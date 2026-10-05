@@ -503,13 +503,18 @@ The variant lines (A2 Clean, A3 Balanced, A4 Handmade) are unchanged. `A2_instru
 #### Instruction artifacts `A<n>_instruction_v2d.txt`
 
 Each is the v2d prompt, a blank line, then that variant's single line (table above), with a
-trailing newline. They differ only in that last line.
+trailing newline. They differ only in that last line. The files are committed in
+[`concepts/kck-03b1/instructions/`](../concepts/kck-03b1/instructions/); the Owner uploads them
+from there (or from the copies sent by the agent) into each fresh generation conversation.
 
 | File | Variant line | Size | SHA-256 (also the canonical-content hash) |
 |---|---|---|---|
 | `A2_instruction_v2d.txt` | A2 Clean | 2342 bytes | `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e` |
 | `A3_instruction_v2d.txt` | A3 Balanced | 2371 bytes | `c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884` |
 | `A4_instruction_v2d.txt` | A4 Handmade | 2396 bytes | `d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34` |
+
+The committed bytes are checked by `concepts/kck-03b1/tools/test_preflight_hash.py`, which also
+holds the BOM / CRLF / trailing-newline regression cases for the canonicalization.
 
 Execution message (the only user-authored text sent, verbatim; `<n>` = the variant):
 
@@ -586,10 +591,14 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 
 Owner-approved 2026-10-05, replacing the original four-item gate (revision recorded below).
 All four must PASS. Any FAIL: do not generate, do not consume an attempt. Tool for the two
-hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py).
+hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
+(a pre-flight helper; no product or runtime code).
 
-1. **Fresh context.** A brand-new conversation, not the current project conversation. Before
-   generation it contains only the two attachments and one execution message.
+1. **Fresh context, defined by Owner input.** A brand-new conversation, not the current
+   project conversation. The Owner supplies exactly two source objects (the image and the
+   instruction file) and exactly one authored execution message. Platform expansion of an
+   attachment into text is not additional Owner-authored content. Both files are uploaded
+   again in every new conversation; a previous upload does not carry over.
 2. **Source image: pixel identity.** The image the generation side actually received decodes
    to **width 1448, height 1086** and its decoded-pixel hash equals
    `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
@@ -611,11 +620,13 @@ hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools
    pasted or typed into a message is **not**, even if its hash comes out correct.
 
 **Revision history.** The original gate required the received files' own SHA-256 to equal the
-canonical files'. A3 generation `3871ee32…` showed that file bytes can differ for reasons
-that need not change the content (that run's image did differ in decoded pixels, see below),
-and that a text attachment may reach the generation side as inline text. Rev. 2 keeps the
-identity check but makes it content-based and fixes the algorithm so it cannot be read two
-ways.
+canonical files'. The repository contract already allows different PNG encodings of the same
+pixels ([contract](character-representation-contract.md) section 10), so file-byte equality is
+the wrong test of content identity. A3 generation `3871ee32…` exposed this, and also showed
+that a text attachment may reach the generation side as inline text. That run did **not**
+demonstrate a pure re-encode: its decoded pixels differed too (see below), so it failed pixel
+identity as well. Rev. 2 makes the identity check content-based and fixes the algorithm so it
+cannot be read two ways.
 
 #### Post-generation provenance capture
 

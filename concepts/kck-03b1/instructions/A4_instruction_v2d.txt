@@ -1,0 +1,23 @@
+Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
+
+Goal: explore a shared Soft Handmade 2.5D rendering language that can later be translated to Cat and Robot without changing their anatomy.
+
+Shared rendering rules:
+- clean dark warm-brown outline with slight controlled hand-drawn variation
+- flat base colors
+- one soft shadow layer, primarily lower-right
+- one restrained soft highlight, primarily upper-left
+- very light colored-pencil / paper grain; texture is subtle seasoning, not the rendering method
+- Preserve the eye shape, size, spacing, placement, and dark-brown eye color as identity features. The white eye highlights are not identity features. Their positions are an intentional style override: do not copy their positions from the reference image. Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it. Do not place the large highlight at top-center or upper-right.
+- clean silhouette and edges suitable for a 64 px character
+- no cast shadow, no background scene, no text, labels, UI, color palette, model sheet, turnaround, or extra characters
+
+Keep the dinosaur recognizably the same character. Reduce the overly polished digital-sticker feeling while preserving clarity.
+
+Produce one isolated full-body character on a true transparent background.
+
+Output exactly ONE dinosaur, centered on ONE square 1:1 canvas. There must be exactly one full-body character in the entire image. Do not show alternatives, variants, panels, side-by-side comparisons, duplicated characters, labels, captions, headings, UI, or text of any kind.
+
+This output is a style exploration candidate, not production artwork and not an approved character master.
+
+Push the handmade pencil/paper character noticeably further than A3, while keeping edges clean and avoiding dense crayon hatching.
