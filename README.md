@@ -1,70 +1,49 @@
 # KidsCharacterKit
 
-A small, reusable Swift package that provides shared child-friendly characters
-for multiple native iOS apps: the character assets, a stable character identity,
-a minimal SwiftUI presentation, and optional basic motion.
+A technology-neutral library of shared child-friendly character assets
+(Cat, Dinosaur, Robot) that multiple apps can reuse from one source of truth.
 
-Apps should be able to say *"I want the Cat"* without knowing which image file
-backs it.
+It is an **asset library**, not a framework. There is no Swift (or any other
+language) code here. A platform adapter is added only when a real app shows
+repeated lookup code worth extracting.
 
-## Status
+## Questions this repo answers
 
-**KCK-00 — bootstrap.** The package builds and imports; it contains no character
-assets and no presentation code yet. See [Roadmap](#roadmap).
-
-## Initial character scope
-
-- Cat
-- Dinosaur
-- Robot
-
-## What belongs in this package
-
-- Reusable character assets
-- Character identity / model
-- Minimal reusable SwiftUI presentation
-- Basic optional character motion
-- Provenance metadata for every asset
-
-## What does NOT belong in this package
-
-- Game logic
-- Levels
-- Scoring
-- Stars / rewards
-- Learning progress
-- Persistence
-- Backend / networking
-- App navigation
-- A general-purpose UI / design system
-- Speculative animation APIs (motion is added only when a real app needs it)
+- Which images are the official assets?
+- Where is the original of each, and where did it come from?
+- Is there any open question about commercial-use rights?
+- Are names, canvas, transparency and padding consistent?
+- Can different apps use the same file without per-app adjustment?
+- When an asset changes, what changed?
 
 ## Layout
 
 ```
-Package.swift
-Sources/KidsCharacterKit/
-    Resources/Characters/     character assets (empty until KCK-02)
-Tests/KidsCharacterKitTests/
-provenance/                   per-asset provenance records
-docs/asset-spec.md            asset specification
+assets/originals/<character>/    untouched source images
+assets/production/<character>/   normalized images apps consume
+provenance/<character>/          per-asset source and rights records
+manifests/characters.json        language-neutral character → asset map
+docs/asset-spec.md               canvas / transparency / anchor / padding
+docs/naming.md                   file naming convention
 ```
 
-## Development
+## Rules
 
-```
-swift build
-swift test
-```
-
-Requires Swift 5.9+ (iOS 16 / macOS 13 deployment targets).
+- Unknown provenance or rights is recorded as `pending` / `unknown`, never inferred.
+- Originals are never overwritten; production files are derived from them.
+- Not in scope: game logic, levels, scoring, rewards, learning progress,
+  persistence, networking, navigation, UI/design system, animation APIs.
 
 ## Roadmap
 
 | Slice | Goal |
 |---|---|
-| KCK-00 | Repository bootstrap (this slice) |
-| KCK-01 | Asset inventory and provenance |
-| KCK-02 | Asset normalization |
-| KCK-03 | Character API (`CharacterID`, asset resolver) |
-| KCK-04 | SwiftUI `CharacterView`, minimal motion, Reduce Motion |
+| KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets |
+| KCK-02 | Provenance records and schema |
+| KCK-03 | Normalize: copy originals, produce production assets, asset spec, naming |
+| KCK-04 | Language-neutral manifest |
+| later | Platform adapter (e.g. Swift) only once an app needs it |
+
+## Status
+
+Skeleton only. No assets or provenance records yet.

@@ -1,12 +1,7 @@
 # Asset specification
 
-> Placeholder. Populated in **KCK-01** (inventory) and **KCK-02** (normalization).
+> Placeholder. Defined in **KCK-03** (normalization), informed by the KCK-01 inventory.
 
-This document will define, for every character asset:
-
-- canvas size and transparency requirements
-- anchor point and padding conventions
-- official file naming
-- how assets are referenced from `Sources/KidsCharacterKit/Resources/Characters/`
-
-No assets exist yet, so there is nothing to specify.
+Will define for production assets: format (transparent PNG), canvas size,
+bottom-center anchor, padding, and the rule that consumers should not need
+per-app offsets to align characters.
