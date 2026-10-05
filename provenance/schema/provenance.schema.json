@@ -2,14 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "kidscharacterkit/provenance.schema.json",
   "title": "KidsCharacterKit provenance record",
-  "description": "One record per asset or per reference/source artwork. Technology-neutral. Unknown stays unknown: commercial-use and rights fields default to pending/unknown and may only become confirmed with evidence.",
+  "description": "One record per asset or per reference/source artwork. Technology-neutral. Unknown stays unknown: commercial-use and rights fields must be filled in explicitly (the schema sets no defaults) and must remain pending/unknown unless supported by evidence.",
   "oneOf": [
     { "$ref": "#/$defs/assetRecord" },
     { "$ref": "#/$defs/referenceRecord" }
   ],
   "$defs": {
     "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-    "stableId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-(ref-)?[0-9]{2}$" },
+    "assetId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-[0-9]{2}$" },
+    "referenceId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-ref-[0-9]{2}$" },
+    "stableId": { "anyOf": [{ "$ref": "#/$defs/assetId" }, { "$ref": "#/$defs/referenceId" }] },
     "character": { "enum": ["cat", "dinosaur", "robot"] },
 
     "sourceLocation": {
@@ -79,7 +81,7 @@
       "additionalProperties": false,
       "required": ["ref_id", "role"],
       "properties": {
-        "ref_id": { "$ref": "#/$defs/stableId" },
+        "ref_id": { "$ref": "#/$defs/referenceId" },
         "role": { "type": "string", "description": "How the input was used, e.g. identity reference, style reference, edit target." }
       }
     },
@@ -95,7 +97,7 @@
     },
 
     "rights": {
-      "description": "Defaults are pending/unknown. Never inferred (e.g. 'AI-generated' is not evidence of commercial clearance).",
+      "description": "Must remain pending/unknown unless supported by evidence; the schema applies no defaults, so every record states them explicitly. Never inferred (e.g. 'AI-generated' is not evidence of commercial clearance).",
       "type": "object",
       "additionalProperties": false,
       "required": ["commercial_use_status", "rights_review_status", "ownership_status", "statements"],
@@ -154,7 +156,7 @@
       "properties": {
         "schema_version": { "const": 1 },
         "record_type": { "const": "asset" },
-        "id": { "$ref": "#/$defs/stableId" },
+        "id": { "$ref": "#/$defs/assetId" },
         "character": { "$ref": "#/$defs/character" },
         "source_asset_name": { "type": "string", "description": "Name in the source app. Not an identity: the stable `id` is." },
         "inventory_id": { "type": "string", "description": "Cross-reference to docs/asset-inventory.md." },
@@ -196,13 +198,13 @@
       "additionalProperties": false,
       "required": [
         "schema_version", "record_type", "id", "character", "kind", "inventory_id",
-        "availability", "source", "origin", "derivation", "used_by", "rights",
+        "availability", "source", "file", "origin", "derivation", "used_by", "rights",
         "evidence", "unresolved_questions"
       ],
       "properties": {
         "schema_version": { "const": 1 },
         "record_type": { "const": "reference" },
-        "id": { "$ref": "#/$defs/stableId" },
+        "id": { "$ref": "#/$defs/referenceId" },
         "character": { "$ref": "#/$defs/character" },
         "kind": {
           "enum": ["owner_provided_reference", "owner_selected_concept", "historical_generated_output", "external_reference"]

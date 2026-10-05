@@ -8,10 +8,11 @@ Records are JSON, validated by [`schema/provenance.schema.json`](schema/provenan
 
 ## Rules
 
-- **Unknown stays unknown.** `commercial_use_status` is `pending`,
-  `rights_review_status` and `ownership_status` are `unknown` unless a record
-  cites evidence. The schema rejects `confirmed` / `reviewed` / `documented`
-  without `evidence_for_confirmation`.
+- **Unknown stays unknown.** `commercial_use_status` must remain `pending`,
+  and `rights_review_status` / `ownership_status` must remain `unknown`, unless
+  a record cites evidence. The schema sets no defaults: every record states
+  these fields explicitly, and it rejects `confirmed` / `reviewed` /
+  `documented` without `evidence_for_confirmation`.
 - **No inference.** "AI-generated", "owner provided" or "app uses it" are not
   rights evidence. Statements found in the source repo are quoted under
   `rights.statements` with their path.
