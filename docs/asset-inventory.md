@@ -211,8 +211,10 @@ Nothing below is resolved by this inventory. Each is recorded as pending.
    - Cat and Dinosaur: the references are described as "owner-provided"
      (Cat JPEG, Dinosaur PNG). No statement about who created them, or about
      any rights audit, was found.
-2. **Rights status of AI-generated outputs — Unknown.** All ten asset paths
-   were generated with a built-in image-generation tool (`image_gen.imagegen`).
+2. **Rights status of AI-generated outputs — Unknown.** All nine unique
+   artwork files originate from a built-in image-generation tool
+   (`image_gen.imagegen`); `DinosaurWorldThumbnail` is a byte-for-byte copy of
+   `DinosaurResearcher`, not an independent generation (source-stated).
    No license terms or commercial-use determination was found in the repo.
    Robot provenance states model name/version/seed were not returned by the
    tool; the Cat and Dinosaur records contain no model field at all.
