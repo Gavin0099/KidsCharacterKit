@@ -33,6 +33,8 @@ Start with the [representation contract](docs/character-representation-contract.
 
 ## Rules
 
+Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVERNANCE.md).
+
 - Unknown provenance or rights is recorded as `pending` / `unknown`, never inferred.
 - Originals are never overwritten; delivery files are derived from them. A character is an identity; images, animations and 3D models are its representations.
 - Not in scope: game logic, levels, scoring, rewards, learning progress,
@@ -44,7 +46,8 @@ Start with the [representation contract](docs/character-representation-contract.
 |---|---|---|
 | KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets | done |
 | KCK-02 | Provenance schema and records for the five core candidates | done |
-| KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | this slice |
+| KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | done |
+| KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | this slice |
 | KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Done by the owner outside this repo (needs an illustration workflow); outcome is brought back for a Style Bible v1 decision | next |
 | — | Style Bible v1 approved, then formal model sheets | after B1 |
 | KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
