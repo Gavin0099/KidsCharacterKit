@@ -66,8 +66,10 @@ SHA-256 `19e3b7889ddaec05d361e9e0756eb9036ac82382ceea685c3d39e6b954e12095`). It 
   clean art, and its "Recommended" label has no governance effect.
 - Provenance was incomplete (see Provenance limitation).
 
-Whether this sheet is later marked `rejected` or `superseded` is decided by the Owner
-after round 2.
+**Status: `rejected`** (Owner decision, 2026-10-05): output-contract violation,
+eye-highlight violation, distorted comparison, incomplete provenance. Not `superseded`:
+it never became an approved baseline. The image itself is not committed; this record,
+its SHA-256 and the reason are the evidence that it was tested and rejected.
 
 ### Owner decisions for round 2 (stated in session, 2026-10-05)
 
@@ -91,10 +93,10 @@ after round 2.
 - Lineup review after generation: A1 (repo original) + A2 + A3 + A4. Only then does the
   Owner consider choosing a style anchor.
 
-### Canonical prompt (shared part)
+### Canonical prompt v2 (shared part) — superseded by v2b for new generations
 
-This text is the generation instruction given to the image generator. It is recorded in
-full as the canonical brief.
+This text was the generation instruction used for the first Round 2 attempts. It is kept
+unchanged for the record. New generations use v2b below.
 
 ```text
 Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
@@ -125,6 +127,103 @@ This output is a style exploration candidate, not production artwork and not an 
 | A2 Clean | `Use almost no visible surface texture; prioritize clean graphic readability.` |
 | A3 Balanced | `Use subtle visible handmade grain and slight line variation, balanced with clean mobile-game readability.` |
 | A4 Handmade | `Push the handmade pencil/paper character noticeably further than A3, while keeping edges clean and avoiding dense crayon hatching.` |
+
+### Round 2 attempts (all `rejected`)
+
+Four generation attempts were made for A2 Clean. All are `rejected` (Owner decision,
+2026-10-05) for **output-contract violation** (the tool produced a three-figure board
+instead of one character) **and eye-highlight violation** (large highlight at top-center
+or slightly right, not upper-left). Not `superseded`: none became a baseline. The images
+are **not committed**; the SHA-256 and reason are the record.
+
+All four: WebP, 2000×667 (about 3:1), RGBA with real transparency. The true-alpha result
+is the one requirement they met.
+
+| # | Generation id | External instruction (Owner's intent, not verbatim) | SHA-256 | Result |
+|---|---|---|---|---|
+| 3 | `a31db5ab-60e9-40c3-add1-a9e012d5c7fa` | full canonical v2 shared prompt + A2 Clean line | `35892949f79f921b5abb3147bd0b4214ba32742bbd23ff9470f8ce8fba7116c8` | three figures + labels |
+| 4 | `7f3a42af-3afb-4320-ae2c-2accbe9051a3` | only A2, one dinosaur, transparent, no A3/A4, no text or comparison board | `1a0c0c5cb4137411db8867edd9b7c0868c2bebcd6da6d2a2c007f4f1d1b7e658` | three figures + labels |
+| 5 | `de636c4c-93c8-4d95-a044-29240f9468d7` | again: one dinosaur only; no text, labels, columns or other characters | `d844e1564bceef7e96f7661e6fd1b285bb046445637f55ab1c1c54acbd11b476` | three figures, no labels |
+| 6 | `4501f2a1-18c7-46ac-bcfd-65c7373dfb46` | retry of single-character A2; no new A3/A4 instruction | `11fcaf4737c99a25765311f264f86ab9bff9847cc45af6d09828bfae87184d45` | three figures, no labels |
+
+Provenance notes:
+
+- The tool call is derived automatically from the conversation. The internal prompt sent
+  to the image model is not exposed, so the column above records the instruction given
+  *to the tool* as the Owner remembers it, not the text the model received.
+- **Attempts 5 and 6 must not be split into A2/A3/A4.** The left, middle and right figures
+  visibly look like Clean, Balanced and Handmade, but the three variant lines were never
+  supplied separately for those attempts, so labeling the figures A2/A3/A4 afterwards
+  would claim provenance that does not exist. No cropped derivative of these images is
+  made.
+
+### Round 2b: amended canonical instruction
+
+Round 2b is a precision change. The approved direction (large highlight at the upper
+left) is **unchanged**; the instruction is rewritten so it implements the rule
+unambiguously, and the composition is locked to one character on a square canvas. Two
+changes to canonical prompt v2:
+
+1. **Composition (added after "Produce one isolated full-body character on a true
+   transparent background."):**
+
+   > Output exactly ONE dinosaur, centered on ONE square 1:1 canvas. There must be exactly one full-body character in the entire image. Do not show alternatives, variants, panels, side-by-side comparisons, duplicated characters, labels, captions, headings, UI, or text of any kind.
+
+2. **Eye highlight (replaces the bullet "large eye highlight must be visibly at the upper-left of each eye; secondary highlight smaller"):**
+
+   > In each iris/pupil, place the large white highlight clearly inside the **upper-left quadrant**, close to the upper-left edge of the dark eye shape. It must be visibly left of the eye's vertical centerline. Place the smaller secondary highlight below and to the right of the large highlight. Do not place the large highlight at top-center or upper-right.
+
+#### Canonical prompt v2b (shared part)
+
+```text
+Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
+
+Goal: explore a shared Soft Handmade 2.5D rendering language that can later be translated to Cat and Robot without changing their anatomy.
+
+Shared rendering rules:
+- clean dark warm-brown outline with slight controlled hand-drawn variation
+- flat base colors
+- one soft shadow layer, primarily lower-right
+- one restrained soft highlight, primarily upper-left
+- very light colored-pencil / paper grain; texture is subtle seasoning, not the rendering method
+- In each iris/pupil, place the large white highlight clearly inside the upper-left quadrant, close to the upper-left edge of the dark eye shape. It must be visibly left of the eye's vertical centerline. Place the smaller secondary highlight below and to the right of the large highlight. Do not place the large highlight at top-center or upper-right.
+- clean silhouette and edges suitable for a 64 px character
+- no cast shadow, no background scene, no text, labels, UI, color palette, model sheet, turnaround, or extra characters
+
+Keep the dinosaur recognizably the same character. Reduce the overly polished digital-sticker feeling while preserving clarity.
+
+Produce one isolated full-body character on a true transparent background.
+
+Output exactly ONE dinosaur, centered on ONE square 1:1 canvas. There must be exactly one full-body character in the entire image. Do not show alternatives, variants, panels, side-by-side comparisons, duplicated characters, labels, captions, headings, UI, or text of any kind.
+
+This output is a style exploration candidate, not production artwork and not an approved character master.
+```
+
+The variant lines (A2 Clean, A3 Balanced, A4 Handmade) are unchanged.
+
+#### Generation order and context rule
+
+- **One variant per fresh context.** Each generation starts in a new context that contains
+  only: `dinosaur-01`, prompt v2b, and that variant's single line. The words `A3`, `A4`,
+  `comparison` and `three variants` must not appear in that context.
+- Order: A2 Clean → validate → (new context) A3 Balanced → validate → (new context) A4
+  Handmade → validate. A failed validation stops the sequence; the next variant is not
+  started.
+- Keep the generation id of every attempt, including failures.
+
+#### Validation after each generation
+
+Each output is checked before the next variant starts:
+
+1. **One character** in the whole image (no board, panels or duplicates; no text).
+2. **True alpha** (transparent background, no matte).
+3. **Eye highlight:** large highlight in the upper-left quadrant of each eye, left of its
+   vertical centerline; smaller one lower-right of it.
+4. **Identity:** still recognizably `dinosaur-01` (silhouette, proportions, anatomy).
+5. **Variant intensity:** texture/line variation matches the variant line and visibly
+   differs from the other variants.
+
+Any failure is recorded as a `rejected` attempt (generation id, SHA-256, reason).
 
 ### Provenance limitation (honest record)
 
