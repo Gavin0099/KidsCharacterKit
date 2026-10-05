@@ -173,7 +173,7 @@ changes to canonical prompt v2:
 
    > In each iris/pupil, place the large white highlight clearly inside the **upper-left quadrant**, close to the upper-left edge of the dark eye shape. It must be visibly left of the eye's vertical centerline. Place the smaller secondary highlight below and to the right of the large highlight. Do not place the large highlight at top-center or upper-right.
 
-#### Canonical prompt v2b (shared part)
+#### Canonical prompt v2b (shared part) — superseded by v2c for new generations
 
 ```text
 Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
@@ -218,12 +218,125 @@ Each output is checked before the next variant starts:
 1. **One character** in the whole image (no board, panels or duplicates; no text).
 2. **True alpha** (transparent background, no matte).
 3. **Eye highlight:** large highlight in the upper-left quadrant of each eye, left of its
-   vertical centerline; smaller one lower-right of it.
+   vertical centerline; smaller one lower-right of it. *(Replaced by the measurable gate
+   in Round 2c below.)*
 4. **Identity:** still recognizably `dinosaur-01` (silhouette, proportions, anatomy).
 5. **Variant intensity:** texture/line variation matches the variant line and visibly
    differs from the other variants.
 
 Any failure is recorded as a `rejected` attempt (generation id, SHA-256, reason).
+
+### Round 2b attempt 1 (A2 Clean): `rejected`
+
+One generation, made in a fresh context with only `dinosaur-01`, prompt v2b and the A2
+line (the instruction is exactly the canonical v2b text followed by the A2 line; checked
+against the pasted instruction). Decision (Owner, 2026-10-05): **`rejected`**.
+
+| | |
+|---|---|
+| Generation id | `91d29f39-c8ee-4693-8302-4e17c26fd4e9` |
+| Input | `dinosaur-01` only (no Cat, Robot or other reference) |
+| Original generation artifact | PNG, RGBA, 1254×1254, SHA-256 `5d5df835d1b8a8d72bf0e35e6d42dcd3c906cf3f06f9e1a33b492489d2f2aa9e` (reported by the Owner; not in this repo; not verified here) |
+| Platform-delivered copy | WebP, 1254×1254, SHA-256 `7393a0672eb5b069e4163547de30855aa796931dd1d1af20862210e785810887` (the file that was measured) |
+
+Reasons for rejection:
+
+1. **Eye-highlight geometry gate failed.** Measured on the delivered copy, as fractions of
+   each dark eye shape's bounding box (0 = left/top edge, 1 = right/bottom edge):
+
+   | Eye | Large highlight (x, y) | Small highlight (x, y) |
+   |---|---|---|
+   | left | 0.562, 0.272 | 0.644, 0.617 |
+   | right | 0.538, 0.264 | 0.627, 0.604 |
+
+   The large highlight sits at the center-top, slightly right of the vertical centerline
+   (target x ∈ [0.30, 0.40], measured 0.54–0.56). The vertical position (y) is within
+   range and the small highlight is below and to the right of the large one in both eyes.
+2. **Provenance gap, fixed by a rule (below):** the original generation artifact and the
+   delivered copy are different encodings, and only one of them was measured.
+
+The other four checks passed:
+
+- **One character:** single 1:1 canvas (1254×1254), one connected figure, no text or labels.
+- **True alpha:** corners fully transparent; character interior alpha 251–254 (not 255).
+- **Identity:** visible-bounds aspect 0.886 vs 0.890 for `dinosaur-01`; mint body, cream
+  belly with two lines, yellow back spikes, peach cheeks, magnifying glass, tail and feet kept.
+- **Variant intensity:** surface texture is nearly absent, as A2 requires (forehead
+  high-frequency energy 0.22 vs 1.51 in the source).
+
+So the only uncontrolled factor left is the highlight position.
+
+### Round 2c: measurable eye-highlight rule
+
+The approved direction (large highlight at the upper left) is **unchanged**. "Upper-left"
+and "visibly left of the centerline" were too loose to generate or check, so the rule is
+restated as coordinates. This is an implementation precision, not a style change.
+
+**Generation target (replaces the v2b highlight bullet):**
+
+> Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it.
+
+**Validation (replaces check 3), applied to each eye:**
+
+```text
+large highlight center:   x in [0.30, 0.40] of eye width
+                          y in [0.20, 0.35] of eye height
+small highlight:          x > large.x   and   y > large.y
+```
+
+Both eyes must pass.
+
+**Measurement method (so it is reproducible):** the eye is the filled connected dark-brown
+region; its bounding box is the 0–1 frame; the highlights are near-white blobs inside it;
+a highlight's center is its centroid. State which copy (original or delivered) was
+measured.
+
+#### Canonical prompt v2c (shared part)
+
+```text
+Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
+
+Goal: explore a shared Soft Handmade 2.5D rendering language that can later be translated to Cat and Robot without changing their anatomy.
+
+Shared rendering rules:
+- clean dark warm-brown outline with slight controlled hand-drawn variation
+- flat base colors
+- one soft shadow layer, primarily lower-right
+- one restrained soft highlight, primarily upper-left
+- very light colored-pencil / paper grain; texture is subtle seasoning, not the rendering method
+- Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it.
+- clean silhouette and edges suitable for a 64 px character
+- no cast shadow, no background scene, no text, labels, UI, color palette, model sheet, turnaround, or extra characters
+
+Keep the dinosaur recognizably the same character. Reduce the overly polished digital-sticker feeling while preserving clarity.
+
+Produce one isolated full-body character on a true transparent background.
+
+Output exactly ONE dinosaur, centered on ONE square 1:1 canvas. There must be exactly one full-body character in the entire image. Do not show alternatives, variants, panels, side-by-side comparisons, duplicated characters, labels, captions, headings, UI, or text of any kind.
+
+This output is a style exploration candidate, not production artwork and not an approved character master.
+```
+
+The variant lines (A2 Clean, A3 Balanced, A4 Handmade) and the one-variant-per-fresh-context
+rule are unchanged. v2c differs from v2b only in the highlight bullet.
+
+### Original generation artifact vs platform-delivered copy
+
+The platform can re-encode what it shows (here PNG → WebP). A hash of the delivered copy is
+not the hash of what the generator produced. Rules:
+
+- **Generation output** = the original artifact the tool produced. Record its format and
+  SHA-256 as reported by the Owner (the Owner's side holds it), and note that the
+  repository did not verify it unless the original file is supplied.
+- **Delivered copy** = any re-encoded or re-exported copy (for example the WebP shown in
+  chat). It is a separate record with its own SHA-256 and says how it was obtained.
+- A validation or measurement states **which copy it was run on**. The geometric gates are
+  binding on the original artifact; a result on a delivered copy is indicative. If only a
+  delivered copy reaches the repository, the record says no original is verifiable here.
+- A conversion made inside this repository is a derived copy with its own record. It never
+  replaces the generation-output hash.
+- Per output, the Owner brings: generation id, original artifact format and SHA-256, the
+  exact instruction, and the input SHA-256.
 
 ### Provenance limitation (honest record)
 
