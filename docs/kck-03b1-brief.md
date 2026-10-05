@@ -236,7 +236,7 @@ against the pasted instruction). Decision (Owner, 2026-10-05): **`rejected`**.
 |---|---|
 | Generation id | `91d29f39-c8ee-4693-8302-4e17c26fd4e9` |
 | Input | `dinosaur-01` only (no Cat, Robot or other reference) |
-| Original generation artifact | PNG, RGBA, 1254×1254, SHA-256 `5d5df835d1b8a8d72bf0e35e6d42dcd3c906cf3f06f9e1a33b492489d2f2aa9e` (reported by the Owner; not in this repo; not verified here) |
+| Original generation artifact | PNG, RGBA, 1254×1254, SHA-256 `5d5df835d1b8a8d72bf0e35e6d42dcd3c906cf3f06f9e1a33b492489d2f2aa9e`. Format, size and hash were re-checked on the generation side (the Owner's assistant, which holds the file) and match the earlier report. The file was not supplied to this repository's session, so this session did **not** verify it itself. Not committed (the attempt is rejected). |
 | Platform-delivered copy | WebP, 1254×1254, SHA-256 `7393a0672eb5b069e4163547de30855aa796931dd1d1af20862210e785810887` (the file that was measured) |
 
 Reasons for rejection:
@@ -252,8 +252,18 @@ Reasons for rejection:
    The large highlight sits at the center-top, slightly right of the vertical centerline
    (target x ∈ [0.30, 0.40], measured 0.54–0.56). The vertical position (y) is within
    range and the small highlight is below and to the right of the large one in both eyes.
+
+   **Re-measurement on the original PNG** (done on the generation side, same method):
+   left eye large highlight x ≈ 0.562, y ≈ 0.272; right eye x ≈ 0.537, y ≈ 0.264. This
+   matches the delivered-WebP result to within about 0.001. Conclusion: the highlight
+   failure is present in the generation artifact itself; PNG → WebP re-encoding did not
+   move it.
 2. **Provenance gap, fixed by a rule (below):** the original generation artifact and the
-   delivered copy are different encodings, and only one of them was measured.
+   delivered copy are different encodings, and at first only the delivered copy had been
+   measured. **Resolved:** the geometry was then re-measured on the original PNG (on the
+   generation side) and matches the delivered WebP result (below), so the failure is in the
+   generation artifact itself, not introduced by platform re-encoding. The rule stays so
+   the question never has to be re-argued.
 
 The other four checks passed:
 
@@ -274,7 +284,7 @@ restated as coordinates. This is an implementation precision, not a style change
 
 **Generation target (replaces the v2b highlight bullet):**
 
-> Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it.
+> Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it. Do not place the large highlight at top-center or upper-right.
 
 **Validation (replaces check 3), applied to each eye:**
 
@@ -304,7 +314,7 @@ Shared rendering rules:
 - one soft shadow layer, primarily lower-right
 - one restrained soft highlight, primarily upper-left
 - very light colored-pencil / paper grain; texture is subtle seasoning, not the rendering method
-- Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it.
+- Treat the dark eye shape as a box from 0% to 100%. The center of the large white highlight should be around 35% from the left edge and 25% from the top edge. Acceptable generation target: x=30–40%, y=20–35%. It must remain clearly left of the eye centerline. The smaller highlight must be lower and to the right of it. Do not place the large highlight at top-center or upper-right.
 - clean silhouette and edges suitable for a 64 px character
 - no cast shadow, no background scene, no text, labels, UI, color palette, model sheet, turnaround, or extra characters
 
@@ -330,9 +340,15 @@ not the hash of what the generator produced. Rules:
   repository did not verify it unless the original file is supplied.
 - **Delivered copy** = any re-encoded or re-exported copy (for example the WebP shown in
   chat). It is a separate record with its own SHA-256 and says how it was obtained.
-- A validation or measurement states **which copy it was run on**. The geometric gates are
-  binding on the original artifact; a result on a delivered copy is indicative. If only a
-  delivered copy reaches the repository, the record says no original is verifiable here.
+- A validation or measurement states **which copy it was run on and who ran it**. The
+  geometric gates are binding on the original artifact; a result on a delivered copy is
+  indicative. The party that holds the original may run the measurement (same method) and
+  report it. If only a delivered copy reaches the repository, the record says no original
+  is verifiable here, and a hash or measurement reported from the generation side is
+  recorded as reported, not as verified by this repository.
+- **Rejected attempts keep evidence, not images:** generation id, original-artifact and
+  delivered-copy hashes, measurements and reasons are enough. The image files are not
+  committed, so the repository does not accumulate failed outputs.
 - A conversion made inside this repository is a derived copy with its own record. It never
   replaces the generation-output hash.
 - Per output, the Owner brings: generation id, original artifact format and SHA-256, the
