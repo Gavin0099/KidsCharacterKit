@@ -50,6 +50,93 @@ The three side by side. One question for the Owner: *does it look like the same 
 Pass → formal turnaround/model sheets can start (a new slice). Fail → iterate B1-A/B.
 Pass/fail is the Owner's decision.
 
+## B1-A round 2: canonical generation brief
+
+### Round 1 (not committed)
+
+A first B1-A sheet was generated on 2026-10-05 (single composite image, 1536×1024 WebP,
+SHA-256 `19e3b7889ddaec05d361e9e0756eb9036ac82382ceea685c3d39e6b954e12095`). It is
+**not in this repository** and is not a style anchor. Why:
+
+- The large eye highlight was drawn at the upper right although labeled "upper-left", so
+  it contradicts the approved direction and rule 4.
+- The four variants (A1–A4) were nearly indistinguishable, so it did not test a style
+  range. Its "A1 Current Reference" was a regenerated copy, not the repository file.
+- It was a presentation board (labels, palette, tagline, turnaround, expressions), not
+  clean art, and its "Recommended" label has no governance effect.
+- Provenance was incomplete (see Provenance limitation).
+
+Whether this sheet is later marked `rejected` or `superseded` is decided by the Owner
+after round 2.
+
+### Owner decisions for round 2 (stated in session, 2026-10-05)
+
+1. **Eye highlight rule is unchanged**: large highlight at the upper left, smaller
+   secondary highlight. The style bible is not edited to fit a wrong output; the image is
+   redone.
+2. **Spread the variants on purpose**: three candidates that differ visibly even at
+   thumbnail size.
+3. **A1 is the repository file**: `dinosaur-01` (SHA-256
+   `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`), used directly. No
+   regenerated stand-in.
+4. **No variant is selected.** Everything from round 1 and round 2 stays `candidate`.
+
+### Inputs and outputs
+
+- Input (only): `dinosaur-01` / DinosaurResearcher, SHA-256 above.
+- Output: **one isolated full-body character per variant, as its own transparent PNG.** No
+  comparison board, turnaround, expressions, palette, tagline or "Recommended" text.
+- If the tool cannot return true alpha, record how the background was removed: that is a
+  modification with its own provenance entry, not a silent step.
+- Lineup review after generation: A1 (repo original) + A2 + A3 + A4. Only then does the
+  Owner consider choosing a style anchor.
+
+### Canonical prompt (shared part)
+
+This text is the generation instruction given to the image generator. It is recorded in
+full as the canonical brief.
+
+```text
+Use the attached `dinosaur-01` image as the identity reference and strict character reference. Preserve the same dinosaur identity, proportions, silhouette, mint-green body, cream belly with two curved lines, softened yellow back spikes, peach cheeks, large brown eyes, tail, feet, and magnifying glass. Do not redesign the character, do not chibify it further, and do not change its anatomy.
+
+Goal: explore a shared Soft Handmade 2.5D rendering language that can later be translated to Cat and Robot without changing their anatomy.
+
+Shared rendering rules:
+- clean dark warm-brown outline with slight controlled hand-drawn variation
+- flat base colors
+- one soft shadow layer, primarily lower-right
+- one restrained soft highlight, primarily upper-left
+- very light colored-pencil / paper grain; texture is subtle seasoning, not the rendering method
+- large eye highlight must be visibly at the upper-left of each eye; secondary highlight smaller
+- clean silhouette and edges suitable for a 64 px character
+- no cast shadow, no background scene, no text, labels, UI, color palette, model sheet, turnaround, or extra characters
+
+Keep the dinosaur recognizably the same character. Reduce the overly polished digital-sticker feeling while preserving clarity.
+
+Produce one isolated full-body character on a true transparent background.
+
+This output is a style exploration candidate, not production artwork and not an approved character master.
+```
+
+### Variant line (the only part that changes)
+
+| Variant | Appended line |
+|---|---|
+| A2 Clean | `Use almost no visible surface texture; prioritize clean graphic readability.` |
+| A3 Balanced | `Use subtle visible handmade grain and slight line variation, balanced with clean mobile-game readability.` |
+| A4 Handmade | `Push the handmade pencil/paper character noticeably further than A3, while keeping edges clean and avoiding dense crayon hatching.` |
+
+### Provenance limitation (honest record)
+
+The tool is ChatGPT's built-in image generation (`image_gen`). Per the Owner, it returns a
+generation id but **no model name, version or seed**, and it does not expose the internal
+prompt it actually sends to the image model; it derives that from the conversation. So an
+"exact full internal prompt" cannot be recorded. What this repository records instead is
+the **user-provided generation instruction** above (verbatim), the tool name, the
+generation id, the input SHA-256 and the output SHA-256, with the limitation stated in
+each record. Records say "instruction given to the tool", never "the prompt the model
+saw".
+
 ## Shared rendering rules (starting brief)
 
 1. **Outline:** all three dark warm brown, similar weight (not Cat light brown, Dinosaur
@@ -94,6 +181,8 @@ color plus very light grain instead of dense hatching.
 
 Per [GOVERNANCE.md](../GOVERNANCE.md): every output is a `candidate` until the Owner
 approves it, and is not a character master.
+
+Where the tool hides its internal prompt, see "Provenance limitation" above for what is recorded instead.
 
 For each output, record: the input assets with their SHA-256 (the repo records for
 `cat-02`, `dinosaur-01`, `robot-01` already hold these), the generation tool
