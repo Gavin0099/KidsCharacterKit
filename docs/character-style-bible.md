@@ -1,9 +1,9 @@
 # Character style bible
 
-**Status: draft v0 (KCK-03A) — proposals pending owner approval.** No artwork is
-produced or changed by this slice. Everything under "Proposed direction" is a
-proposal, not an approved rule, and the numbers have not been tested against any
-artwork.
+**Status: draft v0 (KCK-03A).** The high-level direction in §2 was **approved by the
+owner during the PR #3 review**. The numeric values in §3 are **exploration starting
+ranges** for KCK-03B1 and are **not** approved rules. No artwork is produced or
+changed by this slice.
 
 Purpose: if Cat, Dinosaur and Robot are to look like one world across apps, 2D
 animation and later 3D, they need shared visual rules. Normalizing file sizes does
@@ -36,93 +36,100 @@ Takeaways (inferred):
 - Robot is the only one with deliberate handmade texture; Cat has soft texture;
   Dinosaur is flat.
 
-## 2. Proposed direction: "Soft Handmade 2.5D"
+## 2. Approved direction: "Soft Handmade 2.5D"
 
 > Cute but not infantile. Handmade but not rough. Some volume, not plastic.
 
-Intent: one visual language that survives being a still image, a 2D animation and,
-later, a 3D model.
+Approved by the owner (PR #3 review):
 
-### 2.1 Shape language
-- Built from rounded primitives (sphere, capsule, pear, rounded cube). No sharp,
-  spiky or thin forms.
-- Primitives map directly to 3D volumes later (§2.8).
+- **Soft Handmade 2.5D** as the overall direction: flat shape + hand texture + very
+  light volume.
+- **Identity palette:** Cat = warm orange, Dinosaur = mint, Robot = cool gray + blue.
+  Candy-like but slightly desaturated: not baby-pastel, not neon. Backgrounds in apps
+  may change freely; the character stays recognizable by its own palette.
+- **Rounded primitive shape language:** sphere, capsule, pear, rounded cube; no sharp,
+  spiky or thin forms. These map directly to 3D volumes later.
+- **64 px silhouette:** each character is identifiable from its silhouette alone at
+  64 px (app icons, small boards, rhythm-game lanes, distant 3D views).
+- **Light and highlight from the upper left**, matching the eye highlight. No cast
+  shadows baked into character art.
+- **Controlled handmade texture:** handmade, not rough; clean and readable when scaled
+  down.
+- **One shape language shared by 2D and 3D**, so 3D is built from the 2D model sheet
+  (§4).
 
-### 2.2 Proportion
-- Proposed target: head : body ≈ **1 : 1.3 – 1.8** (head about 36–43 % of height).
-- Rationale (design judgment, not tested): readable as cute, but not as baby-like as
-  a very short chibi body, because the apps target roughly 6–12-year-olds.
-- Observed: only `cat-02` is near this; `dinosaur-*` is shorter and rounder,
-  `robot-01` is taller and narrower. The Robot may stay a robot; the rule needs an
-  owner decision on how strictly it applies per character.
+### What must be shared, and what must not
 
-### 2.3 Eye language (shared rules, per-character shape)
-Shared across all three: highlight at upper-left, large pupil/iris, clearly
-readable expression (including brows or equivalent), a defined blink.
-Per-character shape: Cat = round / large iris, Dinosaur = slightly oval,
-Robot = screen-like oval.
+Shared across all characters (the "same world" part):
+rendering language, eye/highlight language, outline language, texture language,
+lighting, palette treatment.
 
-### 2.4 Silhouette
-- Each character must be identifiable **at 64 px**, from the silhouette alone,
-  without internal detail.
-- Used for: app icons, small game boards, rhythm-game lanes, distant 3D views.
+**Not** shared: body proportion. The goal is not the same physique.
 
-### 2.5 Outline and texture ("controlled imperfection")
-Proposed starting values, to be tuned on real art:
-- Outline weight ≈ 3–5 % of the character's visual size, slight natural variation
-  (≈ 1–2 % wobble), closed and clean.
-- Surface texture (pencil / crayon grain) at ≈ 5–12 % opacity over flat base color.
-- Shadow: very soft. Highlight: at most 1–2 shapes.
-- Must remain clean when scaled down: no noisy edges, no mixed resolutions.
+**Robot exception (explicit):** the Robot keeps its long limbs, box head and
+child-crayon character. Forcing it to Dinosaur-like proportions would erase what makes
+it recognizable. Any proportion range below applies to it only if exploration shows it
+helps.
 
-### 2.6 Palette
-- Keep the identity colors from §1. Candy-like but slightly desaturated: not
-  baby-pastel, not neon.
-- Backgrounds in apps may change freely; the character must stay recognizable
-  because of its own palette.
+## 3. Exploration starting ranges (not approved rules)
 
-### 2.7 Lighting
-- One soft key light from upper-left, matching the eye highlight. No cast shadows
-  baked into character art (delivery adds none; see [asset-spec.md](asset-spec.md)).
+Starting points for KCK-03B1, to be adjusted after the three characters are viewed
+side by side. They are not requirements and not acceptance criteria.
 
-### 2.8 2D ↔ 3D correspondence (planning, not modeling)
+| Parameter | Starting range | Note |
+|---|---|---|
+| Head : body | ≈ 1 : 1.3 – 1.8 (head ≈ 36–43 % of height) | design judgment, untested; Robot is exempt (§2) |
+| Outline weight | ≈ 3–5 % of the character's visual size, ≈ 1–2 % natural wobble | closed and clean |
+| Surface texture | ≈ 5–12 % opacity pencil/crayon grain over flat base color | |
+| Shadow / highlight | very soft shadow; at most 1–2 highlight shapes | |
+| Eye shape | Cat round/large iris, Dinosaur slightly oval, Robot screen-like oval | per-character shape; shared highlight position |
+| Expressions | `happy`, `confused` first | more only when an app needs them |
+
+Observation from §1 (inferred): only `cat-02` is near the head:body range;
+`dinosaur-*` is shorter and rounder, `robot-01` taller and narrower.
+
+## 4. Model sheet
+
+Per character: turnaround (**front, 3/4, side, back**) and expressions (**happy,
+confused**) — six images.
+
+Required before:
+- **authored** 2D character animation (new frames, sprite sheet, skeletal), and
+- **3D** modeling.
+
+**Not** required for presentation motion. Breathing, bobbing, scale pulses and small
+rotations or greeting wiggles applied to an existing raster are app presentation, not
+a new representation (see the
+[contract](character-representation-contract.md) §7).
+
+3D is built from the model sheet, not generated from a single existing PNG:
+single-view conversion tends to drift on side/back views and limb proportions, and the
+characters would stop looking like one IP.
+
+### 2D ↔ 3D correspondence (planning, not modeling)
+
 | Character | Primitive plan |
 |---|---|
 | Cat | round head, pear body, short capsule legs, tube tail |
 | Dinosaur | large rounded head, pear body, capsule legs, tapered tube tail |
 | Robot | rounded-cube head, rounded-cuboid body, segmented capsule limbs |
 
-3D is built from the 2D model sheet (§3), not generated from a single existing PNG:
-single-view conversion tends to drift on side/back views and limb proportions, and
-the three characters would stop looking like one IP.
-
-### 2.9 Expressions
-Initial vocabulary: **happy**, **confused**. More only when an app needs them.
-
-## 3. Model sheet (required before any animation or 3D work)
-
-Per character: turnaround (**front, 3/4, side, back**) and expressions
-(**happy, confused**) — six images. Animation (`idle`, `greeting`, `happy`) and 3D
-modeling start from these, not from the existing single poses.
-
-## 4. How to check it worked (owner decides)
+## 5. How to check it worked (owner decides)
 
 1. **Same-world test:** the three characters side by side — do they look like they
    live in the same world?
 2. **64 px silhouette test:** can each be identified in solid black at 64 px?
-3. **Scale test:** do the proposed outline/texture values still read at small sizes?
+3. **Scale test:** do the outline/texture values still read at small sizes?
 4. **Palette test:** are the three still distinguishable from each other and from
    typical app backgrounds?
 
 Pass/fail is an owner decision; this document does not claim any artwork passes.
 
-## 5. Open decisions
+## 6. Open decisions
 
-- Approve, change or drop the proposed numbers (§2.2, §2.5).
-- Whether Robot is allowed to differ from the proportion target.
-- Whether the new style should be explored on new concept art before the existing
-  five assets go through raster normalization (the order of KCK-03B1 and KCK-03B in
-  the README roadmap).
-- Design rationale from market or trend research is intentionally not recorded
-  here: it has not been verified in this repository's context. Add it with sources
-  if wanted.
+- Final values for the §3 parameters (after KCK-03B1).
+- Relative visual size of related characters, e.g. `dinosaur-02` vs `dinosaur-01`
+  (`visual_scale`): **blocking for KCK-03B**; decided after the KCK-03B1 concepts are
+  reviewed.
+- Design rationale from market or trend research is intentionally not recorded here:
+  it has not been verified in this repository's context. Add it with sources if wanted.

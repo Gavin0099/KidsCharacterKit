@@ -5,6 +5,7 @@
       "id": "cat-01",
       "character": "cat",
       "provenance": "provenance/cat/cat-01.json",
+      "visual_scale": null,
       "canonical_height_m": null,
       "representations": {
         "raster": {
@@ -22,6 +23,7 @@
       "id": "cat-02",
       "character": "cat",
       "provenance": "provenance/cat/cat-02.json",
+      "visual_scale": null,
       "canonical_height_m": null,
       "representations": {
         "raster": {
@@ -39,6 +41,7 @@
       "id": "dinosaur-01",
       "character": "dinosaur",
       "provenance": "provenance/dinosaur/dinosaur-01.json",
+      "visual_scale": null,
       "canonical_height_m": null,
       "representations": {
         "raster": {
@@ -56,6 +59,7 @@
       "id": "dinosaur-02",
       "character": "dinosaur",
       "provenance": "provenance/dinosaur/dinosaur-02.json",
+      "visual_scale": null,
       "canonical_height_m": null,
       "representations": {
         "raster": {
@@ -73,6 +77,7 @@
       "id": "robot-01",
       "character": "robot",
       "provenance": "provenance/robot/robot-01.json",
+      "visual_scale": null,
       "canonical_height_m": null,
       "representations": {
         "raster": {

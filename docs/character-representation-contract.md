@@ -76,27 +76,66 @@ Empty `animation-2d/` and `model-3d/` directories are intentionally not created.
   textures can be re-made from them later.
 - Delivery numbers (canvas, margin, safe box, resampling) are in
   [asset-spec.md](asset-spec.md).
+- **Fit and position are separate decisions.** Visible bounds (alpha > 5 %) decide
+  *scale* only. *Position* uses the semantic ground anchor in §6.
 - Consequence for apps: no per-character `offset`/`scale` corrections should be
   needed to align characters placed on the same ground line.
 
-## 6. Anchor / pivot (shared by all representations)
+## 6. Ground anchor / pivot (shared by all representations)
 
-All representations of a character share one ground reference: the point between
-its feet at the ground.
+The **ground anchor** is a *semantic* point: where the character stands.
+
+| Anchor type | Meaning |
+|---|---|
+| `ground-center` | the point on the ground between the character's feet |
+| `support-baseline` | for a character with no visible feet (e.g. a cat sitting in a paper bag): the contact point of the character/carrier with the ground |
+
+It is **not** the lowest visible pixel. A tail, a prop or a bag can be lower than the
+feet, so "bottom of the alpha bounds" is not guaranteed to be the standing point.
+Using it would make a character jump when it switches between raster, animation and
+3D.
 
 | Representation | Ground reference |
 |---|---|
-| raster (delivery) | anchor `bottom-center` of the **visible bounds**, at a fixed canvas coordinate (asset-spec.md) |
-| animation_2d | same anchor, kept constant across all frames |
+| raster (delivery) | the semantic ground anchor is placed at a fixed canvas coordinate (asset-spec.md) |
+| animation_2d | same anchor, constant across all frames |
 | model_3d | origin at ground center |
 
-So switching a character between raster, animation and 3D does not make it jump
-up or down.
+**The anchor is measured per asset, by looking at the actual image, in KCK-03B**
+and recorded as data. It is not guessed here and not computed from alpha.
 
-## 7. 2D animation metadata (planned shape, formalized in KCK-03C)
+```json
+{
+  "anchor": {
+    "type": "ground-center",
+    "source_x": 0,
+    "source_y": 0,
+    "delivery_x": 512,
+    "delivery_y": 960
+  }
+}
+```
 
-No animation exists yet. When one does, it is described by metadata rather than
-guessed from file names:
+(Placeholder zeros only show the shape; no real value exists yet.)
+
+## 7. Motion: presentation vs authored
+
+Two different things:
+
+| | Presentation motion | Authored character animation |
+|---|---|---|
+| What | transform-only effects on an existing raster: breathing, bobbing, scale ≈ 0.98→1.02, small rotation, greeting wiggle | new frames, a sprite sheet, or skeletal animation |
+| Is it a representation? | **No.** It is app presentation applied to the raster. | **Yes**: an `animation_2d` representation |
+| Needs a model sheet? | **No** | **Yes** |
+| Lives in | the consuming app | this library (`animation-2d/`) |
+
+An app that only wants a character to breathe needs nothing beyond the raster. This
+library does not gate that on new artwork.
+
+### 7.1 Authored 2D animation metadata (planned shape, formalized in KCK-03C)
+
+No authored animation exists yet. When one does, it is described by metadata rather
+than guessed from file names:
 
 | Field | Example | Notes |
 |---|---|---|
@@ -106,7 +145,7 @@ guessed from file names:
 | `fps` | `12` | |
 | `loop` | `true` | |
 | `duration_ms` | `1200` | |
-| `anchor` | `bottom-center` | same as §6 |
+| `anchor` | `ground-center` | same semantic anchor as §6, kept constant |
 
 Initial vocabulary: **`idle`, `greeting`, `happy`**. Other names (`walk`, `run`,
 `jump`, `hurt`, …) are added only when an app needs them. The current PNGs have no
@@ -137,6 +176,8 @@ file.
 
 A 3D model should be built from the character's 2D model sheet (see the
 [style bible](character-style-bible.md)), not generated from a single existing PNG.
+The same applies to authored 2D animation (§7). Presentation motion does not need a
+model sheet.
 
 ## 9. When representations get made
 
@@ -144,7 +185,7 @@ Need-driven. An animation or model is produced when a real app prototype needs i
 and only the poses it needs. Having a 3D model is **not** a completion condition
 for v1 of this library.
 
-## 10. Provenance of derived representations
+## 10. Provenance and determinism of derived representations
 
 Every file under `production/` (and any future animation or model file) must be
 traceable:
@@ -153,20 +194,42 @@ traceable:
 reference → source-app asset → exact copy (original) → delivery / animation / model
 ```
 
+**Determinism.** The same master and the same transformation parameters must produce
+the same **decoded RGBA pixels**. Identical *file bytes* are not promised by default:
+different PNG encoder, library or zlib versions can give different bytes for identical
+pixels. Byte-identical output may be claimed only if 03B pins and records the encoder,
+its settings and versions.
+
 Required evidence for a delivery raster (written in KCK-03B):
-`asset_id`, source SHA-256, production SHA-256, canvas, anchor, margin, visible-bounds
-threshold, scale factor, resampling algorithm and version. This lets a later change
-be classified as "artwork replaced" or "normalization changed".
+
+- `asset_id`
+- source SHA-256, **`pixel_sha256`** and **`file_sha256`** of the output
+- canvas, safe margin, visible-bounds threshold and resulting bounds
+- the semantic ground anchor record (§6) and the resulting scale factor
+- `tool`, `tool_version`, resampling algorithm, color-conversion policy and PNG
+  encoder settings
+
+This lets a later change be classified as "artwork replaced" or "normalization
+changed".
 
 The provenance schema currently has `asset` and `reference` record kinds; a
 transformation record kind is added in KCK-03B, with real evidence to model.
 
-## 11. Not decided here
+## 11. Decisions
+
+### Blocking decision for KCK-03B
+
+**Relative visual scale of related characters.** Normalization must not fit
+`dinosaur-01` and `dinosaur-02` both to the maximum size: that would make the
+"junior" as large as its parent. Before 03B produces delivery files, the owner
+decides each character's relative visual size (after the KCK-03B1 concepts are
+reviewed). It is stored in the manifest as `visual_scale` (`null` until decided).
+`visual_scale` is an art/layout ratio and is separate from `canonical_height_m`,
+which is the 3D world-space height.
+
+### Not decided here
 
 - Animation file format and the formal animation schema (03C).
 - 3D skeleton conventions and the formal model schema (03D).
-- Per-character relative scale (e.g. whether `dinosaur-02` is rendered smaller than
-  `dinosaur-01`): delivery fits each character's largest visible side into the same
-  safe box, so a small sibling would currently appear as large as its parent. Known
-  trade-off, left for an owner decision.
+- Per-asset ground anchors (measured in 03B).
 - Any platform adapter code.

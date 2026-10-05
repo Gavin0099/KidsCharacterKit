@@ -45,9 +45,10 @@ Start with the [representation contract](docs/character-representation-contract.
 | KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets | done |
 | KCK-02 | Provenance schema and records for the five core candidates | done |
 | KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | this slice |
-| KCK-03B1 | Style exploration: one unified concept per character, reviewed side by side (needs an illustration workflow outside this repo; proposed, owner decides whether it precedes 03B) | proposed |
-| KCK-03B | Raster assets: exact-copy originals, deterministic 1024×1024 delivery variants, transformation evidence | planned |
-| KCK-03C | 2D animation contract (schema only; no animations) | planned |
+| KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Done by the owner outside this repo (needs an illustration workflow); outcome is brought back for a Style Bible v1 decision | next |
+| — | Style Bible v1 approved, then formal model sheets | after B1 |
+| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
+| KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
 | KCK-03D | 3D contract (schema only; no models) | planned |
 | later | Platform adapter (e.g. Swift) only once an app needs it | — |
 
