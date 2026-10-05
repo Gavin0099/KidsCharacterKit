@@ -37,7 +37,8 @@
         "visual_scale": {
           "type": ["number", "null"],
           "exclusiveMinimum": 0,
-          "description": "Relative visual size of this character in 2D layout/delivery (art ratio, not world size). null until the owner decides after the style exploration. Separate from canonical_height_m."
+          "maximum": 1,
+          "description": "final_scale = safe_fit_scale * visual_scale, where safe_fit_scale is the largest anchor-aware scale that keeps visible content within the delivery constraints (docs/asset-spec.md). 0 < visual_scale <= 1; 1.0 = maximum allowed visual size, smaller values intentionally keep the character relatively smaller. null until the owner decides after the style exploration (blocking for KCK-03B). An art ratio, separate from canonical_height_m (3D world height)."
         },
         "canonical_height_m": {
           "type": ["number", "null"],

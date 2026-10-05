@@ -47,8 +47,13 @@ Approved by the owner (PR #3 review):
 - **Identity palette:** Cat = warm orange, Dinosaur = mint, Robot = cool gray + blue.
   Candy-like but slightly desaturated: not baby-pastel, not neon. Backgrounds in apps
   may change freely; the character stays recognizable by its own palette.
-- **Rounded primitive shape language:** sphere, capsule, pear, rounded cube; no sharp,
-  spiky or thin forms. These map directly to 3D volumes later.
+- **Rounded primitive shape language:** the primary masses (head, body, limbs) use
+  soft, rounded primitives: sphere, capsule, pear, rounded cube. These map directly to
+  3D volumes later. Existing identity-defining protrusions may stay, e.g. the
+  Dinosaur's back spikes and the Robot's antennae, provided they are softened at the
+  tips, thick enough to read at small sizes, and **not** relied on as fragile
+  fine-detail parts of the main silhouette. The goal is a unified style, not removing
+  what makes a character recognizable.
 - **64 px silhouette:** each character is identifiable from its silhouette alone at
   64 px (app icons, small boards, rhythm-game lanes, distant 3D views).
 - **Light and highlight from the upper left**, matching the eye highlight. No cast

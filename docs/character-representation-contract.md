@@ -163,7 +163,7 @@ Fixed now because import problems from inconsistent units/axes are expensive lat
 | Handedness | right-handed |
 | Origin | ground center (between the feet, on the ground) |
 | Scale | each character has a `canonical_height_m` in its manifest entry; `null` until a model exists. No value is invented before then. |
-| Texture color | sRGB |
+| Texture color space | `baseColor` and `emissive` textures: **sRGB**. `normal`, `metallic-roughness` and `occlusion` textures: **linear / non-color data** (never sRGB-decoded). |
 | Alpha | defined per material when a model exists |
 | Skeleton / animation naming | defined when the first rig exists; animation names reuse §7 vocabulary |
 
@@ -224,8 +224,14 @@ transformation record kind is added in KCK-03B, with real evidence to model.
 "junior" as large as its parent. Before 03B produces delivery files, the owner
 decides each character's relative visual size (after the KCK-03B1 concepts are
 reviewed). It is stored in the manifest as `visual_scale` (`null` until decided).
-`visual_scale` is an art/layout ratio and is separate from `canonical_height_m`,
-which is the 3D world-space height.
+
+Definition: `final_scale = safe_fit_scale × visual_scale`, where `safe_fit_scale` is the
+largest anchor-aware scale that keeps the visible content within the delivery
+constraints ([asset-spec.md](asset-spec.md)), and `0 < visual_scale ≤ 1`. `1.0` means
+the maximum allowed visual size; smaller values intentionally keep a character
+relatively smaller. (A junior might later be 0.7; that number is illustrative, not
+decided.) `visual_scale` is an art/layout ratio and is separate from
+`canonical_height_m`, which is the 3D world-space height.
 
 ### Not decided here
 
