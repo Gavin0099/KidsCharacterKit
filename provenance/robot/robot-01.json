@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "record_type": "asset",
+  "id": "robot-01",
+  "character": "robot",
+  "source_asset_name": "RobotSkinMascot",
+  "inventory_id": "ROBOT-A1",
+  "selection": {
+    "status": "selected_core_candidate",
+    "note": "Selected by the owner for the first core reusable set. Says nothing about rights or production readiness."
+  },
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "ios/App/App/Assets.xcassets/RobotSkinMascot.imageset/robot.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1534882,
+    "sha256": "2a7b4b8c8c75aa0f1ec98337e94b42b9dd94a39bfe2c87dff38f6388f0d69b51"
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "mode": null,
+    "model": null,
+    "model_note": "Source: model name, version and seed were not returned by the built-in tool.",
+    "prompt_ref": {
+      "path": "docs/design/robot-skin-provenance.json",
+      "locator": "/prompt",
+      "recorded_prompt_sha256": "0e501bf80ac090eafe8e323df2a6e194e73df4fc822f4ec00816e206ea7715e1"
+    },
+    "post_generation_pixel_edit": null,
+    "raw_output": {
+      "filename": null,
+      "available": "unknown"
+    }
+  },
+  "derivation": {
+    "inputs": [
+      {
+        "ref_id": "robot-ref-01",
+        "role": "owner-supplied child crayon drawing; identity-preserving cutout source"
+      }
+    ],
+    "notes": [
+      "Source describes the output as an \"identity-preserving cutout candidate\" with background removed to real alpha.",
+      "Source records review_status \"agent_visual_reviewed; owner accepted Robot Home direction and authorized native pilot/internal upload\", and states no independent character-fidelity acceptance is claimed."
+    ]
+  },
+  "duplicates": [],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": [
+      {
+        "text": "Owner selected the supplied drawing as reference. No independent rights/licence audit is claimed.",
+        "path": "docs/design/robot-skin-provenance.json",
+        "locator": "/rights_note"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "docs/design/robot-skin-provenance.json",
+      "supports": "Generator, prompt, reference/output SHA-256, alpha stats, review status, rights_note. While writing this record, output_sha256 was checked against the file and prompt_hash against the prompt text at the source commit: both match."
+    }
+  ],
+  "unresolved_questions": [
+    "Rights status of AI-generated output is not determined anywhere in the inspected files.",
+    "The raw generator output is outside the repo (original author machine); only hashes remain.",
+    "`post_generation_pixel_edit` is not stated for this asset (recorded as null).",
+    "The source record does not state a raw generator output filename."
+  ]
+}

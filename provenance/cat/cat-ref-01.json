@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "record_type": "reference",
+  "id": "cat-ref-01",
+  "character": "cat",
+  "kind": "owner_provided_reference",
+  "inventory_id": "CAT-R1",
+  "availability": "in_source_working_tree",
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "resources/skin-art/cat/owner-reference-20261003.jpg"
+  },
+  "file": {
+    "format": "jpeg",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGB",
+    "bytes": 218683,
+    "sha256": "ba50f18b43e6cf1d26ed50b9eff0be1a5088bed94cc8f5f2f36dbce3d0b66c6c"
+  },
+  "origin": {
+    "description": "Owner-provided visual baseline (two orange tabby cats, paper bag, hearts) dated 2026-10-03. Source says it is not a formal transparent asset and is not in the app resource directory.",
+    "creator": "unknown",
+    "created": "2026-10-03"
+  },
+  "derivation": {
+    "inputs": [],
+    "notes": [
+      "How this image itself was made is not recorded in the inspected files."
+    ]
+  },
+  "used_by": [
+    "cat-01",
+    "cat-02"
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/cat/README.md",
+      "supports": "Describes the file as an owner-provided visual baseline and records its SHA-256"
+    },
+    {
+      "path": "resources/skin-art/cat/cat-02-assets-20261003.json",
+      "supports": "Lists this file as owner_reference and as reference_sha256 for each generated asset"
+    }
+  ],
+  "unresolved_questions": [
+    "Who created this reference image, and with what tool, is not stated.",
+    "No rights or license statement for this image was found."
+  ]
+}

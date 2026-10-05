@@ -46,4 +46,4 @@ docs/naming.md                   file naming convention
 
 ## Status
 
-Skeleton only. No assets or provenance records yet.
+Skeleton plus: [asset inventory](docs/asset-inventory.md) (KCK-01) and [provenance schema and records](provenance/README.md) (KCK-02). No image files have been copied in yet; rights status of every asset is `pending`.

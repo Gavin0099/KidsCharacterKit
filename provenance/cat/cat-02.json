@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "record_type": "asset",
+  "id": "cat-02",
+  "character": "cat",
+  "source_asset_name": "CatRaisedPaw",
+  "inventory_id": "CAT-A2",
+  "selection": {
+    "status": "selected_core_candidate",
+    "note": "Selected by the owner for the first core reusable set. Says nothing about rights or production readiness."
+  },
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "ios/App/App/Assets.xcassets/CatRaisedPaw.imageset/artwork.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1255317,
+    "sha256": "9d77b5ba7b6174a0f4a5bec9849ea8fd47e67f407de00e66642a6f0107792f30"
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "mode": null,
+    "model": null,
+    "model_note": "No model field exists in the source manifest.",
+    "prompt_ref": {
+      "path": "resources/skin-art/cat/cat-02-assets-20261003.json",
+      "locator": "/assets/1/prompt"
+    },
+    "post_generation_pixel_edit": false,
+    "raw_output": {
+      "filename": "exec-c74ec5fd-1123-461c-994f-8902f9095fb5.png",
+      "available": "not_in_source_working_tree"
+    }
+  },
+  "derivation": {
+    "inputs": [
+      {
+        "ref_id": "cat-ref-01",
+        "role": "owner reference; edit/extraction target (right seated kitten with raised paw)"
+      }
+    ],
+    "notes": [
+      "Source states: tool output kept at native 1254x1254 canvas, no post-generation editing or scaling."
+    ]
+  },
+  "duplicates": [],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/cat/cat-02-assets-20261003.json",
+      "supports": "Tool, prompt, reference/output SHA-256, generated filename, role"
+    },
+    {
+      "path": "docs/design/cat-02-independent-assets-20261003.md",
+      "supports": "Allowed role and import notes"
+    },
+    {
+      "path": "resources/skin-art/cat/README.md",
+      "supports": "Reference description"
+    }
+  ],
+  "unresolved_questions": [
+    "Rights status of AI-generated output is not determined anywhere in the inspected files.",
+    "The raw generator output is outside the repo (original author machine); only hashes remain.",
+    "Source states role \"post-answer encouragement/confirmed completion\"; that is an app usage rule, not a rights statement."
+  ]
+}
