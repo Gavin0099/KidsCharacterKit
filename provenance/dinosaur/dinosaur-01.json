@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "record_type": "asset",
+  "id": "dinosaur-01",
+  "character": "dinosaur",
+  "source_asset_name": "DinosaurResearcher",
+  "inventory_id": "DINO-A1",
+  "selection": {
+    "status": "selected_core_candidate",
+    "note": "Selected by the owner for the first core reusable set. Says nothing about rights or production readiness."
+  },
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "ios/App/App/Assets.xcassets/DinosaurResearcher.imageset/artwork.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1448,
+    "height": 1086,
+    "color_type": "RGBA",
+    "bytes": 770614,
+    "sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76"
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "mode": "built-in",
+    "model": null,
+    "model_note": "No model field exists in the source generation record.",
+    "prompt_ref": {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "locator": "/prompts/0"
+    },
+    "post_generation_pixel_edit": false,
+    "raw_output": {
+      "filename": "exec-2cfd324f-3e41-4bb0-8245-18b0de96b4e5.png",
+      "available": "not_in_source_working_tree"
+    }
+  },
+  "derivation": {
+    "inputs": [
+      {
+        "ref_id": "dinosaur-ref-02",
+        "role": "approved baby dinosaur concept; edit target (prompt asks only for removal of a white patch in negative space)"
+      }
+    ],
+    "notes": [
+      "Source states this is the shipped DINO-09 revision; DINO-01 hashes are historical and not current."
+    ]
+  },
+  "duplicates": [
+    {
+      "path": "ios/App/App/Assets.xcassets/DinosaurWorldThumbnail.imageset/artwork.png",
+      "relationship": "byte_identical_copy",
+      "sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76",
+      "note": "Source calls `DinosaurWorldThumbnail` a byte-for-byte copy of `DinosaurResearcher` (not an independent generation); a source test asserts the PNG data is identical. Inventory ID DINO-A2. Not a separate asset in this library."
+    }
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/dinosaur/dino-09-assets-20261004.json",
+      "supports": "Current SHA-256, generated_file, thumbnail_derivation, post_generation_edit=false"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "supports": "Prompt `researcher-clean-negative-space`"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/README.md",
+      "supports": "Revision history and reference description"
+    }
+  ],
+  "unresolved_questions": [
+    "Rights status of AI-generated output is not determined anywhere in the inspected files.",
+    "The raw generator output is outside the repo (original author machine); only hashes remain.",
+    "Origin of the approved concept (dinosaur-ref-02) that this was edited from is Unknown."
+  ]
+}

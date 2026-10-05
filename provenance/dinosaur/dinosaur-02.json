@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "record_type": "asset",
+  "id": "dinosaur-02",
+  "character": "dinosaur",
+  "source_asset_name": "DinosaurJunior",
+  "inventory_id": "DINO-A3",
+  "selection": {
+    "status": "selected_core_candidate",
+    "note": "Selected by the owner for the first core reusable set. Says nothing about rights or production readiness."
+  },
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "ios/App/App/Assets.xcassets/DinosaurJunior.imageset/artwork.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1320,
+    "height": 1191,
+    "color_type": "RGBA",
+    "bytes": 647813,
+    "sha256": "028277f689c17ef9aadc5166f5f71ee50dc6479d692db45a375a4f31e93c13ed"
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "mode": "built-in",
+    "model": null,
+    "model_note": "No model field exists in the source generation record.",
+    "prompt_ref": {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "locator": "/prompts/1"
+    },
+    "post_generation_pixel_edit": false,
+    "raw_output": {
+      "filename": "exec-03651d16-4701-4f30-94fa-ac2b6c2ea182.png",
+      "available": "not_in_source_working_tree"
+    }
+  },
+  "derivation": {
+    "inputs": [
+      {
+        "ref_id": "dinosaur-ref-02",
+        "role": "input 1: approved new large baby dinosaur, style reference"
+      },
+      {
+        "ref_id": "dinosaur-ref-03",
+        "role": "input 2: old junior dinosaur (DINO-01) to redesign; identity (no-prop junior) preserved"
+      }
+    ],
+    "notes": [
+      "Related to dinosaur-01 only through shared reference dinosaur-ref-02 and the prompt describing it as the \"smaller sibling\"; it is a separate generation with its own stable ID."
+    ]
+  },
+  "duplicates": [],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/dinosaur/dino-09-assets-20261004.json",
+      "supports": "Current SHA-256 and generated_file"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "supports": "Prompt `junior` naming both inputs"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-20261004.json",
+      "supports": "Prompt for the superseded DINO-01 junior"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/README.md",
+      "supports": "Revision history"
+    }
+  ],
+  "unresolved_questions": [
+    "Rights status of AI-generated output is not determined anywhere in the inspected files.",
+    "The raw generator output is outside the repo (original author machine); only hashes remain.",
+    "One input (dinosaur-ref-03) is a superseded file that is not in the working tree.",
+    "Origin of the approved concept (dinosaur-ref-02) is Unknown."
+  ]
+}

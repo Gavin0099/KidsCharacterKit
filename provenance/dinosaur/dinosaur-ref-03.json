@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "record_type": "reference",
+  "id": "dinosaur-ref-03",
+  "character": "dinosaur",
+  "kind": "historical_generated_output",
+  "inventory_id": null,
+  "availability": "not_in_source_working_tree",
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": null
+  },
+  "file": {
+    "sha256": "4048570545258386a1cbd54df1af5186bc19726de27ff5a085901e917828cf55",
+    "sha256_basis": "source_stated",
+    "bytes": 722928,
+    "width": 1288,
+    "height": 1221
+  },
+  "origin": {
+    "description": "Superseded DINO-01 \"DinosaurJunior\" (old small dinosaur). Used as the edit target (input 2) when the baby Junior was generated. Source says the DINO-01 hashes are historical and not the current catalog.",
+    "creator": "unknown",
+    "created": "2026-10-04"
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "mode": "built-in",
+    "model": null,
+    "model_note": "No model field exists in the source generation record.",
+    "prompt_ref": {
+      "path": "resources/skin-art/dinosaur/generation-record-20261004.json",
+      "locator": "/prompts/1"
+    },
+    "post_generation_pixel_edit": false,
+    "raw_output": {
+      "filename": null,
+      "available": "unknown"
+    }
+  },
+  "derivation": {
+    "inputs": [
+      {
+        "ref_id": "dinosaur-ref-01",
+        "role": "attached owner-approved illustration; edit/extraction target"
+      }
+    ],
+    "notes": [
+      "A follow-up correction prompt (`dino-junior-targeted-check`, /prompts/3) is recorded as unselected; the original isolated junior was kept."
+    ]
+  },
+  "used_by": [
+    "dinosaur-02"
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/dinosaur/dino-01-assets-20261004.json",
+      "supports": "Lists the DINO-01 DinosaurJunior hash (historical)"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-20261004.json",
+      "supports": "Prompt `dino-junior` and the unselected targeted check"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "supports": "Prompt `junior` names the old junior as input 2"
+    }
+  ],
+  "unresolved_questions": [
+    "The file is not in the inspected working tree; whether it is recoverable from git history was not checked. Hash, byte count and dimensions are source-stated and unverified."
+  ]
+}

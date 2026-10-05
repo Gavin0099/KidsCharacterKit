@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "record_type": "reference",
+  "id": "robot-ref-01",
+  "character": "robot",
+  "kind": "owner_provided_reference",
+  "inventory_id": null,
+  "availability": "external_missing",
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": null
+  },
+  "file": {
+    "sha256": "ce901872d608305ba52cd5c18f2872189cca8f17171980c73c1533494febdac7",
+    "sha256_basis": "source_stated"
+  },
+  "origin": {
+    "description": "Owner-supplied child robot crayon drawing. The source record says it is a \"local reference retained outside this commit\": the artwork is not in git; only its SHA-256 is recorded.",
+    "creator": "unknown",
+    "created": null
+  },
+  "derivation": {
+    "inputs": [],
+    "notes": [
+      "Author of the drawing is not stated beyond being described as a child's drawing supplied by the owner."
+    ]
+  },
+  "used_by": [
+    "robot-01"
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": [
+      {
+        "text": "Owner selected the supplied drawing as reference. No independent rights/licence audit is claimed.",
+        "path": "docs/design/robot-skin-provenance.json",
+        "locator": "/rights_note"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "docs/design/robot-skin-provenance.json",
+      "supports": "Records reference_path (outside the commit), reference_sha256 and rights_note"
+    }
+  ],
+  "unresolved_questions": [
+    "The reference artwork is not in git, so it cannot be re-hashed or inspected; only the recorded hash is available.",
+    "Who drew it, and any rights to it, are not stated."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_type": "reference",
+  "id": "dinosaur-ref-01",
+  "character": "dinosaur",
+  "kind": "owner_provided_reference",
+  "inventory_id": "DINO-R2",
+  "availability": "in_source_working_tree",
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "resources/skin-art/dinosaur/owner-reference-20261004.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1448,
+    "height": 1086,
+    "color_type": "RGB",
+    "bytes": 1335334,
+    "sha256": "54eed7f9c18c26dcde6d8fda505230be972b34b6435298135dcd4620186c8293"
+  },
+  "origin": {
+    "description": "Owner-provided colored dinosaur drawing (large dinosaur with magnifying glass, egg, small dinosaur) dated 2026-10-04; opaque white background. Source says the original hand-drawn sketch is not attached.",
+    "creator": "unknown",
+    "created": "2026-10-04"
+  },
+  "derivation": {
+    "inputs": [],
+    "notes": [
+      "The earlier hand-drawn sketch it was colored from is stated as not attached."
+    ]
+  },
+  "used_by": [
+    "dinosaur-ref-03"
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/dinosaur/README.md",
+      "supports": "Describes it as the owner-provided 2026-10-04 colored PNG used as input reference for the first (DINO-01) generation"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/dino-01-assets-20261004.json",
+      "supports": "Records its SHA-256 as the owner reference"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-20261004.json",
+      "supports": "Lists it as `reference` for the DINO-01 prompts"
+    }
+  ],
+  "unresolved_questions": [
+    "Who created this drawing, and any rights to it, are not stated.",
+    "The original hand-drawn sketch is not in the repo."
+  ]
+}

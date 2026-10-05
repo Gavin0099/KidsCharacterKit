@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kidscharacterkit/provenance.schema.json",
+  "title": "KidsCharacterKit provenance record",
+  "description": "One record per asset or per reference/source artwork. Technology-neutral. Unknown stays unknown: commercial-use and rights fields default to pending/unknown and may only become confirmed with evidence.",
+  "oneOf": [
+    { "$ref": "#/$defs/assetRecord" },
+    { "$ref": "#/$defs/referenceRecord" }
+  ],
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "stableId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-(ref-)?[0-9]{2}$" },
+    "character": { "enum": ["cat", "dinosaur", "robot"] },
+
+    "sourceLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "path"],
+      "properties": {
+        "repository": { "type": "string" },
+        "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "path": { "type": "string" }
+      }
+    },
+
+    "fileFacts": {
+      "description": "Facts computed from the file bytes (observed), not copied from a manifest.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["format", "width", "height", "color_type", "bytes", "sha256"],
+      "properties": {
+        "format": { "enum": ["png", "jpeg"] },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "color_type": { "enum": ["RGB", "RGBA"] },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+
+    "promptRef": {
+      "description": "Pointer to the prompt text in a source-repo file. The prompt itself is not copied here.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "locator"],
+      "properties": {
+        "path": { "type": "string" },
+        "locator": { "type": "string", "description": "RFC 6901 JSON Pointer into the file at `path`." },
+        "recorded_prompt_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+
+    "generation": {
+      "description": "Source-stated: taken from source-repo records, not independently verified.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool", "model", "prompt_ref", "post_generation_pixel_edit", "raw_output"],
+      "properties": {
+        "tool": { "type": "string" },
+        "mode": { "type": ["string", "null"], "description": "null = not recorded." },
+        "model": { "type": ["string", "null"], "description": "null = not recorded." },
+        "model_note": { "type": "string" },
+        "prompt_ref": { "$ref": "#/$defs/promptRef" },
+        "post_generation_pixel_edit": { "type": ["boolean", "null"], "description": "null = not stated." },
+        "raw_output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["filename", "available"],
+          "properties": {
+            "filename": { "type": ["string", "null"] },
+            "available": { "enum": ["in_source_working_tree", "not_in_source_working_tree", "unknown"] }
+          }
+        }
+      }
+    },
+
+    "derivationInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref_id", "role"],
+      "properties": {
+        "ref_id": { "$ref": "#/$defs/stableId" },
+        "role": { "type": "string", "description": "How the input was used, e.g. identity reference, style reference, edit target." }
+      }
+    },
+
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {
+        "inputs": { "type": "array", "items": { "$ref": "#/$defs/derivationInput" } },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "rights": {
+      "description": "Defaults are pending/unknown. Never inferred (e.g. 'AI-generated' is not evidence of commercial clearance).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commercial_use_status", "rights_review_status", "ownership_status", "statements"],
+      "properties": {
+        "commercial_use_status": { "enum": ["confirmed", "pending", "unknown"] },
+        "rights_review_status": { "enum": ["unknown", "pending", "reviewed"] },
+        "ownership_status": { "enum": ["unknown", "documented"] },
+        "statements": {
+          "description": "Verbatim or closely paraphrased statements about rights found in the source repo. Empty if none.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["text", "path"],
+            "properties": {
+              "text": { "type": "string" },
+              "path": { "type": "string" },
+              "locator": { "type": "string" }
+            }
+          }
+        },
+        "evidence_for_confirmation": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [
+        {
+          "if": {
+            "anyOf": [
+              { "properties": { "commercial_use_status": { "const": "confirmed" } }, "required": ["commercial_use_status"] },
+              { "properties": { "rights_review_status": { "const": "reviewed" } }, "required": ["rights_review_status"] },
+              { "properties": { "ownership_status": { "const": "documented" } }, "required": ["ownership_status"] }
+            ]
+          },
+          "then": { "required": ["evidence_for_confirmation"], "properties": { "evidence_for_confirmation": { "minItems": 1 } } }
+        }
+      ]
+    },
+
+    "evidenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "supports"],
+      "properties": {
+        "path": { "type": "string", "description": "Path in the source repository at the record's source commit." },
+        "supports": { "type": "string" }
+      }
+    },
+
+    "assetRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "record_type", "id", "character", "source_asset_name",
+        "inventory_id", "selection", "source", "file", "generation", "derivation",
+        "duplicates", "rights", "evidence", "unresolved_questions"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "record_type": { "const": "asset" },
+        "id": { "$ref": "#/$defs/stableId" },
+        "character": { "$ref": "#/$defs/character" },
+        "source_asset_name": { "type": "string", "description": "Name in the source app. Not an identity: the stable `id` is." },
+        "inventory_id": { "type": "string", "description": "Cross-reference to docs/asset-inventory.md." },
+        "selection": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "note"],
+          "properties": {
+            "status": { "const": "selected_core_candidate" },
+            "note": { "type": "string" }
+          }
+        },
+        "source": { "$ref": "#/$defs/sourceLocation" },
+        "file": { "$ref": "#/$defs/fileFacts" },
+        "generation": { "$ref": "#/$defs/generation" },
+        "derivation": { "$ref": "#/$defs/derivation" },
+        "duplicates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "relationship", "sha256"],
+            "properties": {
+              "path": { "type": "string" },
+              "relationship": { "const": "byte_identical_copy" },
+              "sha256": { "$ref": "#/$defs/sha256" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "rights": { "$ref": "#/$defs/rights" },
+        "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidenceItem" } },
+        "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "referenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "record_type", "id", "character", "kind", "inventory_id",
+        "availability", "source", "origin", "derivation", "used_by", "rights",
+        "evidence", "unresolved_questions"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "record_type": { "const": "reference" },
+        "id": { "$ref": "#/$defs/stableId" },
+        "character": { "$ref": "#/$defs/character" },
+        "kind": {
+          "enum": ["owner_provided_reference", "owner_selected_concept", "historical_generated_output", "external_reference"]
+        },
+        "inventory_id": { "type": ["string", "null"], "description": "KCK-01 inventory ID, or null if the item is not in the inventory." },
+        "availability": {
+          "enum": ["in_source_working_tree", "not_in_source_working_tree", "external_missing"],
+          "description": "external_missing: not in git at all; only metadata is known."
+        },
+        "source": {
+          "oneOf": [
+            { "$ref": "#/$defs/sourceLocation" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["repository", "commit", "path"],
+              "properties": {
+                "repository": { "type": "string" },
+                "commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+                "path": { "type": "null" }
+              }
+            }
+          ]
+        },
+        "file": {
+          "oneOf": [
+            { "$ref": "#/$defs/fileFacts" },
+            {
+              "description": "When the file is not in the working tree: only what a source record states.",
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sha256", "sha256_basis"],
+              "properties": {
+                "sha256": { "$ref": "#/$defs/sha256" },
+                "sha256_basis": { "const": "source_stated" },
+                "bytes": { "type": "integer" },
+                "width": { "type": "integer" },
+                "height": { "type": "integer" }
+              }
+            }
+          ]
+        },
+        "origin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["description", "creator", "created"],
+          "properties": {
+            "description": { "type": "string" },
+            "creator": { "type": "string", "description": "Name as documented in the source repo, or the literal string \"unknown\"." },
+            "created": { "type": ["string", "null"], "description": "Date as stated by the source repo, or null." }
+          }
+        },
+        "generation": { "$ref": "#/$defs/generation" },
+        "derivation": { "$ref": "#/$defs/derivation" },
+        "used_by": { "type": "array", "items": { "$ref": "#/$defs/stableId" } },
+        "rights": { "$ref": "#/$defs/rights" },
+        "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidenceItem" } },
+        "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

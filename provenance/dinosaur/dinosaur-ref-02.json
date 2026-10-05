@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "record_type": "reference",
+  "id": "dinosaur-ref-02",
+  "character": "dinosaur",
+  "kind": "owner_selected_concept",
+  "inventory_id": "DINO-R1",
+  "availability": "in_source_working_tree",
+  "source": {
+    "repository": "Gavin0099/english-vocab-trainer",
+    "commit": "dc9435962b056af66be7cbf201802f691d0ab322",
+    "path": "resources/skin-art/dinosaur/approved-baby-reference-20261004.png"
+  },
+  "file": {
+    "format": "png",
+    "width": 1448,
+    "height": 1086,
+    "color_type": "RGBA",
+    "bytes": 831309,
+    "sha256": "cc6a77dde05609b2f0068e38cd3deacb7577e0234c56eacf5164fbfd9f77bb0c"
+  },
+  "origin": {
+    "description": "Concept image of the large \"baby\" dinosaur that the owner selected on 2026-10-04. Source says it still contains a white residue patch that the shipped version corrected, and that the app does not load it.",
+    "creator": "unknown",
+    "created": "2026-10-04"
+  },
+  "derivation": {
+    "inputs": [],
+    "notes": [
+      "How, with what tool and from what inputs this concept image was produced is not recorded in the inspected files; no relationship to dinosaur-ref-01 is claimed."
+    ]
+  },
+  "used_by": [
+    "dinosaur-01",
+    "dinosaur-02"
+  ],
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "resources/skin-art/dinosaur/README.md",
+      "supports": "Describes it as the owner-selected concept character, reference only"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/dino-09-assets-20261004.json",
+      "supports": "Records approved_reference_sha256 and the owner approval"
+    },
+    {
+      "path": "resources/skin-art/dinosaur/generation-record-baby-20261004.json",
+      "supports": "Names it as `approved_preview` and as input for the baby prompts"
+    }
+  ],
+  "unresolved_questions": [
+    "Origin (tool, prompt, inputs) of this concept image is Unknown.",
+    "No rights or license statement was found."
+  ]
+}
