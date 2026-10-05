@@ -5,6 +5,24 @@ the Owner stated in session on 2026-10-05 so they exist in the repo
 ([GOVERNANCE.md](../GOVERNANCE.md) rule 1). Everything produced under this brief is a
 `candidate`. No artwork is added by this PR.
 
+## Terminology: three different "versions" (Owner, 2026-10-05)
+
+Do not mix these up:
+
+| Term | Meaning | Status |
+|---|---|---|
+| **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
+| **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
+| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
+| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 2 is current. |
+
+Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
+transport, not from V2. A new design version would only be justified by a decision to change
+proportions, head/body ratio, eye shape, line language, main palette, shadow model or the
+Soft Handmade 2.5D direction itself; none is proposed. "V2 frozen" scopes this slice's test
+specification. It does not move the style bible's exploration values (its section 3) into
+approved rules; that remains a separate Owner decision ([GOVERNANCE.md](../GOVERNANCE.md)).
+
 ## Question this slice answers
 
 > After Cat, Dinosaur and Robot are redrawn in the shared rendering language, are they
@@ -397,6 +415,8 @@ supported until the conflict is removed.
 |---|---|
 | Prompt v2c | **SUPERSEDED BEFORE VALID ATTEMPT / specification conflict.** Not a failure and not a protocol deviation. v2c attempts consumed: **0 of 2**. |
 | Generation `e1acb811-2a91-46fc-8fe9-9f60d2a2856f` | **UNREGISTERED / protocol deviation.** Does not consume budget. |
+| Generation `5374c1b2-6064-4b10-8345-06cea98f0ef2` (A2) | **UNREGISTERED**, accepted as a `candidate` under an Owner waiver (PR #10, `dinosaur-concept-01`). Not v2d attempt #1; budget unchanged. |
+| Generation `3871ee32-e201-484d-a68e-6bca8e628b90` (A3) | **UNREGISTERED / pre-flight failed** (details below). Does not consume budget. Gate 4 failure is an observation only. |
 | Texture "PASS" on delivered WebP copies (both A2 images) | **INVALID MEASUREMENT / codec-confounded.** Not a FAIL. |
 | Round 2b A2 attempt (v2b) | stays `rejected`; cause note: the same specification conflict. |
 
@@ -414,6 +434,31 @@ The unregistered generation `e1acb811…`, as reported from the generation side:
 - The official gate script was not run on the original at generation time.
 - Measurements on the delivered copy are non-binding and are **not** used as evidence about
   generator behavior.
+
+The unregistered A3 generation `3871ee32-e201-484d-a68e-6bca8e628b90`, as reported from the
+generation side (all numbers generation-side unless marked):
+
+- Pre-flight failed (original gate): the mounted image was `image(6).png`, PNG RGBA 1448×1086,
+  1,013,098 bytes, file SHA-256 `710fec19bfd1dcde016a2067966f4f6bdb57d7392a1db7a9fff2a0db2046145a`;
+  its **decoded RGBA pixels hash to** `1fc77702e4ee5b2b6860b5c621895942c2db950303c6b9a7c8f9ab211e45dacd`
+  (6,290,112 raw bytes), which is **not** the canonical pixel hash `5b9b014e…aeab8`. The
+  earlier hypothesis that the platform only re-encoded the PNG is therefore **refuted**: the
+  decoded pixels differ. The cause of the difference is not established.
+- `A3_instruction_v2d.txt` was not mounted; the full instruction was pasted inline in the user
+  message together with the execution sentence, so the sent text was not only the execution
+  message.
+- It was the first request in its chat (fresh-chat status plausible, not certified).
+- Original generation artifact: PNG, RGBA, 1254×1254, 1,360,039 bytes, SHA-256
+  `72a9fd351884301be558d5dae0c38389892d965c11aa469cc5dcc82fbd068113`. Delivered copy: WebP,
+  1254×1254, 159,310 bytes, SHA-256 `fa377a051148664e66dbab293033d92ec16cfdf699f8854a10b1bb2a126757cc`
+  (a delivery/conversion artifact, not byte-identical to the original).
+- Agent measurement on the delivered WebP (actor: Claude; reference: canonical `dinosaur-01`;
+  scripts in `concepts/kck-03b1/evidence/`): gates 1-3 pass (one component; corner alpha 0;
+  eye identity max deviation size 0.005, center 0.004, spacing 0.001, RGB 5.4); gate 4 fails
+  (large highlight left (0.455, 0.298), right (0.438, 0.307); required x in 0.30-0.40).
+- Registration: UNREGISTERED, not v2d attempt #1, budget not consumed. Because the input was
+  not the canonical image, the gate-4 result cannot be attributed to the generator, the input
+  difference or the way the prompt was passed. The image is not committed.
 
 Why the texture result is invalid: re-encoding `dinosaur-01` itself as lossy WebP (quality
 75, 80, 90) drops the forehead high-frequency measure from 1.514 to 0.39–0.43; lossless
@@ -455,17 +500,21 @@ This output is a style exploration candidate, not production artwork and not an 
 The variant lines (A2 Clean, A3 Balanced, A4 Handmade) are unchanged. `A2_instruction_v2c.txt`
 (2088 bytes, SHA-256 `0cfb46b4876ec06c207d0b334d1c7449acd00007da7e56bce1b7363c8de2285a`) is **retired** and must not be used.
 
-#### Instruction artifact `A2_instruction_v2d.txt`
+#### Instruction artifacts `A<n>_instruction_v2d.txt`
 
-v2d prompt, a blank line, then the A2 line (`Use almost no visible surface texture; prioritize clean graphic readability.`), with a trailing newline.
+Each is the v2d prompt, a blank line, then that variant's single line (table above), with a
+trailing newline. They differ only in that last line.
 
-- Size: **2342 bytes**
-- SHA-256: `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e`
+| File | Variant line | Size | SHA-256 (also the canonical-content hash) |
+|---|---|---|---|
+| `A2_instruction_v2d.txt` | A2 Clean | 2342 bytes | `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e` |
+| `A3_instruction_v2d.txt` | A3 Balanced | 2371 bytes | `c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884` |
+| `A4_instruction_v2d.txt` | A4 Handmade | 2396 bytes | `d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34` |
 
-Execution message (the only text sent, verbatim):
+Execution message (the only user-authored text sent, verbatim; `<n>` = the variant):
 
 ```text
-Use the attached dinosaur image as the only image reference. Follow A2_instruction_v2d.txt exactly and generate exactly one image.
+Use the attached dinosaur image as the only image reference. Follow A<n>_instruction_v2d.txt exactly and generate exactly one image.
 ```
 
 #### Gates, split into identity and style
@@ -520,8 +569,8 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 #### Retry budget and attempt definition (v2d)
 
 - v2d attempts: **0 of 2** used.
-- **An attempt is consumed only when all four pre-flight checks pass and the generation
-  request is actually sent.** Tool/transport failures that produce no reviewable generated
+- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 2) pass
+  and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
 - v2d permits at most two valid generation attempts. After the second valid generated
   artifact, any failed hard gate stops prompt-only retry; an Owner decision is then needed.
@@ -533,18 +582,40 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
   style rule, or treat the highlight as a deterministic post-process by the image tool with a
   transformation record. Either is an Owner decision.
 
-#### A2 v2d pre-flight gate (hard; before calling the generator)
+#### v2d pre-flight gate, rev. 2 (hard; before calling the generator)
 
-All four must PASS. Any FAIL: do not generate, do not consume an attempt.
+Owner-approved 2026-10-05, replacing the original four-item gate (revision recorded below).
+All four must PASS. Any FAIL: do not generate, do not consume an attempt. Tool for the two
+hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py).
 
 1. **Fresh context.** A brand-new conversation, not the current project conversation. Before
    generation it contains only the two attachments and one execution message.
-2. **Source image identity.** The attached file is canonical `dinosaur-01`. Its bytes hash to
-   the full SHA-256 `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`. Compare full 64-hex values, never abbreviations.
-3. **Instruction artifact identity.** `A2_instruction_v2d.txt` is actually attached (not
-   pasted, retyped or paraphrased): 2342 bytes, full SHA-256 `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e`.
-4. **Execution message exact match.** The only text sent is the execution message above,
-   verbatim: no preamble, no extra rules, no restated instruction, no gate script.
+2. **Source image: pixel identity.** The image the generation side actually received decodes
+   to **width 1448, height 1086** and its decoded-pixel hash equals
+   `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
+   Algorithm (fixed): decode, convert to RGBA8, row-major top to bottom, SHA-256 of the raw
+   RGBA bytes (no color management, no alpha premultiplication; ancillary PNG chunks
+   ignored). Compare full 64-hex values, never abbreviations. The **file** SHA-256
+   (`1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`) and the received
+   file's own SHA-256 are recorded as provenance but are **not** a pass/fail criterion.
+3. **Instruction: canonical-content identity.** The instruction text the generation side
+   received (whether it arrives as an attachment or is expanded from the attachment into
+   text by the platform) canonicalizes to the variant's expected hash in the table above.
+   Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing LF. Any
+   other difference (changed characters, Markdown escapes, edits) FAILs. The generation side
+   states whether it came from an attachment or was expanded from one.
+4. **Execution message and authorship.** The only text the Owner **authored** in that
+   conversation is the execution message above, verbatim: no preamble, no extra rules, no
+   restated instruction, no gate script. Instruction content that appears in the context
+   because the platform expanded the attachment is allowed. Instruction text the Owner
+   pasted or typed into a message is **not**, even if its hash comes out correct.
+
+**Revision history.** The original gate required the received files' own SHA-256 to equal the
+canonical files'. A3 generation `3871ee32…` showed that file bytes can differ for reasons
+that need not change the content (that run's image did differ in decoded pixels, see below),
+and that a text attachment may reach the generation side as inline text. Rev. 2 keeps the
+identity check but makes it content-based and fixes the algorithm so it cannot be read two
+ways.
 
 #### Post-generation provenance capture
 
@@ -552,7 +623,9 @@ Recorded after generation (a generation id does not exist before it):
 
 - attempt number (v2d attempt N);
 - generation id, or `not exposed` if the product does not expose one;
-- source image SHA-256 and instruction file SHA-256 (full);
+- source image: width, height, decoded-pixel SHA-256 and, separately, the received file's
+  SHA-256; instruction: canonical-content SHA-256 and whether it arrived as an attachment or
+  expanded text (all full 64-hex);
 - the exact execution message;
 - original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
