@@ -19,31 +19,39 @@ repeated lookup code worth extracting.
 ## Layout
 
 ```
-assets/originals/<character>/    untouched source images
-assets/production/<character>/   normalized images apps consume
-provenance/<character>/          per-asset source and rights records
-manifests/characters.json        language-neutral character → asset map
-docs/asset-spec.md               canvas / transparency / anchor / padding
-docs/naming.md                   file naming convention
+characters/<id>/raster/originals/   exact byte copies of selected source assets (master)
+characters/<id>/raster/production/  deterministic delivery variants
+provenance/                          schema + per-asset and per-reference records
+manifests/                           language-neutral character manifest + schema
+docs/                                inventory, contracts, specs, style bible
 ```
+
+`<id>` is `cat-01`, `cat-02`, `dinosaur-01`, `dinosaur-02`, `robot-01`.
+`animation-2d/` and `model-3d/` are added per character only when real content exists.
+
+Start with the [representation contract](docs/character-representation-contract.md).
 
 ## Rules
 
 - Unknown provenance or rights is recorded as `pending` / `unknown`, never inferred.
-- Originals are never overwritten; production files are derived from them.
+- Originals are never overwritten; delivery files are derived from them. A character is an identity; images, animations and 3D models are its representations.
 - Not in scope: game logic, levels, scoring, rewards, learning progress,
   persistence, networking, navigation, UI/design system, animation APIs.
 
 ## Roadmap
 
-| Slice | Goal |
-|---|---|
-| KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets |
-| KCK-02 | Provenance records and schema |
-| KCK-03 | Normalize: copy originals, produce production assets, asset spec, naming |
-| KCK-04 | Language-neutral manifest |
-| later | Platform adapter (e.g. Swift) only once an app needs it |
+| Slice | Goal | State |
+|---|---|---|
+| KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets | done |
+| KCK-02 | Provenance schema and records for the five core candidates | done |
+| KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | this slice |
+| KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Done by the owner outside this repo (needs an illustration workflow); outcome is brought back for a Style Bible v1 decision | next |
+| — | Style Bible v1 approved, then formal model sheets | after B1 |
+| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
+| KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
+| KCK-03D | 3D contract (schema only; no models) | planned |
+| later | Platform adapter (e.g. Swift) only once an app needs it | — |
 
 ## Status
 
-Skeleton plus: [asset inventory](docs/asset-inventory.md) (KCK-01) and [provenance schema and records](provenance/README.md) (KCK-02). No image files have been copied in yet; rights status of every asset is `pending`.
+Specification stage. [Inventory](docs/asset-inventory.md), [provenance](provenance/README.md), the [contract](docs/character-representation-contract.md) and the [style bible](docs/character-style-bible.md) exist. No image files have been copied in yet; every character has `raster.available: false`, no animations and no 3D model. Rights status of every asset is `pending`.
