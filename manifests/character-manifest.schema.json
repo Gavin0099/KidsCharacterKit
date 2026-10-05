@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kidscharacterkit/character-manifest.schema.json",
+  "title": "KidsCharacterKit character manifest",
+  "description": "Language-neutral map from character identity to the representations that actually exist. Absent representations are explicit (available false / empty), never placeholders.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "characters"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "characters": {
+      "type": "object",
+      "propertyNames": { "pattern": "^(cat|dinosaur|robot)-[0-9]{2}$" },
+      "additionalProperties": { "$ref": "#/$defs/character" }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "relativePath": { "type": "string", "pattern": "^characters/[a-z0-9-]+/[a-z0-9._/-]+$" },
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "$ref": "#/$defs/relativePath" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "character": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "character", "provenance", "canonical_height_m", "representations"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(cat|dinosaur|robot)-[0-9]{2}$" },
+        "character": { "enum": ["cat", "dinosaur", "robot"] },
+        "provenance": { "type": "string", "pattern": "^provenance/[a-z]+/[a-z]+-[0-9]{2}\\.json$" },
+        "canonical_height_m": {
+          "type": ["number", "null"],
+          "exclusiveMinimum": 0,
+          "description": "Canonical character height in meters for 3D. null until a model exists."
+        },
+        "representations": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["raster", "animation_2d", "model_3d"],
+          "properties": {
+            "raster": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["available"],
+              "properties": {
+                "available": { "type": "boolean" },
+                "master": { "$ref": "#/$defs/file" },
+                "delivery": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["default"],
+                  "properties": { "default": { "$ref": "#/$defs/file" } }
+                }
+              },
+              "if": { "properties": { "available": { "const": true } }, "required": ["available"] },
+              "then": { "required": ["master", "delivery"] },
+              "else": { "not": { "anyOf": [{ "required": ["master"] }, { "required": ["delivery"] }] } }
+            },
+            "animation_2d": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["available"],
+              "properties": {
+                "available": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$" }
+                }
+              }
+            },
+            "model_3d": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["available"],
+              "properties": {
+                "available": { "type": "boolean" },
+                "formats": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": { "enum": ["glb", "usdz"] }
+                }
+              },
+              "if": { "properties": { "available": { "const": true } }, "required": ["available"] },
+              "then": { "required": ["formats"] },
+              "else": { "not": { "required": ["formats"] } }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "representations": {
+                "properties": { "model_3d": { "properties": { "available": { "const": true } }, "required": ["available"] } },
+                "required": ["model_3d"]
+              }
+            },
+            "required": ["representations"]
+          },
+          "then": { "properties": { "canonical_height_m": { "type": "number" } } }
+        }
+      ]
+    }
+  }
+}

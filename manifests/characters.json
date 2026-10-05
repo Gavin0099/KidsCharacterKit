@@ -1,4 +1,90 @@
 {
-  "schema_version": 0,
-  "characters": {}
+  "schema_version": 1,
+  "characters": {
+    "cat-01": {
+      "id": "cat-01",
+      "character": "cat",
+      "provenance": "provenance/cat/cat-01.json",
+      "canonical_height_m": null,
+      "representations": {
+        "raster": {
+          "available": false
+        },
+        "animation_2d": {
+          "available": []
+        },
+        "model_3d": {
+          "available": false
+        }
+      }
+    },
+    "cat-02": {
+      "id": "cat-02",
+      "character": "cat",
+      "provenance": "provenance/cat/cat-02.json",
+      "canonical_height_m": null,
+      "representations": {
+        "raster": {
+          "available": false
+        },
+        "animation_2d": {
+          "available": []
+        },
+        "model_3d": {
+          "available": false
+        }
+      }
+    },
+    "dinosaur-01": {
+      "id": "dinosaur-01",
+      "character": "dinosaur",
+      "provenance": "provenance/dinosaur/dinosaur-01.json",
+      "canonical_height_m": null,
+      "representations": {
+        "raster": {
+          "available": false
+        },
+        "animation_2d": {
+          "available": []
+        },
+        "model_3d": {
+          "available": false
+        }
+      }
+    },
+    "dinosaur-02": {
+      "id": "dinosaur-02",
+      "character": "dinosaur",
+      "provenance": "provenance/dinosaur/dinosaur-02.json",
+      "canonical_height_m": null,
+      "representations": {
+        "raster": {
+          "available": false
+        },
+        "animation_2d": {
+          "available": []
+        },
+        "model_3d": {
+          "available": false
+        }
+      }
+    },
+    "robot-01": {
+      "id": "robot-01",
+      "character": "robot",
+      "provenance": "provenance/robot/robot-01.json",
+      "canonical_height_m": null,
+      "representations": {
+        "raster": {
+          "available": false
+        },
+        "animation_2d": {
+          "available": []
+        },
+        "model_3d": {
+          "available": false
+        }
+      }
+    }
+  }
 }
