@@ -14,16 +14,22 @@ Anything an agent creates is a **candidate**: concepts, style translations, mode
 sheets, redrawn characters, text changes to approved docs. It becomes an approved
 baseline only when the Owner explicitly accepts it.
 
-- Agents do not mark anything approved, official, preferred, selected or final.
+- Agents do not independently approve or promote anything (approved, official,
+  preferred, selected, final, or any status change). An agent may record an explicit
+  Owner approval and update the corresponding status only when that Owner decision is
+  cited as evidence in the record. "The agent judged it good enough" is never
+  sufficient; "the Owner said they approve this version" is.
 - The "Approved direction" in the [style bible](docs/character-style-bible.md) and the
   decisions in the [contract](docs/character-representation-contract.md) are changed
   only with Owner approval. Agents may propose edits in a PR; they do not move
   exploration values into approved rules.
-- An approval given in chat is not durable. The agent records it in the next PR
-  ("Owner decision, stated in session, date") so it exists in the repo.
-- Merging a PR approves that PR's content as submitted. It does **not** by itself
-  promote a candidate to `approved_reference` or `production`; that needs an explicit
-  status change (see Statuses).
+- An approval given in chat is not durable. The agent records it in the next PR as the
+  cited evidence ("Owner decision, stated in session, date") so it exists in the repo.
+- A merge performed by the Owner, or explicitly authorized by the Owner, accepts the
+  repository changes as submitted. A merge event itself never promotes a `candidate`
+  to `approved_reference` or `production`; that needs an explicit, cited Owner decision
+  (see Statuses). An automated or agent-initiated merge without Owner authorization
+  accepts nothing.
 
 ### 2. Provenance is a hard gate
 
