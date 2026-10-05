@@ -417,8 +417,11 @@ The unregistered generation `e1acb811…`, as reported from the generation side:
 
 Why the texture result is invalid: re-encoding `dinosaur-01` itself as lossy WebP (quality
 75, 80, 90) drops the forehead high-frequency measure from 1.514 to 0.39–0.43; lossless
-WebP leaves it at 1.514. The two A2 images measured 0.22 and 0.51 on lossy WebP, inside the
-range that re-encoding alone produces.
+WebP leaves it at 1.514. The two A2 images measured 0.22 and 0.51 on lossy WebP. Those
+values are not inside 0.39–0.43 and are therefore **not explained by that control alone**.
+The demonstrated point is narrower: codec choice materially changes this proxy, so a
+cross-encoding comparison (lossy WebP output vs lossless PNG base) cannot isolate texture
+change.
 
 #### Canonical prompt v2d (shared part)
 
@@ -467,7 +470,8 @@ Use the attached dinosaur image as the only image reference. Follow A2_instructi
 
 #### Gates, split into identity and style
 
-All five hard gates must PASS to accept A2:
+All five hard gates must PASS, and the Owner must separately judge variant intensity
+acceptable, before A2 can be accepted:
 
 | # | Gate | Rule |
 |---|---|---|
@@ -477,21 +481,22 @@ All five hard gates must PASS to accept A2:
 | 4 | **Eye style** | per eye: large highlight center x ∈ [0.30, 0.40], y ∈ [0.20, 0.35] of the dark eye shape; small highlight x > large.x and y > large.y |
 | 5 | Overall identity | silhouette, proportions, anatomy, mint body, cream belly with two lines, yellow back spikes, peach cheeks, magnifying glass, tail and feet still read as `dinosaur-01` |
 
-Reported and Owner-judged, **not** an automated hard gate: **variant intensity** (A2 =
-almost no visible surface texture). A texture proxy is reported with its measurement
-conditions, but is not used to pass or fail until it is shown to track human judgment of
-texture strength.
+Required Owner acceptance check, **not** an automated hard gate: **variant intensity**
+(A2 = almost no visible surface texture). A texture proxy is reported with its measurement
+conditions, but it is not used to auto-pass or auto-fail until it is shown to track human
+judgment of texture strength. Passing the five hard gates alone is therefore necessary but
+not sufficient for A2 acceptance.
 
 The base's own highlight positions (table above) are recorded as **original-state evidence,
 not as a pass target**. A highlight that moves does not fail the identity gates.
 
-**Eye-identity tolerances (proposed; need Owner confirmation before first use).** Measured
-as fractions of the visible-bounds width (size, x) or height (y), highlights masked out. For
-scale, the largest deviation seen between the base and the two generated images so far was
-0.007 (size), 0.011 (center x), 0.009 (center y), 0.007 (spacing) and 8 RGB units; the
-proposal is about twice that:
+**Eye-identity tolerances (Owner-confirmed, 2026-10-05).** Measured as fractions of the
+visible-bounds width (size, x) or height (y), highlights masked out. For scale, the largest
+deviation seen between the base and the two generated images so far was 0.007 (size), 0.011
+(center x), 0.009 (center y), 0.007 (spacing) and 8 RGB units; the confirmed tolerances are
+about twice that:
 
-| Metric | Observed range (base / v2b attempt / unregistered) | Proposed tolerance vs base |
+| Metric | Observed range (base / v2b attempt / unregistered) | Confirmed tolerance vs base |
 |---|---|---|
 | eye width (L / R) | 0.142 / 0.135, 0.142 / 0.136, 0.139 / 0.132 | ± 0.015 |
 | eye height (L / R) | 0.155 / 0.157, 0.150 / 0.152, 0.148 / 0.148 | ± 0.015 |
