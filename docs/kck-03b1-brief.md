@@ -518,10 +518,11 @@ holds the BOM / CRLF / trailing-newline regression cases for the canonicalizatio
 
 Generation-input message: the single Owner-authored message that starts a generation. Its
 required content and a fill-in template (with the hashes above) are in
-[`concepts/kck-03b1/handoff.md`](../concepts/kck-03b1/handoff.md). It includes the original
-sentence `Use the attached dinosaur image as the only image reference. Follow
-A<n>_instruction_v2d.txt exactly and generate exactly one image.` (`<n>` = the variant) and
-asks the generation side to run the pre-flight checks itself before generating.
+[`concepts/kck-03b1/handoff.md`](../concepts/kck-03b1/handoff.md). It includes the execution
+sentence `Use the provided dinosaur image as the only image reference. Follow
+A<n>_instruction_v2d.txt exactly and generate exactly one image.` (`<n>` = the variant;
+"provided" is transport-neutral, it covers uploaded and repository-fetched files) and asks the
+generation side to run the pre-flight checks itself before generating.
 
 #### Gates, split into identity and style
 
@@ -617,28 +618,39 @@ implements them itself.
    `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
    Algorithm (fixed): decode, convert to RGBA8, row-major top to bottom, SHA-256 of the raw
    RGBA bytes (no color management, no alpha premultiplication; ancillary PNG chunks
-   ignored). Compare full 64-hex values, never abbreviations. The **file** SHA-256
-   (`1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`) of the held bytes is
-   reported as provenance; it is **not** the pass/fail criterion, so a pixel-identical
-   re-encode passes and a pixel difference fails.
+   ignored). Compare full 64-hex values, never abbreviations. This (dimensions plus pixel
+   SHA-256) is the **only** pass/fail criterion for the image. Three different hashes are
+   kept apart in the record:
+   - *canonical/source file SHA-256*: fixed,
+     `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76` (the repository file);
+   - *actual held raw SHA-256*: the SHA-256 of the file bytes the generation side actually
+     holds, reported when raw bytes are available; it differs from the canonical file SHA for a
+     pixel-identical re-encode, which still passes;
+   - *pixel SHA-256*: the gate above.
 3. **Instruction: canonical-content identity.** The instruction text the generation side
    holds (whether it arrives as an attachment, a fetched file, or is expanded from an
    attachment into text by the platform) canonicalizes to the variant's expected hash in the
    table above. Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing
-   LF. Any other difference (changed characters, Markdown escapes, edits) FAILs. The
-   generation side states whether it came from an attachment, a fetch, or expanded text, and
-   reports the held file's own SHA-256 as provenance.
+   LF. Any other difference (changed characters, Markdown escapes, edits) FAILs. This
+   canonical-content SHA-256 of the text actually held is the **only** pass/fail criterion for
+   the instruction. The generation side states whether it came from an attachment, a fetch, or
+   expanded text. Provenance: the actual held raw SHA-256 when raw file bytes are available;
+   when the transport exposes only expanded text, it reports `raw bytes not exposed`, and that
+   alone is not a failure.
 4. **Generation-input message and authorship.** The single Owner-authored message contains
    the execution sentence, the expected full hashes, the instruction to verify first, and the
    stop rule; nothing else (no design rules, no restated instruction, no gate script).
    Instruction text the Owner pasted or typed into a message is **not** allowed, even if its
    hash comes out correct.
 
-**Fail-closed rule.** If the generation side cannot obtain the held bytes of either object
-(it only sees a display name, a preview image, or platform metadata), cannot compute a
-hash, or cannot complete a check, the result is **PRE-FLIGHT INCONCLUSIVE**, which is a
-failure: stop and do not call image generation. A claimed verification without computed
-full 64-hex values reported back is treated as INCONCLUSIVE.
+**Fail-closed rule.** If the generation side cannot access the content that will actually be
+used for generation (for the image, the decoded pixels; for the instruction, the text) because
+it only sees a display name, a preview image or platform metadata, or cannot compute the
+content-identity hash of item 2 or 3, the result is **PRE-FLIGHT INCONCLUSIVE**, which is a
+failure: stop and do not call image generation. A claimed verification without the computed
+full 64-hex gate values reported back is also INCONCLUSIVE. A missing raw-file SHA by itself
+(`raw bytes not exposed`) is a provenance gap, not an INCONCLUSIVE, provided the content
+hash was computed from the content actually held and passes.
 
 **Revision history.** The original gate required the received files' own SHA-256 to equal the
 canonical files'. The repository contract already allows different PNG encodings of the same
@@ -664,10 +676,13 @@ Recorded after generation (a generation id does not exist before it):
 
 - attempt number (v2d attempt N);
 - generation id, or `not exposed` if the product does not expose one;
-- source image: width, height, decoded-pixel SHA-256 and, separately, the received file's
-  SHA-256; instruction: canonical-content SHA-256 and whether it arrived as an attachment or
-  expanded text (all full 64-hex);
-- the exact execution message;
+- source image: width, height, decoded-pixel SHA-256 (gate), the canonical/source file SHA-256
+  (fixed) and the actual held raw SHA-256 or `raw bytes not exposed`, kept as separate
+  fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
+  a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all
+  full 64-hex);
+- the exact generation-input message and the transport used (upload, or repository fetch with
+  the pinned commit);
 - original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
   any independent measurement recorded separately; never overwrite);

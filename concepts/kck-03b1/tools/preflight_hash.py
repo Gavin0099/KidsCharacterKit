@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""KCK-03B1 pre-flight rev. 2 hashes (docs/kck-03b1-brief.md, "v2d pre-flight gate, rev. 2").
+"""KCK-03B1 pre-flight rev. 3 content-identity helper (docs/kck-03b1-brief.md, "v2d pre-flight
+gate, rev. 3"; items 2-3, the pixel and canonical-text hashes, are unchanged since rev. 2).
+It does not compute raw-file SHA-256: that is provenance, not a gate.
 
   python3 preflight_hash.py image <file.png>        -> width, height, pixel SHA-256
   python3 preflight_hash.py text  <instruction.txt> -> canonical-content SHA-256
