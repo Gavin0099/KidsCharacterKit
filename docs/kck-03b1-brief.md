@@ -14,7 +14,7 @@ Do not mix these up:
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
 | **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
-| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 2 is current. |
+| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 3 is current. |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
 transport, not from V2. A new design version would only be justified by a decision to change
@@ -516,11 +516,12 @@ from there (or from the copies sent by the agent) into each fresh generation con
 The committed bytes are checked by `concepts/kck-03b1/tools/test_preflight_hash.py`, which also
 holds the BOM / CRLF / trailing-newline regression cases for the canonicalization.
 
-Execution message (the only user-authored text sent, verbatim; `<n>` = the variant):
-
-```text
-Use the attached dinosaur image as the only image reference. Follow A<n>_instruction_v2d.txt exactly and generate exactly one image.
-```
+Generation-input message: the single Owner-authored message that starts a generation. Its
+required content and a fill-in template (with the hashes above) are in
+[`concepts/kck-03b1/handoff.md`](../concepts/kck-03b1/handoff.md). It includes the original
+sentence `Use the attached dinosaur image as the only image reference. Follow
+A<n>_instruction_v2d.txt exactly and generate exactly one image.` (`<n>` = the variant) and
+asks the generation side to run the pre-flight checks itself before generating.
 
 #### Gates, split into identity and style
 
@@ -574,7 +575,7 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 #### Retry budget and attempt definition (v2d)
 
 - v2d attempts: **0 of 2** used.
-- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 2) pass
+- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 3) pass
   and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
 - v2d permits at most two valid generation attempts. After the second valid generated
@@ -587,37 +588,57 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
   style rule, or treat the highlight as a deterministic post-process by the image tool with a
   transformation record. Either is an Owner decision.
 
-#### v2d pre-flight gate, rev. 2 (hard; before calling the generator)
+#### v2d pre-flight gate, rev. 3 (hard; before calling the generator)
 
-Owner-approved 2026-10-05, replacing the original four-item gate (revision recorded below).
-All four must PASS. Any FAIL: do not generate, do not consume an attempt. Tool for the two
-hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
-(a pre-flight helper; no product or runtime code).
+Rev. 2 (items 2 and 3, content-based identity) Owner-approved 2026-10-05; rev. 3 (items 1 and 4,
+the fail-closed rule and the input transport) Owner-approved 2026-10-06. Revision history
+below. All four must PASS. Any FAIL, or any check that cannot be completed: do not
+generate, do not consume an attempt. Reference helper for the two hashes:
+[`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
+(a pre-flight helper; no product or runtime code). It is **not** a third input to a
+generation conversation: the message describes the algorithms and the generation side
+implements them itself.
 
-1. **Fresh context, defined by Owner input.** A brand-new conversation, not the current
-   project conversation. The Owner supplies exactly two source objects (the image and the
-   instruction file) and exactly one authored execution message. Platform expansion of an
-   attachment into text is not additional Owner-authored content. Both files are uploaded
-   again in every new conversation; a previous upload does not carry over.
-2. **Source image: pixel identity.** The image the generation side actually received decodes
+1. **Fresh-context generation input.** A brand-new conversation, not an existing project
+   conversation. Before the first image generation, the Owner supplies exactly two source
+   objects (the source image and the instruction file) and exactly one Owner-authored
+   message (the generation-input message). The source objects are either uploaded files or,
+   as an alternative, files the generation side fetches from this repository
+   (`concepts/kck-03b1/inputs/` and `concepts/kck-03b1/instructions/`) at a pinned commit; in
+   both cases the checks below apply to the bytes the generation side actually holds. Every
+   new conversation gets the objects again; a previous upload or fetch does not carry over.
+   Platform expansion of an attachment into text is not Owner-authored content. That one
+   message may ask the generation side to run the pre-flight verification first; hashing and
+   tool use done by the generation side within that turn is not additional Owner input.
+   Messages sent after the first generation (evidence collection) do not count toward the
+   generation input.
+2. **Source image: pixel identity.** The image the generation side actually holds decodes
    to **width 1448, height 1086** and its decoded-pixel hash equals
    `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
    Algorithm (fixed): decode, convert to RGBA8, row-major top to bottom, SHA-256 of the raw
    RGBA bytes (no color management, no alpha premultiplication; ancillary PNG chunks
    ignored). Compare full 64-hex values, never abbreviations. The **file** SHA-256
-   (`1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`) and the received
-   file's own SHA-256 are recorded as provenance but are **not** a pass/fail criterion.
+   (`1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`) of the held bytes is
+   reported as provenance; it is **not** the pass/fail criterion, so a pixel-identical
+   re-encode passes and a pixel difference fails.
 3. **Instruction: canonical-content identity.** The instruction text the generation side
-   received (whether it arrives as an attachment or is expanded from the attachment into
-   text by the platform) canonicalizes to the variant's expected hash in the table above.
-   Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing LF. Any
-   other difference (changed characters, Markdown escapes, edits) FAILs. The generation side
-   states whether it came from an attachment or was expanded from one.
-4. **Execution message and authorship.** The only text the Owner **authored** in that
-   conversation is the execution message above, verbatim: no preamble, no extra rules, no
-   restated instruction, no gate script. Instruction content that appears in the context
-   because the platform expanded the attachment is allowed. Instruction text the Owner
-   pasted or typed into a message is **not**, even if its hash comes out correct.
+   holds (whether it arrives as an attachment, a fetched file, or is expanded from an
+   attachment into text by the platform) canonicalizes to the variant's expected hash in the
+   table above. Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing
+   LF. Any other difference (changed characters, Markdown escapes, edits) FAILs. The
+   generation side states whether it came from an attachment, a fetch, or expanded text, and
+   reports the held file's own SHA-256 as provenance.
+4. **Generation-input message and authorship.** The single Owner-authored message contains
+   the execution sentence, the expected full hashes, the instruction to verify first, and the
+   stop rule; nothing else (no design rules, no restated instruction, no gate script).
+   Instruction text the Owner pasted or typed into a message is **not** allowed, even if its
+   hash comes out correct.
+
+**Fail-closed rule.** If the generation side cannot obtain the held bytes of either object
+(it only sees a display name, a preview image, or platform metadata), cannot compute a
+hash, or cannot complete a check, the result is **PRE-FLIGHT INCONCLUSIVE**, which is a
+failure: stop and do not call image generation. A claimed verification without computed
+full 64-hex values reported back is treated as INCONCLUSIVE.
 
 **Revision history.** The original gate required the received files' own SHA-256 to equal the
 canonical files'. The repository contract already allows different PNG encodings of the same
@@ -625,8 +646,17 @@ pixels ([contract](character-representation-contract.md) section 10), so file-by
 the wrong test of content identity. A3 generation `3871ee32…` exposed this, and also showed
 that a text attachment may reach the generation side as inline text. That run did **not**
 demonstrate a pure re-encode: its decoded pixels differed too (see below), so it failed pixel
-identity as well. Rev. 2 makes the identity check content-based and fixes the algorithm so it
+identity as well. Rev. 2 made the identity check content-based and fixed the algorithm so it
 cannot be read two ways.
+
+Rev. 3 resolves a conflict in rev. 2: verifying inside the generation conversation needs a
+message, while rev. 2 allowed only the bare execution sentence. A separate rehearsal chat
+followed by a formal chat was rejected as the main method: a rehearsal shows only that an
+upload route worked once, not that the formal fresh chat holds the same bytes, and checking
+afterwards is weaker than checking first. Rev. 3 therefore lets the one Owner message carry
+the verify-first request and adds the fail-closed rule. It also allows the inputs to come
+from this repository (Owner request, 2026-10-06) so the Owner does not have to re-upload
+files by hand.
 
 #### Post-generation provenance capture
 
