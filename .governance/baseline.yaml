@@ -11,16 +11,16 @@
 # ── PROVENANCE ────────────────────────────────────────────────────────────────
 schema_version: "1"
 baseline_version: 1.0.0
-source_commit: e8b705c0a89fd8d9613216766705e0a17f7056d9
+source_commit: 9938a0751b6fc46741f446468ddde42aea728d5c
 framework_root: /Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/ai-governance-framework
-initialized_at: 2026-10-06T03:05:44Z
+initialized_at: 2026-10-06T03:06:53Z
 initialized_by: governance_tools/adopt_governance.py
 
 # ── INTEGRITY ─────────────────────────────────────────────────────────────────
 # sha256.<file>: canonical-LF hash recorded at init/refresh time; "protected" files are hash-verified
 # overridable.<file>: protected = must not change | overridable = repo may extend freely
 sha256.AGENTS.base.md: 20f247a26575cc0e2e9f09be68ea057ac9a8f5d81ab56717e21a94e43ee3043b
-sha256.PLAN.md: 8306a883f4594b9f3f5308a690df51836450e917e0ae450c38a06302265afcc8
+sha256.PLAN.md: 1f889c12a505ee080e11184a0afbd8aba37f00f1cc8506aa3e7aa5fea2c7bd7d
 sha256.contract.yaml: 66e40e4c512d37b0ebbf91004429979a3ec835dfc1e4f16dc6e1c96ffe961c49
 sha256.AGENTS.md: eaf5195d10a4c836c04f0de6a6e2f9553ffa758affe4c67fa1463f244d3b0a27
 overridable.AGENTS.base.md: protected

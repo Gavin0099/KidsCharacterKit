@@ -1,0 +1,13 @@
+[memory_record] Written: /Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/memory/2026-10-06.md (surface identity=9669adf1f7d26ade75b8d6d6619f4da0d2162a5092852d4df5bec4d37f1d18ac)
+- memory_type: session-derived
+  record_format_version: 1.0
+  writer: governance_tools.memory_record
+  what_changed: KCK-GOV-02 evidence clarification: captured the post-PLAN-update drift check with the official durable test receipt writer, bound to implementation 9938a07. Dispatcher actually ran its guard and reports no blockers, but retains warnings: canonical writer/guard path discovery stops at the copied root protocol before searching the nested framework, missing_canonical_memory continuity debt, and the first entry's raw-log evidence lacks a receipt. Do not claim warning-free memory or full runtime adoption; tools are invoked explicitly from the pinned submodule.
+  commit: 9938a07
+  commit_hash: 9938a07
+  session_id: kck-gov-02-20261006
+  memory_binding: bound
+  test_evidence: PASS: official drift receipt artifacts/evidence/test-results/kck-gov-02-drift.json and its sibling output, linked to 9938a07. Diagnostic/maturity/response evidence retained at .governance/evidence/kck-gov-02/memory-final-check.json, .governance/evidence/kck-gov-02/maturity-final.json, .governance/evidence/kck-gov-02/maturity-final.txt, .governance/evidence/kck-gov-02/response-envelope.json, .governance/evidence/kck-gov-02/drift-receipt-write.txt and .governance/evidence/kck-gov-02/memory-write.txt. Runtime smoke FAIL remains .governance/evidence/kck-gov-02-external-runtime-smoke.json.
+  next_step: Commit the memory companion and retained evidence, publish both commits in one draft PR, verify its remote head, then await Owner review; runtime rollout and A3 continuation remain separate scopes.
+  plan_reconciliation: updated
+  record_identity: 9669adf1f7d26ade75b8d6d6619f4da0d2162a5092852d4df5bec4d37f1d18ac

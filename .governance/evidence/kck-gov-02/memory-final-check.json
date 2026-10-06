@@ -1,0 +1,90 @@
+{
+  "status": "memory_workflow_required",
+  "repo_root": "/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit",
+  "repo_root_resolved": true,
+  "memory_files_in_diff": [
+    "memory/01_active_task.md",
+    "memory/2026-10-06.md"
+  ],
+  "changed_files": [
+    "PLAN.md",
+    "artifacts/evidence/test-results/kck-gov-02-drift.json",
+    "artifacts/evidence/test-results/kck-gov-02-drift.txt",
+    "governance/baseline.yaml",
+    "governance/evidence/kck-gov-02/drift-milestone.json",
+    "governance/evidence/kck-gov-02/drift-receipt-write.txt",
+    "governance/evidence/kck-gov-02/maturity-final.json",
+    "governance/evidence/kck-gov-02/maturity-final.txt",
+    "governance/evidence/kck-gov-02/memory-evidence-clarification.txt",
+    "governance/evidence/kck-gov-02/memory-final-check.json",
+    "governance/evidence/kck-gov-02/memory-write.txt",
+    "governance/evidence/kck-gov-02/milestone-refresh.txt",
+    "governance/evidence/kck-gov-02/response-envelope.json",
+    "memory/01_active_task.md",
+    "memory/2026-10-06.md"
+  ],
+  "canonical_writer_required": true,
+  "memory_protocol_path": "governance/MEMORY_PROTOCOL.md",
+  "canonical_writer_path": null,
+  "authority_guard_path": null,
+  "recommended_workflow": [
+    "Stop editing memory/ files directly.",
+    "Use canonical writer for session-derived memory.",
+    "Run memory authority guard after memory changes.",
+    "Do not claim memory DONE until guard result is reported."
+  ],
+  "task_classification": "governed_memory_task",
+  "guard_ran": true,
+  "guard_summary": {
+    "non_canonical_writer": 0,
+    "active_non_canonical_writer": 0,
+    "missing_canonical_memory": 1,
+    "unbound_memory": 0,
+    "test_evidence_provenance_not_found": 1,
+    "session_like_non_session_memory_type": 0,
+    "non_daily_session_shaped_memory_entry": 0,
+    "authority_override_rejected": 0,
+    "test_evidence_artifact_metadata_missing": 0,
+    "test_evidence_artifact_metadata_invalid": 0,
+    "test_evidence_exit_code_contradicts_claim": 0,
+    "test_evidence_linked_commit_mismatch": 0,
+    "test_evidence_artifact_not_durable": 0,
+    "authority_override_used_current_diff": 0,
+    "repo_state_b0_blocker_count": 0,
+    "current_diff_b0_blocker_count": 0
+  },
+  "completion_claim_allowed": true,
+  "warnings": [
+    "mixed_scope_memory_binding",
+    "canonical writer not found",
+    "memory authority guard not found",
+    "missing_canonical_memory",
+    "test_evidence_provenance_not_found"
+  ],
+  "background_warnings": [],
+  "blockers": [],
+  "mixed_scope_findings": [
+    {
+      "code": "mixed_scope_memory_binding",
+      "enforcement": "report_only",
+      "scope_ref": "INDEX",
+      "bound_commits": [
+        "9938a07"
+      ],
+      "disallowed_paths": [
+        "artifacts/evidence/test-results/kck-gov-02-drift.txt",
+        "governance/baseline.yaml",
+        "governance/evidence/kck-gov-02/drift-milestone.json",
+        "governance/evidence/kck-gov-02/drift-receipt-write.txt",
+        "governance/evidence/kck-gov-02/maturity-final.json",
+        "governance/evidence/kck-gov-02/maturity-final.txt",
+        "governance/evidence/kck-gov-02/memory-evidence-clarification.txt",
+        "governance/evidence/kck-gov-02/memory-final-check.json",
+        "governance/evidence/kck-gov-02/memory-write.txt",
+        "governance/evidence/kck-gov-02/milestone-refresh.txt",
+        "governance/evidence/kck-gov-02/response-envelope.json"
+      ],
+      "reason": "canonical memory in this scope binds an earlier local commit while the same scope also changes non-closeout paths"
+    }
+  ]
+}

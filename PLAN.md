@@ -8,7 +8,8 @@
 
 ## Current Phase
 
-- **KCK-GOV-02 — AI governance initial adoption**: authorized by Owner in the
+- **KCK-GOV-02 — AI governance initial adoption**: local static implementation
+  validated; governance proposal awaiting Owner review. Authorized by Owner in the
   current session (「然後可以倒入ai goverance了」). Done condition: pinned canonical
   framework, official adoption baseline, calibrated repo rules and contract,
   proposed slice plan, honest local evidence, canonical memory and one reviewable
@@ -29,7 +30,9 @@
 - [x] Define asset-library authority/risk boundaries and proposed slice ordering.
 - [x] Run static checks, existing tests, readiness and runtime diagnostic smoke;
   record actual PASS/FAIL/UNKNOWN separately.
-- [ ] Deliver implementation plus canonical memory companion in one PR.
+- [x] Commit validated static implementation; record canonical milestone for
+  its separate memory companion. Delivery uses one draft PR; remote publication
+  and ref/CI status are reported separately without a post-push memory loop.
 - [ ] Owner review/merge of the governance PR (not agent-authorized).
 - [ ] Owner disposition of A3 gate failure and pending PR #12, separately.
 
