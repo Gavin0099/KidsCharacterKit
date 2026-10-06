@@ -27,9 +27,10 @@ Algorithms (fixed; reference implementation `tools/preflight_hash.py`):
 
 ## The one Owner message (fresh conversation, nothing sent before it)
 
-Provide the two objects either as uploaded files, or by naming the repository files at a
-pinned commit for the generation side to fetch. Then send **only** this message (A3 shown;
-replace the file name and the instruction hash for another variant; replace `<COMMIT>`):
+Upload the two objects (download them from this directory) into a brand-new conversation. Then
+send **only** this message (A3 shown; replace the file name and the instruction hash for another
+variant). A repository-fetch route was tried on 2026-10-06 and does not work: the image tool
+would not accept the fetched PNG as the image reference.
 
 ```text
 Use the provided dinosaur image as the only image reference. Follow A3_instruction_v2d.txt exactly and generate exactly one image.
@@ -39,12 +40,9 @@ Before generating, verify the content you actually hold for dinosaur-01_Dinosaur
 2. Instruction (gate): take the UTF-8 text you hold, drop a leading BOM, convert CRLF/CR to LF, keep exactly one trailing LF, and compute the SHA-256. It must equal c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884. Say whether you hold it as an attachment, a fetched file, or expanded text.
 3. Provenance (not a gate): if you hold the raw file bytes of either object, also report their SHA-256; if you only see expanded text, write "raw bytes not exposed".
 Only if both gates PASS, generate exactly one image following A3_instruction_v2d.txt. If a gate fails, or you cannot access the content or cannot compute a gate hash, stop: report PRE-FLIGHT FAILED or INCONCLUSIVE and do not call image generation.
-
-(Source objects, if fetched: Gavin0099/KidsCharacterKit at commit <COMMIT>, paths concepts/kck-03b1/inputs/dinosaur-01_DinosaurResearcher.png and concepts/kck-03b1/instructions/A3_instruction_v2d.txt.)
 ```
 
-The last paragraph is only for the fetched-from-repository route; delete it when uploading. The
-sentence says "provided" on purpose so that it is true for both routes.
+The sentence says "provided" on purpose; it is transport-neutral.
 
 ## After the generation (does not count as generation input)
 
