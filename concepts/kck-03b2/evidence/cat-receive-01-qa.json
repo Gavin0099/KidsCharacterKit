@@ -1,0 +1,45 @@
+{
+  "job_id": "cat-receive-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+    "rgba8_sha256": "f010f5c62c1d0516fb1ebe2a946934aa0c3edadf97773e4d71840a175f632772",
+    "bytes": 1507349,
+    "alpha_zero": 830613,
+    "alpha_partial": 742349,
+    "alpha_opaque": 576,
+    "alpha_gt10_bbox_exclusive": [
+      162,
+      25,
+      1639,
+      876
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Two seated receive/happy poses; anatomical LEFT paw reaches forward then near chest, correct pink pad count and other limbs, grounded forward tail unchanged, no snack baked in. Brown iris/white eyes retain primary upper-left and secondary lower-right glints, stripe/whisker/nose/tongue identity and controlled grain. Source remains candidate pending global scale/anchor/socket/timing QA; no personal Owner review claim.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ],
+  "initial_visual_gate": "PASS",
+  "diagnostic_refs": [
+    "concepts/kck-03b2/evidence/cat-receive-01-frame-000-measurements.json",
+    "concepts/kck-03b2/evidence/cat-receive-01-frame-001-measurements.json"
+  ],
+  "previous_diagnostic_hold": "Dinosaur dark-eye method includes Cat sclera in highlight components and is not a qualified Cat test. Numeric RGB also differs; requires qualified assessment, no acceptance inferred.",
+  "resolved_by": "concepts/kck-03c1/evidence/cat-receive-art-conformance.json"
+}

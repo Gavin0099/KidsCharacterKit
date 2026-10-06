@@ -1,0 +1,34 @@
+{
+  "format": "kck-qa-recipe-v1",
+  "canvas": [
+    1024,
+    1024
+  ],
+  "target_anchor": [
+    512,
+    960
+  ],
+  "scale": 0.7971087016958577,
+  "resampling": "LANCZOS",
+  "loop": 1,
+  "frames": [
+    {
+      "source": "artifacts/qa/2026-10-06-cat-receive-slots/frame-000.png",
+      "sha256": "c50bc3147dc1a3f8351e21c891095cd7c6272e9b78fbcb974e19fc3a32eb4100",
+      "anchor": [
+        522,
+        875
+      ],
+      "duration_ms": 150
+    },
+    {
+      "source": "artifacts/qa/2026-10-06-cat-receive-slots/frame-001.png",
+      "sha256": "a62de6c84e6301835c7e3da8be2fdf2a41374e95e4ce2d3ad6a91ebad961f0f0",
+      "anchor": [
+        475,
+        875
+      ],
+      "duration_ms": 200
+    }
+  ]
+}

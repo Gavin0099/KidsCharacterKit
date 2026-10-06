@@ -1,0 +1,96 @@
+{
+  "format": "kck-qa-strip-v1",
+  "candidate_only": true,
+  "source": "concepts/kck-03b2/outputs/dinosaur-stumble-01.png",
+  "source_facts": {
+    "bytes": 1365997,
+    "sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac",
+    "rgba_sha256": "bb5f3c870957c06b9b842bbbbe4251b6e15f9b0414338f7b2652e390b2565946",
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "alpha": {
+      "zero": 854246,
+      "partial": 718327,
+      "opaque": 965
+    },
+    "nonzero_alpha_bbox_exclusive": [
+      23,
+      37,
+      1760,
+      853
+    ]
+  },
+  "slot_count": 2,
+  "frames": [
+    {
+      "path": "frame-000.png",
+      "source_slot_exclusive": [
+        0,
+        0,
+        887,
+        887
+      ],
+      "output_facts": {
+        "bytes": 706079,
+        "sha256": "43d1f8c08738d793f0b1894ea2972634098ff45561b851e44abce77897a3edcb",
+        "rgba_sha256": "2ab1b840039d82d20840086fe1ddcde25d272f871386aae8c4211de350feb68c",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 426986,
+          "partial": 359363,
+          "opaque": 420
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          23,
+          86,
+          887,
+          853
+        ]
+      }
+    },
+    {
+      "path": "frame-001.png",
+      "source_slot_exclusive": [
+        887,
+        0,
+        1774,
+        887
+      ],
+      "output_facts": {
+        "bytes": 697725,
+        "sha256": "4233e44a89c4963f62266a7df29efc49dc082b4c9083296d7e4ae9baa6f78429",
+        "rgba_sha256": "bb59065c15f25f215741d329214880e5dafaeecb87cda23d0a406897af27d402",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 427260,
+          "partial": 358964,
+          "opaque": 545
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          1,
+          37,
+          873,
+          847
+        ]
+      }
+    }
+  ],
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ]
+}

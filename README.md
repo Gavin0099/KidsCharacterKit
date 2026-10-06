@@ -52,20 +52,22 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | done |
 | KCK-GOV-02 | Initial AI governance adoption: pinned framework, repo rules, PLAN, static checks and explicit runtime gaps ([adoption](docs/ai-governance-adoption.md)) | proposed in this PR |
 | KCK-03B1 | Dinosaur style key → Cat / Robot translation → lineup; [brief](docs/kck-03b1-brief.md), [lineup review](artifacts/qa/2026-10-06-b1c-corrected-lineup/contact-sheet.png) | Three-character references/lineup approved; Dino v2d budget remains 2/2 |
-| KCK-03B2 | [Style Bible v1](docs/character-style-bible-v1.md), then Cat/Dinosaur formal model sheets | v1/reference set and Cat/Dinosaur six-sheet sets approved |
-| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | two production candidates; Owner review pending |
-| KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
+| KCK-03B2 | [Style Bible v1](docs/character-style-bible-v1.md), Cat/Dinosaur formal model sheets plus Robot continuation | Cat/Dinosaur six-sheet sets approved; Robot incomplete |
+| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | Cat/Dinosaur available; Robot held after tongue feedback |
+| KCK-03C | [Neutral animation contract](docs/animation-contract-v1.md), schema, timing/events/sockets and file validator | implemented; validation covered |
+| KCK-03C1 | [Snack minimum pack checkpoint](concepts/kck-03c1/README.md) | Dinosaur partial candidate; remaining art checks held |
+| KCK-03C2 | Actual consumer-scene pivot, scale, ground, timing, loop, alpha and prop handoff | pending |
 | KCK-03D | 3D contract (schema only; no models) | planned |
 | later | Platform adapter (e.g. Swift) only once an app needs it | — |
 
-The proposed snack-motion slices (03B2, 03C1, 03C2) and their dependencies are in
-[PLAN.md](PLAN.md). They do not authorize production or waive existing gates.
+The authorized snack-motion path and its dependencies are in [PLAN.md](PLAN.md).
+Conditional Owner acceptance applies only to output with real conformance evidence.
 
 ## Status
 
 Exploration and preparation tooling stage. Concept originals and the separately
 authorized A3 derivative are preserved under `concepts/`. The
 [character pipeline](docs/character-pipeline.md) provides read-only review,
-fixed-slot extraction and explicit-anchor sequence QA. Every character still has
-`raster.available: false`, no delivered animations and no 3D model. Asset rights
+fixed-slot extraction and explicit-anchor sequence QA. Cat/Dinosaur have accepted static deliveries; Robot is held after mouth feedback.
+No delivered animations or 3D model are available. Asset rights
 remain `pending`. These changes are on the review branch, not merged main.

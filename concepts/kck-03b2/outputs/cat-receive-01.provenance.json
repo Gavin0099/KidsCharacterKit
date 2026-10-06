@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "cat-concept-09",
+  "character": "cat",
+  "slice": "KCK-03C1",
+  "stage": "snack-motion",
+  "variant": "receive two-key-pose strip initial individual model-sheet candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorizes scoped asset preparation with conditional acceptance only after actual conformance checks",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/cat-receive-01.png",
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1507349,
+    "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1507349,
+    "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-ac712fd3-9739-44fd-bbf4-36fcfedf484d.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+        "bytes": 1428356
+      },
+      {
+        "name": "concepts/kck-03c1/instructions/cat-receive-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "00b4116e2b19e1c1865c1c3a06067f00cb142461be181fdf4ece1c5665ac329c",
+        "bytes": 1796
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03c1/instructions/cat-receive-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "cat-receive-v1.txt",
+        "bytes": 1796,
+        "sha256": "00b4116e2b19e1c1865c1c3a06067f00cb142461be181fdf4ece1c5665ac329c",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: two-key-pose game action strip. Image 1 is the ONLY approved character master for identity/style. EXACTLY TWO equal-width horizontal slots LEFT TO RIGHT; one isolated full-body character in each, SAME drawing size/camera/head-body proportions and common source ground plane, generous transparent margins. Genuine alpha, no labels/panel dividers/floor/cast shadow/matte/motion blur. Do not overlap slot borders or clip any extremity. Preserve Soft Handmade 2.5D, warm dark-brown outline, controlled fine pencil/paper grain, soft SCREEN UPPER LEFT light. Do not draw any snack, tray, question mark, glitter, extra prop or duplicate character within a slot. Approved seated orange/cream tabby Cat cat-02: same round head, short seated body, stripe placements, whiskers, pink cheeks and inner ears, brown irises/visible eye whites, small nose, grounded tail curling across FRONT FEET. Both open eyes retain LARGE upper-left white glint and SMALL lower-right glint; never swap to pure Dinosaur eye type or close the eyes. Keep pink pads on the raised ANATOMICAL LEFT paw (viewer RIGHT); other forepaw/feet grounded as reference. Do not lift tail behind the body, change stripes or stretch legs. Pose 0 LEFT SLOT: slight forward reaching motion of the already-raised viewer-right paw to receive an external snack, pink pads visible, no snack drawn; neutral friendly mouth/tongue as reference. Pose 1 RIGHT SLOT: same seated base and tail/feet unchanged, raised left paw comes a little toward chest after receipt; happy friendly slightly wider smile with small rounded pink tongue, same open iris/white eyes and glints. Distinct paw positions, same head/body mass. All four paws accounted for, no extra limb. Receiving hand stays anatomical LEFT in both frames.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Dinosaur dark-eye method includes Cat sclera in highlight components and is not a qualified Cat test. Numeric RGB also differs; requires qualified assessment, no acceptance inferred."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d"
+      },
+      "reference_for_comparison": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1774,
+            887
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+          "rgba8_sha256": "f010f5c62c1d0516fb1ebe2a946934aa0c3edadf97773e4d71840a175f632772",
+          "bytes": 1507349,
+          "alpha_zero": 830613,
+          "alpha_partial": 742349,
+          "alpha_opaque": 576,
+          "alpha_gt10_bbox_exclusive": [
+            162,
+            25,
+            1639,
+            876
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Two seated receive/happy poses; anatomical LEFT paw reaches forward then near chest, correct pink pad count and other limbs, grounded forward tail unchanged, no snack baked in. Brown iris/white eyes retain primary upper-left and secondary lower-right glints, stripe/whisker/nose/tongue identity and controlled grain. Source remains candidate pending global scale/anchor/socket/timing QA; no personal Owner review claim.",
+        "owner_acceptance": "pending",
+        "previous_diagnostic_hold": "Dinosaur dark-eye method includes Cat sclera in highlight components and is not a qualified Cat test. Numeric RGB also differs; requires qualified assessment, no acceptance inferred.",
+        "resolved_by": "concepts/kck-03c1/evidence/cat-receive-art-conformance.json"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/snack-motion-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/cat-receive-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/cat-receive-01-frame-000-measurements.json",
+      "supports": "Read-only numeric diagnostic retained without tolerance changes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/cat-receive-01-frame-001-measurements.json",
+      "supports": "Read-only numeric diagnostic retained without tolerance changes"
+    },
+    {
+      "path": "concepts/kck-03c1/evidence/cat-receive-art-conformance.json",
+      "supports": "Qualified Cat visual inspection and actual sclera versus glint component comparison"
+    }
+  ],
+  "unresolved_questions": [
+    "Consumer-scene ground/pivot/scale/timing/prop handoff",
+    "Inherited rights pending/unknown"
+  ]
+}

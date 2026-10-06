@@ -95,6 +95,7 @@ class RasterDelivery(unittest.TestCase):
         validator=Draft202012Validator(json.loads((tool.ROOT/'manifests/character-manifest.schema.json').read_text()))
         validator.validate(manifest)
         raster=manifest['characters']['cat-02']['representations']['raster']
+        raster['available']=False
         raster['style_version']='soft-handmade-v1'
         with self.assertRaises(ValidationError):validator.validate(manifest)
 

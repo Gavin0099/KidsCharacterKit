@@ -1,14 +1,14 @@
 {
   "format": "kck-raster-candidate-set-v1",
   "style_version": "soft-handmade-v1",
-  "status": "candidate",
-  "owner_production_acceptance": "pending",
+  "status": "partial_production",
+  "owner_production_acceptance": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
   "selection_decision": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
   "records": [
     {
       "asset_id": "cat-02",
       "style_version": "soft-handmade-v1",
-      "status": "candidate",
+      "status": "production",
       "master": {
         "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
         "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
@@ -32,7 +32,7 @@
     {
       "asset_id": "dinosaur-01",
       "style_version": "soft-handmade-v1",
-      "status": "candidate",
+      "status": "production",
       "master": {
         "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
         "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
@@ -52,8 +52,35 @@
         "delivery_x": 512,
         "delivery_y": 960
       }
+    },
+    {
+      "asset_id": "robot-01",
+      "style_version": "soft-handmade-v1",
+      "status": "candidate",
+      "selection_decision": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "master": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1/originals/robot-01.png",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1/production/robot-01-1024.png",
+        "sha256": "d72a61a5e8f0b8887f3dd4c76481590e23390862fd1c2548d3cbcf80ddc51e44",
+        "pixel_sha256": "0e5c987eaa1cd010d6c37e47e123e17b2d487f3e3b283bdf024937f7f21492d2",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.95,
+      "anchor": {
+        "type": "ground-center",
+        "source_x": 560,
+        "source_y": 1420,
+        "delivery_x": 512,
+        "delivery_y": 960
+      },
+      "owner_feedback": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json"
     }
   ],
-  "manifest_available": false,
-  "generation_calls": 0
+  "manifest_available": true,
+  "generation_calls": 0,
+  "manifest_available_note": "Aggregate flag: Cat and Dinosaur available; Robot remains false. Per-record lifecycle and character manifest are authoritative."
 }

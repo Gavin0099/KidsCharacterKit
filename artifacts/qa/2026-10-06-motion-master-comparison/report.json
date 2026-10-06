@@ -1,0 +1,161 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+      "label": "Cat-master",
+      "bytes": 573703,
+      "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d",
+      "rgba_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 796762,
+        "partial": 251168,
+        "opaque": 646
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        157,
+        243,
+        807,
+        964
+      ]
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-000.png",
+      "label": "Cat-reach",
+      "bytes": 534746,
+      "sha256": "302b80f1554be1036bc143c98f322f79154eec0e05a8a159df22204d9e93a33d",
+      "rgba_sha256": "69bfa1f09d8cb6003de119e51c5a706e7336237936c1d6f1b821922bef341a8e",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 811870,
+        "partial": 236066,
+        "opaque": 640
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        96,
+        281,
+        803,
+        970
+      ]
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-001.png",
+      "label": "Cat-receive",
+      "bytes": 533329,
+      "sha256": "5e6bf71e6cb2c23fb72c5ebcf0626af797ec140677a93d26ac355d4aa9fc8bb1",
+      "rgba_sha256": "7eebc98189079ade86edfcfb63ec417750b27475ecfa01bb38a12ee3f85aace6",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 813067,
+        "partial": 234850,
+        "opaque": 659
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        134,
+        281,
+        772,
+        970
+      ]
+    },
+    {
+      "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+      "label": "Dino-master",
+      "bytes": 920594,
+      "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31",
+      "rgba_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 607465,
+        "partial": 440291,
+        "opaque": 820
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        70,
+        84,
+        932,
+        983
+      ]
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/frame-000.png",
+      "label": "Dino-run-0",
+      "bytes": 821867,
+      "sha256": "2825848506265fdc36bb9627e42cf63f3fb00aac91f4f956b46f7c73766231a6",
+      "rgba_sha256": "931645c0240a7d31f50d09566e288b088ddf4a4f747aecd5f7649179a31fd424",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 635423,
+        "partial": 412606,
+        "opaque": 547
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        22,
+        121,
+        937,
+        983
+      ]
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/frame-001.png",
+      "label": "Dino-run-1",
+      "bytes": 815643,
+      "sha256": "45675589e49ceec8d2e09a18a42658dca2d259c32322d10f0180b69b2ffa4c86",
+      "rgba_sha256": "50168afbdd5ee0c92e7250158e225831b1d9bc7bca1d8d4782a8b381db79e551",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 632451,
+        "partial": 415541,
+        "opaque": 584
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        49,
+        135,
+        927,
+        996
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.2734375,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.0625,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

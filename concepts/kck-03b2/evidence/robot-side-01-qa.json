@@ -1,0 +1,38 @@
+{
+  "job_id": "robot-side-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+    "rgba8_sha256": "f98bdc73837fce4e3f3d873e6cb35072ece468991383744ab6ae3e148e690768",
+    "bytes": 686887,
+    "alpha_zero": 1276455,
+    "alpha_partial": 295208,
+    "alpha_opaque": 853,
+    "alpha_gt10_bbox_exclusive": [
+      405,
+      18,
+      895,
+      1225
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Both red antenna-tip sphere highlights moved to SCREEN UPPER RIGHT, conflicting with approved upper-left illumination and approved reference. Eye single glint remains upper-left; controls remain on foreshortened front plane, but casing still shows substantial three-quarter depth rather than claiming mathematical side projection. Do not relabel lighting PASS based only on the eye. Preserve exact candidate; stop Robot sheet sequence with back/happy/confused unexecuted.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

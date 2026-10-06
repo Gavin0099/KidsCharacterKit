@@ -1,0 +1,163 @@
+{
+  "format": "kck-qa-sequence-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "canvas": [
+    1024,
+    1024
+  ],
+  "target_anchor": [
+    512,
+    960
+  ],
+  "requested_scale": 1.031732100890887,
+  "actual_uniform_scale": 1.0315670800450958,
+  "resampling": "LANCZOS",
+  "tools": {
+    "Pillow": "12.3.0",
+    "Python": "3.12.14"
+  },
+  "recipe_sha256": "35199a964a2cea87f7de5e4edb468b83a464d9b6dc97d9fa0ecd098eeb7552ff",
+  "frames": [
+    {
+      "path": "frame-000.png",
+      "source": "artifacts/qa/2026-10-06-dinosaur-run-slots/frame-000.png",
+      "source_facts": {
+        "bytes": 763079,
+        "sha256": "6d7ef87216d91487bf466dd6515eefd9b69461574a1b5e697086bc023e51cd19",
+        "rgba_sha256": "cb8fe7fbd9f7749a2a37028d7945d88e4d89467688661d4c1211889f9dc6cb53",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 398887,
+          "partial": 387615,
+          "opaque": 267
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          0,
+          21,
+          887,
+          857
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        475,
+        835
+      ],
+      "offset": [
+        22,
+        99
+      ],
+      "anchor_rounding_error_px": [
+        0.005636978579502738,
+        -0.3585118376549872
+      ],
+      "duration_ms": 100,
+      "output_facts": {
+        "bytes": 821867,
+        "sha256": "2825848506265fdc36bb9627e42cf63f3fb00aac91f4f956b46f7c73766231a6",
+        "rgba_sha256": "931645c0240a7d31f50d09566e288b088ddf4a4f747aecd5f7649179a31fd424",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 635423,
+          "partial": 412606,
+          "opaque": 547
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          22,
+          121,
+          937,
+          983
+        ]
+      }
+    },
+    {
+      "path": "frame-001.png",
+      "source": "artifacts/qa/2026-10-06-dinosaur-run-slots/frame-001.png",
+      "source_facts": {
+        "bytes": 757363,
+        "sha256": "d98ca3eb9381dbe584936338ade5f5c1620515a338900b0d92a77a806f7b23b2",
+        "rgba_sha256": "9eedd8d8085174c9f5dc691708be2c606f4c905bfc3fd06dc25affb4d68c7c9b",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 395960,
+          "partial": 390492,
+          "opaque": 317
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          0,
+          35,
+          851,
+          869
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        449,
+        835
+      ],
+      "offset": [
+        49,
+        99
+      ],
+      "anchor_rounding_error_px": [
+        -0.17361894024799085,
+        -0.3585118376549872
+      ],
+      "duration_ms": 100,
+      "output_facts": {
+        "bytes": 815643,
+        "sha256": "45675589e49ceec8d2e09a18a42658dca2d259c32322d10f0180b69b2ffa4c86",
+        "rgba_sha256": "50168afbdd5ee0c92e7250158e225831b1d9bc7bca1d8d4782a8b381db79e551",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 632451,
+          "partial": 415541,
+          "opaque": 584
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          49,
+          135,
+          927,
+          996
+        ]
+      }
+    }
+  ],
+  "preview": {
+    "path": "preview.png",
+    "sha256": "4f2fa9cf1c8ff01b02772e488880d32c89b278304578038871d232e484b01997",
+    "encoded_frames": 2,
+    "duration_ms": 200.0,
+    "loop": 0,
+    "rgba_and_timing_verified": true
+  }
+}

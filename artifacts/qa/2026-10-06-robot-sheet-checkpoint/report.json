@@ -1,0 +1,92 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b2/outputs/robot-front-01.png",
+      "label": "Robot-front",
+      "bytes": 1093671,
+      "sha256": "a9ef8ff0d01538108af0f6786b7bb7a917226057eea854ec517d626968ddabd2",
+      "rgba_sha256": "d2b64ed44733bbcecd8794460de70ce14ff57639df5e50ba7c81dffacd661a24",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 1069993,
+        "partial": 501422,
+        "opaque": 1101
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        19,
+        10,
+        1214,
+        1235
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/robot-three-quarter-01.png",
+      "label": "Robot-quarter",
+      "bytes": 1092481,
+      "sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+      "rgba_sha256": "8100150948a370eb7163a594caaf4f3d895efb0531c736d83c496fe7ac297037",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 1071483,
+        "partial": 500333,
+        "opaque": 700
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        41,
+        14,
+        1214,
+        1226
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/robot-side-01.png",
+      "label": "Robot-side-FAIL",
+      "bytes": 686887,
+      "sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+      "rgba_sha256": "f98bdc73837fce4e3f3d873e6cb35072ece468991383744ab6ae3e148e690768",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 1276455,
+        "partial": 295208,
+        "opaque": 853
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        89,
+        16,
+        1218,
+        1234
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.22328548644338117,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.051036682615629984,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

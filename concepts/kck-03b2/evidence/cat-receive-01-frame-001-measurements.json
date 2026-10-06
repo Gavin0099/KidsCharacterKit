@@ -1,0 +1,344 @@
+{
+  "candidate": {
+    "file": "frame-001.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 774020,
+    "raw_sha256": "a62de6c84e6301835c7e3da8be2fdf2a41374e95e4ce2d3ad6a91ebad961f0f0",
+    "rgba8_sha256": "42907d9498762575ca3a7977ee436e38d07c2f79c1625127a21a2cc472b8f8ed",
+    "dimensions": [
+      887,
+      887
+    ],
+    "visible_bbox": [
+      115,
+      25,
+      752,
+      875
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 416302,
+    "alpha_partial": 370200,
+    "alpha_opaque": 267,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          253,
+          266,
+          358,
+          367
+        ],
+        "width": 0.16483516483516483,
+        "height": 0.15855572998430142,
+        "cx": 0.2990580847723705,
+        "cy": 0.34294117647058825,
+        "dark_rgb_mean": [
+          69.60891286970424,
+          24.506195043964826,
+          6.614108713029577
+        ],
+        "highlights": [
+          {
+            "pixels": 961,
+            "normalized_centroid": [
+              0.7357316287597245,
+              0.6200945796973037
+            ],
+            "bbox": [
+              295,
+              285,
+              346,
+              361
+            ]
+          },
+          {
+            "pixels": 325,
+            "normalized_centroid": [
+              0.33295238095238094,
+              0.27183549124143186
+            ],
+            "bbox": [
+              278,
+              284,
+              299,
+              304
+            ]
+          },
+          {
+            "pixels": 96,
+            "normalized_centroid": [
+              0.5399801587301587,
+              0.6045792079207921
+            ],
+            "bbox": [
+              305,
+              322,
+              316,
+              333
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      },
+      {
+        "bbox": [
+          443,
+          312,
+          559,
+          418
+        ],
+        "width": 0.18210361067503925,
+        "height": 0.1664050235478807,
+        "cx": 0.6059654631083202,
+        "cy": 0.4,
+        "dark_rgb_mean": [
+          70.08095590959614,
+          24.602815857725084,
+          6.590403853278993
+        ],
+        "highlights": [
+          {
+            "pixels": 1320,
+            "normalized_centroid": [
+              0.7169997387669802,
+              0.5998284734133791
+            ],
+            "bbox": [
+              488,
+              328,
+              544,
+              411
+            ]
+          },
+          {
+            "pixels": 341,
+            "normalized_centroid": [
+              0.2890838305187582,
+              0.27502351574171413
+            ],
+            "bbox": [
+              467,
+              331,
+              487,
+              352
+            ]
+          },
+          {
+            "pixels": 106,
+            "normalized_centroid": [
+              0.5051236174365648,
+              0.6055535777856887
+            ],
+            "bbox": [
+              496,
+              371,
+              508,
+              382
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      }
+    ]
+  },
+  "reference": {
+    "file": "cat-02.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1428356,
+    "raw_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+    "rgba8_sha256": "510c81cade10883b22caa1bb427546d7d86d20b30de02b2671fd1836cb899387",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      224,
+      40,
+      1074,
+      1239
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 863795,
+    "alpha_partial": 708274,
+    "alpha_opaque": 447,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          410,
+          376,
+          550,
+          516
+        ],
+        "width": 0.16470588235294117,
+        "height": 0.16470588235294117,
+        "cx": 0.30117647058823527,
+        "cy": 0.3386155129274395,
+        "dark_rgb_mean": [
+          87.30706999648258,
+          36.76691288544964,
+          13.2430531129089
+        ],
+        "highlights": [
+          {
+            "pixels": 1740,
+            "normalized_centroid": [
+              0.7360262725779967,
+              0.6259770114942528
+            ],
+            "bbox": [
+              467,
+              411,
+              533,
+              509
+            ]
+          },
+          {
+            "pixels": 630,
+            "normalized_centroid": [
+              0.33234693877551025,
+              0.2790816326530612
+            ],
+            "bbox": [
+              443,
+              401,
+              471,
+              430
+            ]
+          },
+          {
+            "pixels": 190,
+            "normalized_centroid": [
+              0.5361278195488721,
+              0.6123308270676692
+            ],
+            "bbox": [
+              478,
+              454,
+              493,
+              470
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      },
+      {
+        "bbox": [
+          665,
+          434,
+          821,
+          580
+        ],
+        "width": 0.18352941176470589,
+        "height": 0.17176470588235293,
+        "cx": 0.6105882352941177,
+        "cy": 0.3894912427022519,
+        "dark_rgb_mean": [
+          87.33450479233227,
+          36.66517571884984,
+          13.290095846645368
+        ],
+        "highlights": [
+          {
+            "pixels": 2673,
+            "normalized_centroid": [
+              0.713790324901436,
+              0.5975380389383433
+            ],
+            "bbox": [
+              728,
+              463,
+              801,
+              572
+            ]
+          },
+          {
+            "pixels": 640,
+            "normalized_centroid": [
+              0.2880008012820513,
+              0.280201198630137
+            ],
+            "bbox": [
+              696,
+              461,
+              725,
+              490
+            ]
+          },
+          {
+            "pixels": 192,
+            "normalized_centroid": [
+              0.4989983974358974,
+              0.6080907534246576
+            ],
+            "bbox": [
+              736,
+              515,
+              751,
+              531
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      }
+    ]
+  },
+  "eye_identity": {
+    "gate": "FAIL",
+    "maximum_absolute_deviations": {
+      "size": 0.00615015236863975,
+      "center": 0.01050875729774814,
+      "rgb": 17.69815712677834,
+      "spacing": 0.002504386369932665
+    },
+    "tolerances": {
+      "size": 0.015,
+      "center": 0.02,
+      "spacing": 0.02,
+      "rgb": 15
+    },
+    "per_eye_deltas_left_to_right": [
+      {
+        "width": 0.00012928248222365823,
+        "height": -0.00615015236863975,
+        "cx": -0.002118385815864765,
+        "cy": 0.004325663543148728,
+        "rgb": [
+          -17.69815712677834,
+          -12.260717841484816,
+          -6.628944399879323
+        ]
+      },
+      {
+        "width": -0.0014258010896666395,
+        "height": -0.005359682334472232,
+        "cx": -0.00462277218579743,
+        "cy": 0.01050875729774814,
+        "rgb": [
+          -17.253548882736126,
+          -12.062359861124754,
+          -6.699691993366375
+        ]
+      }
+    ]
+  },
+  "eye_style": [
+    "FAIL",
+    "FAIL"
+  ],
+  "diagnostic_scope": "Dinosaur v2 method; Cat iris/white is a documented different morphology, classifier may be inconclusive. Motion pose lean is reported, never masked."
+}

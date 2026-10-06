@@ -24,8 +24,10 @@
   the current Dinosaur budget. Owner directed retaining A4's failure evidence.
 - This review branch locally combines pending PR #14 governance and PR #12
   rev5 inputs/evidence. It does not establish remote merge or main availability.
-- No accepted production raster, authored motion or 3D is available on this baseline.
-  Manifest availability is false/empty and asset rights remain pending.
+- Cat/Dinosaur conforming static delivery is now accepted under the Owner's
+  conditional continuation and available on this review branch. Robot availability
+  was withdrawn after tongue feedback. All motion availability remains empty;
+  no 3D or rights upgrade is established.
 - Owner authorized importing the required skill/features into this repo and
   continuing (2026-10-06). Repo-local character preparation skill and bounded
   strip/review/sequence QA tools are implemented; Cat/Robot translations and
@@ -40,7 +42,13 @@
   **KCK-03B2** visual gates are complete for Cat/Dinosaur: both six-sheet sets
   accepted. **KCK-03B** master/version/scale/anchor review preparation is active;
   Owner has separately accepted the 03B master/version/scale/anchor proposal;
-  two deterministic 1024 delivery candidates are ready for actual production review.
+  Cat/Dinosaur deterministic 1024 delivery is accepted. Robot side-sheet lighting
+  and mouth-correction crop failed; six-sheet/motion requirements are incomplete.
+- **KCK-03C**: neutral contract/schema plus semantic/file validation implemented.
+  **03C1**: Dinosaur idle static hold, two-pose run and explicit carry alias form a
+  validated partial candidate pack. Stumble remains held after identity diagnostic
+  FAIL; Cat receive is resolved by independent iris/sclera/glint visual comparison.
+  **03C2**: no identified consumer test scene or verified prop handoff.
 
 ## Active Sprint
 
@@ -101,14 +109,27 @@
   「核准整份提案，採 B 尺寸」; preserve source-app records, accept seated Cat support.
 - [x] Prepare immutable concept-master copies, schema-compatible selection/transform
   evidence, deterministic 1024 RGBA sRGB delivery candidates and actual background QA.
-- [ ] Owner accepts two actual production outputs before manifest availability.
+- [x] Record conditional Owner acceptance of conforming Cat/Dinosaur delivery;
+  promote hash-bound records and manifest availability with actual replay/visual QA.
+- [x] Include Robot static preparation and three sheets; retain side-lighting FAIL.
+- [x] Diagnose Owner tongue feedback; one mouth edit improves shape but crops boot.
+  Withdraw Robot availability and first two new sheet acceptances; preserve history.
+- [x] Implement animation contract/schema and negative semantic/file regressions.
+- [x] Prepare Dinosaur run: exact-slot split, shared scale/semantic root, sockets,
+  200 ms APNG replay and derivation provenance. Candidate only.
+- [ ] Resolve Robot failed mouth/side sequences, Dino stumble identity diagnostic
+  before affected promotions/continuations.
+- [x] Prepare Cat wait static hold, receive two key poses (350 ms) and happy
+  static hold candidate; root/perspective/shared scale and socket evidence retained.
+- [ ] Complete Dino stumble and actual consumer-scene QA.
 
 ## Backlog
 
 Owner has now authorized continuous execution of the snack critical path
 **03B1 → 03B2 → 03B → 03C → 03C1 → 03C2**, subject to actual problems and existing
 acceptance gates. Routine work within that path need not be separately opened
-again. Scope authorization does not approve unseen artwork, waive a hard gate,
+again. The later conditional instruction accepts conforming output when exact conformance
+evidence is persisted; it does not attest to personal Owner review or waive a hard gate,
 reset the shared attempt budget, or attest to merge of an exact PR head.
 03D/04 remain deferred. The consumer-app SNACK-01 scene remains a distinct repo
 scope; this instruction does not identify a consumer checkout.
@@ -132,7 +153,8 @@ placeholder experiments have different dependencies; QA must not wait for a
 scene that is itself blocked on QA.
 
 Keep the target to Cat + Dinosaur sufficient for a snack-delivery prototype.
-Robot motion, all poses, full expression packs, skins and 3D are deferred.
+Robot static/model-sheet work is now explicitly included; Robot motion waits for
+its six-sheet gate. All extra poses, full expression packs, skins and 3D are deferred.
 Do not interpret equal canvas/anchor as equal character height.
 
 ## Decision Log
@@ -162,7 +184,8 @@ Do not interpret equal canvas/anchor as equal character height.
   exact v1/reference-set question. Cat/corrected Robot promoted to approved_reference
   with cited evidence; v1 adopts Robot single-glint exception. Production/rights
   and Dino v2d 2/2 budget unchanged. New 03B2 sheets stay candidate.
-- Pending Owner decisions, **representation contract unchanged in this PR**:
+- Historical pending decisions before the subsequent accepted master/layout proposal
+  (the current representation contract now includes that versioned-master exception):
   1. Current style bible requires full model sheets before authored animation.
      A single-view shortcut for 2–4 poses would require explicit gate change;
      Robot motion/model-sheet production may wait, static lineup may not.
@@ -206,6 +229,27 @@ Do not interpret equal canvas/anchor as equal character height.
   retain raw bytes; delivery uses documented uniform premultiplied-alpha BICUBIC.
   Cat support-baseline seated exception and Dino feet anchor are explicitly accepted.
   Output status remains candidate until actual production review; rights unchanged.
+
+- 2026-10-06: Owner said 「可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做」.
+  Conditional acceptance replaces recurring per-image confirmation for conforming
+  scoped work, with exact hashes and real evidence; no own-output approval inferred.
+  Cat/Dinosaur delivery promoted; Robot prepared at .95 with manual (560,1420) root.
+- 2026-10-06: Robot side antennas lit upper RIGHT failed upper-left lighting. Back,
+  happy and confused unexecuted. Owner then said 「機器人舌頭有點怪」. Availability and
+  first two new sheet acceptances withdrawn. One mouth edit improves tongue but
+  crops right boot (82 last-row pixels alpha>=13); failure kept. Local mouth-only
+  composite permission requested with concrete original/corrected detail previews;
+  no new repair or retry undertaken without a reply.
+- 2026-10-06: Run two poses pass original eye/highlight diagnostics; native ground
+  baseline refined to y835 by labeled foot inspection, preserving earlier y842 QA.
+  Actual foot phase left→right is recorded without mirroring. Stumble comparator
+  fails (lean may contribute, not proven); Cat comparator is not qualified for
+  sclera/iris and gives FAIL diagnostics. Dino remains held; subsequent Cat qualification excludes sclera from the
+  glint interpretation using the same observed components in its approved master
+  and both candidates, without modifying Dinosaur limits. Cat receive/wait/happy
+  candidate pack now passes file/derivation/timing/socket validation.
+  Neutral packs contain Dino run/carry/static idle and Cat receive/static wait/happy;
+  no consumer-scene, prop asset or gameplay-feel claim.
 
 ## Known Risks
 

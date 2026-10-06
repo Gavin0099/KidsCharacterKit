@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "robot-concept-05",
+  "character": "robot",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "side initial individual model-sheet candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorizes Robot sheets with conditional acceptance only after actual conformance checks",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/robot-side-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 686887,
+    "sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 686887,
+    "sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-ba41b548-63da-4df6-9664-09b6ca9748d1.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+        "bytes": 1502496
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/robot-side-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "6088ae0d5e4e837cf9edf24f82a23dda6621f1e8ae791071be726a5e227d49b1",
+        "bytes": 1651
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/robot-side-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "robot-side-v1.txt",
+        "bytes": 1651,
+        "sha256": "6088ae0d5e4e837cf9edf24f82a23dda6621f1e8ae791071be726a5e227d49b1",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: one individual KCK Robot model-sheet reference, not animation or production. Image 1 is the ONLY approved identity/rendering reference (corrected Robot). Preserve Soft Handmade 2.5D: dark warm brown hand outline, cold gray lightly textured casing, blue hands and block boots, red antenna ends and cheeks, gentle upper-left light. Preserve box-shaped head with planar depth, two red-tipped antennas, long segmented limbs, outward raised arms, rectangular smiling mouth and tongue. Each visible open dark oval eye has EXACTLY ONE large white highlight at SCREEN UPPER LEFT; no lower/right highlight. Four chest controls in anatomical consistent front order: screen upper-left BLUE CIRCLE, upper-right YELLOW TRIANGLE, lower-left RED CIRCLE, lower-right GREEN RECTANGLE. Preserve proportions, limb segments and body panel geometry. One whole character, generous transparent margins, no cropping, genuine alpha, no floor/shadow/matte/text/panels/new prop or accessory. Do not change colors, shorten limbs, invent extra controls or mirror handedness. Same original pose and neutral expression except requested camera/expression. Individual square canvas with preserved proportions, no multi-view collage. View: Strict SIDE profile facing screen RIGHT: head AND torso AND boots in the same 90-degree orientation. Single visible eye with one upper-left highlight. Both antenna roots where projection permits, far limbs naturally occluded. Chest front panel lies on the facing-right plane, not pasted facing camera; no new side controls. Retain long two-leg structure and segmented raised arms in projected side view.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+          "rgba8_sha256": "f98bdc73837fce4e3f3d873e6cb35072ece468991383744ab6ae3e148e690768",
+          "bytes": 686887,
+          "alpha_zero": 1276455,
+          "alpha_partial": 295208,
+          "alpha_opaque": 853,
+          "alpha_gt10_bbox_exclusive": [
+            405,
+            18,
+            895,
+            1225
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Both red antenna-tip sphere highlights moved to SCREEN UPPER RIGHT, conflicting with approved upper-left illumination and approved reference. Eye single glint remains upper-left; controls remain on foreshortened front plane, but casing still shows substantial three-quarter depth rather than claiming mathematical side projection. Do not relabel lighting PASS based only on the eye. Preserve exact candidate; stop Robot sheet sequence with back/happy/confused unexecuted.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/robot-model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/robot-side-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    }
+  ],
+  "unresolved_questions": [
+    "Conditional conformance evidence including 64px required before reference acceptance",
+    "Unseen anatomy/side and pose continuity",
+    "Production, visual_scale, anchors and rights unresolved"
+  ]
+}

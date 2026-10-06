@@ -1,0 +1,32 @@
+{
+  "method": "One common four-eye mean-outline-width registration to approved master. Manually inspected source tail support at y875; root under torso transferred from master, ~47px rigid upper-body horizontal shift. Never current foot midpoint or alpha inferred anchor. Foot plane around y811 preserves seated tail/feet perspective.",
+  "master_eye_width": 148.0,
+  "strip_eye_width": 111.0,
+  "approved_master_scale": 0.5978315262718933,
+  "requested_global_scale": 0.7971087016958577,
+  "native_anchors": [
+    [
+      522,
+      875
+    ],
+    [
+      475,
+      875
+    ]
+  ],
+  "contact_evidence": [
+    "artifacts/qa/2026-10-06-cat-receive-slots/support-grid-000.png",
+    "artifacts/qa/2026-10-06-cat-receive-slots/support-grid-001.png"
+  ],
+  "socket_native": [
+    [
+      629,
+      555
+    ],
+    [
+      445,
+      550
+    ]
+  ],
+  "consumer_scene": null
+}

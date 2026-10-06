@@ -1,0 +1,27 @@
+{
+  "method": "One global mean eye-outline-width registration to the approved normalized master; all four open eyes used, no per-pose fitting. Then manually inspected contact baseline y835 and rigid upper-body horizontal shift26px retain virtual ground root under torso, transferred from approved master; actual support foot left then right.",
+  "master_native_mean_eye_width": 135.0,
+  "strip_mean_eye_width": 100.25,
+  "approved_master_scale": 0.7661566156615661,
+  "requested_common_scale": 1.031732100890887,
+  "native_virtual_ground_anchors": [
+    [
+      475,
+      835
+    ],
+    [
+      449,
+      835
+    ]
+  ],
+  "contact_y_manual": 835,
+  "root_reference": "Shared standing ground plane through current support foot; root is not raised-foot midpoint or alpha minimum",
+  "identity_and_highlight_gates": "Both frame identity comparisons PASS; all four primary/secondary eye style gates PASS",
+  "source_phase_deviation": "Requested starting right-foot contact; actual starts left-foot contact. Recorded actual order/events; no mirror, redraw or file swap.",
+  "consumer_scene": "not available",
+  "source_contact_evidence": [
+    "artifacts/qa/2026-10-06-dinosaur-run-slots/feet-grid-000.png",
+    "artifacts/qa/2026-10-06-dinosaur-run-slots/feet-grid-001.png"
+  ],
+  "revision": "Actual labeled foot-crop inspection refines initial y842 proposal to y835; preserve v1 recipe/preview as historical QA, v2 selected for candidate clip; zero generation"
+}

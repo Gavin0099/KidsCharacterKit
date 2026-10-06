@@ -1,0 +1,369 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kidscharacterkit/animation-manifest.schema.json",
+  "title": "KCK frame-sequence animation pack v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "character_id",
+    "style_version",
+    "status",
+    "source_master",
+    "model_sheets",
+    "canvas",
+    "coordinate_system",
+    "anchor",
+    "actions",
+    "rights",
+    "evidence_refs",
+    "consumer_scene_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "character_id": {
+      "type": "string",
+      "pattern": "^(cat|dinosaur|robot)-[0-9]{2}$"
+    },
+    "style_version": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]+$"
+    },
+    "status": {
+      "enum": [
+        "candidate",
+        "production"
+      ]
+    },
+    "source_master": {
+      "$ref": "#/$defs/file"
+    },
+    "model_sheets": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "$ref": "#/$defs/file"
+      }
+    },
+    "canvas": {
+      "const": [
+        1024,
+        1024
+      ]
+    },
+    "coordinate_system": {
+      "const": "x-right-y-down"
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "x",
+        "y"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "ground-center",
+            "support-baseline"
+          ]
+        },
+        "x": {
+          "const": 512
+        },
+        "y": {
+          "const": 960
+        }
+      }
+    },
+    "actions": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "enum": [
+          "idle",
+          "run",
+          "carry",
+          "stumble",
+          "wait",
+          "receive",
+          "happy",
+          "greeting"
+        ]
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/clip"
+          },
+          {
+            "$ref": "#/$defs/alias"
+          }
+        ]
+      }
+    },
+    "rights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commercial_use_status",
+        "rights_review_status",
+        "ownership_status",
+        "evidence"
+      ],
+      "properties": {
+        "commercial_use_status": {
+          "enum": [
+            "pending",
+            "unknown",
+            "confirmed"
+          ]
+        },
+        "rights_review_status": {
+          "enum": [
+            "pending",
+            "unknown",
+            "reviewed"
+          ]
+        },
+        "ownership_status": {
+          "enum": [
+            "unknown",
+            "documented"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "consumer_scene_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "provenance"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(characters|concepts|artifacts)/[a-zA-Z0-9._/-]+\\.png$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "provenance": {
+          "type": "string",
+          "pattern": "^(provenance|concepts)/[a-zA-Z0-9._/-]+\\.json$"
+        }
+      }
+    },
+    "socket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "hand"
+      ],
+      "properties": {
+        "x": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1024
+        },
+        "y": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1024
+        },
+        "hand": {
+          "enum": [
+            "anatomical-left",
+            "anatomical-right"
+          ]
+        }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "duration_ms",
+        "anchor",
+        "sockets"
+      ],
+      "properties": {
+        "file": {
+          "$ref": "#/$defs/file"
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "anchor": {
+          "const": [
+            512,
+            960
+          ]
+        },
+        "sockets": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "snack": {
+              "$ref": "#/$defs/socket"
+            }
+          }
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "time_ms"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "foot_contact",
+            "prop_attach",
+            "prop_release",
+            "action_complete"
+          ]
+        },
+        "time_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "socket": {
+          "const": "snack"
+        },
+        "foot": {
+          "enum": [
+            "left",
+            "right",
+            "both"
+          ]
+        }
+      }
+    },
+    "clip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "motion_kind",
+        "fps",
+        "duration_ms",
+        "loop",
+        "facing",
+        "requires_snack_socket",
+        "frames",
+        "events"
+      ],
+      "properties": {
+        "type": {
+          "const": "frame_sequence"
+        },
+        "motion_kind": {
+          "enum": [
+            "authored",
+            "static_hold"
+          ]
+        },
+        "fps": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "duration_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "facing": {
+          "enum": [
+            "front",
+            "three-quarter",
+            "left",
+            "right",
+            "back"
+          ]
+        },
+        "requires_snack_socket": {
+          "type": "boolean"
+        },
+        "frames": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "$ref": "#/$defs/frame"
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        }
+      }
+    },
+    "alias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "target",
+        "prop_socket"
+      ],
+      "properties": {
+        "type": {
+          "const": "alias"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^[a-z]+(-[a-z]+)*$"
+        },
+        "prop_socket": {
+          "const": "snack"
+        }
+      }
+    }
+  }
+}

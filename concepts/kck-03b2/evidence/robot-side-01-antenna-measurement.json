@@ -1,0 +1,31 @@
+{
+  "method": "Manually selected antenna ROI; bright R>245,G/B>210,A>200 pixel centroid; visual crop remains authoritative for illumination classification",
+  "regions": [
+    {
+      "roi_exclusive": [
+        550,
+        12,
+        640,
+        105
+      ],
+      "bright_pixels": 145,
+      "centroid_native": [
+        613.248275862069,
+        42.165517241379305
+      ]
+    },
+    {
+      "roi_exclusive": [
+        645,
+        60,
+        725,
+        135
+      ],
+      "bright_pixels": 104,
+      "centroid_native": [
+        705.5384615384615,
+        83.27884615384616
+      ]
+    }
+  ]
+}

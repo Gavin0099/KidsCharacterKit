@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "robot-concept-09",
+  "character": "robot",
+  "slice": "KCK-03B2",
+  "stage": "reference-clarification",
+  "variant": "mouth correction targeted correction candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner requested tongue diagnosis/correction; corrected output cropped and is not accepted",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json",
+      "quote": "機器人舌頭有點怪"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1384883,
+    "sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1384883,
+    "sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-1069cb79-8e07-4975-b2b0-92da97aa63f1.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+        "bytes": 1502496
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/robot-mouth-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "efcb7c7e3f71aaf89a2adc11b7a6581dc8c1cf2abbf98e95dfc7968e33ea6664",
+        "bytes": 1594
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "robot-mouth v1",
+      "path": "concepts/kck-03b2/instructions/robot-mouth-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "robot-mouth-v1.txt",
+        "bytes": 1594,
+        "sha256": "efcb7c7e3f71aaf89a2adc11b7a6581dc8c1cf2abbf98e95dfc7968e33ea6664",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: precise-object-edit. Asset type: targeted Robot mouth correction, one transparent still character reference. Input image 1 is the exact approved corrected Robot reference and the edit target. Fix ONLY the mouth/tongue construction: its lower rectangular mouth edge currently overlaps the pink tongue and a heavy central dark vertical split makes the tongue look like a dangling block. Keep the recognizable rectangular friendly smile and its upper pale/white mouth band; make a single coherent mouth opening, with a SMALL SOFT ROUNDED pink tongue peeking out naturally. The tongue must have a rounded U-shaped end, no long straight stem, no heavy black vertical bar through it, no separate square lower-right frame hanging under/beside it. At most one short fine darker-pink fold at the top of the tongue. Do not add teeth or a new expression or widen the face. Keep all other identity and rendering: the same cold gray box head/casing, original pose, long segmented limbs, outward raised blue hands, blue block boots, two red antenna tips, red cheeks, dark warm brown hand outline and controlled pencil/paper texture. Each oval eye keeps EXACTLY ONE large white glint SCREEN UPPER LEFT. Preserve original four chest controls in front order blue circle / yellow triangle / red circle / green rectangle. Upper-left illumination. Preserve the full original portrait composition and character proportions; no cropping, mirroring, shortened legs, reposing, new props, labels, panels or matte. Genuine transparent alpha background, no floor or cast shadow. Do not make any other redesign.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "One targeted mouth edit requested by Owner feedback; cropped output failed; no automatic retry."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+          "rgba8_sha256": "3efdd38d09bb5a25add33cfa4ab2967de1e9cd3c7e49849e89cbab5b8f3479da",
+          "bytes": 1384883,
+          "alpha_zero": 887215,
+          "alpha_partial": 684603,
+          "alpha_opaque": 710,
+          "alpha_gt10_bbox_exclusive": [
+            57,
+            16,
+            1046,
+            1448
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Mouth/tongue improved: short rounded pink tongue, fine fold and coherent rectangular smile, no hanging lower-right box. But source canvas right boot is cropped at bottom: 1086x1448, nonzero bbox ends y1448, 82 pixels on last row have alpha>=13. Other pixels re-rendered by built-in; not an exact localized pixel-only edit. Full-body/no-clipping gate FAIL; retain output, do not promote master or enable Robot raster.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/robot-mouth-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/robot-mouth-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    }
+  ],
+  "unresolved_questions": [
+    "Conditional conformance evidence including 64px required before reference acceptance",
+    "Unseen anatomy/side and pose continuity",
+    "Production, visual_scale, anchors and rights unresolved"
+  ]
+}

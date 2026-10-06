@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "character_id": "cat-02",
+  "style_version": "soft-handmade-v1",
+  "status": "candidate",
+  "source_master": {
+    "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+    "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+    "provenance": "provenance/cat/cat-02-soft-handmade-v1-master.json"
+  },
+  "model_sheets": [
+    {
+      "path": "concepts/kck-03b2/outputs/cat-front-01.png",
+      "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+      "provenance": "concepts/kck-03b2/outputs/cat-front-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-three-quarter-01.png",
+      "sha256": "c9126c6e8e286895e153125018da7bcc6d0da95f694a8d8fee7d6308ed04fe9a",
+      "provenance": "concepts/kck-03b2/outputs/cat-three-quarter-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-side-02.png",
+      "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
+      "provenance": "concepts/kck-03b2/outputs/cat-side-02.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-back-01.png",
+      "sha256": "aea09e7a2c40ad362d6f965650f2da5c0791aa6e32a23388e68a612eb75a4206",
+      "provenance": "concepts/kck-03b2/outputs/cat-back-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-happy-01.png",
+      "sha256": "ff3a4e117c6f8b6834938c466b260c0470aeaf1a2039084489d2ceb43555d8f8",
+      "provenance": "concepts/kck-03b2/outputs/cat-happy-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-confused-01.png",
+      "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+      "provenance": "concepts/kck-03b2/outputs/cat-confused-01.provenance.json"
+    }
+  ],
+  "canvas": [
+    1024,
+    1024
+  ],
+  "coordinate_system": "x-right-y-down",
+  "anchor": {
+    "type": "support-baseline",
+    "x": 512,
+    "y": 960
+  },
+  "actions": {
+    "wait": {
+      "type": "frame_sequence",
+      "motion_kind": "static_hold",
+      "fps": null,
+      "duration_ms": 1000,
+      "loop": true,
+      "facing": "three-quarter",
+      "requires_snack_socket": false,
+      "frames": [
+        {
+          "file": {
+            "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+            "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d",
+            "provenance": "provenance/cat/cat-02-soft-handmade-v1-delivery.json"
+          },
+          "duration_ms": 1000,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {}
+        }
+      ],
+      "events": []
+    },
+    "receive": {
+      "type": "frame_sequence",
+      "motion_kind": "authored",
+      "fps": null,
+      "duration_ms": 350,
+      "loop": false,
+      "facing": "three-quarter",
+      "requires_snack_socket": true,
+      "frames": [
+        {
+          "file": {
+            "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-000.png",
+            "sha256": "302b80f1554be1036bc143c98f322f79154eec0e05a8a159df22204d9e93a33d",
+            "provenance": "concepts/kck-03c1/evidence/cat-receive-frame-000.json"
+          },
+          "duration_ms": 150,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {
+            "snack": {
+              "x": 597,
+              "y": 705,
+              "hand": "anatomical-left"
+            }
+          }
+        },
+        {
+          "file": {
+            "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-001.png",
+            "sha256": "5e6bf71e6cb2c23fb72c5ebcf0626af797ec140677a93d26ac355d4aa9fc8bb1",
+            "provenance": "concepts/kck-03c1/evidence/cat-receive-frame-001.json"
+          },
+          "duration_ms": 200,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {
+            "snack": {
+              "x": 488,
+              "y": 701,
+              "hand": "anatomical-left"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "prop_attach",
+          "time_ms": 150,
+          "socket": "snack"
+        },
+        {
+          "type": "action_complete",
+          "time_ms": 350
+        }
+      ]
+    },
+    "happy": {
+      "type": "frame_sequence",
+      "motion_kind": "static_hold",
+      "fps": null,
+      "duration_ms": 600,
+      "loop": false,
+      "facing": "three-quarter",
+      "requires_snack_socket": true,
+      "frames": [
+        {
+          "file": {
+            "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-001.png",
+            "sha256": "5e6bf71e6cb2c23fb72c5ebcf0626af797ec140677a93d26ac355d4aa9fc8bb1",
+            "provenance": "concepts/kck-03c1/evidence/cat-receive-frame-001.json"
+          },
+          "duration_ms": 600,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {
+            "snack": {
+              "x": 488,
+              "y": 701,
+              "hand": "anatomical-left"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "action_complete",
+          "time_ms": 600
+        }
+      ]
+    }
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "evidence": []
+  },
+  "evidence_refs": [
+    "artifacts/qa/2026-10-06-cat-receive-normalized/report.json",
+    "concepts/kck-03c1/cat-receive-registration.json",
+    "concepts/kck-03c1/evidence/cat-receive-art-conformance.json"
+  ],
+  "consumer_scene_evidence": null
+}

@@ -1,0 +1,44 @@
+{
+  "job_id": "dinosaur-stumble-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac",
+    "rgba8_sha256": "bb5f3c870957c06b9b842bbbbe4251b6e15f9b0414338f7b2652e390b2565946",
+    "bytes": 1365997,
+    "alpha_zero": 854246,
+    "alpha_partial": 718327,
+    "alpha_opaque": 965,
+    "alpha_gt10_bbox_exclusive": [
+      145,
+      89,
+      1703,
+      842
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Two isolated key poses: gentle stumble then recovery; two belly lines, left magnifier, correct palette and visible double eye highlights retained. Numeric eye, scale and anchor checks remain pending; no delivery claim.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ],
+  "initial_visual_gate": "PASS",
+  "hold_reason": "Existing identity comparator FAIL in both frames; pose change may contribute, but no qualified motion identity gate has resolved it. No override or retry.",
+  "diagnostic_refs": [
+    "concepts/kck-03b2/evidence/dinosaur-stumble-01-frame-000-measurements.json",
+    "concepts/kck-03b2/evidence/dinosaur-stumble-01-frame-001-measurements.json"
+  ]
+}

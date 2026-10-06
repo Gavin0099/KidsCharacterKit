@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "record_type": "motion_frame",
+  "status": "candidate",
+  "character_id": "dinosaur-01",
+  "style_version": "soft-handmade-v1",
+  "file": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/frame-000.png",
+    "sha256": "2825848506265fdc36bb9627e42cf63f3fb00aac91f4f956b46f7c73766231a6"
+  },
+  "pixel_sha256": "931645c0240a7d31f50d09566e288b088ddf4a4f747aecd5f7649179a31fd424",
+  "source_strip": {
+    "file": {
+      "path": "concepts/kck-03b2/outputs/dinosaur-run-01.png",
+      "sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c"
+    },
+    "provenance": {
+      "path": "concepts/kck-03b2/outputs/dinosaur-run-01.provenance.json",
+      "sha256": "ad75922f288786f386f61a4fbb6ebbb40b618eb7c593de43c9e3beaea91c0783"
+    }
+  },
+  "source_slot": 0,
+  "split_report": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-run-slots/report.json",
+    "sha256": "ddc4904f24ea7ba07ffaa764d168741faa8ea0f0e5111e0249b095193849e043"
+  },
+  "transform_report": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/report.json",
+    "sha256": "9489ad076b8d1964d87e2ba93a6e8ad9a18b6f06e7fcc50658a550cfe3423b01"
+  },
+  "recipe": {
+    "path": "concepts/kck-03c1/dinosaur-run-qa-recipe-v2.json",
+    "sha256": "35199a964a2cea87f7de5e4edb468b83a464d9b6dc97d9fa0ecd098eeb7552ff"
+  },
+  "tool": {
+    "path": ".agents/skills/kck-character-pipeline/scripts/pipeline.py",
+    "sha256": "216679df86dc616d378d75abfb29347020259e9aa5c116644fb20e974bd7d241"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence_refs": [
+    "concepts/kck-03c1/dinosaur-run-registration-v2.json",
+    "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json"
+  ]
+}

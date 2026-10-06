@@ -38,7 +38,15 @@ jobs:
           python concepts/kck-03b1/tools/test_concept_provenance.py
           python concepts/kck-03b2/tools/test_correct_dinosaur_side_belly.py
       - name: Verify immutable style master and delivery regressions
-        run: python concepts/kck-03b/tools/test_produce_raster.py
+        run: |
+          python concepts/kck-03b/tools/test_produce_raster.py
+          python concepts/kck-03b/tools/test_validate_lifecycle.py
+          python concepts/kck-03b/tools/validate_raster.py
+      - name: Verify animation contract and partial candidate derivation
+        run: |
+          python concepts/kck-03c/tools/test_validate_animation.py
+          python concepts/kck-03c/tools/validate_animation.py concepts/kck-03c1/dinosaur-snack-partial-pack.json
+          python concepts/kck-03c/tools/validate_animation.py concepts/kck-03c1/cat-snack-candidate-pack.json
       - name: Validate asset records against existing schemas
         run: |
           python - <<'PY'
@@ -47,6 +55,8 @@ jobs:
           from jsonschema import Draft202012Validator
           for schema_path, records in (
               (Path('manifests/character-manifest.schema.json'), [Path('manifests/characters.json')]),
+              (Path('manifests/animation-manifest.schema.json'), sorted(Path('concepts/kck-03c1').glob('*pack.json'))),
+              (Path('manifests/animation-frame-provenance.schema.json'), sorted(Path('concepts/kck-03c1/evidence').glob('*frame-*.json'))),
               (Path('provenance/schema/provenance.schema.json'), sorted(Path('provenance').glob('*/*.json')) + sorted(Path('concepts').glob('**/*.provenance.json'))),
           ):
               schema = json.loads(schema_path.read_text())

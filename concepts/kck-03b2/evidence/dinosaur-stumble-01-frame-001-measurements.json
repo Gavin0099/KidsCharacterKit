@@ -1,0 +1,292 @@
+{
+  "candidate": {
+    "file": "frame-001.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 697725,
+    "raw_sha256": "4233e44a89c4963f62266a7df29efc49dc082b4c9083296d7e4ae9baa6f78429",
+    "rgba8_sha256": "bb59065c15f25f215741d329214880e5dafaeecb87cda23d0a406897af27d402",
+    "dimensions": [
+      887,
+      887
+    ],
+    "visible_bbox": [
+      134,
+      89,
+      816,
+      842
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 427260,
+    "alpha_partial": 358964,
+    "alpha_opaque": 545,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          319,
+          369,
+          415,
+          469
+        ],
+        "width": 0.14076246334310852,
+        "height": 0.1466275659824047,
+        "cx": 0.3416422287390029,
+        "cy": 0.43824701195219123,
+        "dark_rgb_mean": [
+          78.2,
+          32.625498007968126,
+          8.817848605577689
+        ],
+        "highlights": [
+          {
+            "pixels": 919,
+            "normalized_centroid": [
+              0.3489753355096119,
+              0.2914907508161044
+            ],
+            "bbox": [
+              336,
+              381,
+              370,
+              416
+            ]
+          },
+          {
+            "pixels": 218,
+            "normalized_centroid": [
+              0.6378058103975536,
+              0.6590825688073394
+            ],
+            "bbox": [
+              372,
+              427,
+              389,
+              444
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      },
+      {
+        "bbox": [
+          560,
+          310,
+          653,
+          410
+        ],
+        "width": 0.13636363636363635,
+        "height": 0.1466275659824047,
+        "cx": 0.6928152492668622,
+        "cy": 0.3598937583001328,
+        "dark_rgb_mean": [
+          78.01002959552778,
+          32.50937191713252,
+          8.613449523183164
+        ],
+        "highlights": [
+          {
+            "pixels": 904,
+            "normalized_centroid": [
+              0.3619159767818061,
+              0.2790265486725664
+            ],
+            "bbox": [
+              577,
+              321,
+              611,
+              355
+            ]
+          },
+          {
+            "pixels": 221,
+            "normalized_centroid": [
+              0.6435070306038048,
+              0.6511764705882354
+            ],
+            "bbox": [
+              612,
+              367,
+              629,
+              384
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  },
+  "reference": {
+    "file": "dinosaur-01.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1439076,
+    "raw_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      205,
+      82,
+      1186,
+      1193
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 815923,
+    "alpha_partial": 756342,
+    "alpha_opaque": 251,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          445,
+          497,
+          582,
+          647
+        ],
+        "width": 0.1396534148827727,
+        "height": 0.1529051987767584,
+        "cx": 0.3144750254841998,
+        "cy": 0.44104410441044106,
+        "dark_rgb_mean": [
+          79.99147511036688,
+          37.41581671487289,
+          11.771730857055868
+        ],
+        "highlights": [
+          {
+            "pixels": 2016,
+            "normalized_centroid": [
+              0.35002824122349674,
+              0.2955489417989418
+            ],
+            "bbox": [
+              468,
+              516,
+              518,
+              568
+            ]
+          },
+          {
+            "pixels": 452,
+            "normalized_centroid": [
+              0.6583554033977134,
+              0.6526106194690265
+            ],
+            "bbox": [
+              524,
+              583,
+              548,
+              608
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      },
+      {
+        "bbox": [
+          796,
+          390,
+          929,
+          542
+        ],
+        "width": 0.13557594291539246,
+        "height": 0.15494393476044852,
+        "cx": 0.6702344546381244,
+        "cy": 0.34563456345634563,
+        "dark_rgb_mean": [
+          82.01873265494912,
+          38.27844588344126,
+          11.921446191797719
+        ],
+        "highlights": [
+          {
+            "pixels": 1976,
+            "normalized_centroid": [
+              0.35136297220784757,
+              0.28312779671851696
+            ],
+            "bbox": [
+              819,
+              407,
+              868,
+              459
+            ]
+          },
+          {
+            "pixels": 454,
+            "normalized_centroid": [
+              0.6557417773508661,
+              0.6399837699976815
+            ],
+            "bbox": [
+              871,
+              476,
+              896,
+              500
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  },
+  "eye_identity": {
+    "gate": "FAIL",
+    "maximum_absolute_deviations": {
+      "size": 0.008316368778043814,
+      "center": 0.027167203254803096,
+      "rgb": 5.7690739663087385,
+      "spacing": 0.0045864086260652415
+    },
+    "tolerances": {
+      "size": 0.015,
+      "center": 0.02,
+      "spacing": 0.02,
+      "rgb": 15
+    },
+    "per_eye_deltas_left_to_right": [
+      {
+        "width": 0.0011090484603358264,
+        "height": -0.006277632794353699,
+        "cx": 0.027167203254803096,
+        "cy": -0.002797092458249828,
+        "rgb": [
+          -1.791475110366875,
+          -4.790318706904763,
+          -2.953882251478179
+        ]
+      },
+      {
+        "width": 0.0007876934482438924,
+        "height": -0.008316368778043814,
+        "cx": 0.022580794628737855,
+        "cy": 0.014259194843787182,
+        "rgb": [
+          -4.008703059421336,
+          -5.7690739663087385,
+          -3.307996668614555
+        ]
+      }
+    ]
+  },
+  "eye_style": [
+    "PASS",
+    "PASS"
+  ],
+  "diagnostic_scope": "Dinosaur v2 method; Cat iris/white is a documented different morphology, classifier may be inconclusive. Motion pose lean is reported, never masked."
+}

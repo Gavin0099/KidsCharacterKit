@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "character_id": "dinosaur-01",
+  "style_version": "soft-handmade-v1",
+  "status": "candidate",
+  "source_master": {
+    "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+    "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json"
+  },
+  "model_sheets": [
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+      "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-front-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
+      "sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+      "sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-back-01.png",
+      "sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-back-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-happy-01.png",
+      "sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-happy-01.provenance.json"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-confused-01.png",
+      "sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-confused-01.provenance.json"
+    }
+  ],
+  "canvas": [
+    1024,
+    1024
+  ],
+  "coordinate_system": "x-right-y-down",
+  "anchor": {
+    "type": "ground-center",
+    "x": 512,
+    "y": 960
+  },
+  "actions": {
+    "run": {
+      "type": "frame_sequence",
+      "motion_kind": "authored",
+      "fps": 10,
+      "duration_ms": 200,
+      "loop": true,
+      "facing": "three-quarter",
+      "requires_snack_socket": true,
+      "frames": [
+        {
+          "file": {
+            "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/frame-000.png",
+            "sha256": "2825848506265fdc36bb9627e42cf63f3fb00aac91f4f956b46f7c73766231a6",
+            "provenance": "concepts/kck-03c1/evidence/dinosaur-run-frame-000.json"
+          },
+          "duration_ms": 100,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {
+            "snack": {
+              "x": 420,
+              "y": 730,
+              "hand": "anatomical-right"
+            }
+          }
+        },
+        {
+          "file": {
+            "path": "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/frame-001.png",
+            "sha256": "45675589e49ceec8d2e09a18a42658dca2d259c32322d10f0180b69b2ffa4c86",
+            "provenance": "concepts/kck-03c1/evidence/dinosaur-run-frame-001.json"
+          },
+          "duration_ms": 100,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {
+            "snack": {
+              "x": 420,
+              "y": 730,
+              "hand": "anatomical-right"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "foot_contact",
+          "time_ms": 0,
+          "foot": "left"
+        },
+        {
+          "type": "foot_contact",
+          "time_ms": 100,
+          "foot": "right"
+        }
+      ]
+    },
+    "carry": {
+      "type": "alias",
+      "target": "run",
+      "prop_socket": "snack"
+    },
+    "idle": {
+      "type": "frame_sequence",
+      "motion_kind": "static_hold",
+      "fps": null,
+      "duration_ms": 1000,
+      "loop": true,
+      "facing": "three-quarter",
+      "requires_snack_socket": false,
+      "frames": [
+        {
+          "file": {
+            "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+            "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31",
+            "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-delivery.json"
+          },
+          "duration_ms": 1000,
+          "anchor": [
+            512,
+            960
+          ],
+          "sockets": {}
+        }
+      ],
+      "events": []
+    }
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "evidence": []
+  },
+  "evidence_refs": [
+    "artifacts/qa/2026-10-06-dinosaur-run-normalized-v2/report.json",
+    "concepts/kck-03c1/dinosaur-run-registration-v2.json",
+    "concepts/kck-03b2/evidence/dinosaur-run-01-frame-000-measurements.json",
+    "concepts/kck-03b2/evidence/dinosaur-run-01-frame-001-measurements.json"
+  ],
+  "consumer_scene_evidence": null
+}

@@ -5,8 +5,10 @@ including versioned concept masters, seated Cat support, semantic anchors and B 
 [Exact decision](evidence/2026-10-06-owner-master-layout-approval.json) retains the
 reviewed document/report hashes and direct answer.
 
-The [candidate index](raster-candidate-set.json) binds two immutable master copies
-and two actual 1024 RGBA sRGB delivery candidates. Both sources remain byte-exact;
+The [candidate index](raster-candidate-set.json) binds three immutable master copies
+and three actual 1024 RGBA sRGB files. Cat/Dinosaur are production under the
+[Owner conditional acceptance](evidence/2026-10-06-owner-conformance-continuation.json);
+Robot remains candidate after [tongue feedback](evidence/2026-10-06-owner-robot-tongue-feedback.json). Sources remain byte-exact;
 old source-app records and all failed exploration outputs are unchanged. New
 master/transformation record kinds retain full provenance and pending rights.
 
@@ -26,6 +28,8 @@ read-only; it is a candidate-checkpoint verifier, not a lifecycle promotion comm
 
 Five regressions cover actual masters/repeated pixels+encoder, independent anchor
 and uniform geometry, faint-alpha/profile/input rejection, overwrite/source gates,
-and negative provenance/manifest schemas. Production availability stays false until
-the Owner accepts exact delivery outputs. A4 stays 2/2; this checkpoint made no
+and negative provenance/manifest schemas. Use `tools/validate_raster.py` for current lifecycle/status verification after
+acceptance. The original builder's `--check` replays the historical candidate stage
+and cannot byte-compare later status evidence/index additions. Cat/Dinosaur
+availability is true; Robot is false and both failed outputs are retained. A4 stays 2/2; this checkpoint made no
 generation calls. Rights remain pending/unknown; PR merge and app release separate.
