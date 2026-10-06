@@ -1,0 +1,93 @@
+{
+  "record_type": "deterministic_candidate_derivation",
+  "date": "2026-10-06",
+  "status": "candidate",
+  "owner_authorization": {
+    "quote": "好的 可以這樣做",
+    "stated_in": "current Owner session, reply to the specific Robot programmatic-repair proposal",
+    "scope": "Only move the two large eye highlights to upper left; retain all alpha and other pixels, preserve original, verify and update lineup/PR. No generation.",
+    "does_not_approve": [
+      "unseen corrected artwork",
+      "Cat/Robot shared-world lineup",
+      "Style Bible v1",
+      "production",
+      "rights"
+    ]
+  },
+  "input": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01.png",
+    "raw_sha256": "03ef900a89866cef4b163deb7c7a303e3f496c07b26b1efe74e30b62aecd1cd7"
+  },
+  "output": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+    "raw_sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+    "rgba8_sha256": "f7116570605bb695d2e9ef5cd1d36c4715112a3083fe8cc54e636ed2535deadc",
+    "dimensions": [
+      1086,
+      1448
+    ]
+  },
+  "tool": {
+    "name": "correct_robot_highlights.py",
+    "script_sha256": "1c7be6f5b8a0f2fc76110fb12aa48d3b333a2a8f6e6916efd70359600dd2e22c",
+    "Python": "3.12.14",
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5"
+  },
+  "method": "Symmetric immutable-source RGB swaps within large-highlight bbox plus two-pixel halo and its horizontal reflection, clipped on both sides to filled eye interior with untouched three-pixel rim; alpha unchanged. No new pixels synthesized. Primary highlight count and height retained; horizontal eye-axis reflection moves it from right to left.",
+  "patches": [
+    {
+      "eye_bbox": [
+        432,
+        261,
+        508,
+        339
+      ],
+      "large_bbox": [
+        472,
+        272,
+        492,
+        292
+      ],
+      "reflection_sum_x": 939,
+      "source_roi": [
+        470,
+        270,
+        494,
+        294
+      ],
+      "mask_pixels": 1094,
+      "changed_pixels": 1094
+    },
+    {
+      "eye_bbox": [
+        659,
+        275,
+        733,
+        352
+      ],
+      "large_bbox": [
+        698,
+        287,
+        717,
+        306
+      ],
+      "reflection_sum_x": 1391,
+      "source_roi": [
+        696,
+        285,
+        719,
+        308
+      ],
+      "mask_pixels": 1036,
+      "changed_pixels": 1036
+    }
+  ],
+  "image_generation_calls": 0,
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "limit": 2,
+    "remaining": 0
+  },
+  "original_failure_retained": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01.provenance.json"
+}

@@ -1,0 +1,92 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "label": "Cat candidate",
+      "bytes": 1428356,
+      "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "rgba_sha256": "510c81cade10883b22caa1bb427546d7d86d20b30de02b2671fd1836cb899387",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 863795,
+        "partial": 708274,
+        "opaque": 447
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        15,
+        1214,
+        1241
+      ]
+    },
+    {
+      "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "label": "Dino approved style key",
+      "bytes": 1439076,
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "rgba_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 815923,
+        "partial": 756342,
+        "opaque": 251
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        33,
+        1212,
+        1246
+      ]
+    },
+    {
+      "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "label": "Robot corrected candidate",
+      "bytes": 1502496,
+      "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+      "rgba_sha256": "f7116570605bb695d2e9ef5cd1d36c4715112a3083fe8cc54e636ed2535deadc",
+      "canvas": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 909629,
+        "partial": 662232,
+        "opaque": 667
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        25,
+        16,
+        1058,
+        1448
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.19337016574585636,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.04419889502762431,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

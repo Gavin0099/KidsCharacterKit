@@ -28,7 +28,8 @@
   Manifest availability is false/empty and asset rights remain pending.
 - Owner authorized importing the required skill/features into this repo and
   continuing (2026-10-06). Repo-local character preparation skill and bounded
-  strip/review/sequence QA tools are implemented; Cat/Robot translation is next.
+  strip/review/sequence QA tools are implemented; Cat/Robot translations and
+  Owner-authorized Robot highlight derivative are ready for lineup review.
 
 ## Active Sprint
 
@@ -66,8 +67,11 @@
   B1-B instructions; both original hashes match existing provenance.
 - [x] Generate one static Cat and one Robot candidate with approved A3 rendering
   reference, preserving raw output and explicit tool-input verification limits.
-- [ ] Resolve Robot upper-right eye highlight failure. Cat identity/rendering
-  and three-character lineup remain Owner pending; no automatic retry/repair.
+- [x] Owner authorized Robot source-locked highlight-only repair (「好的 可以這樣做」).
+  Both primary highlights now upper left; original failure, all alpha, eye rims,
+  per-eye RGB histograms and outside-patch pixels preserved. Zero generation calls.
+- [ ] Owner review of Cat/corrected-Robot identity/rendering and shared-world
+  lineup, including normal/64px/solid-black silhouette QA views.
 
 ## Backlog
 
@@ -110,6 +114,10 @@ Do not interpret equal canvas/anchor as equal character height.
 - 2026-10-06: Owner requested 「把需要的skill或是feature 導入目前的repo再往下做」.
   Imported only bounded asset-preparation/QA functionality; no art approval,
   new generation budget, manifest promotion or model-sheet waiver was inferred.
+- 2026-10-06: Owner replied 「好的 可以這樣做」 to the exact proposal to fix
+  only Robot's two large eye highlights programmatically, retaining original,
+  all alpha and other pixels. This authorizes correction execution; corrected
+  artwork and the shared-world lineup still require review.
 - 2026-10-06: Owner opened continuous execution of the snack critical path
   (quoted above). Owner subsequently approved the proposed programmatic A3 repair
   (「好的 做下去」), leaving the remaining generation slot for A4. The A4 output

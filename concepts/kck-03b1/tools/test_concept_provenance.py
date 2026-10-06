@@ -26,7 +26,7 @@ class ConceptProvenance(unittest.TestCase):
         concepts = sorted((ROOT / 'concepts').glob('**/*.provenance.json'))
         self.assertEqual({json.loads(path.read_text())['id'] for path in concepts},
                          {'dinosaur-concept-02', 'dinosaur-concept-03', 'dinosaur-concept-04',
-                          'cat-concept-01', 'robot-concept-01'})
+                          'cat-concept-01', 'robot-concept-01', 'robot-concept-02'})
         for path in concepts:
             record = json.loads(path.read_text())
             self.validator.validate(record)

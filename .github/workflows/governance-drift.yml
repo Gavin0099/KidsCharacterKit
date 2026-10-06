@@ -34,6 +34,7 @@ jobs:
         run: |
           python concepts/kck-03b1/tools/test_measure_output.py
           python concepts/kck-03b1/tools/test_correct_a3_highlights.py
+          python concepts/kck-03b1/tools/test_correct_robot_highlights.py
           python concepts/kck-03b1/tools/test_concept_provenance.py
       - name: Validate asset records against existing schemas
         run: |

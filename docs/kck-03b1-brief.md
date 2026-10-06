@@ -966,9 +966,23 @@ or model/seed/id: these limits are recorded without claiming generator-side hash
 PASS. Cat retains the raised-paw/striped-tail identity by agent visual review;
 Robot retains its long limbs, box head and four buttons, but its two main eye
 highlights remain upper right and fail the approved upper-left light direction.
-No retry or Robot pixel correction was performed. See the
+At that checkpoint, no retry or Robot correction had been performed. See the
 [three-character QA review](../artifacts/qa/2026-10-06-b1b-lineup/contact-sheet.png).
 Cat/Robot and shared-world lineup remain Owner pending; B1-C/03B2 are not complete.
+
+**Owner-authorized Robot correction:** Owner later replied 「好的 可以這樣做」
+to the explicit source-locked programmatic proposal. The separate derivative
+preserves every alpha byte, eye rims, original per-eye RGB histograms and all
+pixels outside two bounded highlight/donor patches. Both primary white cores
+now lie upper left with unchanged counts and y positions. The original Robot PNG
+and its upper-right failure record are unchanged. No generation was called;
+the Dinosaur budget remains 2/2. See [correction evidence](../concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction.json),
+[independent validation](../concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction-validation.json)
+and [updated lineup](../artifacts/qa/2026-10-06-b1c-corrected-lineup/contact-sheet.png).
+The [64px solid-black silhouettes](../artifacts/qa/2026-10-06-b1c-corrected-lineup/silhouette-64.png)
+are review artifacts with recorded common native-canvas scale, not approved
+production scale/anchors. Corrected-Robot artwork and shared-world acceptance
+remain Owner decisions; correction authorization does not complete B1-C.
 
 Owner accepted the proposed programmatic A3 highlight-only repair and original
 Balanced texture in session (「好的 做下去」). The original PNG and its failed

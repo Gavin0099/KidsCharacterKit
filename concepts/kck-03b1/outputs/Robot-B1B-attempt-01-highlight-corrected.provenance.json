@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "robot-concept-02",
+  "character": "robot",
+  "slice": "KCK-03B1",
+  "stage": "B1-B",
+  "variant": "A3 style-key translation, deterministic highlight derivative",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized continuing static B1-B using corrected A3; output remains unapproved candidate",
+      "date": "2026-10-06",
+      "stated_in": "current Owner session",
+      "quote": "核准修正 A3 作 style key，A4 保留失敗紀錄"
+    },
+    {
+      "decision": "Owner authorized only source-locked programmatic correction of two large highlights; output remains candidate pending artwork/lineup review",
+      "date": "2026-10-06",
+      "stated_in": "current Owner session; reply to the specific Robot correction proposal",
+      "quote": "好的 可以這樣做"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1502496,
+    "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+    "relationship_to_original": "Separate deterministic derivative; exact original retained and its highlight failure unchanged"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1531035,
+    "sha256": "03ef900a89866cef4b163deb7c7a303e3f496c07b26b1efe74e30b62aecd1cd7",
+    "held_in_repo": true,
+    "basis": "Built-in imagegen saved artifact exec-8591da43-3905-4ad7-81e6-9a7e78e0b6b1.png; workspace copy hash independently computed; model and generation id not exposed"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/inputs/robot-01_RobotSkinMascot.png",
+        "role": "identity and pose edit target",
+        "bytes": 1534882,
+        "sha256": "2a7b4b8c8c75aa0f1ec98337e94b42b9dd94a39bfe2c87dff38f6388f0d69b51"
+      },
+      {
+        "name": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+        "role": "Owner-approved rendering-only style key",
+        "bytes": 1439076,
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+      },
+      {
+        "name": "concepts/kck-03b1/instructions/Robot_B1B_instruction_v1.txt",
+        "role": "exact text passed as built-in tool prompt",
+        "bytes": 1656,
+        "sha256": "172fb2dbcf08be8db3641c456088a4dda1d923aa2d2b0ac295b4e4716111377b"
+      },
+      {
+        "name": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01.png",
+        "role": "immutable local correction target, not a new generation input",
+        "bytes": 1531035,
+        "sha256": "03ef900a89866cef4b163deb7c7a303e3f496c07b26b1efe74e30b62aecd1cd7"
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "B1-B v1",
+      "path": "concepts/kck-03b1/instructions/Robot_B1B_instruction_v1.txt",
+      "locator": "Entire saved UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "Robot_B1B_instruction_v1.txt",
+        "bytes": 1656,
+        "sha256": "172fb2dbcf08be8db3641c456088a4dda1d923aa2d2b0ac295b4e4716111377b",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: style-transfer. KCK-03B1 B1-B static rendering translation, not an animation or model sheet. Image 1 is the identity/pose edit target. Image 2 is the Owner-approved Dinosaur A3 style key, rendering reference ONLY: do not copy dinosaur anatomy, props or mint palette. Apply its warm brown outline, subtle controlled paper/pencil grain, softly modeled flat color and upper-left lighting. One isolated full-body character, true transparent background, clean edges, no text, labels, panels, duplicate characters, floor or cast shadow. Preserve identity, silhouette, pose, proportions and character-specific palette. Do not chibify or add props. Large eye highlight upper left, smaller secondary highlight consistent with upper-left light; keep character-specific eye anatomy. Return exactly one PNG candidate.\nSubject: the original tall gray-and-blue child-drawn robot. Preserve the box head with slight side plane, two antennas ending in red circles, long segmented arms raised outwards with blue round hands, long gray legs with blue feet, small dark oval eyes, red cheek patches, rectangular smiling mouth with pink tongue. Chest panel must retain blue circle upper left, yellow triangle upper right, red circle lower left, green rectangle lower right. Keep original head-to-torso and long-limb proportions, not Dinosaur proportions. Translate dense rough hatching to controlled subtle handmade pencil grain while retaining child-crayon character, softened sturdy corners and gray/blue identity. Warm brown outline and softly shaded gray planes, no glossy plastic. Portrait canvas; preserve all antennae, hands and feet inside transparent margin.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": true
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": null,
+    "counts_toward_budget": false,
+    "basis": "Derivative of initial Robot B1-B job; zero generation calls, no additional attempt; Dinosaur v2d budget remains 2/2."
+  },
+  "deviations": [
+    "Generator-held byte/pixel hashes and internal augmented prompt are not exposed; canonical_match=false means match not established, not proof of mismatched input. Explicit exact local file paths were submitted as tool references. No generator-side hash gate PASS claimed.",
+    "Fresh internal generation context/model/seed/id not independently exposed.",
+    "Owner-authorized local RGB swap in bounded eye patches; tool record concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction.json. Inherited generation fields describe original, not a new generation."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex independent derivative review",
+      "copy": {
+        "description": "Exact committed corrected Robot PNG",
+        "format": "png",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01.png",
+      "method": "concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction-validation.json plus real-image test_correct_robot_highlights.py and direct visual inspection",
+      "results": {
+        "upper_left_eye_highlight": "PASS: two primary cores now upper left with unchanged counts and y positions",
+        "alpha_and_unrelated_pixels": "PASS: all alpha, outside bounded patches, eye rims and per-eye RGB histograms unchanged",
+        "identity": "Original anatomy, box head, antennas, long limbs, palette, chest controls and texture preserved exactly outside two eye patches",
+        "shared_world": "Owner pending; numerical repair proof is not artwork acceptance"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Owner approved correction method only; corrected Robot artwork and Cat/Robot lineup pending."
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-b1b-inputs.json",
+      "supports": "Exact source commit, local hashes, job authorization and input verification limitations"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-b1b-lineup/report.json",
+      "supports": "Exact output hashes, native canvas and transparency facts"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json",
+      "supports": "Owner-approved rendering reference and separate Dinosaur budget"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction.json",
+      "supports": "Explicit authorization, immutable source/output hashes, precise RGB patch method, tool versions and no generation"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction-validation.json",
+      "supports": "Independent direction and pixel-preservation evidence"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-b1c-corrected-lineup/report.json",
+      "supports": "Updated Cat/Dinosaur/corrected-Robot review hashes and native canvases"
+    }
+  ],
+  "unresolved_questions": [
+    "Owner corrected-Robot and Cat identity/rendering/world acceptance pending",
+    "Style Bible v1/model sheets/production and rights unresolved"
+  ]
+}

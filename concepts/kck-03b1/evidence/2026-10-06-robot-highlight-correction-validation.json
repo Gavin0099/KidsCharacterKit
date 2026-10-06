@@ -1,0 +1,58 @@
+{
+  "method": "Independent fixed eye rectangles, largest 4-neighbor white core R,G,B>235/alpha>200. Upper-left direction means left and top halves; no Dinosaur numeric gate imposed on Robot.",
+  "source_sha256": "03ef900a89866cef4b163deb7c7a303e3f496c07b26b1efe74e30b62aecd1cd7",
+  "output_sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+  "changed_pixels": 2130,
+  "alpha_equal": true,
+  "metrics": [
+    {
+      "eye_bbox_exclusive": [
+        432,
+        261,
+        508,
+        339
+      ],
+      "before": {
+        "primary_white_core_pixels": 295,
+        "normalized_centroid": [
+          0.6533006244424621,
+          0.26649282920469364
+        ]
+      },
+      "after": {
+        "primary_white_core_pixels": 295,
+        "normalized_centroid": [
+          0.3335414808206958,
+          0.26649282920469364
+        ]
+      },
+      "upper_left_direction": "PASS"
+    },
+    {
+      "eye_bbox_exclusive": [
+        659,
+        275,
+        733,
+        352
+      ],
+      "before": {
+        "primary_white_core_pixels": 284,
+        "normalized_centroid": [
+          0.6484107346783403,
+          0.27327601975489296
+        ]
+      },
+      "after": {
+        "primary_white_core_pixels": 284,
+        "normalized_centroid": [
+          0.33807575180814614,
+          0.27327601975489296
+        ]
+      },
+      "upper_left_direction": "PASS"
+    }
+  ],
+  "manual_review": "One robot, outlines/eye rims intact; both primary glints upper left; long limbs, controls, gray/blue palette, texture and anatomy unchanged outside swapped patches",
+  "owner_lineup_acceptance": "pending",
+  "measurement_development_note": "First test counted all white pixels in an eye bounding rectangle, including exterior paper. Corrected it to the largest connected primary core; source core fixture counts remain 295/284, not relaxed."
+}

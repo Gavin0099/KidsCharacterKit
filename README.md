@@ -51,7 +51,7 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | done |
 | KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | done |
 | KCK-GOV-02 | Initial AI governance adoption: pinned framework, repo rules, PLAN, static checks and explicit runtime gaps ([adoption](docs/ai-governance-adoption.md)) | proposed in this PR |
-| KCK-03B1 | Dinosaur style key → Cat / Robot translation → lineup; [brief](docs/kck-03b1-brief.md), [candidate review](artifacts/qa/2026-10-06-dinosaur-lineup/contact-sheet.png) | Corrected A3 style key approved; A4 failed record retained, budget 2/2; B1-B next |
+| KCK-03B1 | Dinosaur style key → Cat / Robot translation → lineup; [brief](docs/kck-03b1-brief.md), [lineup review](artifacts/qa/2026-10-06-b1c-corrected-lineup/contact-sheet.png) | A3 style key approved; Cat/corrected-Robot lineup Owner pending; Dino budget 2/2 |
 | — | Style Bible v1 approved, then formal model sheets | after B1 |
 | KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
 | KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
