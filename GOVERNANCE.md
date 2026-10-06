@@ -106,3 +106,12 @@ character definitions, assets or the manifest locally; changes come through this
 
 Stop and ask the Owner. Do not resolve an approval, rights or scope question by
 choosing the likeliest answer.
+
+## AI governance integration
+
+The pinned framework and repo-specific [AGENTS.md](AGENTS.md) support execution
+discipline, evidence and memory. [PLAN.md](PLAN.md) records bounded work and
+proposed future slices; [adoption notes](docs/ai-governance-adoption.md) describe
+what is installed and what remains unverified. These surfaces do not replace
+the four rules above. Framework installation or a static check cannot approve
+artwork, waive a model-sheet requirement, upgrade rights or open another slice.

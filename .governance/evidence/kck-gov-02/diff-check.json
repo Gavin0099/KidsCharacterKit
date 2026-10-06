@@ -1,0 +1,26 @@
+{
+  "full": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 2,
+    "stdout": "governance/SEMANTIC_FAILURE_TAXONOMY.md:3: trailing whitespace.\n+As-of: 2026-05-15  \n"
+  },
+  "source_copy_note": "Only reported whitespace is byte-identical to the pinned upstream semantic-failure taxonomy; preserved rather than silently forking the pack.",
+  "excluding_known_upstream_copy": {
+    "command": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)governance/SEMANTIC_FAILURE_TAXONOMY.md"
+    ],
+    "exit_code": 0,
+    "stdout": ""
+  }
+}

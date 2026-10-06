@@ -1,0 +1,20 @@
+[
+  {
+    "check": "Verify governance baseline",
+    "exit_code": 0,
+    "command": "python ai-governance-framework/governance_tools/governance_drift_checker.py \\\n  --repo . \\\n  --framework-root ./ai-governance-framework \\\n  --format human\n",
+    "evidence": ".governance/evidence/kck-gov-02/drift-ci.txt"
+  },
+  {
+    "check": "Run existing input identity regressions",
+    "exit_code": 0,
+    "command": "python concepts/kck-03b1/tools/test_preflight_hash.py",
+    "evidence": ".governance/evidence/kck-gov-02/preflight-tests.txt"
+  },
+  {
+    "check": "Validate asset records against existing schemas",
+    "exit_code": 0,
+    "command": "python - <<'PY'\nimport json\nfrom pathlib import Path\nfrom jsonschema import Draft202012Validator\nfor schema_path, records in (\n    (Path('manifests/character-manifest.schema.json'), [Path('manifests/characters.json')]),\n    (Path('provenance/schema/provenance.schema.json'), sorted(Path('provenance').glob('*/*.json'))),\n):\n    schema = json.loads(schema_path.read_text())\n    Draft202012Validator.check_schema(schema)\n    validator = Draft202012Validator(schema)\n    for record in records:\n        if record == schema_path:\n            continue\n        validator.validate(json.loads(record.read_text()))\n        print('VALID', record)\nPY\n",
+    "evidence": ".governance/evidence/kck-gov-02/asset-records.txt"
+  }
+]

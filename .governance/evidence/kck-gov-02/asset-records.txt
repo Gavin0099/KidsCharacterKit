@@ -1,0 +1,11 @@
+VALID manifests/characters.json
+VALID provenance/cat/cat-01.json
+VALID provenance/cat/cat-02.json
+VALID provenance/cat/cat-ref-01.json
+VALID provenance/dinosaur/dinosaur-01.json
+VALID provenance/dinosaur/dinosaur-02.json
+VALID provenance/dinosaur/dinosaur-ref-01.json
+VALID provenance/dinosaur/dinosaur-ref-02.json
+VALID provenance/dinosaur/dinosaur-ref-03.json
+VALID provenance/robot/robot-01.json
+VALID provenance/robot/robot-ref-01.json

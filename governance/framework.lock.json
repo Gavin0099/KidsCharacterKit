@@ -1,0 +1,25 @@
+{
+  "framework_repo": "https://github.com/Gavin0099/ai-governance-framework.git",
+  "adopted_release": "1.3.0",
+  "adopted_commit": "fb8f6abb09d6419923247183a2ce744d75e65b29",
+  "framework_interface_version": "1",
+  "framework_compatible": ">=1.0.0,<2.0.0",
+  "adoption_mode": "initial-static-adoption",
+  "adopted_surfaces": [
+    "framework_submodule",
+    "framework_lock",
+    "protected_baseline",
+    "repo_agents",
+    "plan",
+    "domain_contract",
+    "governance_pack",
+    "memory_scaffold",
+    "drift_ci_configuration"
+  ],
+  "not_adopted": [
+    "runtime_hook_installation",
+    "domain_runtime_validators",
+    "full_adoption_claim"
+  ],
+  "updated_at": "2026-10-06"
+}
