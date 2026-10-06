@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python concepts/kck-03b1/tools/test_concept_provenance.py",
+  "exit_code": 0,
+  "started_at": "2026-10-06T05:31:51Z",
+  "finished_at": "2026-10-06T05:31:52Z",
+  "runner": "python-unittest",
+  "linked_commit": "918c69c6d6dcc4fed95a6e3703a0700e9f4c52b6",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/model-sheet-completion-provenance.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "full_diff_check_exit_code": 2,
+  "findings": [
+    "cat-side-correction-v1.txt:1 trailing space",
+    "dinosaur-side-correction-v1.txt:1 trailing space"
+  ],
+  "disposition": "Preserved exact original tool prompt bytes/hash; do not trim after generation to fake a clean check. Other files pass diff --check with exactly these two raw prompt files excluded.",
+  "remaining_files_exit_code": 0
+}

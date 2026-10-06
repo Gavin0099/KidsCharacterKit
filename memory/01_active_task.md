@@ -19,3 +19,5 @@
 - Robot source-locked highlight repair completed with zero generation; 43 tests PASS, original/alpha/outside pixels unchanged. Cat/Dino/corrected Robot lineup and 64px silhouette ready for Owner review. A3 style key approved; corrected Robot/Cat world acceptance, Style Bible/model sheets/production remain pending; Dino budget 2/2. <!-- memory_record_projection:active-task-summary:2f36fb80817ad2bc4b83a8c8df7e8b4b4aebcb16bdcce1d8db58751ef3c41dba -->
 
 - KCK-03B1 reference set + Style Bible v1 accepted; KCK-03B2 has six sheet candidates, both side views FAIL continuity; sequences stopped pending Owner repair disposition. No production/rights/budget reset. <!-- memory_record_projection:active-task-summary:e1a81d3a1e0b1926328391a02a9e6aa99343394e519666d762a495dd41151813 -->
+
+- KCK-03B2: Cat six model sheets approved; Dinosaur six current candidates prepared, pending explicit Owner acceptance. Bounded belly repair validated; original failures and v2d 2/2 preserved. 03B master/scale/anchor and production/rights remain gated. <!-- memory_record_projection:active-task-summary:d85712a8fd4bf82474b7e684fd16eb5f35eb47b426f677f77129a8460cfe2655 -->
