@@ -94,8 +94,9 @@ it becomes `approved_reference`.
 
 Existing records use `selection.status: selected_core_candidate` for the five
 owner-selected core assets. That means "selected for processing", i.e. stage
-`candidate`. A formal `status` field is added to the provenance schema when the first
-new concept record is created (KCK-03B1), not before.
+`candidate`. Concept records (`record_type: concept`, KCK-03B1) carry the formal `status`
+field defined above, and a `status_evidence` list quoting the Owner decision that set it;
+the five asset records are not changed.
 
 ## Consumers
 

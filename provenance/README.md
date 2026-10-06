@@ -26,6 +26,7 @@ Records are JSON, validated by [`schema/provenance.schema.json`](schema/provenan
 |---|---|---|
 | `asset` | `<character>-NN` | A selected core candidate image |
 | `reference` | `<character>-ref-NN` | Source/reference artwork or an earlier output used as a generation input |
+| `concept` | `<character>-concept-NN` | A style-exploration output (KCK-03B1). Carries a `status` and the Owner decision behind it. Lives under [`concepts/`](../concepts/README.md), never under `characters/` |
 
 Each `asset` points at the references it was derived from (`derivation.inputs`);
 each `reference` lists the assets that use it (`used_by`). A reference can be
@@ -59,6 +60,12 @@ All records were written against `Gavin0099/english-vocab-trainer` at commit
 
 `DinosaurWorldThumbnail` (DINO-A2) is recorded only as a `byte_identical_copy`
 note on `dinosaur-01`; it is not a separate asset.
+
+### Concepts (style exploration, `candidate`)
+
+| ID | What | Status | Record |
+|---|---|---|---|
+| `dinosaur-concept-01` | KCK-03B1 B1-A, A2 (Clean) | `candidate`, accepted under an Owner waiver of pre-flight deviations; not a style anchor | [dinosaur/dinosaur-concept-01.json](dinosaur/dinosaur-concept-01.json) |
 
 ### References and chains
 
