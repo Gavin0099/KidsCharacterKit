@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python ai-governance-framework/governance_tools/governance_drift_checker.py --repo . --framework-root ./ai-governance-framework --format human",
+  "exit_code": 0,
+  "started_at": "2026-10-06T07:48:39Z",
+  "finished_at": "2026-10-06T07:48:39Z",
+  "runner": "governance-drift",
+  "linked_commit": "b400c102cf57073a58c934f4edafbb1dfb038cab",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/stumble-proposal-drift.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}
