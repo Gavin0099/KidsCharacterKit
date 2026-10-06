@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "robot-concept-11",
+  "character": "robot",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "side bounded Owner-authorized retry v2",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Direct Owner approval of concrete bounded retry proposal; conditional conformance continuation does not accept failed output or production motion",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+      "quote": "好 幫我嘗試"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/robot-side-02.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 667737,
+    "sha256": "bf34dd325c860e18c543fbc7aa143fbb4a69b4e61261b6965df8de4a69a8f0a8",
+    "relationship_to_original": "Exact byte copy of new built-in saved PNG; old failed output untouched"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 667737,
+    "sha256": "bf34dd325c860e18c543fbc7aa143fbb4a69b4e61261b6965df8de4a69a8f0a8",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of exec-a60c0b9e-6a92-4290-9d75-ca56599316f1.png; filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "role": "Only approved identity/rendering source",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+        "bytes": 1497894
+      },
+      {
+        "name": "concepts/kck-03c1/retry-proposal/robot-side-v2.txt",
+        "role": "Exact UTF-8 text passed as built-in prompt",
+        "sha256": "9bdc072751d1629eecd033bcd6f30b156522db88020c1424bcd55bde33fd51fb",
+        "bytes": 2708
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Approved specification informing instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "bounded retry v2",
+      "path": "concepts/kck-03c1/retry-proposal/robot-side-v2.txt",
+      "locator": "Entire saved UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "robot-side-v2.txt",
+        "bytes": 2708,
+        "sha256": "9bdc072751d1629eecd033bcd6f30b156522db88020c1424bcd55bde33fd51fb",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: one individual KCK Robot model-sheet reference, not animation or production. Image 1 is the ONLY approved identity/rendering reference (corrected Robot). Preserve Soft Handmade 2.5D: dark warm brown hand outline, cold gray lightly textured casing, blue hands and block boots, red antenna ends and cheeks, gentle upper-left light. Preserve box-shaped head with planar depth, two red-tipped antennas, long segmented limbs, outward raised arms, rectangular smiling mouth and tongue. Each visible open dark oval eye has EXACTLY ONE large white highlight at SCREEN UPPER LEFT; no lower/right highlight. Four chest controls in anatomical consistent front order: screen upper-left BLUE CIRCLE, upper-right YELLOW TRIANGLE, lower-left RED CIRCLE, lower-right GREEN RECTANGLE. Preserve proportions, limb segments and body panel geometry. One whole character, generous transparent margins, no cropping, genuine alpha, no floor/shadow/matte/text/panels/new prop or accessory. Do not change colors, shorten limbs, invent extra controls or mirror handedness. Same original pose and neutral expression except requested camera/expression. Individual square canvas with preserved proportions, no multi-view collage. View: Strict SIDE profile facing screen RIGHT: head AND torso AND boots in the same 90-degree orientation. Single visible eye with one upper-left highlight. Both antenna roots where projection permits, far limbs naturally occluded. Chest front panel lies on the facing-right plane, not pasted facing camera; no new side controls. Retain long two-leg structure and segmented raised arms in projected side view.\n\nRevision for a separately authorized bounded retry/new-mouth sheet set: Image 1 is the newly selected soft-handmade-v1-mouthfix Robot. Preserve its coherent rectangular smile, short rounded pink tongue and thin central tongue fold wherever the mouth is visible. No separate hanging lower rectangle, elongated tongue or heavy dark center bar. Preserve one SCREEN UPPER-LEFT primary eye glint per visible eye; do not add a second glint. Light every rounded red antenna cap consistently from SCREEN UPPER LEFT: the light patch belongs in its screen upper-left quadrant, the shade in lower-right. Never put the light patch on upper-right. Keep the soft handmade paper texture and warm brown outline. Preserve chest symbols, segmented long limbs, two complete blue boots and two red antenna caps; do not crop any extremity. Center the full body on the canvas with generous true transparent margins, no detached haze, backdrop, shadow or extra prop. Keep the reference rendering and character anatomy while making only the specified model-sheet view/expression.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 2,
+    "counts_toward_budget": false,
+    "basis": "Separate explicit bounded retry authorization; one call for this job, no automatic retry. Does not reset/use exhausted Dinosaur v2d style-exploration2/2 budget."
+  },
+  "deviations": [
+    "Generator-held bytes/model/id/seed/internal augmented prompt not exposed; canonical_match=false means match not established, not mismatch.",
+    "Strict side camera/anatomy conformance failed despite corrected antenna light direction. Robot sequence stopped; five other authorized sheet calls remain zero."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex independent structural/visual and original-gate review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "bf34dd325c860e18c543fbc7aa143fbb4a69b4e61261b6965df8de4a69a8f0a8"
+      },
+      "reference_for_comparison": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+      "method": "Native full-body/alpha and existing numeric gates where applicable; normalized common-scale Dino QA; separate Robot projection/lighting review",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "bytes": 667737,
+          "raw_sha256": "bf34dd325c860e18c543fbc7aa143fbb4a69b4e61261b6965df8de4a69a8f0a8",
+          "rgba8_sha256": "bc44578a4ae1d59c6c791a55523a4a60f6c2965cb4406f59040f711cb1dd2a5a",
+          "alpha_zero": 1289047,
+          "alpha_partial": 282935,
+          "alpha_opaque": 534,
+          "alpha_gt10_bbox_exclusive": [
+            458,
+            28,
+            809,
+            1220
+          ],
+          "visible_edge_pixels": 0
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Full-body native and checker/white/black review: both red antenna cap light patches now SCREEN upper-left; single visible eye keeps upper-left glint, short rounded tongue and chest-symbol colors preserved, body/boots uncropped. Requested strict90-degree side profile is not achieved: the head exposes broad side AND face planes, the torso exposes side AND front controls, while boots present broad front/toe faces. These volumes do not share the requested90-degree orientation. This is a side-biased three-quarter drawing, not the required side anatomy reference. No reinterpretation as a passed side sheet."
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Continuing conditional authority; no personal Owner viewing claim",
+    "overall_identity": "Side camera gate failed; not accepted",
+    "note": "No production motion or Robot model-set promotion"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+      "supports": "Direct bounded retry decision"
+    },
+    {
+      "path": "concepts/kck-03c1/bounded-retry-jobs.json",
+      "supports": "Separate execution ledger; old budgets/failures unchanged"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/robot-side-02-qa.json",
+      "supports": "Actual independent conformance review"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-robot-side-retry-review/report.json",
+      "supports": "Actual diagnostic/QA evidence"
+    }
+  ],
+  "unresolved_questions": [
+    "Actual consumer-scene and rights not established",
+    "Robot strict side conformance failed; remaining sheets blocked"
+  ]
+}

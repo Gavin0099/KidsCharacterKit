@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-front-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+    "rgba8_sha256": "be8c11a00cf132b53c6d807b51de8b0b6ff6ce5ceeabcfbadf2709e27f7be9ff",
+    "bytes": 1359332,
+    "alpha_zero": 866939,
+    "alpha_partial": 705125,
+    "alpha_opaque": 452,
+    "alpha_gt10_bbox_exclusive": [
+      217,
+      91,
+      1034,
+      1199
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: true front/equal eye height; raised left paw on viewer right, three toe pads, stripes, curled tail, iris/whites, tongue and seated proportions retained; upper-left primary and lower-right secondary glints. Single character/no text/floor/matte. Owner acceptance pending.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

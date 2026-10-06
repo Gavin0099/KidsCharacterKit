@@ -1,0 +1,382 @@
+{
+  "format": "kck-model-sheet-jobs-v1",
+  "slice": "KCK-03B2",
+  "date": "2026-10-06",
+  "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+  "specification": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "purpose": "Six separate Cat and Dinosaur candidates for per-sheet Owner review; not delivery or authored motion",
+  "policy": "One initial call per sheet. Sequential structural/visual checks. On a hard failure stop that character sequence, preserve evidence, no automatic retries or repair. Other independent character work may continue. No Dinosaur v2d budget reset.",
+  "tool_limits": "Built-in image_gen.imagegen does not expose held input hashes/internal model prompt/model/seed; local requested hashes are evidence, not generator-side PASS.",
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  },
+  "jobs": [
+    {
+      "job_id": "cat-front-01",
+      "character": "cat",
+      "view": "front",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-front-v1.txt",
+      "instruction_sha256": "4af4ef2ab28614b0b0e325cf7fb5269041e5f5a71dded8c07fc8afefce53ba83",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-front-01.png",
+      "output_sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+      "provenance": "concepts/kck-03b2/outputs/cat-front-01.provenance.json",
+      "concept_id": "cat-concept-02",
+      "qa": "concepts/kck-03b2/evidence/cat-front-01-qa.json"
+    },
+    {
+      "job_id": "cat-three-quarter-01",
+      "character": "cat",
+      "view": "three-quarter",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-three-quarter-v1.txt",
+      "instruction_sha256": "6bb7f7294179dc9c6e52b4f630e879e959fb26e2a0593d0ed001dbd96f3a79a1",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-three-quarter-01.png",
+      "output_sha256": "c9126c6e8e286895e153125018da7bcc6d0da95f694a8d8fee7d6308ed04fe9a",
+      "provenance": "concepts/kck-03b2/outputs/cat-three-quarter-01.provenance.json",
+      "concept_id": "cat-concept-03",
+      "qa": "concepts/kck-03b2/evidence/cat-three-quarter-01-qa.json"
+    },
+    {
+      "job_id": "cat-side-01",
+      "character": "cat",
+      "view": "side",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-side-v1.txt",
+      "instruction_sha256": "87b810819c72ea038b843339aa398dceabd89ccd7dbd6d71c7a30cf95d319a22",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "FAIL",
+      "output": "concepts/kck-03b2/outputs/cat-side-01.png",
+      "output_sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+      "provenance": "concepts/kck-03b2/outputs/cat-side-01.provenance.json",
+      "concept_id": "cat-concept-04",
+      "qa": "concepts/kck-03b2/evidence/cat-side-01-qa.json"
+    },
+    {
+      "job_id": "cat-back-01",
+      "character": "cat",
+      "view": "back",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-back-v2.txt",
+      "instruction_sha256": "701c2be514f4cbf9bfdc23e838481c8b139b5d60089dbb30dd30db7073820561",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "cat-side-02",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "status_history": [
+        {
+          "status": "blocked_after_hard_failure",
+          "reason": "Original side failure"
+        },
+        {
+          "status": "planned",
+          "reason": "Owner-authorized correction passed agent checks",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json"
+        }
+      ],
+      "instruction_history": [
+        {
+          "path": "concepts/kck-03b2/instructions/cat-back-v1.txt",
+          "sha256": "f4feb16b80295309f70e467bb02e5d410c3d0b5233659612b985a3952111b29f",
+          "reason": "Never submitted initial text preserved"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-back-01.png",
+      "output_sha256": "aea09e7a2c40ad362d6f965650f2da5c0791aa6e32a23388e68a612eb75a4206",
+      "provenance": "concepts/kck-03b2/outputs/cat-back-01.provenance.json",
+      "concept_id": "cat-concept-05",
+      "qa": "concepts/kck-03b2/evidence/cat-back-01-qa.json"
+    },
+    {
+      "job_id": "cat-happy-01",
+      "character": "cat",
+      "view": "happy",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-happy-v1.txt",
+      "instruction_sha256": "29be3d3e45f40ac49d0c7145774ec7a01c87f5c45581032f7bc07b9dfc9f73d3",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "cat-side-02",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "status_history": [
+        {
+          "status": "blocked_after_hard_failure",
+          "reason": "Original side failure"
+        },
+        {
+          "status": "planned",
+          "reason": "Owner-authorized correction passed agent checks",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-happy-01.png",
+      "output_sha256": "ff3a4e117c6f8b6834938c466b260c0470aeaf1a2039084489d2ceb43555d8f8",
+      "provenance": "concepts/kck-03b2/outputs/cat-happy-01.provenance.json",
+      "concept_id": "cat-concept-06",
+      "qa": "concepts/kck-03b2/evidence/cat-happy-01-qa.json"
+    },
+    {
+      "job_id": "cat-confused-01",
+      "character": "cat",
+      "view": "confused",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "instruction": "concepts/kck-03b2/instructions/cat-confused-v1.txt",
+      "instruction_sha256": "420101320f143fcbc0b070c567f1dc30c1025bc77a30d311a3ebbe5e459a4f3d",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "cat-side-02",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "status_history": [
+        {
+          "status": "blocked_after_hard_failure",
+          "reason": "Original side failure"
+        },
+        {
+          "status": "planned",
+          "reason": "Owner-authorized correction passed agent checks",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-confused-01.png",
+      "output_sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+      "provenance": "concepts/kck-03b2/outputs/cat-confused-01.provenance.json",
+      "concept_id": "cat-concept-07",
+      "qa": "concepts/kck-03b2/evidence/cat-confused-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-front-01",
+      "character": "dinosaur",
+      "view": "front",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-front-v1.txt",
+      "instruction_sha256": "07278a20d33c4d0ca892c44d7565c1e71d26dcd042e736ecbe19e8c84b988d91",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+      "output_sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-front-01.provenance.json",
+      "concept_id": "dinosaur-concept-05",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-front-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-three-quarter-01",
+      "character": "dinosaur",
+      "view": "three-quarter",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-three-quarter-v1.txt",
+      "instruction_sha256": "3c93d20aaf6cccda5ae13bb3e03cc55abaca25cc1bd6f33762c19f635a3e7d62",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
+      "output_sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.provenance.json",
+      "concept_id": "dinosaur-concept-06",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-three-quarter-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-side-01",
+      "character": "dinosaur",
+      "view": "side",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-side-v1.txt",
+      "instruction_sha256": "ea1cfb9b84f5a727e10688d6575b60fcbe8cd3ed785894cbfc0661d6bfd93255",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "agent_hard_gate": "FAIL",
+      "output": "concepts/kck-03b2/outputs/dinosaur-side-01.png",
+      "output_sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-side-01.provenance.json",
+      "concept_id": "dinosaur-concept-07",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-side-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-back-01",
+      "character": "dinosaur",
+      "view": "back",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-back-v2.txt",
+      "instruction_sha256": "222351e47d64bffe9eb265a22ccf7519b593f672e9bfee7bc29b9512cc30d06d",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "dinosaur-side-02-belly-corrected",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "status_history": [
+        {
+          "status": "planned",
+          "reason": "Owner-authorized local repair passes; resume remaining initial sheets",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json"
+        }
+      ],
+      "instruction_history": [
+        {
+          "path": "concepts/kck-03b2/instructions/dinosaur-back-v1.txt",
+          "sha256": "b2449d20253e2422a66ab2911476fe787d1e459cdff49e59d83c600f797b38eb",
+          "reason": "Never-submitted initial text retained"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/dinosaur-back-01.png",
+      "output_sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-back-01.provenance.json",
+      "concept_id": "dinosaur-concept-08",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-back-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-happy-01",
+      "character": "dinosaur",
+      "view": "happy",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-happy-v1.txt",
+      "instruction_sha256": "d261134770723549b3f1431d67748e4dd36d7a7d86632fd8e0e3f8dc5b91349a",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "dinosaur-side-02-belly-corrected",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "status_history": [
+        {
+          "status": "planned",
+          "reason": "Owner-authorized local repair passes; resume remaining initial sheets",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/dinosaur-happy-01.png",
+      "output_sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-happy-01.provenance.json",
+      "concept_id": "dinosaur-concept-09",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-happy-01-qa.json"
+    },
+    {
+      "job_id": "dinosaur-confused-01",
+      "character": "dinosaur",
+      "view": "confused",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-confused-v1.txt",
+      "instruction_sha256": "cfb4e8d59e2f719a11f9f2408c10e75915035d7717838125c42ba0eaf3e63c23",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "requires_pass": "dinosaur-side-02-belly-corrected",
+      "continuation_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "status_history": [
+        {
+          "status": "planned",
+          "reason": "Owner-authorized local repair passes; resume remaining initial sheets",
+          "evidence": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json"
+        }
+      ],
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/dinosaur-confused-01.png",
+      "output_sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-confused-01.provenance.json",
+      "concept_id": "dinosaur-concept-10",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-confused-01-qa.json"
+    },
+    {
+      "job_id": "cat-side-02",
+      "character": "cat",
+      "view": "side",
+      "kind": "authorized_targeted_correction",
+      "concept_id_reserved": "cat-concept-08",
+      "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "reference": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "reference_sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "edit_target": "concepts/kck-03b2/outputs/cat-side-01.png",
+      "edit_target_sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+      "instruction": "concepts/kck-03b2/instructions/cat-side-correction-v1.txt",
+      "instruction_sha256": "fae304f01eecc632ff2ec121d81ff7dd8975c07cf91cdf87a0a2db7be7d52bb7",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "corrects_job": "cat-side-01",
+      "agent_hard_gate": "PASS",
+      "output": "concepts/kck-03b2/outputs/cat-side-02.png",
+      "output_sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
+      "provenance": "concepts/kck-03b2/outputs/cat-side-02.provenance.json",
+      "concept_id": "cat-concept-08",
+      "qa": "concepts/kck-03b2/evidence/cat-side-02-qa.json"
+    },
+    {
+      "job_id": "dinosaur-side-02",
+      "character": "dinosaur",
+      "view": "side",
+      "kind": "authorized_targeted_correction",
+      "concept_id_reserved": "dinosaur-concept-11",
+      "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "reference": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "reference_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "edit_target": "concepts/kck-03b2/outputs/dinosaur-side-01.png",
+      "edit_target_sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+      "instruction": "concepts/kck-03b2/instructions/dinosaur-side-correction-v1.txt",
+      "instruction_sha256": "f5a68163104f824f4c30859e9e26e98cdcecef4bb8e14640f1ec587d7e59d3ff",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "corrects_job": "dinosaur-side-01",
+      "agent_hard_gate": "FAIL",
+      "output": "concepts/kck-03b2/outputs/dinosaur-side-02.png",
+      "output_sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-side-02.provenance.json",
+      "concept_id": "dinosaur-concept-11",
+      "qa": "concepts/kck-03b2/evidence/dinosaur-side-02-qa.json"
+    }
+  ],
+  "continuation_decision": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+  "derivations": [
+    {
+      "job_id": "dinosaur-side-02-belly-corrected",
+      "character": "dinosaur",
+      "view": "side",
+      "kind": "authorized_programmatic_derivative",
+      "calls": 0,
+      "agent_hard_gate": "PASS",
+      "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "source_job": "dinosaur-side-02",
+      "output": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+      "output_sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
+      "provenance": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.provenance.json",
+      "concept_id": "dinosaur-concept-12",
+      "record": "concepts/kck-03b2/evidence/dinosaur-side-belly-correction.json"
+    }
+  ]
+}

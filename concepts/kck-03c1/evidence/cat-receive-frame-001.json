@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "record_type": "motion_frame",
+  "status": "candidate",
+  "character_id": "cat-02",
+  "style_version": "soft-handmade-v1",
+  "file": {
+    "path": "artifacts/qa/2026-10-06-cat-receive-normalized/frame-001.png",
+    "sha256": "5e6bf71e6cb2c23fb72c5ebcf0626af797ec140677a93d26ac355d4aa9fc8bb1"
+  },
+  "pixel_sha256": "7eebc98189079ade86edfcfb63ec417750b27475ecfa01bb38a12ee3f85aace6",
+  "source_strip": {
+    "file": {
+      "path": "concepts/kck-03b2/outputs/cat-receive-01.png",
+      "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d"
+    },
+    "provenance": {
+      "path": "concepts/kck-03b2/outputs/cat-receive-01.provenance.json",
+      "sha256": "a3323db1e29621a5ea18bcd41bc65d0a621e0725e3f1aa9eb90084e03f66c87b"
+    }
+  },
+  "source_slot": 1,
+  "split_report": {
+    "path": "artifacts/qa/2026-10-06-cat-receive-slots/report.json",
+    "sha256": "00509ce9aef64a0ad44c5df4517baac134167d7ad18cec920fe1f671217fc5f5"
+  },
+  "transform_report": {
+    "path": "artifacts/qa/2026-10-06-cat-receive-normalized/report.json",
+    "sha256": "e26005e40327593676d7f4c585ea1758f51f4be939b587c67487db9ce32ef098"
+  },
+  "recipe": {
+    "path": "concepts/kck-03c1/cat-receive-qa-recipe.json",
+    "sha256": "bf1cab90aa677d7d1c589e5988e68328d8ccba19e862adda1f34d0eeec3d3652"
+  },
+  "tool": {
+    "path": ".agents/skills/kck-character-pipeline/scripts/pipeline.py",
+    "sha256": "216679df86dc616d378d75abfb29347020259e9aa5c116644fb20e974bd7d241"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence_refs": [
+    "concepts/kck-03c1/cat-receive-registration.json",
+    "concepts/kck-03c1/evidence/cat-receive-art-conformance.json"
+  ]
+}

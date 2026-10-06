@@ -1,0 +1,300 @@
+{
+  "format": "kck-cat-pose-visual-conformance-v1",
+  "spec": "docs/character-style-bible-v1.md",
+  "spec_sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+  "source": "concepts/kck-03b2/outputs/cat-receive-01.png",
+  "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+  "method": "Direct reference/candidate visual inspection of Cat iris/sclera and two actual glints. Existing Dinosaur v2 dark-eye classifier fills the white crescent sclera and picks it as largest highlight in BOTH approved master and candidates. Those diagnostic FAILs are retained; its Dinosaur RGB/centroid tolerances are not Cat acceptance rules. No tolerance or Dinosaur gate is modified.",
+  "checks": {
+    "orange_cream_tabby": true,
+    "iris_and_sclera_retained": true,
+    "two_glints_inside_each_iris": true,
+    "primary_screen_upper_left": true,
+    "small_secondary_retains_reference_position": true,
+    "three_small_pads_one_main": true,
+    "anatomical_left_receiving_paw": true,
+    "foreground_grounded_tail": true,
+    "no_clipped_visible_border": true,
+    "no_baked_snack": true,
+    "warm_brown_outline_and_upper_left_light": true
+  },
+  "actual_glints": [
+    {
+      "frame": 0,
+      "eye": 0,
+      "excluded_sclera_component": {
+        "pixels": 914,
+        "normalized_centroid": [
+          0.7355365140391419,
+          0.6077843014060705
+        ],
+        "bbox": [
+          344,
+          288,
+          394,
+          363
+        ]
+      },
+      "candidate_primary": {
+        "pixels": 325,
+        "normalized_centroid": [
+          0.3430337886412653,
+          0.26784463061690783
+        ],
+        "bbox": [
+          327,
+          285,
+          347,
+          306
+        ]
+      },
+      "candidate_secondary": {
+        "pixels": 97,
+        "normalized_centroid": [
+          0.5338664611234223,
+          0.6064101255486374
+        ],
+        "bbox": [
+          352,
+          324,
+          363,
+          335
+        ]
+      },
+      "reference_primary": {
+        "pixels": 630,
+        "normalized_centroid": [
+          0.33234693877551025,
+          0.2790816326530612
+        ],
+        "bbox": [
+          443,
+          401,
+          471,
+          430
+        ]
+      },
+      "reference_secondary": {
+        "pixels": 190,
+        "normalized_centroid": [
+          0.5361278195488721,
+          0.6123308270676692
+        ],
+        "bbox": [
+          478,
+          454,
+          493,
+          470
+        ]
+      }
+    },
+    {
+      "frame": 0,
+      "eye": 1,
+      "excluded_sclera_component": {
+        "pixels": 1318,
+        "normalized_centroid": [
+          0.7207302077337658,
+          0.6029526470296258
+        ],
+        "bbox": [
+          532,
+          333,
+          591,
+          412
+        ]
+      },
+      "candidate_primary": {
+        "pixels": 346,
+        "normalized_centroid": [
+          0.30070261112218455,
+          0.2682188968721301
+        ],
+        "bbox": [
+          514,
+          332,
+          535,
+          352
+        ]
+      },
+      "candidate_secondary": {
+        "pixels": 102,
+        "normalized_centroid": [
+          0.5088742393509128,
+          0.6027121128825361
+        ],
+        "bbox": [
+          543,
+          372,
+          554,
+          384
+        ]
+      },
+      "reference_primary": {
+        "pixels": 640,
+        "normalized_centroid": [
+          0.2880008012820513,
+          0.280201198630137
+        ],
+        "bbox": [
+          696,
+          461,
+          725,
+          490
+        ]
+      },
+      "reference_secondary": {
+        "pixels": 192,
+        "normalized_centroid": [
+          0.4989983974358974,
+          0.6080907534246576
+        ],
+        "bbox": [
+          736,
+          515,
+          751,
+          531
+        ]
+      }
+    },
+    {
+      "frame": 1,
+      "eye": 0,
+      "excluded_sclera_component": {
+        "pixels": 961,
+        "normalized_centroid": [
+          0.7357316287597245,
+          0.6200945796973037
+        ],
+        "bbox": [
+          295,
+          285,
+          346,
+          361
+        ]
+      },
+      "candidate_primary": {
+        "pixels": 325,
+        "normalized_centroid": [
+          0.33295238095238094,
+          0.27183549124143186
+        ],
+        "bbox": [
+          278,
+          284,
+          299,
+          304
+        ]
+      },
+      "candidate_secondary": {
+        "pixels": 96,
+        "normalized_centroid": [
+          0.5399801587301587,
+          0.6045792079207921
+        ],
+        "bbox": [
+          305,
+          322,
+          316,
+          333
+        ]
+      },
+      "reference_primary": {
+        "pixels": 630,
+        "normalized_centroid": [
+          0.33234693877551025,
+          0.2790816326530612
+        ],
+        "bbox": [
+          443,
+          401,
+          471,
+          430
+        ]
+      },
+      "reference_secondary": {
+        "pixels": 190,
+        "normalized_centroid": [
+          0.5361278195488721,
+          0.6123308270676692
+        ],
+        "bbox": [
+          478,
+          454,
+          493,
+          470
+        ]
+      }
+    },
+    {
+      "frame": 1,
+      "eye": 1,
+      "excluded_sclera_component": {
+        "pixels": 1320,
+        "normalized_centroid": [
+          0.7169997387669802,
+          0.5998284734133791
+        ],
+        "bbox": [
+          488,
+          328,
+          544,
+          411
+        ]
+      },
+      "candidate_primary": {
+        "pixels": 341,
+        "normalized_centroid": [
+          0.2890838305187582,
+          0.27502351574171413
+        ],
+        "bbox": [
+          467,
+          331,
+          487,
+          352
+        ]
+      },
+      "candidate_secondary": {
+        "pixels": 106,
+        "normalized_centroid": [
+          0.5051236174365648,
+          0.6055535777856887
+        ],
+        "bbox": [
+          496,
+          371,
+          508,
+          382
+        ]
+      },
+      "reference_primary": {
+        "pixels": 640,
+        "normalized_centroid": [
+          0.2880008012820513,
+          0.280201198630137
+        ],
+        "bbox": [
+          696,
+          461,
+          725,
+          490
+        ]
+      },
+      "reference_secondary": {
+        "pixels": 192,
+        "normalized_centroid": [
+          0.4989983974358974,
+          0.6080907534246576
+        ],
+        "bbox": [
+          736,
+          515,
+          751,
+          531
+        ]
+      }
+    }
+  ],
+  "acceptance": "Candidate art conformance PASS under qualified Cat visual rules; motion delivery pending. No personal Owner review claimed."
+}

@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-run-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c",
+    "rgba8_sha256": "6dc3c955313bb4a4f313048100906dd51fd86c6a4ad301d6d53ce41437c77e0c",
+    "bytes": 1476592,
+    "alpha_zero": 794847,
+    "alpha_partial": 778107,
+    "alpha_opaque": 584,
+    "alpha_gt10_bbox_exclusive": [
+      144,
+      59,
+      1713,
+      846
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Two full-body equal-square-slot in-place run key poses, alternating raised foot/contact foot, same camera/head mass and magnifier in anatomical LEFT hand, two belly lines and no snack. Actual phase starts left-foot contact then right-foot contact, reverse of requested prose; metadata must describe actual phase, not fabricate requested order. Phase start is not a character/style redesign. Open eyes keep upper-left primary/lower-right secondary. Source strip is candidate until numeric/scale/anchor/timing QA; not animation delivery.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

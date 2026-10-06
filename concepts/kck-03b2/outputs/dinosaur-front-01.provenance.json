@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-05",
+  "character": "dinosaur",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "front initial individual model-sheet candidate",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    },
+    {
+      "decision": "Owner accepted exact Dinosaur six model sheets including corrected side, back spike/foot details, handedness and new expressions as references",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-dinosaur-sheets-approval.json",
+      "quote": "Ok 再往下"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1278109,
+    "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1278109,
+    "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-1398fa09-ba82-40c7-9c7e-589a1eeea6e6.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "bytes": 1439076
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/dinosaur-front-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "07278a20d33c4d0ca892c44d7565c1e71d26dcd042e736ecbe19e8c84b988d91",
+        "bytes": 2106
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/dinosaur-front-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "dinosaur-front-v1.txt",
+        "bytes": 2106,
+        "sha256": "07278a20d33c4d0ca892c44d7565c1e71d26dcd042e736ecbe19e8c84b988d91",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: KCK-03B2 individual model-sheet candidate, NOT animation or production. Input image 1 is the ONLY approved identity and rendering reference. Keep the exact Soft Handmade 2.5D illustrator treatment: dark warm brown hand outline, controlled fine paper/pencil grain, flat base colors with gentle volume, soft upper-left light. One isolated whole-body character only, genuine transparent background; no text, labels, panels, duplicates, floor, cast shadow, white matte or new props. Square canvas; entire ears, tail, feet and required prop inside a generous transparent margin on all sides. Keep approximately the same character mass/size and proportions across sheets; do not enlarge the head or shrink limbs. Eyes keep reference anatomy: large primary white glint in the UPPER LEFT of each visible open eye, small secondary glint LOWER RIGHT. Light direction is SCREEN upper left regardless of body rotation. Do not mirror the reference or transfer props between anatomical hands. This is one still PNG, no collage. Subject: approved mint Dinosaur dinosaur-01 from corrected A3. Same large head and short rounded body; deep warm brown round eyes with no iris/white sclera, peach cheeks, little w-shaped smile, cream belly with EXACTLY TWO separate curved brown lines, soft yellow rounded dorsal spikes from head down back to long tail, two short feet with toe marks. Magnifying glass with yellow-orange handle/frame and pale blue lens stays held by DINOSAUR'S LEFT hand (viewer right in front view); other hand near chest. Keep all identity colors and head/body proportion. Open-eye primary highlight centroid approximately x=0.35,y=0.28 within each eye's bounding box, secondary smaller below/right; do not put primary glint on right. View: strict straight-on orthographic FRONT, both eyes at equal screen height and whole face centered without head tilt. Retain reference neutral friendly expression and pose. Torso faces camera; retain both feet and curled tail visible to the extent physically appropriate. Do not return the original tilted three-quarter camera.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+          "rgba8_sha256": "63b55180f27ececa03fffdcfc4736f6258a24cce767725a9ac5468f040b50604",
+          "bytes": 1278109,
+          "alpha_zero": 857971,
+          "alpha_partial": 713952,
+          "alpha_opaque": 593,
+          "alpha_gt10_bbox_exclusive": [
+            173,
+            100,
+            1125,
+            1183
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Agent visual: upright near-front face/equal eye heights, mint/cream palette, two belly lines, spikes/tail/feet and left-hand magnifying glass retained. Strict torso orthographic/anatomical spike placement remains Owner review; not yet an approved front model. Numeric eye-highlight style PASS; original tilted-pose eye-center comparison not an applicable new front-view gate. No duplicate/text/floor/matte.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Owner accepted model-sheet rendering",
+    "overall_identity": "Owner accepted six displayed references including new anatomy/expressions",
+    "note": "Reference approval only; production/master/scale/anchor/rights are separate."
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-front-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-model-sheets/report.json",
+      "supports": "Source-verified common-scale checker/white/black/64px review; not anchor alignment"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-front-01-measurements.json",
+      "supports": "Unchanged Dinosaur eye method; original pose identity comparison only applicable to unchanged three-quarter view. Side expects one eye."
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-dinosaur-sheets-approval.json",
+      "supports": "Contextual explicit Owner acceptance of six exact displayed references"
+    }
+  ],
+  "unresolved_questions": [
+    "Production/master/version policy/visual_scale/ground anchors and rights unresolved"
+  ]
+}

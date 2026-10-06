@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-01",
+  "character": "dinosaur",
+  "slice": "KCK-03B1",
+  "stage": "B1-A",
+  "variant": "A2 (Clean)",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Waive the A2 pre-flight deviations and accept generation 5374c1b2-6064-4b10-8345-06cea98f0ef2 as a candidate. Does not approve it as a style anchor, reference or production asset.",
+      "date": "2026-10-05",
+      "stated_in": "session (Owner message in the KCK-03B1 working session)",
+      "quote": "我是 Owner，豁免 A2 的 pre-flight 偏差，接受生成 5374c1b2-… 為 candidate。"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b1/a2-dinosaur-v01.webp",
+    "format": "webp",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 126266,
+    "sha256": "43a0f1e2a4a43d58315b7747e4bffbd93b2432d5dd1d71b4791440638975102e",
+    "relationship_to_original": "Platform-delivered WebP copy of the original PNG artifact, as received by the Owner's session. Not byte-equal to the original and, being WebP, not asserted to be pixel-equal to it. The original PNG is not held in this repository."
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1140257,
+    "sha256": "fd172d05af4d800e80bc10441834f828db5167ad9152114cc41ddcd5234077b9",
+    "held_in_repo": false,
+    "basis": "Reported from the generation side (see evidence bundle). Not supplied to, or re-hashed by, the agent that wrote this record."
+  },
+  "inputs": {
+    "requested": [
+      {
+        "ref": "dinosaur-01",
+        "name": "dinosaur-01_DinosaurResearcher.png",
+        "role": "identity reference (only image reference)",
+        "bytes": 770614,
+        "sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76"
+      }
+    ],
+    "actually_mounted": [
+      {
+        "name": "image(5).png",
+        "format": "png",
+        "color_type": "RGB",
+        "width": 1269,
+        "height": 952,
+        "bytes": 441868,
+        "sha256": "332e8c94af3ff582230bfbf9b0fcb16c02a8f77273489206fb7bead6afa3ea01"
+      }
+    ],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen (Owner's ChatGPT session)",
+    "model": null,
+    "generation_id": "5374c1b2-6064-4b10-8345-06cea98f0ef2",
+    "prompt": {
+      "version": "v2d + A2 line",
+      "path": "docs/kck-03b1-brief.md",
+      "locator": "heading \"Canonical prompt v2d (shared part)\" and \"Instruction artifact A2_instruction_v2d.txt\"",
+      "instruction_file": {
+        "name": "A2_instruction_v2d.txt",
+        "bytes": 2342,
+        "sha256": "12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use the attached dinosaur image as the only image reference. Follow A2_instruction_v2d.txt exactly and generate exactly one image.",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": null
+  },
+  "registration": {
+    "status": "unregistered",
+    "valid_attempt_number": null,
+    "counts_toward_budget": false,
+    "basis": "The brief consumes a v2d attempt only when all four pre-flight checks pass and the request is sent; they were not established for this run, and the Owner's waiver (see status_evidence) waives the deviations and accepts the output as a candidate. The waiver message does not mention the budget, so the brief's rule stands: not attempt #1, v2d budget stays 0 of 2. Owner may correct this."
+  },
+  "related_attempts": [
+    {
+      "generation_id": "e1acb811-2a91-46fc-8fe9-9f60d2a2856f",
+      "registration_status": "unregistered",
+      "note": "Earlier v2c-era sample with the same input-image deviation; recorded in docs/kck-03b1-brief.md; image not committed; not accepted as a candidate."
+    }
+  ],
+  "deviations": [
+    "Input image mounted in the generation was `image(5).png` (PNG RGB 1269x952, SHA-256 332e8c94...), not the canonical `dinosaur-01` file (1448x1086 RGBA, SHA-256 1515f586...). The generation side could not certify the canonical bytes as the generation input.",
+    "`A2_instruction_v2d.txt` was not present as a separate attachment in the generation conversation; the instruction text was not verified against its SHA-256 on the generation side.",
+    "Fresh context (one conversation per variant) could not be verified from generation metadata.",
+    "The execution message as the sole generation-side text could not be certified; generation was invoked from the existing chat context.",
+    "Generation-side eye-geometry numbers were taken against the mounted 1269x952 copy, not the canonical file; the agent measurement below uses the canonical file."
+  ],
+  "measurements": [
+    {
+      "actor": "generation side (Owner's ChatGPT session), as reported in the evidence bundle",
+      "copy": {
+        "description": "original generation artifact",
+        "format": "png",
+        "sha256": "fd172d05af4d800e80bc10441834f828db5167ad9152114cc41ddcd5234077b9"
+      },
+      "reference_for_comparison": "mounted `image(5).png` (332e8c94...), not the canonical file",
+      "method": "Own segmentation on the generation side; not the repository's scripts.",
+      "results": {
+        "gate_1_one_character": "PASS (1 connected component; visible bbox 988x1130)",
+        "gate_2_true_alpha": "PASS (corner alpha 0,0,1,0; alpha==0 fraction 0.5075)",
+        "gate_3_eye_identity": "max |delta| 0.015 (right eye center x), against the mounted copy",
+        "gate_4_eye_style": "PASS (large highlight left 0.362,0.300; right 0.343,0.307)",
+        "gate_5_overall_identity": "visually consistent; no numeric threshold"
+      }
+    },
+    {
+      "actor": "agent (Claude), this session",
+      "copy": {
+        "description": "platform-delivered copy (the committed file)",
+        "format": "webp",
+        "sha256": "43a0f1e2a4a43d58315b7747e4bffbd93b2432d5dd1d71b4791440638975102e"
+      },
+      "reference_for_comparison": "canonical dinosaur-01 file (1515f586...)",
+      "method": "concepts/kck-03b1/evidence/a2_measure.py (gates 1-3) and eye_highlight_gate.py (gate 4); tolerances from docs/kck-03b1-brief.md.",
+      "results": {
+        "gate_1_one_character": "PASS (1 connected component)",
+        "gate_2_true_alpha": "PASS (corner alpha 0,0,1,0; alpha==0 fraction 0.5075)",
+        "gate_3_eye_identity": "PASS: max deviation size 0.005, center 0.015, spacing 0.010, RGB 4.0 (tolerances 0.015 / 0.02 / 0.02 / 15)",
+        "gate_4_eye_style": "PASS: large highlight left (0.362, 0.300), right (0.343, 0.309); small highlight lower right of large in both eyes",
+        "gate_5_overall_identity": "Agent visual reading: motifs present (back spikes, cream belly with curved lines, magnifying glass, peach cheeks, tail, feet). Judgment is the Owner's.",
+        "texture_proxy": "not measured: lossy WebP vs the PNG base is a codec-confounded comparison (see the brief, Texture measurement validity)"
+      },
+      "note": "Agrees with the generation-side numbers to about 0.002 on the shared metrics."
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Not formally checked. The Owner said in session, before the waiver, that they felt the sample was fine (\"但是我覺得ok了\"). No separate variant-intensity decision is recorded.",
+    "overall_identity": "Accepted as a candidate by the waiver above; not an identity approval.",
+    "note": "One sample. It is not a style anchor and does not by itself show the generator follows the highlight rule reproducibly."
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b1/evidence/a2-5374c1b2-generation-bundle.md",
+      "sha256": "8686685d199d2201ce977f93641dea712c1d3699e683670834b5ac38190a4c20",
+      "supports": "Generation-side report: generation id, mounted input, original artifact hash, generation-side measurements, deviations (Owner-supplied, unmodified)"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/a2_measure.py",
+      "sha256": "54b23a97eee6e136e9ed92d028ff3ab82a00821cc3508bb07941171f332c5356",
+      "supports": "Agent measurement of gates 1-3"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/eye_highlight_gate.py",
+      "sha256": "62ec9dcf2e5cdd79f601b7db1737c3ebd352d9f9a6c70ae9231fa66a48a32bcc",
+      "supports": "Agent measurement of gate 4"
+    },
+    {
+      "path": "docs/kck-03b1-brief.md",
+      "supports": "Prompt v2d, gates, tolerances, pre-flight and attempt rules"
+    },
+    {
+      "path": "provenance/dinosaur/dinosaur-01.json",
+      "supports": "Provenance of the input asset"
+    }
+  ],
+  "unresolved_questions": [
+    "Origin of the approved concept behind dinosaur-01 (dinosaur-ref-02) is Unknown; this output inherits that.",
+    "Rights status of AI-generated output is not determined; all rights fields stay pending/unknown.",
+    "The original PNG artifact is not in this repository; only the delivered WebP copy is committed.",
+    "Would the same result occur from a verified canonical input and a verified instruction attachment? Not tested.",
+    "Whether the highlight rule x in [0.30, 0.40] transfers to Cat and Robot is an Owner decision for B1-B."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "validation": "PASS",
+  "schema_counts": {
+    "manifest": 1,
+    "provenance": 31
+  },
+  "approved_reference_hashes": 3,
+  "generation_output_and_input_hashes": 14,
+  "local_derivatives_verified": 1,
+  "Cat_approved_sheet_hashes": 6,
+  "original_first_six_outputs_unchanged": true,
+  "local_markdown_links": 28,
+  "generation_calls": 14,
+  "original_side_visual_failures": [
+    "cat-side-01",
+    "dinosaur-side-01",
+    "dinosaur-side-02"
+  ],
+  "unexecuted_sheets": 0,
+  "owner_sheet_acceptance": "Cat six accepted; Dinosaur pending",
+  "document": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "claim_boundary": "Schema/hash PASS is not artwork acceptance; original failures retained; authorized local derivative fixes extra Dino line; v2d 2/2 unchanged.",
+  "implementation_commit": "918c69c6d6dcc4fed95a6e3703a0700e9f4c52b6"
+}

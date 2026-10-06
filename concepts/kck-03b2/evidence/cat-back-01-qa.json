@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-back-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "aea09e7a2c40ad362d6f965650f2da5c0791aa6e32a23388e68a612eb75a4206",
+    "rgba8_sha256": "05acb6e8d5b2a645ffee5c178aab915ac750c77ff5848bd08e2dab538862c57c",
+    "bytes": 1345540,
+    "alpha_zero": 920884,
+    "alpha_partial": 650708,
+    "alpha_opaque": 924,
+    "alpha_gt10_bbox_exclusive": [
+      212,
+      100,
+      1041,
+      1193
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: back-facing head and torso, no pasted face/inner-ear triangles/front belly; anatomical left raised paw on screen left shows striped rear surface with pads occluded. Tabby identity, seated proportions and low curled tail retained; no upright tail. New dorsal stripe pattern and exact tail occlusion/continuity remain Owner-proposed anatomy, not previously known. Single character/true alpha/no text/scene.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b1/inputs/dinosaur-01_DinosaurResearcher.png",
+      "label": "A1 source",
+      "bytes": 770614,
+      "sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76",
+      "rgba_sha256": "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8",
+      "canvas": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 985719,
+        "partial": 585294,
+        "opaque": 1515
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        57,
+        52,
+        1346,
+        1061
+      ]
+    },
+    {
+      "path": "artifacts/qa/references/a2-dinosaur-v01.webp",
+      "label": "A2 candidate / WebP",
+      "bytes": 126266,
+      "sha256": "43a0f1e2a4a43d58315b7747e4bffbd93b2432d5dd1d71b4791440638975102e",
+      "rgba_sha256": "cd1ea8f149ebbb3a74868eb69148e4472b3881b4b6938436283ae0f6b582eb0f",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 798033,
+        "partial": 773536,
+        "opaque": 947
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        62,
+        1202,
+        1254
+      ]
+    },
+    {
+      "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "label": "A3 corrected / gates PASS",
+      "bytes": 1439076,
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "rgba_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 815923,
+        "partial": 756342,
+        "opaque": 251
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        33,
+        1212,
+        1246
+      ]
+    },
+    {
+      "path": "concepts/kck-03b1/outputs/A4-v2d-attempt-02.png",
+      "label": "A4 / gates FAIL",
+      "bytes": 1611452,
+      "sha256": "bba83eaf57e2796e6ad29d4277b67220a27c6bc4e46c05d433731c0180a426f8",
+      "rgba_sha256": "f62d79305bce84eb1b004caf3d0a6a203fb0411cbd08810ac20cb7da073ef7b0",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 770945,
+        "partial": 801483,
+        "opaque": 88
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        21,
+        1222,
+        1224
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.19337016574585636,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.04419889502762431,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

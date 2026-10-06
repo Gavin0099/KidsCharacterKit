@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "current Owner session after side failures and concrete one-edit proposal",
+  "quote": "ok沒問題 往下做",
+  "context": "Owner response to proposal: each side one targeted correction (Cat grounded forward-curled tail; Dinosaur whole torso side-on); continue back/happy/confused only if side checks pass.",
+  "authorized": [
+    "one built-in image edit per failed side",
+    "Resume remaining sheets after that character corrected side passes structural/visual checks"
+  ],
+  "not_approved": [
+    "unseen corrected artwork/model sheets",
+    "additional retries beyond one per side",
+    "Dinosaur v2d reset",
+    "production/rights/remote merge"
+  ],
+  "targets": [
+    {
+      "path": "concepts/kck-03b2/outputs/cat-side-01.png",
+      "sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+      "problem": "FAIL"
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-side-01.png",
+      "sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+      "problem": "FAIL"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-14",
+  "character": "dinosaur",
+  "slice": "KCK-03C1",
+  "stage": "snack-motion",
+  "variant": "stumble two-key-pose strip initial individual model-sheet candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorizes scoped asset preparation with conditional acceptance only after actual conformance checks",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-stumble-01.png",
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1365997,
+    "sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1365997,
+    "sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-74433185-2392-4c0e-8813-ae8b354b258e.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "bytes": 1439076
+      },
+      {
+        "name": "concepts/kck-03c1/instructions/dinosaur-stumble-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "d4c340c92048a9f161f2f31dc177f27aa033b4108383a834abf001b750ecd9e7",
+        "bytes": 1952
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03c1/instructions/dinosaur-stumble-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "dinosaur-stumble-v1.txt",
+        "bytes": 1952,
+        "sha256": "d4c340c92048a9f161f2f31dc177f27aa033b4108383a834abf001b750ecd9e7",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: two-key-pose game action strip. Image 1 is the ONLY approved character master for identity/style. EXACTLY TWO equal-width horizontal slots LEFT TO RIGHT; one isolated full-body character in each, SAME drawing size/camera/head-body proportions and common source ground plane, generous transparent margins. Genuine alpha, no labels/panel dividers/floor/cast shadow/matte/motion blur. Do not overlap slot borders or clip any extremity. Preserve Soft Handmade 2.5D, warm dark-brown outline, controlled fine pencil/paper grain, soft SCREEN UPPER LEFT light. Do not draw any snack, tray, question mark, glitter, extra prop or duplicate character within a slot. Approved mint Dinosaur dinosaur-01: preserve large friendly tilted head, short rounded body, cream belly with EXACTLY TWO separate curved brown lines, soft yellow rounded dorsal spikes, peach cheeks, long curled tail, short stubby feet and toe marks. Dark round eyes without iris/sclera, each has LARGE primary at SCREEN upper-left (35% across, 28% down eye bounds), SMALL secondary lower-right. Magnifying glass stays in ANATOMICAL LEFT hand (viewer RIGHT), same orange/yellow frame and pale blue lens. Anatomical right hand stays free near chest; no snack/tray baked in. Same reference frontal three-quarter camera in both frames; friendly non-distressing movement. Pose 0 LEFT SLOT: gentle stumble/contact pose: torso leans slightly forward, one short foot extends forward to catch balance, other foot remains in support, free right hand slightly reaches for balance. Keep face and eyes recognizable, small uncertain w-shaped smile, no crying/damage/star effects. Pose 1 RIGHT SLOT: recovery pose, both short feet return to grounded stable stance, torso upright and friendly w-smile restored. Both complete full-body poses within margins, no flat lying pose or lost magnifier. Do not add extra belly lines, lengthen legs or radically tilt/enlarge head.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Existing identity comparator FAIL in both frames; pose change may contribute, but no qualified motion identity gate has resolved it. No override or retry."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac"
+      },
+      "reference_for_comparison": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1774,
+            887
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "fbfe19e5cdf5678a0e869a3cd7b3991969be9e8fc4b9b418aafddd501b06b9ac",
+          "rgba8_sha256": "bb5f3c870957c06b9b842bbbbe4251b6e15f9b0414338f7b2652e390b2565946",
+          "bytes": 1365997,
+          "alpha_zero": 854246,
+          "alpha_partial": 718327,
+          "alpha_opaque": 965,
+          "alpha_gt10_bbox_exclusive": [
+            145,
+            89,
+            1703,
+            842
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Two isolated key poses: gentle stumble then recovery; two belly lines, left magnifier, correct palette and visible double eye highlights retained. Numeric eye, scale and anchor checks remain pending; no delivery claim.",
+        "owner_acceptance": "pending",
+        "hold_reason": "Existing identity comparator FAIL in both frames; pose change may contribute, but no qualified motion identity gate has resolved it. No override or retry."
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/snack-motion-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-01-frame-000-measurements.json",
+      "supports": "Read-only numeric diagnostic retained without tolerance changes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-01-frame-001-measurements.json",
+      "supports": "Read-only numeric diagnostic retained without tolerance changes"
+    }
+  ],
+  "unresolved_questions": [
+    "Existing identity comparator FAIL in both frames; pose change may contribute, but no qualified motion identity gate has resolved it. No override or retry.",
+    "Motion scale/anchor/timing/socket and consumer scene not validated",
+    "Inherited rights pending/unknown"
+  ]
+}

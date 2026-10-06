@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-15",
+  "character": "dinosaur",
+  "slice": "KCK-03C1",
+  "stage": "snack-motion",
+  "variant": "stumble two key poses bounded Owner-authorized retry v2",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Direct Owner approval of concrete bounded retry proposal; conditional conformance continuation does not accept failed output or production motion",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+      "quote": "好 幫我嘗試"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-stumble-02.png",
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1475515,
+    "sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f",
+    "relationship_to_original": "Exact byte copy of new built-in saved PNG; old failed output untouched"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1475515,
+    "sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of exec-455cef9a-e4a5-478c-9b05-affa51ece6f8.png; filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "role": "Only approved identity/rendering source",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "bytes": 1439076
+      },
+      {
+        "name": "concepts/kck-03c1/retry-proposal/dinosaur-stumble-v2.txt",
+        "role": "Exact UTF-8 text passed as built-in prompt",
+        "sha256": "171dfb3e1d4ddda918f95f3ea21d4bc34a060145a92e42fa4189549c845fb6e3",
+        "bytes": 2773
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Approved specification informing instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "bounded retry v2",
+      "path": "concepts/kck-03c1/retry-proposal/dinosaur-stumble-v2.txt",
+      "locator": "Entire saved UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "dinosaur-stumble-v2.txt",
+        "bytes": 2773,
+        "sha256": "171dfb3e1d4ddda918f95f3ea21d4bc34a060145a92e42fa4189549c845fb6e3",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: two-key-pose game action strip. Image 1 is the ONLY approved character master for identity/style. EXACTLY TWO equal-width horizontal slots LEFT TO RIGHT; one isolated full-body character in each, SAME drawing size/camera/head-body proportions and common source ground plane, generous transparent margins. Genuine alpha, no labels/panel dividers/floor/cast shadow/matte/motion blur. Do not overlap slot borders or clip any extremity. Preserve Soft Handmade 2.5D, warm dark-brown outline, controlled fine pencil/paper grain, soft SCREEN UPPER LEFT light. Do not draw any snack, tray, question mark, glitter, extra prop or duplicate character within a slot. Approved mint Dinosaur dinosaur-01: preserve large friendly tilted head, short rounded body, cream belly with EXACTLY TWO separate curved brown lines, soft yellow rounded dorsal spikes, peach cheeks, long curled tail, short stubby feet and toe marks. Dark round eyes without iris/sclera, each has LARGE primary at SCREEN upper-left (35% across, 28% down eye bounds), SMALL secondary lower-right. Magnifying glass stays in ANATOMICAL LEFT hand (viewer RIGHT), same orange/yellow frame and pale blue lens. Anatomical right hand stays free near chest; no snack/tray baked in. Same reference frontal three-quarter camera in both frames; friendly non-distressing movement. Pose 0 LEFT SLOT: gentle stumble/contact pose: torso leans slightly forward, one short foot extends forward to catch balance, other foot remains in support, free right hand slightly reaches for balance. Keep face and eyes recognizable, small uncertain w-shaped smile, no crying/damage/star effects. Pose 1 RIGHT SLOT: recovery pose, both short feet return to grounded stable stance, torso upright and friendly w-smile restored. Both complete full-body poses within margins, no flat lying pose or lost magnifier. Do not add extra belly lines, lengthen legs or radically tilt/enlarge head.\n\nRevision for a separately authorized bounded retry: Keep the reference head camera, head silhouette, eye outline sizes, eye spacing and eye placement unchanged in BOTH poses. The gentle stumble is primarily a small free-hand and short-foot pose change; no head lean, enlargement or squash. Preserve the reference eye-to-head geometry and very small torso shift; pose change must not become an identity redesign. Keep each complete character near the center of its equal slot, with at least 10% clear transparent margin on the LEFT and RIGHT and generous margins above/below. No low-opacity haze, detached pixels or paint outside the character edge. Include the entire magnifier, tail, spikes and both feet; genuine clean transparent background. Use the same drawing size and baseline in both slots. Do not draw a snack.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 2,
+    "counts_toward_budget": false,
+    "basis": "Separate explicit bounded retry authorization; one call for this job, no automatic retry. Does not reset/use exhausted Dinosaur v2d style-exploration2/2 budget."
+  },
+  "deviations": [
+    "Generator-held bytes/model/id/seed/internal augmented prompt not exposed; canonical_match=false means match not established, not mismatch.",
+    "Requested source-slot side margins >=10% were not achieved on the viewer-right magnifier side: visible margin about3.7%-4.1%. No extremity clipped. Actual common-scale 1024 QA respects approved64px horizontal/top safe margin and full nonzero alpha; source composition deviation retained."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex independent structural/visual and original-gate review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f"
+      },
+      "reference_for_comparison": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+      "method": "Native full-body/alpha and existing numeric gates where applicable; normalized common-scale Dino QA; separate Robot projection/lighting review",
+      "results": {
+        "structural": {
+          "canvas": [
+            1774,
+            887
+          ],
+          "mode": "RGBA",
+          "bytes": 1475515,
+          "raw_sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f",
+          "rgba8_sha256": "c339b2501d29c2338edfb664ab52ba81791aa104f56f3630b67b1a98ed6ef168",
+          "alpha_zero": 771412,
+          "alpha_partial": 801530,
+          "alpha_opaque": 596,
+          "alpha_gt10_bbox_exclusive": [
+            118,
+            51,
+            1738,
+            848
+          ],
+          "visible_edge_pixels": 0
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Native two isolated full-body gentle stumble/recovery poses retain mint/cream/yellow/peach palette, warm brown outline, fine handmade texture, two belly lines and left magnifier. All four eyes pass original double-highlight gate and both frames pass original identity tolerances. First anatomical-left foot reaches forward and free right hand opens; second both feet return to stable support. Common eye-width scale and measured y835 support reviewed in native foot grids and normalized checker/white/black preview; full nonzero alpha fits. This is a 400ms two-pose candidate, not actual-scene motion QA."
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Continuing conditional authority; no personal Owner viewing claim",
+    "overall_identity": "Dino existing gates passed",
+    "note": "No production motion or Robot model-set promotion"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+      "supports": "Direct bounded retry decision"
+    },
+    {
+      "path": "concepts/kck-03c1/bounded-retry-jobs.json",
+      "supports": "Separate execution ledger; old budgets/failures unchanged"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-02-qa.json",
+      "supports": "Actual independent conformance review"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-02-frame-000-measurements.json",
+      "supports": "Actual diagnostic/QA evidence"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-stumble-02-frame-001-measurements.json",
+      "supports": "Actual diagnostic/QA evidence"
+    },
+    {
+      "path": "concepts/kck-03c1/dinosaur-stumble-registration-v2.json",
+      "supports": "Actual diagnostic/QA evidence"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-normalized/report.json",
+      "supports": "Actual diagnostic/QA evidence"
+    }
+  ],
+  "unresolved_questions": [
+    "Actual consumer-scene and rights not established"
+  ]
+}

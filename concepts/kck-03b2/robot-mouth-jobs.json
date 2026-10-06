@@ -1,0 +1,50 @@
+{
+  "format": "kck-model-sheet-jobs-v1",
+  "slice": "KCK-03B2",
+  "date": "2026-10-06",
+  "authorization": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json",
+  "authorization_quote": "機器人舌頭有點怪",
+  "specification": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "policy": "One targeted mouth edit; preserve old source, stop if conformance fails; not Robot side-lighting repair or Dino budget reset",
+  "jobs": [
+    {
+      "job_id": "robot-mouth-01",
+      "character": "robot",
+      "view": "mouth correction",
+      "stage": "reference-clarification",
+      "reference": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "reference_sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+      "instruction": "concepts/kck-03b2/instructions/robot-mouth-v1.txt",
+      "instruction_sha256": "efcb7c7e3f71aaf89a2adc11b7a6581dc8c1cf2abbf98e95dfc7968e33ea6664",
+      "status": "candidate_recorded",
+      "calls": 1,
+      "initial_call_limit": 1,
+      "concept_id_reserved": "robot-concept-09",
+      "agent_hard_gate": "FAIL",
+      "output": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+      "output_sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+      "provenance": "concepts/kck-03b2/outputs/robot-mouth-01.provenance.json",
+      "concept_id": "robot-concept-09",
+      "qa": "concepts/kck-03b2/evidence/robot-mouth-01-qa.json"
+    }
+  ],
+  "derivations": [
+    {
+      "job_id": "robot-mouth-local-01",
+      "character": "robot",
+      "calls": 0,
+      "status": "approved_reference",
+      "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "input": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "donor": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+      "output": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+      "output_sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+      "provenance": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.provenance.json",
+      "agent_hard_gate": "PASS",
+      "evidence": "concepts/kck-03b2/evidence/robot-mouth-local-conformance.json"
+    }
+  ]
+}

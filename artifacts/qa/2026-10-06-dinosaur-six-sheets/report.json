@@ -1,0 +1,161 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+      "label": "Front",
+      "bytes": 1278109,
+      "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+      "rgba_sha256": "63b55180f27ececa03fffdcfc4736f6258a24cce767725a9ac5468f040b50604",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 857971,
+        "partial": 713952,
+        "opaque": 593
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        55,
+        1244,
+        1191
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
+      "label": "3/4",
+      "bytes": 1386251,
+      "sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
+      "rgba_sha256": "d07419f5673910ec592949bcb80bdeb6788f0b86c75791095035ee68d6d085ab",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 812791,
+        "partial": 759031,
+        "opaque": 694
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        91,
+        17,
+        1210,
+        1208
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+      "label": "Side",
+      "bytes": 1146927,
+      "sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
+      "rgba_sha256": "9ea383ef87ca4834d873d87f8eff34fccfbb3ddefb3bf6befcb2f78963f0333d",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 916924,
+        "partial": 654981,
+        "opaque": 611
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        47,
+        21,
+        1184,
+        1230
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-back-01.png",
+      "label": "Back",
+      "bytes": 1283789,
+      "sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611",
+      "rgba_sha256": "64b6a524b348bc9eb45b85f9f4322a978f228302e87672971e8b40af93e57fea",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 865890,
+        "partial": 706066,
+        "opaque": 560
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        97,
+        32,
+        1188,
+        1192
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-happy-01.png",
+      "label": "Happy",
+      "bytes": 1331442,
+      "sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54",
+      "rgba_sha256": "8378977275052eb8ce6e48cc5d62f2c6519ab387c413dce91e5bfc18e20fd027",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 813746,
+        "partial": 758122,
+        "opaque": 648
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        105,
+        23,
+        1190,
+        1220
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-confused-01.png",
+      "label": "Confused",
+      "bytes": 1277753,
+      "sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2",
+      "rgba_sha256": "365905c488800fc83661058a6c4d6ec21473bf59c984658334a517104338fff2",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 816471,
+        "partial": 755193,
+        "opaque": 852
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        105,
+        41,
+        1188,
+        1206
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.22328548644338117,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.051036682615629984,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

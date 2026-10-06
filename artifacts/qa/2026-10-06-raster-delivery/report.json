@@ -1,0 +1,69 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+      "label": "Cat-B",
+      "bytes": 573703,
+      "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d",
+      "rgba_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 796762,
+        "partial": 251168,
+        "opaque": 646
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        157,
+        243,
+        807,
+        964
+      ]
+    },
+    {
+      "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+      "label": "Dinosaur-B",
+      "bytes": 920594,
+      "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31",
+      "rgba_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+      "canvas": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 607465,
+        "partial": 440291,
+        "opaque": 820
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        70,
+        84,
+        932,
+        983
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.2734375,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.0625,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

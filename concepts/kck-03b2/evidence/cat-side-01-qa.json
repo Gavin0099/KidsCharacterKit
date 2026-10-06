@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-side-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+    "rgba8_sha256": "206cde77e66752792d36d8fcfef2993d61c8dae130986f39e32b973e75bbdef0",
+    "bytes": 1163355,
+    "alpha_zero": 1029932,
+    "alpha_partial": 541660,
+    "alpha_opaque": 924,
+    "alpha_gt10_bbox_exclusive": [
+      292,
+      56,
+      1060,
+      1182
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Agent visual: palette, tabby/iris/whites/pads and upper-left glints retained, one visible eye/profile nose. Pose continuity FAIL: approved seated tail curls forward along ground across feet, but this output raises/curls tail behind body; requested camera change also reposes tail. This is an unapproved new pose, not a continuous turnaround. Preserve candidate and stop remaining Cat sheets; no retry/repair. Strict torso orthographic angle/hand presentation needs Owner review.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

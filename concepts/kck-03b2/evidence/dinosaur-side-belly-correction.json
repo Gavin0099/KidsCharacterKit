@@ -1,0 +1,62 @@
+{
+  "record_type": "deterministic_candidate_derivation",
+  "date": "2026-10-06",
+  "status": "candidate",
+  "owner_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+  "input": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-side-02.png",
+    "raw_sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef"
+  },
+  "output": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+    "raw_sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
+    "rgba8_sha256": "9ea383ef87ca4834d873d87f8eff34fccfbb3ddefb3bf6befcb2f78963f0333d",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  "method": "Bounded cream-interior RGB copy from immutable neighboring cream (dx=14,dy=28); alpha and outside unchanged",
+  "patch": {
+    "patch_bbox_exclusive": [
+      466,
+      851,
+      493,
+      864
+    ],
+    "patch_pixels": 315,
+    "changed_pixels": 309,
+    "donor_offset": [
+      14,
+      28
+    ],
+    "protected_lower_strokes": [
+      [
+        445,
+        912,
+        500,
+        947
+      ],
+      [
+        450,
+        977,
+        508,
+        1011
+      ]
+    ]
+  },
+  "image_generation_calls": 0,
+  "tool": {
+    "name": "correct_dinosaur_side_belly.py",
+    "sha256": "9ef7024d5c095d400c7a848e75bc67a0b7973e8df0745783c24679fccd35c983",
+    "Python": "3.12.14",
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5"
+  },
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  },
+  "original_failure_retained": "concepts/kck-03b2/outputs/dinosaur-side-02.provenance.json"
+}

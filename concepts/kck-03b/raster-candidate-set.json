@@ -1,0 +1,113 @@
+{
+  "format": "kck-raster-candidate-set-v1",
+  "style_version": "soft-handmade-v1",
+  "status": "production",
+  "owner_production_acceptance": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+  "selection_decision": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+  "records": [
+    {
+      "asset_id": "cat-02",
+      "style_version": "soft-handmade-v1",
+      "status": "production",
+      "master": {
+        "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+        "provenance": "provenance/cat/cat-02-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+        "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d",
+        "pixel_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+        "provenance": "provenance/cat/cat-02-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.8,
+      "anchor": {
+        "type": "support-baseline",
+        "source_x": 705,
+        "source_y": 1235,
+        "delivery_x": 512,
+        "delivery_y": 960
+      }
+    },
+    {
+      "asset_id": "dinosaur-01",
+      "style_version": "soft-handmade-v1",
+      "status": "production",
+      "master": {
+        "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+        "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31",
+        "pixel_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+        "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.95,
+      "anchor": {
+        "type": "ground-center",
+        "source_x": 650,
+        "source_y": 1176,
+        "delivery_x": 512,
+        "delivery_y": 960
+      }
+    },
+    {
+      "asset_id": "robot-01",
+      "style_version": "soft-handmade-v1-mouthfix",
+      "status": "production",
+      "selection_decision": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "master": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-master.json"
+      },
+      "delivery": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/production/robot-01-1024.png",
+        "sha256": "b301e3b8f8849925969e80ae455313baed15aa206515049ca4bb3040f82fc59c",
+        "pixel_sha256": "15d07616aa96b8a671b337e8dfdcff5157a06e3617b1ee324117d0b51f3b840b",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-delivery.json"
+      },
+      "visual_scale": 0.95,
+      "anchor": {
+        "type": "ground-center",
+        "source_x": 560,
+        "source_y": 1420,
+        "delivery_x": 512,
+        "delivery_y": 960
+      }
+    }
+  ],
+  "manifest_available": true,
+  "generation_calls": 0,
+  "manifest_available_note": "All three current static records available. Robot uses mouthfix version; prior soft-handmade-v1 Robot remains withdrawn candidate in retired_records. Per-record style version is authoritative.",
+  "retired_records": [
+    {
+      "asset_id": "robot-01",
+      "style_version": "soft-handmade-v1",
+      "status": "candidate",
+      "selection_decision": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "master": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1/originals/robot-01.png",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1/production/robot-01-1024.png",
+        "sha256": "d72a61a5e8f0b8887f3dd4c76481590e23390862fd1c2548d3cbcf80ddc51e44",
+        "pixel_sha256": "0e5c987eaa1cd010d6c37e47e123e17b2d487f3e3b283bdf024937f7f21492d2",
+        "provenance": "provenance/robot/robot-01-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.95,
+      "anchor": {
+        "type": "ground-center",
+        "source_x": 560,
+        "source_y": 1420,
+        "delivery_x": 512,
+        "delivery_y": 960
+      },
+      "owner_feedback": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json"
+    }
+  ]
+}

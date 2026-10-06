@@ -1,0 +1,163 @@
+{
+  "format": "kck-qa-sequence-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "canvas": [
+    1024,
+    1024
+  ],
+  "target_anchor": [
+    512,
+    960
+  ],
+  "requested_scale": 0.7971087016958577,
+  "actual_uniform_scale": 0.7970687711386697,
+  "resampling": "LANCZOS",
+  "tools": {
+    "Pillow": "12.3.0",
+    "Python": "3.12.14"
+  },
+  "recipe_sha256": "bf1cab90aa677d7d1c589e5988e68328d8ccba19e862adda1f34d0eeec3d3652",
+  "frames": [
+    {
+      "path": "frame-000.png",
+      "source": "artifacts/qa/2026-10-06-cat-receive-slots/frame-000.png",
+      "source_facts": {
+        "bytes": 777953,
+        "sha256": "c50bc3147dc1a3f8351e21c891095cd7c6272e9b78fbcb974e19fc3a32eb4100",
+        "rgba_sha256": "4ba3b2b8b350023ae0d8eea2ea5a54aea21c3d1e854f43730839e593a0dfc8c3",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 414311,
+          "partial": 372149,
+          "opaque": 309
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          0,
+          23,
+          887,
+          887
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        522,
+        875
+      ],
+      "offset": [
+        96,
+        263
+      ],
+      "anchor_rounding_error_px": [
+        -0.06989853438557248,
+        -0.4351747463359743
+      ],
+      "duration_ms": 150,
+      "output_facts": {
+        "bytes": 534746,
+        "sha256": "302b80f1554be1036bc143c98f322f79154eec0e05a8a159df22204d9e93a33d",
+        "rgba_sha256": "69bfa1f09d8cb6003de119e51c5a706e7336237936c1d6f1b821922bef341a8e",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 811870,
+          "partial": 236066,
+          "opaque": 640
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          96,
+          281,
+          803,
+          970
+        ]
+      }
+    },
+    {
+      "path": "frame-001.png",
+      "source": "artifacts/qa/2026-10-06-cat-receive-slots/frame-001.png",
+      "source_facts": {
+        "bytes": 774020,
+        "sha256": "a62de6c84e6301835c7e3da8be2fdf2a41374e95e4ce2d3ad6a91ebad961f0f0",
+        "rgba_sha256": "42907d9498762575ca3a7977ee436e38d07c2f79c1625127a21a2cc472b8f8ed",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 416302,
+          "partial": 370200,
+          "opaque": 267
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          1,
+          23,
+          802,
+          887
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        475,
+        875
+      ],
+      "offset": [
+        133,
+        263
+      ],
+      "anchor_rounding_error_px": [
+        0.3923337091318899,
+        -0.4351747463359743
+      ],
+      "duration_ms": 200,
+      "output_facts": {
+        "bytes": 533329,
+        "sha256": "5e6bf71e6cb2c23fb72c5ebcf0626af797ec140677a93d26ac355d4aa9fc8bb1",
+        "rgba_sha256": "7eebc98189079ade86edfcfb63ec417750b27475ecfa01bb38a12ee3f85aace6",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 813067,
+          "partial": 234850,
+          "opaque": 659
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          134,
+          281,
+          772,
+          970
+        ]
+      }
+    }
+  ],
+  "preview": {
+    "path": "preview.png",
+    "sha256": "bd4b1f45982aa953bb060997a637b9722dd7e2305083e252c7048a0940acea94",
+    "encoded_frames": 2,
+    "duration_ms": 350.0,
+    "loop": 1,
+    "rgba_and_timing_verified": true
+  }
+}

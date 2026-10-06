@@ -4,7 +4,9 @@
 [representation contract](character-representation-contract.md) §5. Implemented in
 KCK-03B; nothing is produced by KCK-03A.
 
-Masters (`raster/originals/`) are exact byte copies of the source assets and are
+Source-app masters (`raster/originals/`) and Owner-selected concept masters
+(`raster/versions/<style_version>/originals/`, contract §5 amendment) are exact
+byte copies of their selected sources and are
 never changed. Everything below applies to `raster/production/`.
 
 ## Delivery variant

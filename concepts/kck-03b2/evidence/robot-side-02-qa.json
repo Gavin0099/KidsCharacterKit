@@ -1,0 +1,39 @@
+{
+  "job_id": "robot-side-02",
+  "authorization": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+  "copy": "Exact saved built-in output bytes; no pixel edit or alpha cleanup",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "bytes": 667737,
+    "raw_sha256": "bf34dd325c860e18c543fbc7aa143fbb4a69b4e61261b6965df8de4a69a8f0a8",
+    "rgba8_sha256": "bc44578a4ae1d59c6c791a55523a4a60f6c2965cb4406f59040f711cb1dd2a5a",
+    "alpha_zero": 1289047,
+    "alpha_partial": 282935,
+    "alpha_opaque": 534,
+    "alpha_gt10_bbox_exclusive": [
+      458,
+      28,
+      809,
+      1220
+    ],
+    "visible_edge_pixels": 0
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Full-body native and checker/white/black review: both red antenna cap light patches now SCREEN upper-left; single visible eye keeps upper-left glint, short rounded tongue and chest-symbol colors preserved, body/boots uncropped. Requested strict90-degree side profile is not achieved: the head exposes broad side AND face planes, the torso exposes side AND front controls, while boots present broad front/toe faces. These volumes do not share the requested90-degree orientation. This is a side-biased three-quarter drawing, not the required side anatomy reference. No reinterpretation as a passed side sheet.",
+  "deviations": [
+    "Strict side camera/anatomy conformance failed despite corrected antenna light direction. Robot sequence stopped; five other authorized sheet calls remain zero."
+  ],
+  "diagnostic_refs": [
+    "artifacts/qa/2026-10-06-robot-side-retry-review/report.json"
+  ],
+  "owner_acceptance": "Continuing conditional authority applies only to conforming output; candidate motion not promoted; failed Robot not accepted",
+  "not_proven": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id",
+    "Consumer-scene motion/contact/timing/handoff",
+    "Rights"
+  ]
+}

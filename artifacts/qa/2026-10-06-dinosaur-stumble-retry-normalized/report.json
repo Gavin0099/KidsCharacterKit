@@ -1,0 +1,163 @@
+{
+  "format": "kck-qa-sequence-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "canvas": [
+    1024,
+    1024
+  ],
+  "target_anchor": [
+    512,
+    960
+  ],
+  "requested_scale": 1.0395089760232303,
+  "actual_uniform_scale": 1.0394588500563697,
+  "resampling": "LANCZOS",
+  "tools": {
+    "Pillow": "12.3.0",
+    "Python": "3.12.14"
+  },
+  "recipe_sha256": "9440b8516e94a154e6949599cc4cfb4acc557e67206a6a2f7110b19dc3c7ab71",
+  "frames": [
+    {
+      "path": "frame-000.png",
+      "source": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-slots/frame-000.png",
+      "source_facts": {
+        "bytes": 763142,
+        "sha256": "b940311201bb42f43025274da5f011f2ead222dfba233bf30bb5df78ef0fef56",
+        "rgba_sha256": "76298742e86472101dad10b86dec9c463697152deb59ebbee9f8f6948d3d4a05",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 385446,
+          "partial": 401016,
+          "opaque": 307
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          0,
+          48,
+          887,
+          858
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        458,
+        835
+      ],
+      "offset": [
+        36,
+        92
+      ],
+      "anchor_rounding_error_px": [
+        -0.07215332581733946,
+        0.05186020293126603
+      ],
+      "duration_ms": 150,
+      "output_facts": {
+        "bytes": 831816,
+        "sha256": "47af416cd24122eb87f2239c76db42f1b6cbdebb8e8a04b39805222d8c1b18f9",
+        "rgba_sha256": "2e0056dd64529ec84a2f7e2b8d5a0899a9e69ee532a0790a475d20a230148699",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 614454,
+          "partial": 433441,
+          "opaque": 681
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          36,
+          142,
+          958,
+          984
+        ]
+      }
+    },
+    {
+      "path": "frame-001.png",
+      "source": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-slots/frame-001.png",
+      "source_facts": {
+        "bytes": 754755,
+        "sha256": "c4d659a225711f8dd3574fcc454e1fb56b2828c97de648908fdb30c0f541246b",
+        "rgba_sha256": "78fb3c0f5ab200b94272c9b4aa2429968b02d4d4eef5f370aaa9788d8c3ba5f4",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 385966,
+          "partial": 400514,
+          "opaque": 289
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          7,
+          37,
+          859,
+          869
+        ]
+      },
+      "anchor": [
+        512,
+        960
+      ],
+      "source_anchor": [
+        455,
+        835
+      ],
+      "offset": [
+        39,
+        92
+      ],
+      "anchor_rounding_error_px": [
+        0.04622322435176329,
+        0.05186020293126603
+      ],
+      "duration_ms": 250,
+      "output_facts": {
+        "bytes": 822726,
+        "sha256": "cc99c851666bf6f7c16952a8997cecfbe66c6ecf6e6b0fd295252f599a7dd41c",
+        "rgba_sha256": "bdfe3ea6f79554ced35513e29bbe85b2cce98f4675994bc95ac67579f55b3448",
+        "canvas": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 615087,
+          "partial": 432848,
+          "opaque": 641
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          46,
+          130,
+          932,
+          995
+        ]
+      }
+    }
+  ],
+  "preview": {
+    "path": "preview.png",
+    "sha256": "810bbc61d2df7d08525a5af34d377a38a572b5fbedebea6fcbf18fbc54667069",
+    "encoded_frames": 2,
+    "duration_ms": 400.0,
+    "loop": 1,
+    "rgba_and_timing_verified": true
+  }
+}

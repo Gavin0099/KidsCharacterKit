@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "cat-concept-07",
+  "character": "cat",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "confused initial individual model-sheet candidate",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    },
+    {
+      "decision": "Owner accepted exact Cat model-sheet view/anatomy/pose/pattern/expression as reference, not production/rights",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "quote": "核准 Cat 六張，並同意 Dino 局部修圖後繼續"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/cat-confused-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1373586,
+    "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1373586,
+    "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-8ca6b211-22a6-42c5-9f26-0780d777cc93.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+        "bytes": 1428356
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/cat-confused-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "420101320f143fcbc0b070c567f1dc30c1025bc77a30d311a3ebbe5e459a4f3d",
+        "bytes": 2016
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/cat-confused-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "cat-confused-v1.txt",
+        "bytes": 2016,
+        "sha256": "420101320f143fcbc0b070c567f1dc30c1025bc77a30d311a3ebbe5e459a4f3d",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: KCK-03B2 individual model-sheet candidate, NOT animation or production. Input image 1 is the ONLY approved identity and rendering reference. Keep the exact Soft Handmade 2.5D illustrator treatment: dark warm brown hand outline, controlled fine paper/pencil grain, flat base colors with gentle volume, soft upper-left light. One isolated whole-body character only, genuine transparent background; no text, labels, panels, duplicates, floor, cast shadow, white matte or new props. Square canvas; entire ears, tail, feet and required prop inside a generous transparent margin on all sides. Keep approximately the same character mass/size and proportions across sheets; do not enlarge the head or shrink limbs. Eyes keep reference anatomy: large primary white glint in the UPPER LEFT of each visible open eye, small secondary glint LOWER RIGHT. Light direction is SCREEN upper left regardless of body rotation. Do not mirror the reference or transfer props between anatomical hands. This is one still PNG, no collage. Subject: approved orange-and-cream tabby Cat cat-02. Round broad head, pink inner ears and cheeks, brown iris AND visible white sclera, small brown nose, smile and tongue, three whiskers each side, clearly striped body and long curled striped tail, seated short-legged body with two cream feet. Raised pad-visible paw is the CAT'S LEFT paw (viewer right in front view); retain pink large central pad and three small toe pads. Other forepaw rests low. Keep original proportions and palette, no hair strands, clothing or accessories. Expression view: same near-front three-quarter full-body reference pose, camera, proportions and props. Change only face to mild friendly CONFUSION: subtle brow/eye-expression asymmetry and a small uncertain mouth. Keep both eyes open, original eye shape/size and correct upper-left primary/lower-right secondary glints. No question-mark text, floating symbols, extra objects, sad tears, tongue replacement props or pose change.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+          "rgba8_sha256": "ce6fde1463b8af81d3bde5ef5cdd8952eeb76e052404fdf51bb84ec2d68acb15",
+          "bytes": 1373586,
+          "alpha_zero": 856682,
+          "alpha_partial": 715424,
+          "alpha_opaque": 410,
+          "alpha_gt10_bbox_exclusive": [
+            224,
+            34,
+            1076,
+            1240
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Agent visual: original pose/eyes/paw/stripes/grounded tail and palette retained. Mild uncertain furrowed/asymmetric brows and small closed frown, no text/symbols/new props; tongue naturally occluded by closed mouth. Both open eyes retain iris/white sclera and correct two-glint direction. Owner must judge whether expression reads confused rather than worried and approve facial variation.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Owner accepted model-sheet rendering",
+    "overall_identity": "Owner accepted exact view, back pattern/tail continuity and happy/confused expressions",
+    "note": "Approved model-sheet reference only; production and rights remain separate."
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/cat-confused-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "supports": "Explicit one-per-side correction and conditional remaining-sheet continuation; not artwork acceptance"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-cat-six-sheets/report.json",
+      "supports": "Actual common native-canvas review on checker/white/black/64px; no semantic anchor fit"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "supports": "Explicit six-sheet Owner acceptance"
+    }
+  ],
+  "unresolved_questions": [
+    "Production/master/visual_scale/ground anchors and rights unresolved"
+  ]
+}

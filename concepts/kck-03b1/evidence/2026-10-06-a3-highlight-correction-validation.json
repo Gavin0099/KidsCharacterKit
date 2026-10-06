@@ -1,0 +1,61 @@
+{
+  "record_type": "independent_candidate_validation",
+  "date": "2026-10-06",
+  "candidate": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+    "raw_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  "result": "PASS",
+  "reviewer": "Codex",
+  "gates": [
+    {
+      "gate": 1,
+      "result": "PASS",
+      "basis": "Independent visual review: one full-body dinosaur, no labels/panels/duplicates. Square canvas and one foreground component retained."
+    },
+    {
+      "gate": 2,
+      "result": "PASS",
+      "basis": "Visual inspection and exact all-alpha equality with the original; all corner alpha values zero. No matte introduced."
+    },
+    {
+      "gate": 3,
+      "result": "PASS",
+      "basis": "Read-only measure_output identity comparison against unchanged reference; full metrics in measurement evidence."
+    },
+    {
+      "gate": 4,
+      "result": "PASS",
+      "large_highlight_centroids": [
+        [
+          0.35002824122349674,
+          0.2955489417989418
+        ],
+        [
+          0.35136297220784757,
+          0.28312779671851696
+        ]
+      ],
+      "basis": "Both x in .30-.40 and y in .20-.35 under unchanged output rule; eye outline and small glints intact by visual review."
+    },
+    {
+      "gate": 5,
+      "result": "PASS",
+      "basis": "Independent visual inspection plus exact pixel equality outside the two bounded eye patches preserves original silhouette, anatomy, palette, belly lines, spikes, cheeks, feet, tail and magnifying glass."
+    }
+  ],
+  "measurement_evidence": "2026-10-06-a3-highlight-correction-measurements.json",
+  "regression_tests": "../tools/test_correct_a3_highlights.py",
+  "owner_texture_acceptance": "Owner accepted original A3 Balanced texture in current continuation; texture outside eye patches exactly retained",
+  "owner_corrected_artwork_approval": "pending",
+  "style_anchor_approval": "pending",
+  "production_available": false,
+  "original_failure_unchanged": true,
+  "budget_used_after_derivation": 1,
+  "budget_limit": 2
+}

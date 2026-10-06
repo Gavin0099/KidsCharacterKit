@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "current Owner session; async decision after A1/A2/corrected-A3/A4 review",
+  "quote": "核准修正 A3 作 style key，A4 保留失敗紀錄",
+  "approved_reference": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+    "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "role": "Dinosaur style key for B1-B Cat/Robot static translation"
+  },
+  "a4_disposition": "Retain failed exploration evidence; no correction/retry, rejection status or budget reset inferred",
+  "budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  },
+  "review": "artifacts/qa/2026-10-06-dinosaur-lineup/report.json",
+  "not_approved": [
+    "three-character lineup",
+    "Style Bible v1",
+    "model sheets",
+    "production or rights"
+  ]
+}

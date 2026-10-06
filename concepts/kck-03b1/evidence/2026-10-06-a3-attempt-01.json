@@ -1,0 +1,141 @@
+{
+  "record_type": "registered_v2d_attempt",
+  "variant": "A3 Balanced",
+  "attempt": 1,
+  "date": "2026-10-06",
+  "status": "candidate",
+  "validation": "FAIL",
+  "owner_artwork_approval": "pending",
+  "authorization": {
+    "actor": "Owner",
+    "statement": "好的 往下做",
+    "date": "2026-10-06",
+    "scope": "Execute the proposed rev. 5 rules, upload the two specified inputs, submit the unchanged handoff message, validate A3, and stop if a hard gate fails; A4 requires passed A3 gates and Owner variant-intensity acceptance.",
+    "submission_actor": "Codex on behalf of Owner"
+  },
+  "generation": {
+    "basis": "generation-side reported metadata; one image independently observed in browser",
+    "id": "97104382-f63f-43c1-8207-c2ea6c1ff71a",
+    "tool": "image_gen.text2im",
+    "model_version": "not exposed",
+    "seed": "not exposed (metadata null)",
+    "exact_internal_tool_prompt": "not exposed",
+    "owner_prompt_reference": "../handoff.md, single unchanged A3 verification/execution message at be38c12571ce6380aefdbd32bed706bd1c6b220f",
+    "instruction_reference": "../instructions/A3_instruction_v2d.txt",
+    "chat_url": "https://chatgpt.com/c/6ac45d5c-cc34-83ee-a462-2c8c6111a431",
+    "chat_title": "圖片生成前置檢查",
+    "first_input_message_id": "f9e8e770-62d9-4735-a0ba-8cafbf9a0c12",
+    "post_generation_evidence_turn_id": "4c19dd74-bb91-46c6-b99e-2a2e479593af",
+    "source_commit": "be38c12571ce6380aefdbd32bed706bd1c6b220f"
+  },
+  "preflight": {
+    "revision": 5,
+    "result": "PASS",
+    "fresh_context": {
+      "result": "PASS",
+      "new_non_project_chat": true,
+      "source_objects_before_generation": 2,
+      "messages_before_generation": 1
+    },
+    "image": {
+      "result": "PASS",
+      "source": "../inputs/dinosaur-01_DinosaurResearcher.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "bytes": 770614,
+      "raw_sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76",
+      "rgba8_sha256": "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8",
+      "route": "canonical",
+      "held_form": "uploaded PNG; raw bytes exposed"
+    },
+    "instruction": {
+      "result": "PASS",
+      "held_form": "uploaded text attachment; raw bytes exposed",
+      "raw_bytes": 2371,
+      "raw_sha256": "c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884",
+      "canonical_bytes": 2364,
+      "canonical_sha256": "53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09"
+    },
+    "authorship": {
+      "result": "PASS",
+      "unchanged_template_submitted_once": true,
+      "extra_design_input_before_generation": false
+    },
+    "basis": "Pre-generation computed hashes observed in browser; post-generation report repeats them. Attachment bytes exposed through read_thread independently matched repository sources."
+  },
+  "output": {
+    "generation_side_filename": "a_clean_high_resolution_illustration_on_a_transpa.png",
+    "downloaded_filename": "拿放大鏡的薄荷綠小恐龍.png",
+    "preserved_local_path": "/Users/pc49-58/.codex/visualizations/2026/10/06/01a10efe-02e9-7450-a259-4d2739b91a24/A3-v2d-attempt-01.png",
+    "browser_proof_local_path": "/Users/pc49-58/.codex/visualizations/2026/10/06/01a10efe-02e9-7450-a259-4d2739b91a24/A3-generation-browser-proof.jpg",
+    "availability": "local preserved original only; generated artwork not included in PR #12",
+    "format": "PNG",
+    "mode": "RGBA",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 1467699,
+    "raw_sha256": "345b25c5f9b390497d71267b66546dcebd4cb643872ccadf347108072fd03baf",
+    "rgba8_sha256": "aff2a4a2a01505f4876581c7d2a7c2b913f7f9ef96e193e725b00d0fdbf5589f",
+    "identity_basis": "Both independently computed hashes, dimensions and byte count equal the generation-side reported tool-emitted artifact. Preserved copy was copied without re-encoding.",
+    "upstream_internal_artifact": "not exposed"
+  },
+  "independent_output_gates": [
+    {
+      "gate": 1,
+      "result": "PASS",
+      "basis": "one full-body figure, no text/panels/duplicates by Codex visual review; square dimensions and one alpha>10 component larger than 10 pixels"
+    },
+    {
+      "gate": 2,
+      "result": "PASS",
+      "basis": "four corner alpha values 0; actual zero-alpha background and no matte by pixel/visual inspection"
+    },
+    {
+      "gate": 3,
+      "result": "PASS",
+      "basis": "read-only measurement helper matches confirmed size, position, spacing and RGB tolerances; retained eye shapes by visual review"
+    },
+    {
+      "gate": 4,
+      "result": "FAIL",
+      "basis": "large highlight centroids left [0.6061761383385471,0.2955489417989418], right [0.5884866518523028,0.28312779671851696]; both x exceed 0.40"
+    },
+    {
+      "gate": 5,
+      "result": "PASS",
+      "basis": "Codex visual review retains silhouette, proportions, anatomy, mint body, cream belly/two lines, yellow spikes, peach cheeks, tail, feet, magnifying glass"
+    }
+  ],
+  "measurement_evidence": "2026-10-06-a3-attempt-01-measurements.json",
+  "generation_side_evidence": "2026-10-06-a3-generation-side-report.json",
+  "method_difference": "Generation-side report uses a different brown/white mask, 8-neighbor connectivity and inclusive bboxes, giving large centroids about [0.6123,0.2975] and [0.5928,0.2851]. It normalizes eye height to visible height. Independent tool retains prior A2 thresholds, 4-neighbor connectivity, exclusive bbox maxima and confirmed eye-size normalization to visible width. Both methods fail gate 4. Generation-side IoU values were not independently recomputed.",
+  "texture": {
+    "observation": "Visible fine paper/pencil grain across fills; outline and silhouette stay legible.",
+    "owner_acceptance": "pending",
+    "automatic_texture_gate": false
+  },
+  "budget": {
+    "total_slots": 2,
+    "consumed_this_attempt": 1,
+    "used": 1,
+    "remaining": 1,
+    "prior_unregistered_attempts_reclassified": false
+  },
+  "disposition": {
+    "sequence": "stopped under existing failed-A3 hard-gate rule",
+    "automatic_retry": false,
+    "A4_started": false,
+    "owner_rejected_status_set": false,
+    "next_required_decision": "Owner chooses whether/how to address the failed eye-style gate before any further generation.",
+    "carry_into": "eventual exploration consolidation PR; this attempt does not complete accepted A3/A4"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown"
+  }
+}

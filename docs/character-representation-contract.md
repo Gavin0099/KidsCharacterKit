@@ -65,10 +65,10 @@ Empty `animation-2d/` and `model-3d/` directories are intentionally not created.
 
 | Kind | Location | Meaning |
 |---|---|---|
-| **Master** | `raster/originals/` | Exact byte copy of the selected source-app asset, at its original resolution and canvas. Never resized, cropped or re-encoded. |
+| **Master** | `raster/originals/` (source-app) or `raster/versions/<style_version>/originals/` (selected concept) | Exact byte copy of the selected source-app asset or explicitly Owner-selected approved concept, at its original resolution and canvas. Never resized, cropped or re-encoded. |
 | **Delivery** | `raster/production/` | Normalized variant that apps consume. Always derived from the master by a documented, deterministic transform. |
 
-- **`originals/` is not generator raw output.** Raw outputs mostly are not in the
+- **Source-app `raster/originals/` is not generator raw output.** Raw outputs mostly are not in the
   source repo. `originals/` holds the source app's asset, byte for byte. Its
   SHA-256 must equal `file.sha256` in the asset's provenance record.
 - **1024×1024 is a delivery variant, not the character master.** Masters keep
@@ -81,6 +81,20 @@ Empty `animation-2d/` and `model-3d/` directories are intentionally not created.
 - Consequence for apps: no per-character `offset`/`scale` corrections should be
   needed to align characters placed on the same ground line.
 
+### Owner-selected style masters (03B amendment, 2026-10-06)
+
+An Owner-selected style pack may use an approved concept instead of a source-app
+asset. Its versioned master is an exact byte copy of the accepted concept output,
+with the full source/reference/generation/local-derivative provenance chain retained.
+Use `characters/<character>/raster/versions/<style_version>/originals/<asset_id>.png`
+and that version's `production/`. Do not overwrite source-app originals or change
+their existing provenance hashes. Keep stable identity and style version separate.
+The manifest selects a style version only after production acceptance, with master
+and transformation evidence. Selection is neither production nor rights approval.
+
+The Owner accepted Cat `cat-concept-01` and corrected A3 `dinosaur-concept-03`
+for `soft-handmade-v1`, with the [hash-bound layout decision](../concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json).
+
 ## 6. Ground anchor / pivot (shared by all representations)
 
 The **ground anchor** is a *semantic* point: where the character stands.
@@ -88,7 +102,13 @@ The **ground anchor** is a *semantic* point: where the character stands.
 | Anchor type | Meaning |
 |---|---|
 | `ground-center` | the point on the ground between the character's feet |
-| `support-baseline` | for a character with no visible feet (e.g. a cat sitting in a paper bag): the contact point of the character/carrier with the ground |
+| `support-baseline` | for a character with no visible feet, or a seated pose whose resting tail/carrier defines projected foreground support: the manually measured support contact |
+
+For a footed seated pose, record the foot-contact offset from the foreground support
+line; retain the drawn perspective. A standing/running pose uses `ground-center`.
+The Cat seated exception and native anchors `(705,1235)` / Dino `(650,1176)` were
+explicitly accepted in the linked 03B decision. Consumer-scene ground contact remains
+a separate motion QA gate.
 
 It is **not** the lowest visible pixel. A tail, a prop or a bag can be lower than the
 feet, so "bottom of the alpha bounds" is not guaranteed to be the standing point.
@@ -191,7 +211,7 @@ Every file under `production/` (and any future animation or model file) must be
 traceable:
 
 ```
-reference → source-app asset → exact copy (original) → delivery / animation / model
+reference → source-app asset OR Owner-selected approved concept → exact-copy versioned master → delivery / animation / model
 ```
 
 **Determinism.** The same master and the same transformation parameters must produce
@@ -212,8 +232,8 @@ Required evidence for a delivery raster (written in KCK-03B):
 This lets a later change be classified as "artwork replaced" or "normalization
 changed".
 
-The provenance schema currently has `asset` and `reference` record kinds; a
-transformation record kind is added in KCK-03B, with real evidence to model.
+The provenance schema retains asset/reference/concept records and adds 03B
+`master` and `transformation` kinds, with real immutable-copy and delivery evidence.
 
 ## 11. Decisions
 
@@ -232,6 +252,10 @@ the maximum allowed visual size; smaller values intentionally keep a character
 relatively smaller. (A junior might later be 0.7; that number is illustrative, not
 decided.) `visual_scale` is an art/layout ratio and is separate from
 `canonical_height_m`, which is the 3D world-space height.
+
+Cat-02 `visual_scale=0.80` and dinosaur-01 `visual_scale=0.95` for
+`soft-handmade-v1` were accepted in the linked decision. Other characters remain
+`null` and unavailable; no junior/parent size is inferred.
 
 ### Not decided here
 

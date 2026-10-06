@@ -3,8 +3,8 @@
 A technology-neutral library of shared child-friendly character assets
 (Cat, Dinosaur, Robot) that multiple apps can reuse from one source of truth.
 
-It is an **asset library**, not a framework. There is no Swift (or any other
-language) code here. A platform adapter is added only when a real app shows
+It is an **asset library**, with Python preparation/QA tools and no app runtime.
+A platform adapter is added only when a real app shows
 repeated lookup code worth extracting.
 
 ## Questions this repo answers
@@ -24,6 +24,8 @@ characters/<id>/raster/production/  deterministic delivery variants
 provenance/                          schema + per-asset and per-reference records
 manifests/                           language-neutral character manifest + schema
 docs/                                inventory, contracts, specs, style bible
+.agents/skills/                      repo-local character preparation/QA skill
+artifacts/qa/                        labeled candidate reviews and QA bundles
 ```
 
 `<id>` is `cat-01`, `cat-02`, `dinosaur-01`, `dinosaur-02`, `robot-01`.
@@ -49,16 +51,24 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | done |
 | KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | done |
 | KCK-GOV-02 | Initial AI governance adoption: pinned framework, repo rules, PLAN, static checks and explicit runtime gaps ([adoption](docs/ai-governance-adoption.md)) | proposed in this PR |
-| KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Three checkpoints: B1-A Dinosaur style key → B1-B Cat / Robot translation → B1-C lineup gate. Brief: [docs/kck-03b1-brief.md](docs/kck-03b1-brief.md). Done by the owner outside this repo (needs an illustration workflow); outputs are `candidate`s and come back for a Style Bible v1 decision | execution hold; pending PR #12 |
-| — | Style Bible v1 approved, then formal model sheets | after B1 |
-| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
-| KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
+| KCK-03B1 | Dinosaur style key → Cat / Robot translation → lineup; [brief](docs/kck-03b1-brief.md), [lineup review](artifacts/qa/2026-10-06-b1c-corrected-lineup/contact-sheet.png) | Three-character references/lineup approved; Dino v2d budget remains 2/2 |
+| KCK-03B2 | [Style Bible v1](docs/character-style-bible-v1.md), Cat/Dinosaur formal model sheets plus Robot continuation | Cat/Dinosaur six-sheet sets approved; Robot incomplete |
+| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | Cat/Dinosaur available; Robot mouthfix static available |
+| KCK-03C | [Neutral animation contract](docs/animation-contract-v1.md), schema, timing/events/sockets and file validator | implemented; validation covered |
+| KCK-03C1 | [Snack minimum pack checkpoint](concepts/kck-03c1/README.md) | Cat/Dinosaur minimum action candidates prepared; consumer QA pending |
+| KCK-03C2 | Actual consumer-scene pivot, scale, ground, timing, loop, alpha and prop handoff | pending |
 | KCK-03D | 3D contract (schema only; no models) | planned |
 | later | Platform adapter (e.g. Swift) only once an app needs it | — |
 
-The proposed snack-motion slices (03B2, 03C1, 03C2) and their dependencies are in
-[PLAN.md](PLAN.md). They do not authorize production or waive existing gates.
+The authorized snack-motion path and its dependencies are in [PLAN.md](PLAN.md).
+Conditional Owner acceptance applies only to output with real conformance evidence.
 
 ## Status
 
-Specification stage. [Inventory](docs/asset-inventory.md), [provenance](provenance/README.md), the [contract](docs/character-representation-contract.md) and the [style bible](docs/character-style-bible.md) exist. No image files have been copied in yet; every character has `raster.available: false`, no animations and no 3D model. Rights status of every asset is `pending`.
+Exploration and preparation tooling stage. Concept originals and the separately
+authorized A3 derivative are preserved under `concepts/`. The
+[character pipeline](docs/character-pipeline.md) provides read-only review,
+fixed-slot extraction and explicit-anchor sequence QA. Cat/Dinosaur and the [mouth-fixed Robot](docs/character-reference-amendments.md)
+have accepted static deliveries; Robot sheets remain incomplete.
+No delivered animations or 3D model are available. Asset rights
+remain `pending`. These changes are on the review branch, not merged main.

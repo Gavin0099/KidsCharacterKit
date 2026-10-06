@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python -c \"import hashlib,json,runpy\nfrom pathlib import Path\nm=runpy.run_path('concepts/kck-03c1/tools/diagnose_stumble.py',run_name='diagnostic_check')\nr=m['diagnose']()\nassert r==json.loads(Path('concepts/kck-03c1/evidence/dinosaur-stumble-read-only-diagnostic.json').read_text())\np=json.loads(Path('concepts/kck-03c1/retry-proposal/proposal.json').read_text())\nassert p['execution_authorized'] is False and p['generation_calls']==0 and len(p['jobs'])==7\nassert p['new_maximum_calls_if_authorized']==7\nfor j in p['jobs']:\n    assert j['calls']==0 and j['max_calls']==1 and j['status']=='proposed_not_authorized'\n    for key in ['instruction','reference']:\n        f=j[key]; assert hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256']\nprint(json.dumps({'report_replay':'PASS','sources_unchanged':r['sources_unchanged'],'legacy_identity':[g['gate'] for g in r['legacy_identity_gates']],'trial_clipped_nonzero':[f['clipped_nonzero_pixels'] for f in r['trial_registration']['frames']],'actual_pipeline':r['trial_registration']['actual_pipeline_result'],'proposed_jobs':7,'instruction_reference_hashes':'PASS','generation_calls':0,'execution_authorized':False}))\n\"",
+  "exit_code": 0,
+  "started_at": "2026-10-06T07:48:37Z",
+  "finished_at": "2026-10-06T07:48:38Z",
+  "runner": "diagnostic-replay",
+  "linked_commit": "b400c102cf57073a58c934f4edafbb1dfb038cab",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/stumble-proposal-diagnosis.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

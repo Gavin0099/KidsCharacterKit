@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KCK candidate motion-frame provenance v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_type",
+    "status",
+    "character_id",
+    "style_version",
+    "file",
+    "pixel_sha256",
+    "source_strip",
+    "source_slot",
+    "split_report",
+    "transform_report",
+    "recipe",
+    "tool",
+    "rights",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "record_type": {
+      "const": "motion_frame"
+    },
+    "status": {
+      "const": "candidate"
+    },
+    "character_id": {
+      "type": "string"
+    },
+    "style_version": {
+      "type": "string"
+    },
+    "file": {
+      "$ref": "#/$defs/binding"
+    },
+    "pixel_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "source_strip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file",
+        "provenance"
+      ],
+      "properties": {
+        "file": {
+          "$ref": "#/$defs/binding"
+        },
+        "provenance": {
+          "$ref": "#/$defs/binding"
+        }
+      }
+    },
+    "source_slot": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "split_report": {
+      "$ref": "#/$defs/binding"
+    },
+    "transform_report": {
+      "$ref": "#/$defs/binding"
+    },
+    "recipe": {
+      "$ref": "#/$defs/binding"
+    },
+    "tool": {
+      "$ref": "#/$defs/binding"
+    },
+    "rights": {
+      "type": "object",
+      "required": [
+        "commercial_use_status",
+        "rights_review_status",
+        "ownership_status",
+        "statements"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      }
+    }
+  }
+}

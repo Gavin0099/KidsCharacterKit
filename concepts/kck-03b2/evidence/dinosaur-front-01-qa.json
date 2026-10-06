@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-front-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+    "rgba8_sha256": "63b55180f27ececa03fffdcfc4736f6258a24cce767725a9ac5468f040b50604",
+    "bytes": 1278109,
+    "alpha_zero": 857971,
+    "alpha_partial": 713952,
+    "alpha_opaque": 593,
+    "alpha_gt10_bbox_exclusive": [
+      173,
+      100,
+      1125,
+      1183
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: upright near-front face/equal eye heights, mint/cream palette, two belly lines, spikes/tail/feet and left-hand magnifying glass retained. Strict torso orthographic/anatomical spike placement remains Owner review; not yet an approved front model. Numeric eye-highlight style PASS; original tilted-pose eye-center comparison not an applicable new front-view gate. No duplicate/text/floor/matte.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

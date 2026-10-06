@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "asset_id": "robot-01",
+  "character": "robot",
+  "style_version": "soft-handmade-v1",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_robot_raster.py",
+    "sha256": "9b328ad40488f8b876ca7da8b03cf70d1136653d5c0caefab302a76264eff5cd",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/produce_raster.py",
+        "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e"
+      },
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "sha256": "5c992645c367da40667353cc8eb42908151c2f9997762f4dc7776ccacee1b86b",
+      "supports": "Owner requests Robot and conformance-based continuation, preserving identity/specification"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-robot-static/foot-measurement-grid.png",
+      "supports": "Manually inspected native foot-contact baseline; no alpha-derived anchor"
+    }
+  ],
+  "record_type": "master",
+  "id": "robot-01-soft-handmade-v1-master",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Select existing Owner-approved corrected Robot under continuing conformance authority; no source-app overwrite",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "characters/robot/raster/versions/soft-handmade-v1/originals/robot-01.png",
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1502496,
+    "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216"
+  },
+  "pixel_sha256": "f7116570605bb695d2e9ef5cd1d36c4715112a3083fe8cc54e636ed2535deadc",
+  "input": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+    "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216"
+  },
+  "source_provenance": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.provenance.json",
+    "sha256": "fd73730ff137f1fce9d5bc2333dc9d2213a46bed3192a5cf670306c0e7478b6a"
+  },
+  "copy_policy": "Exact source bytes; no resize/re-encoding/pixel edits",
+  "unresolved_questions": [
+    "Inherited rights pending/unknown"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "job_id": "dinosaur-stumble-02",
+  "authorization": "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+  "copy": "Exact saved built-in output bytes; no pixel edit or alpha cleanup",
+  "structural": {
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "bytes": 1475515,
+    "raw_sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f",
+    "rgba8_sha256": "c339b2501d29c2338edfb664ab52ba81791aa104f56f3630b67b1a98ed6ef168",
+    "alpha_zero": 771412,
+    "alpha_partial": 801530,
+    "alpha_opaque": 596,
+    "alpha_gt10_bbox_exclusive": [
+      118,
+      51,
+      1738,
+      848
+    ],
+    "visible_edge_pixels": 0
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Native two isolated full-body gentle stumble/recovery poses retain mint/cream/yellow/peach palette, warm brown outline, fine handmade texture, two belly lines and left magnifier. All four eyes pass original double-highlight gate and both frames pass original identity tolerances. First anatomical-left foot reaches forward and free right hand opens; second both feet return to stable support. Common eye-width scale and measured y835 support reviewed in native foot grids and normalized checker/white/black preview; full nonzero alpha fits. This is a 400ms two-pose candidate, not actual-scene motion QA.",
+  "deviations": [
+    "Requested source-slot side margins >=10% were not achieved on the viewer-right magnifier side: visible margin about3.7%-4.1%. No extremity clipped. Actual common-scale 1024 QA respects approved64px horizontal/top safe margin and full nonzero alpha; source composition deviation retained."
+  ],
+  "diagnostic_refs": [
+    "concepts/kck-03b2/evidence/dinosaur-stumble-02-frame-000-measurements.json",
+    "concepts/kck-03b2/evidence/dinosaur-stumble-02-frame-001-measurements.json",
+    "concepts/kck-03c1/dinosaur-stumble-registration-v2.json",
+    "artifacts/qa/2026-10-06-dinosaur-stumble-retry-normalized/report.json"
+  ],
+  "owner_acceptance": "Continuing conditional authority applies only to conforming output; candidate motion not promoted; failed Robot not accepted",
+  "not_proven": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id",
+    "Consumer-scene motion/contact/timing/handoff",
+    "Rights"
+  ]
+}

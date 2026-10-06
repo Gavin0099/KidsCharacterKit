@@ -1,0 +1,38 @@
+{
+  "job_id": "robot-three-quarter-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+    "rgba8_sha256": "8100150948a370eb7163a594caaf4f3d895efb0531c736d83c496fe7ac297037",
+    "bytes": 1092481,
+    "alpha_zero": 1071483,
+    "alpha_partial": 500333,
+    "alpha_opaque": 700,
+    "alpha_gt10_bbox_exclusive": [
+      200,
+      16,
+      1051,
+      1223
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Reference three-quarter head tilt and depth, long segmented limbs, raised blue hands/block boots, two red antenna tips, correctly ordered blue-circle/yellow-triangle/red-circle/green-rectangle controls. One upper-left glint in each open oval eye, rectangular mouth/tongue and controlled gray grain retained; no scene/matte/extra symbols.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

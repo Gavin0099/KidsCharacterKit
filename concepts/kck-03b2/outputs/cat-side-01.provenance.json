@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "cat-concept-04",
+  "character": "cat",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "side initial individual model-sheet candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/cat-side-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1163355,
+    "sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1163355,
+    "sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-1727cfe0-b170-4e73-865b-eae9e72c0a7e.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+        "bytes": 1428356
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/cat-side-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "87b810819c72ea038b843339aa398dceabd89ccd7dbd6d71c7a30cf95d319a22",
+        "bytes": 1965
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/cat-side-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "cat-side-v1.txt",
+        "bytes": 1965,
+        "sha256": "87b810819c72ea038b843339aa398dceabd89ccd7dbd6d71c7a30cf95d319a22",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: KCK-03B2 individual model-sheet candidate, NOT animation or production. Input image 1 is the ONLY approved identity and rendering reference. Keep the exact Soft Handmade 2.5D illustrator treatment: dark warm brown hand outline, controlled fine paper/pencil grain, flat base colors with gentle volume, soft upper-left light. One isolated whole-body character only, genuine transparent background; no text, labels, panels, duplicates, floor, cast shadow, white matte or new props. Square canvas; entire ears, tail, feet and required prop inside a generous transparent margin on all sides. Keep approximately the same character mass/size and proportions across sheets; do not enlarge the head or shrink limbs. Eyes keep reference anatomy: large primary white glint in the UPPER LEFT of each visible open eye, small secondary glint LOWER RIGHT. Light direction is SCREEN upper left regardless of body rotation. Do not mirror the reference or transfer props between anatomical hands. This is one still PNG, no collage. Subject: approved orange-and-cream tabby Cat cat-02. Round broad head, pink inner ears and cheeks, brown iris AND visible white sclera, small brown nose, smile and tongue, three whiskers each side, clearly striped body and long curled striped tail, seated short-legged body with two cream feet. Raised pad-visible paw is the CAT'S LEFT paw (viewer right in front view); retain pink large central pad and three small toe pads. Other forepaw rests low. Keep original proportions and palette, no hair strands, clothing or accessories. View: strict orthographic LEFT SIDE PROFILE, camera looks at character's anatomical LEFT side; nose points screen LEFT. Only the near eye is visible. Keep the same seated/standing pose and near-side raised left paw or magnifying glass; far hand/leg may be occluded naturally. Tail/spikes stay attached anatomically. No second eye pasted on profile and no turned-to-camera head.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+          "rgba8_sha256": "206cde77e66752792d36d8fcfef2993d61c8dae130986f39e32b973e75bbdef0",
+          "bytes": 1163355,
+          "alpha_zero": 1029932,
+          "alpha_partial": 541660,
+          "alpha_opaque": 924,
+          "alpha_gt10_bbox_exclusive": [
+            292,
+            56,
+            1060,
+            1182
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Agent visual: palette, tabby/iris/whites/pads and upper-left glints retained, one visible eye/profile nose. Pose continuity FAIL: approved seated tail curls forward along ground across feet, but this output raises/curls tail behind body; requested camera change also reposes tail. This is an unapproved new pose, not a continuous turnaround. Preserve candidate and stop remaining Cat sheets; no retry/repair. Strict torso orthographic angle/hand presentation needs Owner review.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/cat-side-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-cat-model-sheets/report.json",
+      "supports": "Source-verified common-scale checker/white/black/64px review; not anchor alignment"
+    }
+  ],
+  "unresolved_questions": [
+    "Owner individual sheet acceptance",
+    "Unseen anatomy/side and pose continuity",
+    "Production, visual_scale, anchors and rights unresolved"
+  ]
+}

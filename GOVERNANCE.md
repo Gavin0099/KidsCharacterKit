@@ -31,6 +31,18 @@ baseline only when the Owner explicitly accepts it.
   (see Statuses). An automated or agent-initiated merge without Owner authorization
   accepts nothing.
 
+#### Owner conditional acceptance, recorded 2026-10-06
+
+The [Owner's continuing instruction](concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json)
+explicitly accepts outputs that satisfy the approved specifications and directs
+continuation without repeated per-output questions, including Robot. Agents may
+record acceptance under this Owner authority only after named structural and visual
+conformance checks are persisted against exact output hashes. Cite the conditional
+Owner decision and actual checks; do not claim the Owner personally reviewed unseen
+art. Actual failures, unclear conformance or changes to approved identity/style stop
+the affected sequence. Rights, merge/release and exhausted budgets remain separate.
+This is Owner conditional acceptance, not autonomous authority to change the spec.
+
 ### 2. Provenance is a hard gate
 
 When an agent creates or modifies an asset, the record must contain: input assets and

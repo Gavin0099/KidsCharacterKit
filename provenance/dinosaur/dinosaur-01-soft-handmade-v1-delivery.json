@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "asset_id": "dinosaur-01",
+  "character": "dinosaur",
+  "style_version": "soft-handmade-v1",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_raster.py",
+    "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "sha256": "1f3761ef7c0ae1873f713f0b6ef8a4f0a42ba60cd4f87830a4323907f122b74d",
+      "supports": "Exact Owner-selected master/anchor/scale/versioned-copy and seated support decisions"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-raster-delivery/report.json",
+      "supports": "Actual checker/white/black/64px review; exact output hashes"
+    },
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Owner acceptance of shown conforming output and continued scoped acceptance"
+    }
+  ],
+  "record_type": "transformation",
+  "id": "dinosaur-01-soft-handmade-v1-delivery",
+  "status": "production",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized delivery candidate creation; unseen production output not yet accepted",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "quote": "核准整份提案，採 B 尺寸"
+    },
+    {
+      "decision": "Owner accepts conforming shown output and continued conformance-based delivery; structural/pixel/visual QA passed",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "input": {
+    "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+    "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+  },
+  "master_provenance": {
+    "path": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json",
+    "sha256": "62ea900a55c440a2dad16ff8d6e8e6a16ada9dbacb713157f7221583d283798a"
+  },
+  "file": {
+    "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+    "format": "png",
+    "width": 1024,
+    "height": 1024,
+    "color_type": "RGBA",
+    "bytes": 920594,
+    "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31"
+  },
+  "pixel_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+  "parameters": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "safe_margin": 64,
+    "alpha_threshold": 13,
+    "source_visible_bounds": [
+      205,
+      82,
+      1186,
+      1193
+    ],
+    "anchor": {
+      "type": "ground-center",
+      "source_x": 650,
+      "source_y": 1176,
+      "delivery_x": 512,
+      "delivery_y": 960
+    },
+    "safe_fit_scale": 0.8064806480648065,
+    "visual_scale": 0.95,
+    "final_scale": 0.7661566156615661,
+    "resampling": "uniform inverse affine BICUBIC, premultiplied RGBa",
+    "color_policy": "Unprofiled selected source samples interpreted as sRGB; preserve samples before resampling; write PNG sRGB intent 0",
+    "encoder": {
+      "name": "Pillow PNG",
+      "compress_level": 9,
+      "optimize": false
+    }
+  },
+  "qa": {
+    "delivery_visible_bounds": [
+      171,
+      122,
+      922,
+      973
+    ],
+    "clipped_nonzero_alpha_pixels": 0,
+    "padded_replay_equal": true,
+    "repeat_pixel_equal": true,
+    "srgb_chunk": true
+  },
+  "unresolved_questions": [
+    "Inherited rights pending/unknown",
+    "Consumer-scene ground contact remains later QA"
+  ]
+}

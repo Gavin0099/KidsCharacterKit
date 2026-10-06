@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-06",
+  "previous_checkpoint_commit": "1ef6868c9d4e0aff3f1c86f364cac32baece7b11",
+  "new_generation_calls": 8,
+  "total_03b2_generation_calls": 14,
+  "local_derivation_calls": 0,
+  "cat_sheets": "six approved_reference with exact Owner acceptance",
+  "dinosaur_sheets": "six current candidates pass agent review; Owner acceptance pending",
+  "original_failures_retained": [
+    "cat-side-01",
+    "dinosaur-side-01",
+    "dinosaur-side-02"
+  ],
+  "repair": "Upper extra Dino stroke removed in bounded cream-interior RGB patch; lower two/contour/all alpha/outside exact; 4 real-image regressions PASS",
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  },
+  "rights": "pending/unknown",
+  "not_done": [
+    "Dino sheet acceptance",
+    "selected master/version policy",
+    "visual_scale/semantic anchor approval",
+    "production/animation/motion QA/consumer scene"
+  ]
+}

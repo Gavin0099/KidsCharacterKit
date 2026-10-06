@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-three-quarter-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
+    "rgba8_sha256": "d07419f5673910ec592949bcb80bdeb6788f0b86c75791095035ee68d6d085ab",
+    "bytes": 1386251,
+    "alpha_zero": 812791,
+    "alpha_partial": 759031,
+    "alpha_opaque": 694,
+    "alpha_gt10_bbox_exclusive": [
+      208,
+      77,
+      1187,
+      1195
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: original tilted near-front pose, proportions, spikes/tail/feet/two belly lines/magnifying glass and palette retained. Single character/no scene/text/matte; true alpha. Unchanged measure_output eye identity AND two-highlight style PASS against corrected A3; numerical evidence separately preserved. Owner acceptance pending.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

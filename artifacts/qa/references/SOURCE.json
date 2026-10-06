@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/Gavin0099/KidsCharacterKit",
+  "pull_request": 10,
+  "commit": "01053171c8d6c815415df1a8c0bfc37441fd7423",
+  "path": "concepts/kck-03b1/a2-dinosaur-v01.webp",
+  "sha256": "43a0f1e2a4a43d58315b7747e4bffbd93b2432d5dd1d71b4791440638975102e",
+  "bytes": 126266,
+  "status": "candidate",
+  "rights": "pending",
+  "purpose": "Exact copy for read-only A1/A2/A3/A4 review; not PR merge or production promotion",
+  "limitation": "Delivered WebP is codec-confounded; texture measurements are invalid, not FAIL",
+  "original_provenance_record": {
+    "path": "provenance/dinosaur/dinosaur-concept-01.json",
+    "review_copy": "artifacts/qa/references/a2-source-record.json",
+    "sha256": "ded235e2bfd8d5a14e83cff8422f89c0863a771994ffe688dab71b5dc02794db"
+  }
+}

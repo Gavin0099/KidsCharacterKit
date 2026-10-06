@@ -1,0 +1,96 @@
+{
+  "format": "kck-qa-strip-v1",
+  "candidate_only": true,
+  "source": "concepts/kck-03b2/outputs/cat-receive-01.png",
+  "source_facts": {
+    "bytes": 1507349,
+    "sha256": "6d0484f18a33688e9b066c97d847293562e5be279dad534782191eea0c179f9d",
+    "rgba_sha256": "f010f5c62c1d0516fb1ebe2a946934aa0c3edadf97773e4d71840a175f632772",
+    "canvas": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "alpha": {
+      "zero": 830613,
+      "partial": 742349,
+      "opaque": 576
+    },
+    "nonzero_alpha_bbox_exclusive": [
+      0,
+      23,
+      1689,
+      887
+    ]
+  },
+  "slot_count": 2,
+  "frames": [
+    {
+      "path": "frame-000.png",
+      "source_slot_exclusive": [
+        0,
+        0,
+        887,
+        887
+      ],
+      "output_facts": {
+        "bytes": 777953,
+        "sha256": "c50bc3147dc1a3f8351e21c891095cd7c6272e9b78fbcb974e19fc3a32eb4100",
+        "rgba_sha256": "4ba3b2b8b350023ae0d8eea2ea5a54aea21c3d1e854f43730839e593a0dfc8c3",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 414311,
+          "partial": 372149,
+          "opaque": 309
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          0,
+          23,
+          887,
+          887
+        ]
+      }
+    },
+    {
+      "path": "frame-001.png",
+      "source_slot_exclusive": [
+        887,
+        0,
+        1774,
+        887
+      ],
+      "output_facts": {
+        "bytes": 774020,
+        "sha256": "a62de6c84e6301835c7e3da8be2fdf2a41374e95e4ce2d3ad6a91ebad961f0f0",
+        "rgba_sha256": "42907d9498762575ca3a7977ee436e38d07c2f79c1625127a21a2cc472b8f8ed",
+        "canvas": [
+          887,
+          887
+        ],
+        "mode": "RGBA",
+        "alpha": {
+          "zero": 416302,
+          "partial": 370200,
+          "opaque": 267
+        },
+        "nonzero_alpha_bbox_exclusive": [
+          1,
+          23,
+          802,
+          887
+        ]
+      }
+    }
+  ],
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ]
+}

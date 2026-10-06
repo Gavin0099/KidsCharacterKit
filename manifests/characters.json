@@ -23,11 +23,29 @@
       "id": "cat-02",
       "character": "cat",
       "provenance": "provenance/cat/cat-02.json",
-      "visual_scale": null,
+      "visual_scale": 0.8,
       "canonical_height_m": null,
       "representations": {
         "raster": {
-          "available": false
+          "available": true,
+          "style_version": "soft-handmade-v1",
+          "master": {
+            "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+            "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e"
+          },
+          "delivery": {
+            "default": {
+              "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+              "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d"
+            }
+          },
+          "master_provenance": "provenance/cat/cat-02-soft-handmade-v1-master.json",
+          "transformation_provenance": "provenance/cat/cat-02-soft-handmade-v1-delivery.json",
+          "anchor": {
+            "type": "support-baseline",
+            "x": 512,
+            "y": 960
+          }
         },
         "animation_2d": {
           "available": []
@@ -41,11 +59,29 @@
       "id": "dinosaur-01",
       "character": "dinosaur",
       "provenance": "provenance/dinosaur/dinosaur-01.json",
-      "visual_scale": null,
+      "visual_scale": 0.95,
       "canonical_height_m": null,
       "representations": {
         "raster": {
-          "available": false
+          "available": true,
+          "style_version": "soft-handmade-v1",
+          "master": {
+            "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+            "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+          },
+          "delivery": {
+            "default": {
+              "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+              "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31"
+            }
+          },
+          "master_provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json",
+          "transformation_provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-delivery.json",
+          "anchor": {
+            "type": "ground-center",
+            "x": 512,
+            "y": 960
+          }
         },
         "animation_2d": {
           "available": []
@@ -77,11 +113,29 @@
       "id": "robot-01",
       "character": "robot",
       "provenance": "provenance/robot/robot-01.json",
-      "visual_scale": null,
+      "visual_scale": 0.95,
       "canonical_height_m": null,
       "representations": {
         "raster": {
-          "available": false
+          "available": true,
+          "style_version": "soft-handmade-v1-mouthfix",
+          "master": {
+            "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+            "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+          },
+          "delivery": {
+            "default": {
+              "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/production/robot-01-1024.png",
+              "sha256": "b301e3b8f8849925969e80ae455313baed15aa206515049ca4bb3040f82fc59c"
+            }
+          },
+          "master_provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-master.json",
+          "transformation_provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-delivery.json",
+          "anchor": {
+            "type": "ground-center",
+            "x": 512,
+            "y": 960
+          }
         },
         "animation_2d": {
           "available": []

@@ -1,0 +1,69 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "label": "Robot-prior",
+      "bytes": 1502496,
+      "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+      "rgba_sha256": "f7116570605bb695d2e9ef5cd1d36c4715112a3083fe8cc54e636ed2535deadc",
+      "canvas": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 909629,
+        "partial": 662232,
+        "opaque": 667
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        25,
+        16,
+        1058,
+        1448
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+      "label": "Mouth-improved-crop-FAIL",
+      "bytes": 1384883,
+      "sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+      "rgba_sha256": "3efdd38d09bb5a25add33cfa4ab2967de1e9cd3c7e49849e89cbab5b8f3479da",
+      "canvas": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 887215,
+        "partial": 684603,
+        "opaque": 710
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        14,
+        1054,
+        1448
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.19337016574585636,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.04419889502762431,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

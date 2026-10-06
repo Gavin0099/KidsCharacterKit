@@ -1,0 +1,1 @@
+{"report_replay": "PASS", "sources_unchanged": true, "legacy_identity": ["FAIL", "FAIL"], "trial_clipped_nonzero": [37, 0], "actual_pipeline": {"outcome": "rejected", "error": "clipping nonzero alpha, including soft edge pixels"}, "proposed_jobs": 7, "instruction_reference_hashes": "PASS", "generation_calls": 0, "execution_authorized": false}

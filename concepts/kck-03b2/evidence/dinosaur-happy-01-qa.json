@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-happy-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54",
+    "rgba8_sha256": "8378977275052eb8ce6e48cc5d62f2c6519ab387c413dce91e5bfc18e20fd027",
+    "bytes": 1331442,
+    "alpha_zero": 813746,
+    "alpha_partial": 758122,
+    "alpha_opaque": 648,
+    "alpha_gt10_bbox_exclusive": [
+      205,
+      82,
+      1187,
+      1193
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: open cheerful smile replaces small w mouth, eyes remain open without iris/sclera; same tilted near-front pose, hand-held magnifier, spikes/tail/feet/two belly lines and palette. Unchanged original-pose eye identity/highlight tests PASS. One body/no scene/matte/text; expression and identity acceptance remain Owner pending.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

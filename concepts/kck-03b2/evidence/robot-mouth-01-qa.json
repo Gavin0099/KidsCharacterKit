@@ -1,0 +1,38 @@
+{
+  "job_id": "robot-mouth-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1086,
+      1448
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+    "rgba8_sha256": "3efdd38d09bb5a25add33cfa4ab2967de1e9cd3c7e49849e89cbab5b8f3479da",
+    "bytes": 1384883,
+    "alpha_zero": 887215,
+    "alpha_partial": 684603,
+    "alpha_opaque": 710,
+    "alpha_gt10_bbox_exclusive": [
+      57,
+      16,
+      1046,
+      1448
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Mouth/tongue improved: short rounded pink tongue, fine fold and coherent rectangular smile, no hanging lower-right box. But source canvas right boot is cropped at bottom: 1086x1448, nonzero bbox ends y1448, 82 pixels on last row have alpha>=13. Other pixels re-rendered by built-in; not an exact localized pixel-only edit. Full-body/no-clipping gate FAIL; retain output, do not promote master or enable Robot raster.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

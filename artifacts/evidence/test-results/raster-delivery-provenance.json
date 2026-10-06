@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python concepts/kck-03b1/tools/test_concept_provenance.py",
+  "exit_code": 0,
+  "started_at": "2026-10-06T06:08:30Z",
+  "finished_at": "2026-10-06T06:08:31Z",
+  "runner": "python-unittest",
+  "linked_commit": "0ddbee5e4d2dc80d6fd0ed486dce6bc877c31096",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/raster-delivery-provenance.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

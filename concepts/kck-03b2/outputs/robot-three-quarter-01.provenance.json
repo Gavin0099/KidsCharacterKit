@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "robot-concept-04",
+  "character": "robot",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "three-quarter initial individual model-sheet candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorizes Robot sheets with conditional acceptance only after actual conformance checks",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    },
+    {
+      "decision": "Conditional Owner acceptance after source-verified anatomy/rendering/native+64px conformance; no personal Owner visual-review claim",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    },
+    {
+      "decision": "Owner tongue concern leaves these new sheets unresolved; prior conditional acceptance retained in history",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json",
+      "quote": "機器人舌頭有點怪"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/robot-three-quarter-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1092481,
+    "sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1092481,
+    "sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-93111410-6070-4d3b-a07f-b1cf573c18be.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216",
+        "bytes": 1502496
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/robot-three-quarter-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "87f22cb49f8d02b37f1afe96e0d07d20a9ff5315472723648f58c4b2ad048491",
+        "bytes": 1374
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/robot-three-quarter-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "robot-three-quarter-v1.txt",
+        "bytes": 1374,
+        "sha256": "87f22cb49f8d02b37f1afe96e0d07d20a9ff5315472723648f58c4b2ad048491",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: one individual KCK Robot model-sheet reference, not animation or production. Image 1 is the ONLY approved identity/rendering reference (corrected Robot). Preserve Soft Handmade 2.5D: dark warm brown hand outline, cold gray lightly textured casing, blue hands and block boots, red antenna ends and cheeks, gentle upper-left light. Preserve box-shaped head with planar depth, two red-tipped antennas, long segmented limbs, outward raised arms, rectangular smiling mouth and tongue. Each visible open dark oval eye has EXACTLY ONE large white highlight at SCREEN UPPER LEFT; no lower/right highlight. Four chest controls in anatomical consistent front order: screen upper-left BLUE CIRCLE, upper-right YELLOW TRIANGLE, lower-left RED CIRCLE, lower-right GREEN RECTANGLE. Preserve proportions, limb segments and body panel geometry. One whole character, generous transparent margins, no cropping, genuine alpha, no floor/shadow/matte/text/panels/new prop or accessory. Do not change colors, shorten limbs, invent extra controls or mirror handedness. Same original pose and neutral expression except requested camera/expression. Individual square canvas with preserved proportions, no multi-view collage. View: Same three-quarter view and tilt as reference, same outward raised arms and blue boots; keep exact identity and neutral mouth.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+          "rgba8_sha256": "8100150948a370eb7163a594caaf4f3d895efb0531c736d83c496fe7ac297037",
+          "bytes": 1092481,
+          "alpha_zero": 1071483,
+          "alpha_partial": 500333,
+          "alpha_opaque": 700,
+          "alpha_gt10_bbox_exclusive": [
+            200,
+            16,
+            1051,
+            1223
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Reference three-quarter head tilt and depth, long segmented limbs, raised blue hands/block boots, two red antenna tips, correctly ordered blue-circle/yellow-triangle/red-circle/green-rectangle controls. One upper-left glint in each open oval eye, rectangular mouth/tongue and controlled gray grain retained; no scene/matte/extra symbols.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "Accepted under Owner conditional conformance authority",
+    "overall_identity": "Actual agent conformance review passed; full Robot sheets remain incomplete",
+    "note": "No claim of personal Owner review of this output"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/robot-model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/robot-three-quarter-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-robot-conformance.json",
+      "supports": "Actual native/64px conformance review under cited Owner authority"
+    }
+  ],
+  "unresolved_questions": [
+    "Owner tongue concern; current reference conformance unresolved",
+    "Remaining Robot side/back/happy/confused gate",
+    "Inherited rights pending/unknown"
+  ]
+}

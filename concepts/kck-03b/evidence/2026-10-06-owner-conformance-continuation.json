@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "Direct Owner response after exact Cat/Dinosaur delivery review and acceptance request",
+  "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做",
+  "scope": "Accept shown conforming Cat/Dino delivery; continue authorized slices with evidence-based conformance acceptance, no recurring per-image confirmation; add Robot model sheets and static delivery. Preserve any actual failure stop, approved identity constraints, exhausted v2d budget, rights and merge boundaries. Robot motion after static requirements, when its minimal need is concrete.",
+  "acceptance_basis": "Owner conditional acceptance, with actual named specification and per-output conformance evidence; never claim personal Owner visual review of unseen output",
+  "current_outputs": [
+    {
+      "asset_id": "cat-02",
+      "style_version": "soft-handmade-v1",
+      "status": "candidate",
+      "master": {
+        "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+        "provenance": "provenance/cat/cat-02-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/cat/raster/versions/soft-handmade-v1/production/cat-02-1024.png",
+        "sha256": "0b6b7f8b62358ad3d8ff24994d3f65265f93d81d52e2a0a5fdd05211fcb1912d",
+        "pixel_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+        "provenance": "provenance/cat/cat-02-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.8,
+      "anchor": {
+        "type": "support-baseline",
+        "source_x": 705,
+        "source_y": 1235,
+        "delivery_x": 512,
+        "delivery_y": 960
+      }
+    },
+    {
+      "asset_id": "dinosaur-01",
+      "style_version": "soft-handmade-v1",
+      "status": "candidate",
+      "master": {
+        "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json"
+      },
+      "delivery": {
+        "path": "characters/dinosaur/raster/versions/soft-handmade-v1/production/dinosaur-01-1024.png",
+        "sha256": "049587b07bf2de22f602afaa6c69a3855bab443bfcfa5f82c602d2a9a31d0c31",
+        "pixel_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+        "provenance": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-delivery.json"
+      },
+      "visual_scale": 0.95,
+      "anchor": {
+        "type": "ground-center",
+        "source_x": 650,
+        "source_y": 1176,
+        "delivery_x": 512,
+        "delivery_y": 960
+      }
+    }
+  ],
+  "not_authorized": [
+    "Rights upgrade without external evidence",
+    "PR merge or app release",
+    "Reset exhausted Dinosaur v2d budget",
+    "Ignore actual conformance failure or alter identity/style rules",
+    "Silent deterministic artwork retouch outside already authorized repairs"
+  ]
+}

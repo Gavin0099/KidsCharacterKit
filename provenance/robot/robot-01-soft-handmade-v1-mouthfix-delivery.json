@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "asset_id": "robot-01",
+  "character": "robot",
+  "style_version": "soft-handmade-v1-mouthfix",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_robot_mouth_raster.py",
+    "sha256": "1a86f22a449e1862d29010263bda8fd434af02edae0cb5cf7a6ddedff0f8714e",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/produce_raster.py",
+        "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e"
+      },
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "sha256": "0c5610801b761881907fcca35b14fc894b4e220c9e570d47d49c243b23700fd7",
+      "supports": "Owner contextual continuation of the exact bounded mouth-only composite proposal"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-robot-static/foot-measurement-grid.png",
+      "supports": "Manually inspected native foot-contact baseline; no alpha-derived anchor"
+    },
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Owner conditional actual conformance acceptance"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/robot-mouth-local-conformance.json",
+      "supports": "Four real-image repair regressions and exact mouth conformance review"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-robot-mouth-delivery-review/report.json",
+      "supports": "Actual output hash, 1024 canvas, preserved alpha and checker/white/black/64px review"
+    }
+  ],
+  "record_type": "transformation",
+  "id": "robot-01-soft-handmade-v1-mouthfix-delivery",
+  "status": "production",
+  "status_evidence": [
+    {
+      "decision": "Create Robot static candidate under conditional Owner acceptance; verify actual output before delivery selection",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "quote": "往下做"
+    },
+    {
+      "decision": "Conditional Owner acceptance of exact mouth-fixed static delivery after source/pixel/alpha/1024/sRGB/background/64px conformance checks; not personal Owner viewing or full sheet acceptance",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/production/robot-01-1024.png",
+    "format": "png",
+    "width": 1024,
+    "height": 1024,
+    "color_type": "RGBA",
+    "bytes": 624594,
+    "sha256": "b301e3b8f8849925969e80ae455313baed15aa206515049ca4bb3040f82fc59c"
+  },
+  "pixel_sha256": "15d07616aa96b8a671b337e8dfdcff5157a06e3617b1ee324117d0b51f3b840b",
+  "input": {
+    "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+    "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+  },
+  "master_provenance": {
+    "path": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-master.json",
+    "sha256": "fecb16aea02947364ff564ef5b97bd15d7e4c3420664bfc09fc91072873b642d"
+  },
+  "parameters": {
+    "canvas": [
+      1024,
+      1024
+    ],
+    "safe_margin": 64,
+    "alpha_threshold": 13,
+    "source_visible_bounds": [
+      55,
+      18,
+      1034,
+      1432
+    ],
+    "anchor": {
+      "type": "ground-center",
+      "source_x": 560,
+      "source_y": 1420,
+      "delivery_x": 512,
+      "delivery_y": 960
+    },
+    "safe_fit_scale": 0.6336633663366337,
+    "visual_scale": 0.95,
+    "final_scale": 0.601980198019802,
+    "resampling": "uniform inverse affine BICUBIC, premultiplied RGBa",
+    "color_policy": "Unprofiled selected source samples interpreted as sRGB; preserve samples before resampling; write PNG sRGB intent 0",
+    "encoder": {
+      "name": "Pillow PNG",
+      "compress_level": 9,
+      "optimize": false
+    }
+  },
+  "qa": {
+    "delivery_visible_bounds": [
+      208,
+      116,
+      797,
+      967
+    ],
+    "clipped_nonzero_alpha_pixels": 0,
+    "padded_replay_equal": true,
+    "repeat_pixel_equal": true,
+    "srgb_chunk": true
+  },
+  "unresolved_questions": [
+    "Inherited rights pending/unknown",
+    "Robot sheets incomplete; side lighting failure retained",
+    "Consumer-scene motion QA not done"
+  ]
+}

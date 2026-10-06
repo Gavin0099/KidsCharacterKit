@@ -1,0 +1,38 @@
+{
+  "job_id": "robot-front-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "a9ef8ff0d01538108af0f6786b7bb7a917226057eea854ec517d626968ddabd2",
+    "rgba8_sha256": "d2b64ed44733bbcecd8794460de70ce14ff57639df5e50ba7c81dffacd661a24",
+    "bytes": 1093671,
+    "alpha_zero": 1069993,
+    "alpha_partial": 501422,
+    "alpha_opaque": 1101,
+    "alpha_gt10_bbox_exclusive": [
+      195,
+      12,
+      1057,
+      1228
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Frontal torso/panel and level paired eyes; retains reference 2.5D left casing plane rather than claiming a mathematically flat orthographic rendering. Long segmented limbs, two antenna tips, rectangular tongue mouth, four correctly ordered controls and one upper-left eye glint retained. No prop/floor/matte/cropping; native and later common-scale review required.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

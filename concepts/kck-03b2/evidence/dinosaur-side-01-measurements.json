@@ -1,0 +1,80 @@
+{
+  "method": "Unchanged measure_output.measure; one eye expected in left profile; two-eye identity comparison not applicable",
+  "candidate": {
+    "file": "exec-9ab4b69f-91b1-4c34-b1bc-f7fe8b43f2d4.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1109164,
+    "raw_sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+    "rgba8_sha256": "651c410f0698d338045941cfacfae632d4f83e7fdba80cb3cebe2bcbfc6c6965",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      191,
+      88,
+      1060,
+      1178
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 961190,
+    "alpha_partial": 610787,
+    "alpha_opaque": 539,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          417,
+          460,
+          546,
+          604
+        ],
+        "width": 0.14844649021864212,
+        "height": 0.16570771001150747,
+        "cx": 0.33429228998849253,
+        "cy": 0.4073394495412844,
+        "dark_rgb_mean": [
+          85.48677072030715,
+          38.86820799599366,
+          12.539938235539605
+        ],
+        "highlights": [
+          {
+            "pixels": 1863,
+            "normalized_centroid": [
+              0.35541158504870446,
+              0.28453584421780875
+            ],
+            "bbox": [
+              439,
+              477,
+              487,
+              526
+            ]
+          },
+          {
+            "pixels": 407,
+            "normalized_centroid": [
+              0.628554558787117,
+              0.6598757848757848
+            ],
+            "bbox": [
+              487,
+              544,
+              510,
+              567
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  }
+}

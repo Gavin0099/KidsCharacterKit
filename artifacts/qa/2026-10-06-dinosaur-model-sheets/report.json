@@ -1,0 +1,115 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "label": "Dinosaur approved reference",
+      "bytes": 1439076,
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "rgba_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 815923,
+        "partial": 756342,
+        "opaque": 251
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        33,
+        1212,
+        1246
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+      "label": "Dinosaur front candidate",
+      "bytes": 1278109,
+      "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
+      "rgba_sha256": "63b55180f27ececa03fffdcfc4736f6258a24cce767725a9ac5468f040b50604",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 857971,
+        "partial": 713952,
+        "opaque": 593
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        55,
+        1244,
+        1191
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
+      "label": "Dinosaur three-quarter candidate",
+      "bytes": 1386251,
+      "sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
+      "rgba_sha256": "d07419f5673910ec592949bcb80bdeb6788f0b86c75791095035ee68d6d085ab",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 812791,
+        "partial": 759031,
+        "opaque": 694
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        91,
+        17,
+        1210,
+        1208
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/dinosaur-side-01.png",
+      "label": "Dinosaur side: torso angle FAIL",
+      "bytes": 1109164,
+      "sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+      "rgba_sha256": "651c410f0698d338045941cfacfae632d4f83e7fdba80cb3cebe2bcbfc6c6965",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 961190,
+        "partial": 610787,
+        "opaque": 539
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        21,
+        1210,
+        1254
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.22328548644338117,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.051036682615629984,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}

@@ -5,12 +5,16 @@
   "description": "One record per asset or per reference/source artwork. Technology-neutral. Unknown stays unknown: commercial-use and rights fields must be filled in explicitly (the schema sets no defaults) and must remain pending/unknown unless supported by evidence.",
   "oneOf": [
     { "$ref": "#/$defs/assetRecord" },
-    { "$ref": "#/$defs/referenceRecord" }
+    { "$ref": "#/$defs/referenceRecord" },
+    { "$ref": "#/$defs/conceptRecord" },
+    { "$ref": "#/$defs/masterRecord" },
+    { "$ref": "#/$defs/transformationRecord" }
   ],
   "$defs": {
     "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
     "assetId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-[0-9]{2}$" },
     "referenceId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-ref-[0-9]{2}$" },
+    "conceptId": { "type": "string", "pattern": "^(cat|dinosaur|robot)-concept-[0-9]{2}$" },
     "stableId": { "anyOf": [{ "$ref": "#/$defs/assetId" }, { "$ref": "#/$defs/referenceId" }] },
     "character": { "enum": ["cat", "dinosaur", "robot"] },
 
@@ -193,6 +197,245 @@
       }
     },
 
+    "status": {
+      "description": "Lifecycle status (GOVERNANCE.md). Set to anything beyond `candidate` only with an Owner decision cited in `status_evidence`.",
+      "enum": ["candidate", "approved_reference", "production", "rejected", "deferred", "superseded"]
+    },
+
+    "conceptFileFacts": {
+      "description": "Facts computed from the committed file bytes.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "format", "width", "height", "color_type", "bytes", "sha256"],
+      "properties": {
+        "path": { "type": "string", "description": "Path in this repository." },
+        "format": { "enum": ["png", "webp"] },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "color_type": { "enum": ["RGB", "RGBA"] },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "relationship_to_original": { "type": "string", "description": "The committed file may be a platform-delivered copy rather than the original artifact; see `original_artifact`." }
+      }
+    },
+
+    "repoEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "supports"],
+      "properties": {
+        "path": { "type": "string", "description": "Path in this repository." },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "supports": { "type": "string" }
+      }
+    },
+
+    "conceptRecord": {
+      "description": "Hash-bound concept stored under concepts/. A separately accepted exact-copy style master uses the master record kind; the historical concept record remains intact.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "record_type", "id", "character", "slice", "stage", "variant",
+        "status", "status_evidence", "file", "original_artifact", "inputs", "generation",
+        "registration", "deviations", "measurements", "owner_review", "rights", "evidence",
+        "unresolved_questions"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "record_type": { "const": "concept" },
+        "id": { "$ref": "#/$defs/conceptId" },
+        "character": { "$ref": "#/$defs/character" },
+        "slice": { "type": "string" },
+        "stage": { "type": "string" },
+        "variant": { "type": "string" },
+        "status": { "$ref": "#/$defs/status" },
+        "status_evidence": {
+          "description": "Owner decisions that set the status, quoted with date and venue. Required: a status is never set by an agent's own judgment.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["decision", "date", "stated_in", "quote"],
+            "properties": {
+              "decision": { "type": "string" },
+              "date": { "type": "string" },
+              "stated_in": { "type": "string" },
+              "quote": { "type": "string" }
+            }
+          }
+        },
+        "file": { "$ref": "#/$defs/conceptFileFacts" },
+        "original_artifact": {
+          "description": "The generation tool's original artifact as reported from the generation side. Not held in this repository unless `held_in_repo` is true.",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["format", "width", "height", "color_type", "bytes", "sha256", "held_in_repo", "basis"],
+          "properties": {
+            "format": { "enum": ["png", "webp"] },
+            "width": { "type": "integer" },
+            "height": { "type": "integer" },
+            "color_type": { "enum": ["RGB", "RGBA"] },
+            "bytes": { "type": "integer" },
+            "sha256": { "$ref": "#/$defs/sha256" },
+            "held_in_repo": { "type": "boolean" },
+            "basis": { "type": "string" }
+          }
+        },
+        "inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["requested", "actually_mounted", "canonical_match"],
+          "properties": {
+            "requested": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "role", "sha256"],
+                "properties": {
+                  "ref": { "type": "string", "description": "Stable ID of the input in this library, if it has one." },
+                  "name": { "type": "string" },
+                  "role": { "type": "string" },
+                  "bytes": { "type": "integer" },
+                  "sha256": { "$ref": "#/$defs/sha256" }
+                }
+              }
+            },
+            "actually_mounted": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "format", "color_type", "width", "height", "bytes", "sha256"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "format": { "type": "string" },
+                  "color_type": { "type": "string" },
+                  "width": { "type": "integer" },
+                  "height": { "type": "integer" },
+                  "bytes": { "type": "integer" },
+                  "sha256": { "$ref": "#/$defs/sha256" }
+                }
+              }
+            },
+            "canonical_match": { "type": "boolean" }
+          }
+        },
+        "generation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["tool", "model", "generation_id", "prompt", "execution_message", "fresh_context", "post_generation_pixel_edit"],
+          "properties": {
+            "tool": { "type": "string" },
+            "model": { "type": ["string", "null"], "description": "null = not recorded." },
+            "generation_id": { "type": ["string", "null"], "description": "null = not exposed." },
+            "prompt": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["version", "path", "locator", "instruction_file"],
+              "properties": {
+                "version": { "type": "string" },
+                "path": { "type": "string" },
+                "locator": { "type": "string" },
+                "instruction_file": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name", "bytes", "sha256", "attached_in_generation"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "bytes": { "type": "integer" },
+                    "sha256": { "$ref": "#/$defs/sha256" },
+                    "attached_in_generation": { "enum": [true, false, "unknown"] }
+                  }
+                }
+              }
+            },
+            "execution_message": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "certified_sole_message"],
+              "properties": {
+                "text": { "type": "string" },
+                "certified_sole_message": { "type": "boolean" }
+              }
+            },
+            "fresh_context": { "enum": [true, false, "unknown"] },
+            "post_generation_pixel_edit": { "type": ["boolean", "null"], "description": "null = not stated." }
+          }
+        },
+        "registration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "valid_attempt_number", "counts_toward_budget", "basis"],
+          "properties": {
+            "status": { "enum": ["registered", "unregistered"] },
+            "valid_attempt_number": { "type": ["integer", "null"] },
+            "counts_toward_budget": { "type": "boolean" },
+            "basis": { "type": "string" }
+          }
+        },
+        "related_attempts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["generation_id", "registration_status", "note"],
+            "properties": {
+              "generation_id": { "type": "string" },
+              "registration_status": { "enum": ["registered", "unregistered"] },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "deviations": {
+          "description": "Departures from the brief's pre-flight / protocol. Each one is stated, never omitted.",
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "measurements": {
+          "description": "One entry per measurement actor and copy. Never overwritten: a new measurement adds an entry.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["actor", "copy", "reference_for_comparison", "method", "results"],
+            "properties": {
+              "actor": { "type": "string" },
+              "copy": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["description", "format", "sha256"],
+                "properties": {
+                  "description": { "type": "string" },
+                  "format": { "type": "string" },
+                  "sha256": { "$ref": "#/$defs/sha256" }
+                }
+              },
+              "reference_for_comparison": { "type": "string" },
+              "method": { "type": "string" },
+              "results": { "type": "object" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "owner_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["variant_intensity", "overall_identity", "note"],
+          "properties": {
+            "variant_intensity": { "type": "string" },
+            "overall_identity": { "type": "string" },
+            "note": { "type": "string" }
+          }
+        },
+        "rights": { "$ref": "#/$defs/rights" },
+        "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/repoEvidence" } },
+        "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
     "referenceRecord": {
       "type": "object",
       "additionalProperties": false,
@@ -263,6 +506,450 @@
         "rights": { "$ref": "#/$defs/rights" },
         "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidenceItem" } },
         "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+  "hashedRepoFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "date",
+        "stated_in",
+        "quote"
+      ],
+      "properties": {
+        "decision": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "stated_in": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string"
+        }
+      }
+    },
+    "rasterParameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canvas",
+        "safe_margin",
+        "alpha_threshold",
+        "source_visible_bounds",
+        "anchor",
+        "safe_fit_scale",
+        "visual_scale",
+        "final_scale",
+        "resampling",
+        "color_policy",
+        "encoder"
+      ],
+      "properties": {
+        "canvas": {
+          "const": [
+            1024,
+            1024
+          ]
+        },
+        "safe_margin": {
+          "const": 64
+        },
+        "alpha_threshold": {
+          "const": 13
+        },
+        "source_visible_bounds": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "anchor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "source_x",
+            "source_y",
+            "delivery_x",
+            "delivery_y"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "ground-center",
+                "support-baseline"
+              ]
+            },
+            "source_x": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source_y": {
+              "type": "number",
+              "minimum": 0
+            },
+            "delivery_x": {
+              "const": 512
+            },
+            "delivery_y": {
+              "const": 960
+            }
+          }
+        },
+        "safe_fit_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "visual_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "final_scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "resampling": {
+          "const": "uniform inverse affine BICUBIC, premultiplied RGBa"
+        },
+        "color_policy": {
+          "const": "Unprofiled selected source samples interpreted as sRGB; preserve samples before resampling; write PNG sRGB intent 0"
+        },
+        "encoder": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "compress_level",
+            "optimize"
+          ],
+          "properties": {
+            "name": {
+              "const": "Pillow PNG"
+            },
+            "compress_level": {
+              "const": 9
+            },
+            "optimize": {
+              "const": false
+            }
+          }
+        }
+      }
+    },
+    "masterRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "asset_id",
+        "character",
+        "style_version",
+        "status",
+        "status_evidence",
+        "file",
+        "pixel_sha256",
+        "tool",
+        "rights",
+        "evidence",
+        "unresolved_questions",
+        "record_type",
+        "input",
+        "source_provenance",
+        "copy_policy"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^(cat|dinosaur|robot)-[0-9]{2}-[a-z0-9-]+-(master|delivery)$"
+        },
+        "asset_id": {
+          "$ref": "#/$defs/assetId"
+        },
+        "character": {
+          "$ref": "#/$defs/character"
+        },
+        "style_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]+$"
+        },
+        "status": {
+          "const": "approved_reference"
+        },
+        "status_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decision"
+          }
+        },
+        "file": {
+          "$ref": "#/$defs/conceptFileFacts"
+        },
+        "pixel_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "tool": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "python",
+            "Pillow",
+            "zlib",
+            "helpers"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "python": {
+              "type": "string",
+              "minLength": 1
+            },
+            "Pillow": {
+              "type": "string",
+              "minLength": 1
+            },
+            "zlib": {
+              "type": "string",
+              "minLength": 1
+            },
+            "helpers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/hashedRepoFile"
+              }
+            }
+          }
+        },
+        "rights": {
+          "$ref": "#/$defs/rights"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/repoEvidence"
+          }
+        },
+        "unresolved_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "record_type": {
+          "const": "master"
+        },
+        "input": {
+          "$ref": "#/$defs/hashedRepoFile"
+        },
+        "source_provenance": {
+          "$ref": "#/$defs/hashedRepoFile"
+        },
+        "copy_policy": {
+          "const": "Exact source bytes; no resize/re-encoding/pixel edits"
+        }
+      }
+    },
+    "transformationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "id",
+        "asset_id",
+        "character",
+        "style_version",
+        "status",
+        "status_evidence",
+        "file",
+        "pixel_sha256",
+        "tool",
+        "rights",
+        "evidence",
+        "unresolved_questions",
+        "record_type",
+        "input",
+        "master_provenance",
+        "parameters",
+        "qa"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^(cat|dinosaur|robot)-[0-9]{2}-[a-z0-9-]+-(master|delivery)$"
+        },
+        "asset_id": {
+          "$ref": "#/$defs/assetId"
+        },
+        "character": {
+          "$ref": "#/$defs/character"
+        },
+        "style_version": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]+$"
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "production"
+          ]
+        },
+        "status_evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/decision"
+          }
+        },
+        "file": {
+          "$ref": "#/$defs/conceptFileFacts"
+        },
+        "pixel_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "tool": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "python",
+            "Pillow",
+            "zlib",
+            "helpers"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "$ref": "#/$defs/sha256"
+            },
+            "python": {
+              "type": "string",
+              "minLength": 1
+            },
+            "Pillow": {
+              "type": "string",
+              "minLength": 1
+            },
+            "zlib": {
+              "type": "string",
+              "minLength": 1
+            },
+            "helpers": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/hashedRepoFile"
+              }
+            }
+          }
+        },
+        "rights": {
+          "$ref": "#/$defs/rights"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/repoEvidence"
+          }
+        },
+        "unresolved_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "record_type": {
+          "const": "transformation"
+        },
+        "input": {
+          "$ref": "#/$defs/hashedRepoFile"
+        },
+        "master_provenance": {
+          "$ref": "#/$defs/hashedRepoFile"
+        },
+        "parameters": {
+          "$ref": "#/$defs/rasterParameters"
+        },
+        "qa": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "delivery_visible_bounds",
+            "clipped_nonzero_alpha_pixels",
+            "padded_replay_equal",
+            "repeat_pixel_equal",
+            "srgb_chunk"
+          ],
+          "properties": {
+            "delivery_visible_bounds": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "clipped_nonzero_alpha_pixels": {
+              "const": 0
+            },
+            "padded_replay_equal": {
+              "const": true
+            },
+            "repeat_pixel_equal": {
+              "const": true
+            },
+            "srgb_chunk": {
+              "const": true
+            }
+          }
+        }
       }
     }
   }

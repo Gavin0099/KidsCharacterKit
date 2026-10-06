@@ -1,0 +1,313 @@
+{
+  "purpose": "Historical pre-commit validation before Cat classifier qualification; later commit-bound receipts and check_checkpoint output supersede this snapshot.",
+  "results": [
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b1/tools/test_preflight_hash.py"
+      ],
+      "exit_code": 0,
+      "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 1.957s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b1/tools/test_measure_output.py"
+      ],
+      "exit_code": 0,
+      "output": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.092s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b1/tools/test_correct_a3_highlights.py"
+      ],
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.397s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b1/tools/test_correct_robot_highlights.py"
+      ],
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.395s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b1/tools/test_concept_provenance.py"
+      ],
+      "exit_code": 0,
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.207s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b2/tools/test_correct_dinosaur_side_belly.py"
+      ],
+      "exit_code": 0,
+      "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.328s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b/tools/test_produce_raster.py"
+      ],
+      "exit_code": 0,
+      "output": ".....\n----------------------------------------------------------------------\nRan 5 tests in 1.469s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b/tools/test_validate_lifecycle.py"
+      ],
+      "exit_code": 0,
+      "output": "./Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/concepts/kck-03b/tools/test_validate_lifecycle.py:41: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.\n  alpha=image.getchannel('A');self.assertEqual(sum(v>=13 for v in alpha.crop((0,1447,1086,1448)).getdata()),82)\n...\n----------------------------------------------------------------------\nRan 4 tests in 0.746s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03c/tools/test_validate_animation.py"
+      ],
+      "exit_code": 0,
+      "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.574s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        ".agents/skills/kck-character-pipeline/scripts/test_pipeline.py"
+      ],
+      "exit_code": 0,
+      "output": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.262s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03b/tools/validate_raster.py"
+      ],
+      "exit_code": 0,
+      "output": "{\"records\": [{\"asset_id\": \"cat-02\", \"status\": \"production\", \"available\": true, \"pixel_replay\": \"PASS\"}, {\"asset_id\": \"dinosaur-01\", \"status\": \"production\", \"available\": true, \"pixel_replay\": \"PASS\"}, {\"asset_id\": \"robot-01\", \"status\": \"candidate\", \"available\": false, \"pixel_replay\": \"PASS\"}], \"originals_replaced\": false}\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "concepts/kck-03c/tools/validate_animation.py",
+        "concepts/kck-03c1/dinosaur-snack-partial-pack.json"
+      ],
+      "exit_code": 0,
+      "output": "{\"schema_and_semantics\": \"PASS\", \"source_and_frame_files\": \"PASS\", \"status\": \"candidate\", \"availability_promoted\": false}\n"
+    },
+    {
+      "command": [
+        "/tmp/kck-governance-env/bin/python",
+        "ai-governance-framework/governance_tools/governance_drift_checker.py",
+        "--repo",
+        ".",
+        "--framework-root",
+        "./ai-governance-framework",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"ok\": true,\n  \"severity\": \"ok\",\n  \"repo_root\": \"/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit\",\n  \"baseline_yaml\": \"/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/.governance/baseline.yaml\",\n  \"baseline_version\": \"1.0.0\",\n  \"framework_version\": \"1.0.0\",\n  \"checks\": {\n    \"baseline_yaml_present\": true,\n    \"baseline_version_known\": true,\n    \"framework_version_current\": true,\n    \"source_commit_recorded\": true,\n    \"protected_files_present\": true,\n    \"protected_files_unmodified\": true,\n    \"protected_file_sentinel_present\": true,\n    \"contract_required_fields_present\": true,\n    \"contract_agents_base_referenced\": true,\n    \"contract_no_placeholders\": true,\n    \"contract_not_framework_copy\": true,\n    \"plan_required_sections_present\": true,\n    \"agents_sections_filled\": true,\n    \"memory_schema_complete\": true,\n    \"plan_freshness\": true,\n    \"plan_inventory_current\": true,\n    \"baseline_yaml_freshness\": true,\n    \"expansion_boundary\": true\n  },\n  \"findings\": [],\n  \"warnings\": [],\n  \"errors\": [],\n  \"remediation_hints\": [],\n  \"plan_section_inventory\": [\n    \"## Current Phase\",\n    \"## Active Sprint\",\n    \"## Backlog\",\n    \"## Decision Log\",\n    \"## Known Risks\"\n  ]\n}\n"
+    }
+  ],
+  "schemas": [
+    {
+      "schema": "manifests/character-manifest.schema.json",
+      "record": "manifests/characters.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/cat/cat-02.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/cat/cat-02-soft-handmade-v1-delivery.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/cat/cat-02-soft-handmade-v1-master.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/cat/cat-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/cat/cat-ref-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-delivery.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-01-soft-handmade-v1-master.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-ref-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-ref-02.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-02.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/dinosaur/dinosaur-ref-03.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/robot/robot-01-soft-handmade-v1-master.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/robot/robot-01-soft-handmade-v1-delivery.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/robot/robot-ref-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "provenance/robot/robot-01.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/A3-v2d-attempt-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/A4-v2d-attempt-02.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/robot-mouth-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-side-02.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-back-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-front-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-run-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-happy-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-back-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-confused-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-stumble-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-side-02.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/robot-side-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/robot-front-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/robot-three-quarter-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-receive-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-happy-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-front-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-side-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-confused-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/cat-three-quarter-01.provenance.json"
+    },
+    {
+      "schema": "provenance/schema/provenance.schema.json",
+      "record": "concepts/kck-03b2/outputs/dinosaur-side-01.provenance.json"
+    },
+    {
+      "schema": "manifests/animation-manifest.schema.json",
+      "record": "concepts/kck-03c1/dinosaur-snack-partial-pack.json"
+    },
+    {
+      "schema": "manifests/animation-frame-provenance.schema.json",
+      "record": "concepts/kck-03c1/evidence/dinosaur-run-frame-000.json"
+    },
+    {
+      "schema": "manifests/animation-frame-provenance.schema.json",
+      "record": "concepts/kck-03c1/evidence/dinosaur-run-frame-001.json"
+    }
+  ],
+  "consumer_scene_run": false,
+  "motion_delivery": false,
+  "robot_available": false
+}

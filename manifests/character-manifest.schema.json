@@ -53,20 +53,138 @@
             "raster": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["available"],
+              "required": [
+                "available"
+              ],
               "properties": {
-                "available": { "type": "boolean" },
-                "master": { "$ref": "#/$defs/file" },
+                "available": {
+                  "type": "boolean"
+                },
+                "master": {
+                  "$ref": "#/$defs/file"
+                },
                 "delivery": {
                   "type": "object",
                   "additionalProperties": false,
-                  "required": ["default"],
-                  "properties": { "default": { "$ref": "#/$defs/file" } }
+                  "required": [
+                    "default"
+                  ],
+                  "properties": {
+                    "default": {
+                      "$ref": "#/$defs/file"
+                    }
+                  }
+                },
+                "style_version": {
+                  "type": "string",
+                  "pattern": "^[a-z][a-z0-9-]+$"
+                },
+                "master_provenance": {
+                  "type": "string",
+                  "pattern": "^provenance/[a-z]+/[a-z0-9-]+-master\\.json$"
+                },
+                "transformation_provenance": {
+                  "type": "string",
+                  "pattern": "^provenance/[a-z]+/[a-z0-9-]+-delivery\\.json$"
+                },
+                "anchor": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "type",
+                    "x",
+                    "y"
+                  ],
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "ground-center",
+                        "support-baseline"
+                      ]
+                    },
+                    "x": {
+                      "const": 512
+                    },
+                    "y": {
+                      "const": 960
+                    }
+                  }
                 }
               },
-              "if": { "properties": { "available": { "const": true } }, "required": ["available"] },
-              "then": { "required": ["master", "delivery"] },
-              "else": { "not": { "anyOf": [{ "required": ["master"] }, { "required": ["delivery"] }] } }
+              "if": {
+                "properties": {
+                  "available": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "available"
+                ]
+              },
+              "then": {
+                "required": [
+                  "master",
+                  "delivery"
+                ]
+              },
+              "else": {
+                "not": {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "master"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "delivery"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "style_version"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "master_provenance"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "transformation_provenance"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "anchor"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "dependentRequired": {
+                "style_version": [
+                  "anchor",
+                  "master_provenance",
+                  "transformation_provenance"
+                ],
+                "master_provenance": [
+                  "anchor",
+                  "style_version",
+                  "transformation_provenance"
+                ],
+                "transformation_provenance": [
+                  "anchor",
+                  "master_provenance",
+                  "style_version"
+                ],
+                "anchor": [
+                  "master_provenance",
+                  "style_version",
+                  "transformation_provenance"
+                ]
+              }
             },
             "animation_2d": {
               "type": "object",

@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-06",
+  "owner_authority": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+  "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做",
+  "acceptance_mode": "Conditional Owner acceptance with actual Codex conformance evidence, not personal Owner review of unseen Robot outputs",
+  "specification": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "static_delivery": {
+    "path": "characters/robot/raster/versions/soft-handmade-v1/production/robot-01-1024.png",
+    "sha256": "d72a61a5e8f0b8887f3dd4c76481590e23390862fd1c2548d3cbcf80ddc51e44",
+    "checks": [
+      "Raw corrected Robot master exact",
+      "Same identity/palette and single upper-left eye glints as approved source",
+      "Four chest controls ordered correctly; limbs/antennas intact at native/64px",
+      "Actual checker/white/black QA shows no matte/crop",
+      "1024 RGBA with sRGB chunk; repeated uniform-transform pixels; semantic feet anchor manually measured (560,1420)",
+      "Visual scale .95 uses same maximum-size convention as Dinosaur; original Robot proportions preserved; no junior relation inferred"
+    ],
+    "review": "artifacts/qa/2026-10-06-three-character-delivery/report.json"
+  },
+  "approved_sheet_references": [
+    {
+      "view": "front",
+      "concept_id": "robot-concept-03",
+      "path": "concepts/kck-03b2/outputs/robot-front-01.png",
+      "sha256": "a9ef8ff0d01538108af0f6786b7bb7a917226057eea854ec517d626968ddabd2",
+      "review": "artifacts/qa/2026-10-06-robot-sheet-checkpoint/report.json"
+    },
+    {
+      "view": "three-quarter",
+      "concept_id": "robot-concept-04",
+      "path": "concepts/kck-03b2/outputs/robot-three-quarter-01.png",
+      "sha256": "cbe1714638b5b2565f7830d54bd105dae2aba150d976117f101bbb4eee5a34d6",
+      "review": "artifacts/qa/2026-10-06-robot-sheet-checkpoint/report.json"
+    }
+  ],
+  "failed_sheet": {
+    "job_id": "robot-side-01",
+    "sha256": "7a2933c8b204b866c629832d3cf2154b26d7927936dfcaeaf4fc88fa424beaf6",
+    "reason": "Two red antenna-tip highlights point SCREEN UPPER RIGHT, contrary to approved upper-left illumination",
+    "evidence": "concepts/kck-03b2/evidence/robot-side-01-antenna-measurement.json",
+    "crop": "artifacts/qa/2026-10-06-robot-sheet-checkpoint/antenna-lighting-detail.png"
+  },
+  "unexecuted": [
+    "robot-back-01",
+    "robot-happy-01",
+    "robot-confused-01"
+  ],
+  "full_Robot_model_sheet_gate": "FAIL/incomplete; authored Robot motion blocked",
+  "rights": "pending/unknown",
+  "not_claimed": [
+    "Robot six-sheet completion",
+    "Robot motion",
+    "Consumer scene ground contact",
+    "Rights or merge approval"
+  ]
+}

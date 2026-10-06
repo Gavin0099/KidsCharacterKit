@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "asset_id": "cat-02",
+  "character": "cat",
+  "style_version": "soft-handmade-v1",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_raster.py",
+    "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "sha256": "1f3761ef7c0ae1873f713f0b6ef8a4f0a42ba60cd4f87830a4323907f122b74d",
+      "supports": "Exact Owner-selected master/anchor/scale/versioned-copy and seated support decisions"
+    }
+  ],
+  "record_type": "master",
+  "id": "cat-02-soft-handmade-v1-master",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Owner selected exact approved concept as versioned immutable master, not production/rights",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "quote": "核准整份提案，採 B 尺寸"
+    }
+  ],
+  "input": {
+    "path": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+    "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e"
+  },
+  "source_provenance": {
+    "path": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.provenance.json",
+    "sha256": "f07445c01f5018ca78eaff12bfee86b56238224efd4669ca52813f9c13f9c585"
+  },
+  "file": {
+    "path": "characters/cat/raster/versions/soft-handmade-v1/originals/cat-02.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1428356,
+    "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e"
+  },
+  "pixel_sha256": "510c81cade10883b22caa1bb427546d7d86d20b30de02b2671fd1836cb899387",
+  "copy_policy": "Exact source bytes; no resize/re-encoding/pixel edits",
+  "unresolved_questions": [
+    "Production acceptance and inherited rights unresolved"
+  ]
+}

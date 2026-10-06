@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-13",
+  "character": "dinosaur",
+  "slice": "KCK-03C1",
+  "stage": "snack-motion",
+  "variant": "run two-key-pose strip initial action strip candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorizes scoped asset preparation with conditional acceptance only after actual conformance checks",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "quote": "可以 如果都有符合規格 就一直做下去 不用一直問我 然後機器人也要做"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-run-01.png",
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1476592,
+    "sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c",
+    "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1774,
+    "height": 887,
+    "color_type": "RGBA",
+    "bytes": 1476592,
+    "sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-8d133399-c661-403f-86ed-a1da86a9e673.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "bytes": 1439076
+      },
+      {
+        "name": "concepts/kck-03c1/instructions/dinosaur-run-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "23ba62bf93d105ac45fe19f4888ba961156b3bf477bfbeaf7a46bfc1ce9146a4",
+        "bytes": 2450
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03c1/instructions/dinosaur-run-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "dinosaur-run-v1.txt",
+        "bytes": 2450,
+        "sha256": "23ba62bf93d105ac45fe19f4888ba961156b3bf477bfbeaf7a46bfc1ce9146a4",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: identity-preserve. Asset type: KCK-03C1 two-key-pose in-place run strip, not a collage/model sheet. Input image 1 is the ONLY approved Dinosaur master and rendering/identity reference. Make EXACTLY TWO equal-width horizontal slots, ordered LEFT TO RIGHT, with one full-body dinosaur in EACH slot. Each slot has the SAME canvas height, generous transparent margins and SAME character drawing size, camera angle, head/body proportions and baseline. Horizontal strip, no labels, separators, ground, cast shadow or background; genuine transparent alpha. Do not overlap slot borders or clip any tail/prop/foot. These are two running poses of one character, NOT two different characters or an interactive scene. Same reference frontal three-quarter camera and tilted friendly large head in both poses; run in place, no root translation. Preserve exact Soft Handmade 2.5D: warm dark-brown outline, controlled fine paper/pencil grain, mint green body, cream belly with EXACTLY TWO brown curved belly stripes, soft yellow rounded dorsal spikes, peach cheeks, small w-shaped mouth, stubby short legs with toe marks and long curved tail. Do not lengthen legs, change head size, add teeth, add iris/eye white, change tail or spikes. Each open dark eye has two white glints: LARGE primary precisely at upper LEFT (about 35% across, 28% down each eye), SMALL secondary lower RIGHT. Keep the same face/eye anatomy in both poses. The magnifying glass with orange/yellow frame and pale blue lens stays in Dinosaur ANATOMICAL LEFT hand (viewer RIGHT), same hand and same orientation in both frames. Other ANATOMICAL RIGHT hand (viewer LEFT) stays a free relaxed receiving/carry palm near chest, no snack or tray baked in. Pose 0 LEFT SLOT: running contact pose with anatomical right foot in ground contact, anatomical left foot lifted a little back; keep the raised foot inside slot. Pose 1 RIGHT SLOT: alternate running contact pose, anatomical left foot now in ground contact, anatomical right foot lifted slightly forward. Two visibly different leg poses, clear short-leg run, not duplicated standing stills. Head mass and body height remain constant; no artificial squash, oversized bob, rotation change or built-in motion blur. Use a coherent common baseline and natural anatomy; retain both visible feet where camera permits. Same illumination SCREEN UPPER LEFT across both slots. No extra prop, text, question mark, decorative sparkle or solid matte.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c"
+      },
+      "reference_for_comparison": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1774,
+            887
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "8acf44ca0169d571b67174b1af0427b84278989f1f5c375fd02f09c614d7689c",
+          "rgba8_sha256": "6dc3c955313bb4a4f313048100906dd51fd86c6a4ad301d6d53ce41437c77e0c",
+          "bytes": 1476592,
+          "alpha_zero": 794847,
+          "alpha_partial": 778107,
+          "alpha_opaque": 584,
+          "alpha_gt10_bbox_exclusive": [
+            144,
+            59,
+            1713,
+            846
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "PASS",
+        "visual_review": "Two full-body equal-square-slot in-place run key poses, alternating raised foot/contact foot, same camera/head mass and magnifier in anatomical LEFT hand, two belly lines and no snack. Actual phase starts left-foot contact then right-foot contact, reverse of requested prose; metadata must describe actual phase, not fabricate requested order. Phase start is not a character/style redesign. Open eyes keep upper-left primary/lower-right secondary. Source strip is candidate until numeric/scale/anchor/timing QA; not animation delivery.",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Approval of input reference/v1 does not approve this new sheet"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/snack-motion-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-run-01-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    }
+  ],
+  "unresolved_questions": [
+    "Conditional conformance evidence including 64px required before reference acceptance",
+    "Unseen anatomy/side and pose continuity",
+    "Production, visual_scale, anchors and rights unresolved"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-back-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611",
+    "rgba8_sha256": "64b6a524b348bc9eb45b85f9f4322a978f228302e87672971e8b40af93e57fea",
+    "bytes": 1283789,
+    "alpha_zero": 865890,
+    "alpha_partial": 706066,
+    "alpha_opaque": 560,
+    "alpha_gt10_bbox_exclusive": [
+      116,
+      85,
+      1072,
+      1179
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: head/torso face back, no eyes/cheeks/mouth/front belly; anatomical left magnifier hand on viewer left, rear tail on viewer right; mint/yellow palette and short-body masses retained. Dorsal spikes continue down rear head/back/tail. Previously unseen spike cross-section (including two top shapes) and rear foot details are proposed anatomy requiring Owner judgment, not established from original front view. No scene/matte/text/duplicates.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}
