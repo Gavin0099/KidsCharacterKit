@@ -117,7 +117,25 @@
       "canonical_height_m": null,
       "representations": {
         "raster": {
-          "available": false
+          "available": true,
+          "style_version": "soft-handmade-v1-mouthfix",
+          "master": {
+            "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+            "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+          },
+          "delivery": {
+            "default": {
+              "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/production/robot-01-1024.png",
+              "sha256": "b301e3b8f8849925969e80ae455313baed15aa206515049ca4bb3040f82fc59c"
+            }
+          },
+          "master_provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-master.json",
+          "transformation_provenance": "provenance/robot/robot-01-soft-handmade-v1-mouthfix-delivery.json",
+          "anchor": {
+            "type": "ground-center",
+            "x": 512,
+            "y": 960
+          }
         },
         "animation_2d": {
           "available": []

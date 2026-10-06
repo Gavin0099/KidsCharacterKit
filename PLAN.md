@@ -26,7 +26,8 @@
   rev5 inputs/evidence. It does not establish remote merge or main availability.
 - Cat/Dinosaur conforming static delivery is now accepted under the Owner's
   conditional continuation and available on this review branch. Robot availability
-  was withdrawn after tongue feedback. All motion availability remains empty;
+  was withdrawn after tongue feedback, then restored only for the new mouthfix
+  version after authorized bounded local repair and actual conformance checks. All motion availability remains empty;
   no 3D or rights upgrade is established.
 - Owner authorized importing the required skill/features into this repo and
   continuing (2026-10-06). Repo-local character preparation skill and bounded
@@ -43,7 +44,9 @@
   accepted. **KCK-03B** master/version/scale/anchor review preparation is active;
   Owner has separately accepted the 03B master/version/scale/anchor proposal;
   Cat/Dinosaur deterministic 1024 delivery is accepted. Robot side-sheet lighting
-  and mouth-correction crop failed; six-sheet/motion requirements are incomplete.
+  and generated mouth-correction crop failed. A later mouth-only local composite
+  preserves the full original and passes; static mouthfix delivery is selected,
+  while six-sheet/motion requirements are incomplete.
 - **KCK-03C**: neutral contract/schema plus semantic/file validation implemented.
   **03C1**: Dinosaur idle static hold, two-pose run and explicit carry alias form a
   validated partial candidate pack. Stumble remains held after identity diagnostic
@@ -117,8 +120,11 @@
 - [x] Implement animation contract/schema and negative semantic/file regressions.
 - [x] Prepare Dinosaur run: exact-slot split, shared scale/semantic root, sockets,
   200 ms APNG replay and derivation provenance. Candidate only.
-- [ ] Resolve Robot failed mouth/side sequences, Dino stumble identity diagnostic
-  before affected promotions/continuations.
+- [x] Owner contextual 「往下做」 accepts the concrete mouth-only local composite;
+  all alpha/outside pixels and full original boots preserved, four regressions PASS.
+  New mouthfix master/delivery selected; old version and cropped donor unchanged.
+- [ ] Resolve Robot side-lighting/new-sheet mouth consistency and Dino stumble
+  identity diagnostic before affected model/motion continuation.
 - [x] Prepare Cat wait static hold, receive two key poses (350 ms) and happy
   static hold candidate; root/perspective/shared scale and socket evidence retained.
 - [ ] Complete Dino stumble and actual consumer-scene QA.
@@ -239,7 +245,8 @@ Do not interpret equal canvas/anchor as equal character height.
   first two new sheet acceptances withdrawn. One mouth edit improves tongue but
   crops right boot (82 last-row pixels alpha>=13); failure kept. Local mouth-only
   composite permission requested with concrete original/corrected detail previews;
-  no new repair or retry undertaken without a reply.
+  no new repair or retry undertaken without a reply (later contextual continuation
+  below accepts only the concrete local mouth method).
 - 2026-10-06: Run two poses pass original eye/highlight diagnostics; native ground
   baseline refined to y835 by labeled foot inspection, preserving earlier y842 QA.
   Actual foot phase left→right is recorded without mirroring. Stumble comparator
@@ -250,6 +257,15 @@ Do not interpret equal canvas/anchor as equal character height.
   candidate pack now passes file/derivation/timing/socket validation.
   Neutral packs contain Dino run/carry/static idle and Cat receive/static wait/happy;
   no consumer-scene, prop asset or gameplay-feel claim.
+
+- 2026-10-06: Owner replied 「往下做」 after the exact bounded mouth-only composite
+  proposal. New Robot concept-10 changes 16,896 RGB pixels inside mouth ROI only;
+  every alpha and outside pixel exact. Four regressions/native/64px review PASS.
+  New soft-handmade-v1-mouthfix static delivery has the same .95 scale/root and
+  alpha as its historical version; old files are retained. Static available=true;
+  Robot six-sheet gate remains incomplete. Owner additionally directed
+  「做到一個段落就幫我push」; validated milestones commit/push on this same PR,
+  no automatic merge or post-push memory loop.
 
 ## Known Risks
 

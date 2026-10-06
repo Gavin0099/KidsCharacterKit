@@ -30,5 +30,21 @@
       "concept_id": "robot-concept-09",
       "qa": "concepts/kck-03b2/evidence/robot-mouth-01-qa.json"
     }
+  ],
+  "derivations": [
+    {
+      "job_id": "robot-mouth-local-01",
+      "character": "robot",
+      "calls": 0,
+      "status": "approved_reference",
+      "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "input": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "donor": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+      "output": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+      "output_sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+      "provenance": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.provenance.json",
+      "agent_hard_gate": "PASS",
+      "evidence": "concepts/kck-03b2/evidence/robot-mouth-local-conformance.json"
+    }
   ]
 }

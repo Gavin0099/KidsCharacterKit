@@ -6,14 +6,15 @@ import unittest
 import validate_raster as tool
 
 class Lifecycle(unittest.TestCase):
-    def test_actual_promotion_and_robot_withdrawal(self):
+    def test_actual_promotion_and_robot_mouth_restoration(self):
         result=tool.validate()
         self.assertEqual([(x['asset_id'],x['status'],x['available']) for x in result['records']],
-                         [('cat-02','production',True),('dinosaur-01','production',True),('robot-01','candidate',False)])
+                         [('cat-02','production',True),('dinosaur-01','production',True),('robot-01','production',True)])
 
     def test_robot_cannot_be_enabled_by_manifest_alone(self):
-        manifest=json.loads((tool.ROOT/'manifests/characters.json').read_text());manifest['characters']['robot-01']['representations']['raster']['available']=True
-        with self.assertRaisesRegex(ValueError,'availability/lifecycle'):tool.validate(manifest=manifest)
+        index=json.loads((tool.ROOT/'concepts/kck-03b/raster-candidate-set.json').read_text())
+        index['records']=[index['retired_records'][0] if x['asset_id']=='robot-01' else x for x in index['records']]
+        with self.assertRaisesRegex(ValueError,'availability/lifecycle'):tool.validate(index=index)
 
     def test_job_sources_calls_and_failure_retention(self):
         jobs=[]

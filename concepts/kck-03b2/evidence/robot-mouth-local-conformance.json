@@ -1,0 +1,34 @@
+{
+  "format": "kck-robot-mouth-conformance-v1",
+  "date": "2026-10-06",
+  "source": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+  "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+  "spec": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "owner_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+  "conditional_acceptance": "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json",
+  "checks": {
+    "single_coherent_rectangular_smile": true,
+    "short_rounded_tongue": true,
+    "heavy_vertical_split_removed": true,
+    "no_hanging_lower_right_box": true,
+    "eye_single_highlight_unchanged": true,
+    "body_chest_controls_antennas_boots_unchanged": true,
+    "all_alpha_equal": true,
+    "outside_mouth_roi_equal": true,
+    "full_body_visible_border_preserved": true,
+    "checker_white_black_64px_review": true
+  },
+  "actual_repair_evidence": "concepts/kck-03b2/evidence/robot-mouth-local-correction.json",
+  "test_command": "python concepts/kck-03b2/tools/test_correct_robot_mouth.py",
+  "actual_test_result": "4 regressions PASS before acceptance; commit-bound receipts follow",
+  "visual_review": "Inspected full original and corrected body, native mouth detail and common-canvas checker/white/black/64px comparison. Short rounded tongue under white upper band; no detached lower-right rectangle or long central dark bar. Cold-gray mouth border blends without a visible seam. Original single upper-left eye glints, head/chest/limb proportions and all outside pixels unchanged.",
+  "not_claimed": [
+    "Owner personally reviewed this output",
+    "Robot six sheets complete",
+    "Rights clearance",
+    "New image generation"
+  ]
+}

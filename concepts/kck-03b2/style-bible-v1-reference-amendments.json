@@ -1,0 +1,30 @@
+{
+  "format": "kck-reference-amendments-v1",
+  "base": {
+    "path": "concepts/kck-03b2/style-bible-v1-reference-set.json",
+    "sha256": "cd9068d173a24cbb1df7de8ebe54a9996fd749f98aa96c99558b13a090cbeebf"
+  },
+  "spec": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "amendments": [
+    {
+      "character": "robot",
+      "concept_id": "robot-concept-10",
+      "source": {
+        "path": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "provenance": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.provenance.json",
+      "replaces_for_future_work": "robot-concept-02 mouth construction only; original approved reference remains historical",
+      "conformance": "concepts/kck-03b2/evidence/robot-mouth-local-conformance.json",
+      "owner_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json"
+    }
+  ],
+  "not_claimed": [
+    "Original style-bible/reference-set hashes changed",
+    "Existing sheet attempts re-executed",
+    "Robot sheet gate passed"
+  ]
+}

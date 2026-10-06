@@ -1,0 +1,67 @@
+{
+  "record_type": "deterministic_candidate_derivation",
+  "date": "2026-10-06",
+  "status": "candidate",
+  "owner_authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+  "input": {
+    "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+    "raw_sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216"
+  },
+  "donor": {
+    "path": "concepts/kck-03b2/outputs/robot-mouth-01.png",
+    "raw_sha256": "3a0c3799d4ebf861c685aad3e8e948ca9ffa1a2251ac5a9202a01628726e3387",
+    "failure": "Full-body cropped right boot; mouth RGB only is sampled"
+  },
+  "output": {
+    "path": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+    "raw_sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464",
+    "rgba8_sha256": "7f6e7bc65f96c0ef65a5303eb4cc8b0746995bc5700116197bdd1e64aa73b74f",
+    "dimensions": [
+      1086,
+      1448
+    ]
+  },
+  "method": "One uniform BICUBIC donor registration; cold-gray border RGB match; bounded feathered mouth composite. All original alpha and outside RGBA exact.",
+  "patch": {
+    "allowed_roi_exclusive": [
+      512,
+      392,
+      650,
+      520
+    ],
+    "changed_bbox_exclusive": [
+      513,
+      393,
+      649,
+      519
+    ],
+    "changed_pixels": 16896,
+    "uniform_donor_scale": 0.9586776859504132,
+    "donor_translation": [
+      15.859504132231393,
+      8.024793388429714
+    ],
+    "rgb_border_median_offset": [
+      2.0,
+      1.0,
+      2.0
+    ],
+    "feather_width_px": 8,
+    "all_alpha_equal": true,
+    "outside_roi_rgba_equal": true,
+    "body_and_boots_equal": true
+  },
+  "tool": {
+    "path": "concepts/kck-03b2/tools/correct_robot_mouth.py",
+    "sha256": "313b848d7cf554a72854d86ce23cc0109365389a8eacbf285a034481299127cb",
+    "Python": "3.12.14",
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5"
+  },
+  "image_generation_calls": 0,
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  }
+}

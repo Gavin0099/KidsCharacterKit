@@ -37,6 +37,7 @@ jobs:
           python concepts/kck-03b1/tools/test_correct_robot_highlights.py
           python concepts/kck-03b1/tools/test_concept_provenance.py
           python concepts/kck-03b2/tools/test_correct_dinosaur_side_belly.py
+          python concepts/kck-03b2/tools/test_correct_robot_mouth.py
       - name: Verify immutable style master and delivery regressions
         run: |
           python concepts/kck-03b/tools/test_produce_raster.py

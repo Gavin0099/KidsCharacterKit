@@ -8,7 +8,9 @@ reviewed document/report hashes and direct answer.
 The [candidate index](raster-candidate-set.json) binds three immutable master copies
 and three actual 1024 RGBA sRGB files. Cat/Dinosaur are production under the
 [Owner conditional acceptance](evidence/2026-10-06-owner-conformance-continuation.json);
-Robot remains candidate after [tongue feedback](evidence/2026-10-06-owner-robot-tongue-feedback.json). Sources remain byte-exact;
+Robot now uses an accepted [mouthfix amendment](../../docs/character-reference-amendments.md)
+after [tongue feedback](evidence/2026-10-06-owner-robot-tongue-feedback.json). Its
+previous version remains a withdrawn candidate in `retired_records`. Sources remain byte-exact;
 old source-app records and all failed exploration outputs are unchanged. New
 master/transformation record kinds retain full provenance and pending rights.
 
@@ -31,5 +33,5 @@ and uniform geometry, faint-alpha/profile/input rejection, overwrite/source gate
 and negative provenance/manifest schemas. Use `tools/validate_raster.py` for current lifecycle/status verification after
 acceptance. The original builder's `--check` replays the historical candidate stage
 and cannot byte-compare later status evidence/index additions. Cat/Dinosaur
-availability is true; Robot is false and both failed outputs are retained. A4 stays 2/2; this checkpoint made no
+and new Robot-mouthfix availability is true; all old/failed outputs are retained. A4 stays 2/2; this checkpoint made no
 generation calls. Rights remain pending/unknown; PR merge and app release separate.

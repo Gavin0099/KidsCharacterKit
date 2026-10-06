@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "asset_id": "robot-01",
+  "character": "robot",
+  "style_version": "soft-handmade-v1-mouthfix",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_robot_mouth_raster.py",
+    "sha256": "1a86f22a449e1862d29010263bda8fd434af02edae0cb5cf7a6ddedff0f8714e",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/produce_raster.py",
+        "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e"
+      },
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "sha256": "0c5610801b761881907fcca35b14fc894b4e220c9e570d47d49c243b23700fd7",
+      "supports": "Owner contextual continuation of the exact bounded mouth-only composite proposal"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-robot-static/foot-measurement-grid.png",
+      "supports": "Manually inspected native foot-contact baseline; no alpha-derived anchor"
+    }
+  ],
+  "record_type": "master",
+  "id": "robot-01-soft-handmade-v1-mouthfix-master",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Select existing Owner-approved corrected Robot under continuing conformance authority; no source-app overwrite",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-robot-local-mouth-continuation.json",
+      "quote": "往下做"
+    }
+  ],
+  "file": {
+    "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+    "format": "png",
+    "width": 1086,
+    "height": 1448,
+    "color_type": "RGBA",
+    "bytes": 1497894,
+    "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+  },
+  "pixel_sha256": "7f6e7bc65f96c0ef65a5303eb4cc8b0746995bc5700116197bdd1e64aa73b74f",
+  "input": {
+    "path": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.png",
+    "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+  },
+  "source_provenance": {
+    "path": "concepts/kck-03b2/outputs/robot-mouth-01-local-corrected.provenance.json",
+    "sha256": "7eeea7aa59ff2af7ab8f8fc83f4b624c8f6aceb4bb93c9c94fc3a3d1df63740e"
+  },
+  "copy_policy": "Exact source bytes; no resize/re-encoding/pixel edits",
+  "unresolved_questions": [
+    "Inherited rights pending/unknown"
+  ]
+}

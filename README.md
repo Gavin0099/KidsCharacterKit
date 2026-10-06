@@ -53,7 +53,7 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-GOV-02 | Initial AI governance adoption: pinned framework, repo rules, PLAN, static checks and explicit runtime gaps ([adoption](docs/ai-governance-adoption.md)) | proposed in this PR |
 | KCK-03B1 | Dinosaur style key → Cat / Robot translation → lineup; [brief](docs/kck-03b1-brief.md), [lineup review](artifacts/qa/2026-10-06-b1c-corrected-lineup/contact-sheet.png) | Three-character references/lineup approved; Dino v2d budget remains 2/2 |
 | KCK-03B2 | [Style Bible v1](docs/character-style-bible-v1.md), Cat/Dinosaur formal model sheets plus Robot continuation | Cat/Dinosaur six-sheet sets approved; Robot incomplete |
-| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | Cat/Dinosaur available; Robot held after tongue feedback |
+| KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | Cat/Dinosaur available; Robot mouthfix static available |
 | KCK-03C | [Neutral animation contract](docs/animation-contract-v1.md), schema, timing/events/sockets and file validator | implemented; validation covered |
 | KCK-03C1 | [Snack minimum pack checkpoint](concepts/kck-03c1/README.md) | Dinosaur partial candidate; remaining art checks held |
 | KCK-03C2 | Actual consumer-scene pivot, scale, ground, timing, loop, alpha and prop handoff | pending |
@@ -68,6 +68,7 @@ Conditional Owner acceptance applies only to output with real conformance eviden
 Exploration and preparation tooling stage. Concept originals and the separately
 authorized A3 derivative are preserved under `concepts/`. The
 [character pipeline](docs/character-pipeline.md) provides read-only review,
-fixed-slot extraction and explicit-anchor sequence QA. Cat/Dinosaur have accepted static deliveries; Robot is held after mouth feedback.
+fixed-slot extraction and explicit-anchor sequence QA. Cat/Dinosaur and the [mouth-fixed Robot](docs/character-reference-amendments.md)
+have accepted static deliveries; Robot sheets remain incomplete.
 No delivered animations or 3D model are available. Asset rights
 remain `pending`. These changes are on the review branch, not merged main.
