@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python -c \"import unittest; suite=unittest.TestSuite(); [suite.addTests(unittest.TestLoader().discover(directory,pattern='test_*.py')) for directory in ['concepts/kck-03b1/tools','.agents/skills/kck-character-pipeline/scripts']]; result=unittest.TextTestRunner(verbosity=1).run(suite); raise SystemExit(not result.wasSuccessful())\"",
+  "exit_code": 0,
+  "started_at": "2026-10-06T04:35:35Z",
+  "finished_at": "2026-10-06T04:35:55Z",
+  "runner": "python-unittest",
+  "linked_commit": "fa19b35fb92d148da9e4420d9e1ce4a6a415813e",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/robot-highlight-checkpoint.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

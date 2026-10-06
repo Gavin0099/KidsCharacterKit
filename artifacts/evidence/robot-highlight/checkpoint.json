@@ -1,0 +1,26 @@
+{
+  "implementation_commit": "fa19b35fb92d148da9e4420d9e1ce4a6a415813e",
+  "owner_quote": "好的 可以這樣做",
+  "authorization": "Specific source-locked Robot highlight-only correction, original/alpha/outside pixels preserved; not corrected artwork or lineup acceptance",
+  "image_generation_calls": 0,
+  "dinosaur_budget": "2/2 unchanged",
+  "test_evidence": "artifacts/evidence/test-results/robot-highlight-checkpoint.json",
+  "test_count": 43,
+  "schema_validation": {
+    "manifest_records": 1,
+    "provenance_records": 16,
+    "result": "PASS"
+  },
+  "governance_checks": 18,
+  "pixel_validation": "concepts/kck-03b1/evidence/2026-10-06-robot-highlight-correction-validation.json",
+  "lineup": "artifacts/qa/2026-10-06-b1c-corrected-lineup/report.json",
+  "not_claimed": [
+    "Cat/Robot approved_reference",
+    "B1-C complete",
+    "Style Bible v1",
+    "production",
+    "rights clearance",
+    "new generation",
+    "remote merge"
+  ]
+}
