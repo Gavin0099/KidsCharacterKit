@@ -14,6 +14,10 @@ No animation availability is added to the character manifest.
 - Dinosaur `stumble`: immutable raw two-pose output and whole-slot extraction;
   eye-style checks PASS but the existing position/size comparator FAILs. Lean can
   affect screen-space metrics, but no qualified assessment has resolved the result.
+  [Read-only follow-up](evidence/dinosaur-stumble-read-only-diagnostic.json) records
+  facial ratios against accepted views without inventing a new gate. One provisional
+  shared registration also clips 37 alpha=1 pixels and is rejected by the actual
+  pipeline. Anchors remain unapproved; no cleanup, acceptance or retry occurred.
 - Cat `receive`: two distinct poses, 150/200 ms, 350 ms one-shot; grounded tail
   support, one global registration, anatomical LEFT hand socket and attach event.
   Dinosaur diagnostics remain FAIL because they include white sclera, which also
@@ -34,3 +38,7 @@ lifecycle, sockets, events, timing, hashes, extraction and derivative replay.
 [Cat candidate pack](cat-snack-candidate-pack.json), [qualified Cat art evidence](evidence/cat-receive-art-conformance.json) and [Cat QA preview](../../artifacts/qa/2026-10-06-cat-receive-normalized/preview.png) preserve the same delivery boundaries.
 
 Master/pose comparison on a common canvas scale is saved under `artifacts/qa/2026-10-06-motion-master-comparison/`. Pose height changes are visible; equal eye registration and anchors do not establish a consumer-scene no-jump result.
+
+[Bounded retry proposal](retry-proposal/README.md) has exact inputs/instructions
+for one Dino stumble call and a six-view mouthfix Robot sheet set. All calls are
+zero and execution requires the Owner's explicit failed-sequence decision.

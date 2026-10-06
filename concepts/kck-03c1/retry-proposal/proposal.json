@@ -1,0 +1,148 @@
+{
+  "format": "kck-bounded-retry-proposal-v1",
+  "status": "awaiting_explicit_owner_decision",
+  "execution_authorized": false,
+  "generation_calls": 0,
+  "new_maximum_calls_if_authorized": 7,
+  "scope": "Dino stumble one call; Robot six replacement/new-mouth model sheets, one call per view, side first. Robot motion/3D is not part of this proposal.",
+  "reason": "Existing Dino identity FAIL and failed Robot side lighting stop their generation sequences. New mouth reference needs consistent Robot sheets; old withdrawn sheets are preserved.",
+  "policy": "Only a direct Owner reply may activate this proposal. Run sequentially within each character; any failed hard gate immediately stops that character sequence. No automatic retry, no tolerance/anchor waiver, no alpha cleanup, no immutable file overwrite. Other independent already-authorized work may proceed.",
+  "old_budget_unchanged": {
+    "dinosaur_v2d_used": 2,
+    "dinosaur_v2d_maximum": 2,
+    "remaining": 0
+  },
+  "not_authorized": [
+    "merge",
+    "rights upgrade",
+    "production motion promotion without consumer QA",
+    "unbounded attempts"
+  ],
+  "jobs": [
+    {
+      "job_id": "dinosaur-stumble-02-proposed",
+      "character": "dinosaur",
+      "view": "stumble two key poses",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/dinosaur-stumble-v2.txt",
+        "sha256": "171dfb3e1d4ddda918f95f3ea21d4bc34a060145a92e42fa4189549c845fb6e3"
+      },
+      "reference": {
+        "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized",
+      "previous_failure": "concepts/kck-03b2/evidence/dinosaur-stumble-01-qa.json"
+    },
+    {
+      "job_id": "robot-side-02-proposed",
+      "character": "robot",
+      "view": "side",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-side-v2.txt",
+        "sha256": "9bdc072751d1629eecd033bcd6f30b156522db88020c1424bcd55bde33fd51fb"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    },
+    {
+      "job_id": "robot-front-02-proposed",
+      "character": "robot",
+      "view": "front",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-front-v2.txt",
+        "sha256": "313b85766c84ea57e35bceaaecc9c411d85ddd3a69bd86eaed1438cda5d250de"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    },
+    {
+      "job_id": "robot-three-quarter-02-proposed",
+      "character": "robot",
+      "view": "three-quarter",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-three-quarter-v2.txt",
+        "sha256": "dff8619ae3720b8e7c8f7d498b3a219530bb2f5465b7b52c3527906e13ac0686"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    },
+    {
+      "job_id": "robot-back-02-proposed",
+      "character": "robot",
+      "view": "back",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-back-v2.txt",
+        "sha256": "018a499aa6bc39302830a2b837c82d825174d1c841a91b6189a53e3c652aaf6f"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    },
+    {
+      "job_id": "robot-happy-02-proposed",
+      "character": "robot",
+      "view": "happy",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-happy-v2.txt",
+        "sha256": "5d8c3bf7efe1543a9d934b8adae54f116e7cfdfd4b07937db31278720c7ea5c1"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    },
+    {
+      "job_id": "robot-confused-02-proposed",
+      "character": "robot",
+      "view": "confused",
+      "instruction": {
+        "path": "concepts/kck-03c1/retry-proposal/robot-confused-v2.txt",
+        "sha256": "17eb5562087c665937f76ae7c2419210240ac1b421ea2b13bdd43309b7c8147a"
+      },
+      "reference": {
+        "path": "characters/robot/raster/versions/soft-handmade-v1-mouthfix/originals/robot-01.png",
+        "sha256": "6f86e3790e6f570a241fb88ef72a772245295cf996598bc7bf83a5ca1231e464"
+      },
+      "max_calls": 1,
+      "calls": 0,
+      "status": "proposed_not_authorized"
+    }
+  ],
+  "diagnostic": {
+    "path": "concepts/kck-03c1/evidence/dinosaur-stumble-read-only-diagnostic.json",
+    "sha256": "fa36856c9d82c9a2b1ad5085b85df79a26301b997a1fc8ae4742e738a646e19d"
+  },
+  "specification": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "reference_amendment": {
+    "path": "concepts/kck-03b2/style-bible-v1-reference-amendments.json",
+    "sha256": "963f91a5617955effd559197fcf85e3f8cdb6da557ffaf7a95c2f00db19099e0"
+  }
+}

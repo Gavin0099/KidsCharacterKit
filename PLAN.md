@@ -269,6 +269,14 @@ Do not interpret equal canvas/anchor as equal character height.
 
 ## Known Risks
 
+- Read-only stumble follow-up retains both legacy identity FAILs. Facial ratios
+  are near accepted sheet views, but no new identity threshold is defined. One
+  trial global scale/root clips 37 alpha=1 pixels and the actual pipeline rejects
+  it; those roots are unapproved hypotheses, not proof every anchor fails.
+  `concepts/kck-03c1/retry-proposal/` prepares seven bounded calls (Dino stumble
+  one, Robot six mouthfix sheets with side first), all zero/unapproved. Explicit
+  failed-sequence Owner decision is required; no gate or old budget is reset.
+
 - Planning cannot silently waive model-sheet, identity or selected-master rules.
 - Main and pending PR #12 have different input-gate revisions; always identify
   the branch/commit used for a hash/test/attempt claim.
