@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""KCK-03B1 pre-flight rev. 3 content-identity helper (docs/kck-03b1-brief.md, "v2d pre-flight
-gate, rev. 3"; items 2-3, the pixel and canonical-text hashes, are unchanged since rev. 2).
+"""KCK-03B1 pre-flight rev. 4 content-identity helper (docs/kck-03b1-brief.md).
+Rev. 4 removes empty instruction lines; the image gate is unchanged.
 It does not compute raw-file SHA-256: that is provenance, not a gate.
 
   python3 preflight_hash.py image <file.png>        -> width, height, pixel SHA-256
@@ -10,8 +10,10 @@ It does not compute raw-file SHA-256: that is provenance, not a gate.
 
 Image identity: decode -> RGBA8 -> row-major, top-to-bottom -> SHA-256 of the raw RGBA
 bytes. No color management, no alpha premultiplication, ancillary chunks ignored.
-Text identity: UTF-8, leading BOM removed, CRLF/CR -> LF, then exactly one trailing LF;
-any other difference (including Markdown escapes or changed characters) changes the hash.
+Text identity: UTF-8, leading BOM removed, CRLF/CR -> LF, remove empty lines, then join
+remaining lines with LF and append exactly one LF. Empty means zero characters; spaces
+and tabs are preserved. Any other difference (including Markdown escapes or changed
+characters) changes the hash.
 Requires: pillow."""
 import hashlib
 import sys
@@ -30,7 +32,7 @@ def canonical_text(raw):
     if t.startswith("﻿"):
         t = t[1:]
     t = t.replace("\r\n", "\n").replace("\r", "\n")
-    return (t.rstrip("\n") + "\n").encode("utf-8")
+    return ("\n".join(line for line in t.split("\n") if line != "") + "\n").encode("utf-8")
 
 
 def text_identity(raw):

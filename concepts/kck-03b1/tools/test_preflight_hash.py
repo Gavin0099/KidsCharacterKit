@@ -10,10 +10,15 @@ import preflight_hash as P
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 INSTR = os.path.join(HERE, "..", "instructions")
-EXPECTED = {
+RAW_EXPECTED = {
     "A2": ("12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e", 2342),
     "A3": ("c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884", 2371),
     "A4": ("d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34", 2396),
+}
+EXPECTED = {
+    "A2": ("b1b54564a7b6b5e4a8ee0420a9d52c7053eb2edf7d108561493a913a51a668d1", 2335),
+    "A3": ("53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09", 2364),
+    "A4": ("99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee", 2389),
 }
 
 
@@ -24,10 +29,11 @@ def load(v):
 
 class InstructionHashes(unittest.TestCase):
     def test_committed_files_match_brief(self):
-        for v, (sha, size) in EXPECTED.items():
+        for v, (raw_sha, raw_size) in RAW_EXPECTED.items():
             raw = load(v)
-            self.assertEqual(len(raw), size, v)
-            self.assertEqual(hashlib.sha256(raw).hexdigest(), sha, v)
+            self.assertEqual(len(raw), raw_size, v)
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), raw_sha, v)
+            sha, size = EXPECTED[v]
             self.assertEqual(P.text_identity(raw), (size, sha), v)
 
     def test_transport_differences_do_not_change_hash(self):
@@ -38,6 +44,10 @@ class InstructionHashes(unittest.TestCase):
             "bom": b"\xef\xbb\xbf" + raw,
             "no trailing newline": raw.rstrip(b"\n"),
             "extra trailing newline": raw + b"\n",
+            "cr": raw.replace(b"\n", b"\r"),
+            "empty lines removed": b"\n".join(line for line in raw.split(b"\n") if line) + b"\n",
+            "empty lines inserted": b"\n\n" + raw.replace(b"\n", b"\n\n\n"),
+            "combined transport": b"\xef\xbb\xbf\r\n" + raw.replace(b"\n", b"\r\n\r\n"),
         }.items():
             self.assertEqual(P.text_identity(variant)[1], want, name)
 
@@ -47,6 +57,16 @@ class InstructionHashes(unittest.TestCase):
         self.assertNotEqual(P.text_identity(raw.replace("–".encode(), b"-"))[1], want)
         self.assertNotEqual(P.text_identity(raw.replace(b"x=30", b"x\\=30"))[1], want)
         self.assertNotEqual(P.text_identity(raw.replace(b"x=30", b"x=31"))[1], want)
+        self.assertNotEqual(P.text_identity(raw.replace(b"\n\n", b"\n \n", 1))[1], want)
+        self.assertNotEqual(P.text_identity(raw.replace(b"\n\n", b"\n\t\n", 1))[1], want)
+        self.assertNotEqual(P.text_identity(raw.replace(b"\nGoal:", b" Goal:", 1))[1], want)
+
+    def test_canonicalization_is_idempotent(self):
+        for v in EXPECTED:
+            c = P.canonical_text(load(v))
+            self.assertEqual(P.canonical_text(c), c, v)
+            self.assertNotIn(b"\n\n", c, v)
+            self.assertTrue(c.endswith(b"\n"), v)
 
 
 class ImageIdentity(unittest.TestCase):

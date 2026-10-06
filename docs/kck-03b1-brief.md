@@ -14,7 +14,7 @@ Do not mix these up:
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
 | **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
-| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 3 is current. |
+| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 3 is current; rev. 4 is proposed in PR #12. |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
 transport, not from V2. A new design version would only be justified by a decision to change
@@ -507,14 +507,25 @@ trailing newline. They differ only in that last line. The files are committed in
 [`concepts/kck-03b1/instructions/`](../concepts/kck-03b1/instructions/); the Owner uploads them
 from there (or from the copies sent by the agent) into each fresh generation conversation.
 
-| File | Variant line | Size | SHA-256 (also the canonical-content hash) |
+| File | Variant line | Size | Raw-file SHA-256 (provenance) |
 |---|---|---|---|
 | `A2_instruction_v2d.txt` | A2 Clean | 2342 bytes | `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e` |
 | `A3_instruction_v2d.txt` | A3 Balanced | 2371 bytes | `c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884` |
 | `A4_instruction_v2d.txt` | A4 Handmade | 2396 bytes | `d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34` |
 
-The committed bytes are checked by `concepts/kck-03b1/tools/test_preflight_hash.py`, which also
-holds the BOM / CRLF / trailing-newline regression cases for the canonicalization.
+The instruction source files keep their original bytes and seven empty lines. Under proposed
+rev. 4, the gate uses these canonical-content values instead of the raw-file hashes:
+
+| File | Canonical size (empty lines removed) | Canonical-content SHA-256 (gate) |
+|---|---|---|
+| `A2_instruction_v2d.txt` | 2335 bytes | `b1b54564a7b6b5e4a8ee0420a9d52c7053eb2edf7d108561493a913a51a668d1` |
+| `A3_instruction_v2d.txt` | 2364 bytes | `53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09` |
+| `A4_instruction_v2d.txt` | 2389 bytes | `99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee` |
+
+The committed bytes and the separate canonical hashes are checked by
+`concepts/kck-03b1/tools/test_preflight_hash.py`. Regression cases cover BOM, CRLF/CR,
+trailing LF, inserted/removed empty lines and combined transport differences; characters,
+numbers, Markdown escapes, nonempty line breaks, spaces and tabs still affect the hash.
 
 Generation-input message: the single Owner-authored message that starts a generation. Its
 required content and a fill-in template (with the hashes above) are in
@@ -576,7 +587,7 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 #### Retry budget and attempt definition (v2d)
 
 - v2d attempts: **0 of 2** used.
-- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 3) pass
+- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 4, once Owner-accepted) pass
   and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
 - v2d permits at most two valid generation attempts. After the second valid generated
@@ -589,12 +600,15 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
   style rule, or treat the highlight as a deterministic post-process by the image tool with a
   transformation record. Either is an Owner decision.
 
-#### v2d pre-flight gate, rev. 3 (hard; before calling the generator)
+#### v2d pre-flight gate, rev. 4 (proposed; hard before calling the generator)
 
 Rev. 2 (items 2 and 3, content-based identity) Owner-approved 2026-10-05; rev. 3 (items 1 and 4,
-the fail-closed rule and the input transport) Owner-approved 2026-10-06. Revision history
-below. All four must PASS. Any FAIL, or any check that cannot be completed: do not
-generate, do not consume an attempt. Reference helper for the two hashes:
+the fail-closed rule and the input transport) Owner-approved 2026-10-06. Rev. 4 changes
+only instruction canonicalization by removing empty lines. The Owner asked this local Codex
+session to continue the proposed update and diagnostics on 2026-10-06; the agent agrees with
+the proposal, but that is not Owner acceptance. This revision is a PR #12 candidate until
+Owner acceptance is recorded. The image gate is unchanged. Revision history below.
+All four must PASS. Any FAIL, or any check that cannot be completed: do not generate, do not consume an attempt. Reference helper for the two hashes:
 [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
 (a pre-flight helper; no product or runtime code). It is **not** a third input to a
 generation conversation: the message describes the algorithms and the generation side
@@ -633,8 +647,12 @@ implements them itself.
 3. **Instruction: canonical-content identity.** The instruction text the generation side
    holds (whether it arrives as an attachment, a fetched file, or is expanded from an
    attachment into text by the platform) canonicalizes to the variant's expected hash in the
-   table above. Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing
-   LF. Any other difference (changed characters, Markdown escapes, edits) FAILs. This
+   canonical-content table above. Canonicalization: UTF-8, remove a leading BOM, CRLF/CR
+   converted to LF, remove every empty line, join remaining lines with LF and append exactly
+   one LF. An empty line has zero characters after newline conversion; do not strip spaces
+   or tabs, merge nonempty lines, or rewrite characters. The instruction alone is hashed,
+   excluding the execution and verification message. Any other difference (changed
+   characters, numbers, Markdown escapes, edits) FAILs. This
    canonical-content SHA-256 of the text actually held is the **only** pass/fail criterion for
    the instruction. The generation side states whether it came from an attachment, a fetch, or
    expanded text. Provenance: the actual held raw SHA-256 when raw file bytes are available;
@@ -674,6 +692,65 @@ from this repository (Owner request, 2026-10-06, to avoid copying files by hand)
 Codex run showed the image tool does not accept a fetched PNG as the image reference, so that
 route was withdrawn; the inputs are uploaded, and the repository only hosts the files for
 download.
+
+Rev. 4 addresses a narrower transport difference: expanded A3 text contained exactly the
+same nonempty lines but omitted seven empty lines (2371 -> 2364 bytes). Removing those
+lines locally reproduces its reported SHA-256 exactly. It does not loosen character or
+number identity. The image mismatch is a separate issue and is not waived by this change.
+
+#### Failed upload pre-flight and diagnostics, 2026-10-06 (no generation)
+
+Chat: `預檢失敗 റിപ്പോർ‍ട്ട്`, id `6ac4547a-89a0-83ee-902c-1157bab39e5b`.
+The initial request exposed neither source object and was INCONCLUSIVE. The later request
+in the same chat held one PNG and expanded A3 text and reported both content gates FAIL.
+No image generation was called; no v2d attempt was consumed; budget stays **0/2**. This
+chat is for diagnostics only and cannot be reused as a formal fresh-context attempt.
+The retrieved transcript alone does not establish whether the expanded text originated
+from a platform-expanded attachment or an Owner paste, so item 4 is not certified.
+
+| Evidence | Value | Actor |
+|---|---|---|
+| Local canonical input | 770614 bytes; raw SHA-256 `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`; decoded RGBA8 SHA-256 `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8` | Codex independent local measurement |
+| Held attachment `image(7).png` | 929481 bytes; 1448x1086; raw SHA-256 `cac0f4fcc8138e2504a0bd0ad65a2fb4c6e6ea91a8bdd6c0bd6855b5e300777a`; decoded RGBA8 SHA-256 `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d` | Generation-side report; independently matched on the local attachment copy |
+| Held A3 expanded instruction, empty lines removed | 2364 bytes; SHA-256 `53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09`; raw bytes not exposed | Generation-side diagnostic report; local canonical instruction independently gives the same value |
+
+The diagnostic-only message requested an exact held-file copy, alpha statistics, PNG
+chunks/IHDR and the instruction hash after removing empty lines. The generation side
+returned `held_image_exact.png` with the same raw SHA above. A byte-exact local attachment
+copy was preserved for the Owner; it was copied, not re-encoded. The local canonical hash
+confirms the intended source in this checkout; the historical file-picker selection is
+not independently observable from this session.
+
+Independent measurements and the reproducible transform are in
+[`2026-10-06-upload-diagnostics.json`](../concepts/kck-03b1/evidence/2026-10-06-upload-diagnostics.json),
+using [`diagnose_png_transport.py`](../concepts/kck-03b1/tools/diagnose_png_transport.py)
+(Pillow/numpy versions recorded in the JSON). Generation-side statistics agree:
+
+- Both images have exactly the same alpha at every pixel: alpha 0 = 985719 pixels,
+  partial alpha = 585294, alpha 255 = 1515. Top four alpha values/counts:
+  0/985719, 253/403941, 252/91771, 254/70367.
+- Both have inclusive alpha > 10 bounds `(353, 64, 1220, 1038)` and 575474 pixels
+  with alpha > 200. Held mean RGB on those pixels is
+  `(185.230624, 194.767503, 148.832912)`.
+- 63143 pixels differ in RGB, including 591 alpha-zero pixels. At alpha > 0,
+  the maximum channel difference is 1; alpha is unchanged everywhere.
+- For each original RGB channel `c` and alpha `a`, the integer transform
+  `p = floor((c*a + 127)/255)`, then
+  `c2 = floor((p*255 + floor(a/2))/a)` for `a > 0`, else `c2 = 0`,
+  reproduces **every RGBA byte** of the held image. Its hash is exactly
+  `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d`.
+  This models nearest-integer 8-bit premultiplication followed by unpremultiplication,
+  with RGB zeroed at alpha 0. It establishes an exact reproducible mapping;
+  attribution to a particular platform component remains an inference.
+- Canonical PNG: IHDR, caBX, IDAT x12, IEND. Held PNG: IHDR, sRGB, eXIf,
+  IDAT x57, IEND. Both are bit depth 8, color type 6 (RGBA).
+  Removing caBX alone cannot explain changed decoded RGB.
+
+The diagnostic transform is **not an image gate**. No alpha/RGB tolerance or alternate
+accepted hash is introduced. The older `1fc77702…e45dacd` attachment has not been
+independently tested against this transform. The Owner decides any image-gate revision
+from this evidence. Carry this failure/diagnostic record into the eventual exploration
+consolidation PR after A3 and A4; neither is completed by this diagnostic work.
 
 #### Post-generation provenance capture
 
