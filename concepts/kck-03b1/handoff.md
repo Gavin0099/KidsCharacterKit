@@ -6,6 +6,11 @@ the brief decides. Owner accepted the exact two-result image gate and empty-line
 instruction normalization in this session on 2026-10-06 ("好的 往下做").
 The v2d budget is two valid generated artifacts total, shared across A3/A4 and retries.
 
+**Current execution state (2026-10-06): 1/2 used.** Registered A3 attempt #1 passed
+pre-flight and produced one image, then failed output gate 4. The sequence is stopped;
+do not use the template below to start a retry or A4 without a subsequent Owner decision.
+See the [attempt record](evidence/2026-10-06-a3-attempt-01.json).
+
 ## Source objects (exactly two per generation)
 
 | Object | Where | Gate (full 64-hex) |

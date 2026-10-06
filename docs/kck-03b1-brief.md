@@ -13,7 +13,7 @@ Do not mix these up:
 |---|---|---|
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
-| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
+| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3 candidate, output gate 4 FAIL; A4 pending, sequence stopped. |
 | **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 5 is current (Owner decision, 2026-10-06). |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
@@ -585,7 +585,7 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 
 #### Retry budget and attempt definition (v2d)
 
-- v2d attempts: **0 of 2** used.
+- v2d attempts: **1 of 2** used (A3 attempt #1, 2026-10-06; output gate 4 FAIL, record below).
 - **An attempt is consumed only when all four checks of the pre-flight gate (rev. 5) pass
   and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
@@ -728,7 +728,7 @@ hashes fail.
 Chat: `預檢失敗 റിപ്പോർ‍ട്ട്`, id `6ac4547a-89a0-83ee-902c-1157bab39e5b`.
 The initial request exposed neither source object and was INCONCLUSIVE. The later request
 in the same chat held one PNG and expanded A3 text and reported both content gates FAIL.
-No image generation was called; no v2d attempt was consumed; budget stays **0/2**. This
+No image generation was called; no v2d attempt was consumed; budget was **0/2 at that point**. This
 chat is for diagnostics only and cannot be reused as a formal fresh-context attempt.
 The retrieved transcript alone does not establish whether the expanded text originated
 from a platform-expanded attachment or an Owner paste, so item 4 is not certified.
@@ -778,6 +778,63 @@ The older `1fc77702…e45dacd` attachment has not been independently tested agai
 transform and remains outside the accepted set. The Owner decides any image-gate revision
 from this evidence; rev. 5 records the accepted decision above. Carry this failure/diagnostic record into the eventual exploration
 consolidation PR after A3 and A4; neither is completed by this diagnostic work.
+
+#### Registered A3 attempt #1 — output gate 4 FAIL (2026-10-06)
+
+Under Owner's delegated execution decision ("好的 往下做", 2026-10-06), Codex opened
+the fresh, non-project chat [圖片生成前置檢查](https://chatgpt.com/c/6ac45d5c-cc34-83ee-a462-2c8c6111a431),
+uploaded exactly the source PNG and original A3 instruction file from commit
+`be38c12571ce6380aefdbd32bed706bd1c6b220f`, and submitted the unchanged handoff message
+once. All four rev. 5 pre-flight checks passed before generation. The actual held PNG
+matched the **canonical** route and original raw SHA; A3 was a raw attachment with
+2371 bytes, canonicalizing to 2364 bytes and the expected `53e34cde…eaff09` hash.
+The post-generation evidence request was sent only after the single image existed;
+it requested no generation, editing or retry.
+
+The generation side reports generation ID `97104382-f63f-43c1-8207-c2ea6c1ff71a`, tool
+`image_gen.text2im`, model/version and seed not exposed. Its tool-emitted artifact is
+PNG/RGBA, **1254×1254**, **1,467,699 bytes**, raw SHA-256
+`345b25c5f9b390497d71267b66546dcebd4cb643872ccadf347108072fd03baf`, decoded RGBA8 SHA-256
+`aff2a4a2a01505f4876581c7d2a7c2b913f7f9ef96e193e725b00d0fdbf5589f`.
+Codex downloaded the image through its image-viewer download control, preserved it
+without editing, and independently obtained **both identical hashes**, dimensions
+and byte count. It is therefore the same byte sequence as the reported tool-emitted
+artifact, not merely a matching preview. More upstream internal buffers are not exposed.
+
+| Output gate | Independent result | Evidence |
+|---|---|---|
+| 1 — one full-body character, square canvas, no text/panels/duplicates | PASS | visual review; 1254×1254; one alpha>10 component larger than 10 pixels |
+| 2 — true alpha, no matte | PASS | all four corner alpha values 0; 815,923 alpha-zero pixels; visual review finds no matte/background scene |
+| 3 — eye identity | PASS | max size deviation 0.002052, center 0.003153, spacing 0.003688, RGB 13.665; all within confirmed tolerances; eye shapes visually retained |
+| 4 — eye highlight style | **FAIL** | large centroid left (0.6062, 0.2955), right (0.5885, 0.2831); both x exceed 0.40; small highlights are below/right |
+| 5 — overall identity | PASS | visual review retains anatomy, silhouette/proportions, mint body, cream belly with two lines, yellow spikes, peach cheeks, tail, feet and magnifying glass |
+
+The independent measurement uses the prior A2 dark-eye threshold and four-neighbor
+connectivity; bounding-box maxima are exclusive. The generation-side report uses a
+different brown threshold, eight-neighbor connectivity and inclusive maxima, and reports
+large centroids (0.6123, 0.2975) / (0.5928, 0.2851). Keep these actors/methods separate:
+both find a clear gate 4 failure, not a borderline disagreement. Its eye-height values
+are normalized to visible height; the independent measurements use visible width for
+eye size, as required by the confirmed tolerance convention above. Generation-side
+IoU values are source-stated, not independently recomputed.
+
+Texture observation only: visible fine paper/pencil grain across the body and other fills,
+with the outline and silhouette still legible. **Owner variant-intensity acceptance is
+pending**. The artwork remains a `candidate`; this validation failure does not assign the
+Owner-only `rejected` status or approve an artwork/master/rights change.
+
+This is the **first registered v2d attempt**, consuming one slot despite output failure.
+Budget is **1/2**. The sequence stops under the existing failed-A3 rule: **no retry and no
+A4 were started**. The older unregistered and pre-flight-failed records remain unchanged.
+Keep this evidence for the eventual exploration consolidation; A3 is not accepted and
+A4 is not completed.
+
+Evidence:
+
+- [`2026-10-06-a3-attempt-01.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-attempt-01.json): input/output provenance, actor, authority, artifact location and gate disposition.
+- [`2026-10-06-a3-attempt-01-measurements.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-attempt-01-measurements.json): independent values, exact bboxes, thresholds and library versions.
+- [`2026-10-06-a3-generation-side-report.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-generation-side-report.json): captured input/evidence request and attributed generation-side response.
+- [`measure_output.py`](../concepts/kck-03b1/tools/measure_output.py): read-only reproduction helper; generated PNG is preserved locally, outside this procedural PR.
 
 #### Post-generation provenance capture
 
