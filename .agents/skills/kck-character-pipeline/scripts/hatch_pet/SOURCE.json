@@ -1,0 +1,22 @@
+{
+  "repository": "https://github.com/openai/skills",
+  "commit": "49f948faa9258a0c61caceaf225e179651397431",
+  "license": "Apache-2.0",
+  "files": {
+    "make_contact_sheet.py": {
+      "upstream_path": "skills/.curated/hatch-pet/scripts/make_contact_sheet.py",
+      "upstream_sha256": "28ab6f17909dd471ba6c9529b343fd9303ec9e35c551ceac23c98808224e701c",
+      "adapted_sha256": "db82ee65744c9038eea8c06070c1ad1a143b6b1d82e07a41dc774eaf0b916fb7"
+    },
+    "render_animation_previews.py": {
+      "upstream_path": "skills/.curated/hatch-pet/scripts/render_animation_previews.py",
+      "upstream_sha256": "911e8813e1b79b7f9da44fae8a667c044818e8c71f41eaa4b280e91c78cde61e",
+      "adapted_sha256": "95455da4cd45383393a15ca4beaef58f0b8f10f3d316a538799acc005fa0388a"
+    },
+    "LICENSE.txt": {
+      "upstream_path": "skills/.curated/hatch-pet/LICENSE.txt",
+      "upstream_sha256": "4dd13869245e356246a5b770723247bbb80a8f07a181d1d3d873a1734297cdb9"
+    }
+  },
+  "modifications": "KCK adapts contact sheet to explicit frames/labels/common preview scale and multiple backgrounds; preview renderer accepts explicit durations/loop and writes APNG. No chroma removal, fixed pet states, cell sizes or frame inference."
+}

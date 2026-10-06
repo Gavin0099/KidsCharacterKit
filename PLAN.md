@@ -16,16 +16,19 @@
   PR. Initial adoption is distinct from runtime/hook rollout and full adoption.
 - **KCK-03B1 — style exploration** remains active. Owner approved deterministic
   A3 highlight-only repair and accepted A3 Balanced texture. The preserved A3
-  derivative passes all five independent output gates; corrected-art and style
-  anchor approval remain pending. Original A3 gate-4 failure remains recorded.
+  derivative passes all five independent output gates; Owner explicitly approved
+  it as Dinosaur style key after A1/A2/A3/A4 review. Original A3 failure remains.
 - Fresh-chat A4 passed both input hashes and generated exactly one candidate.
   Independent output gates 3 (eye identity) and 4 (highlights) failed. The shared
   v2d generation budget is now **2/2**; no further generation is permitted under
-  the current budget. Record failure and await Owner disposition.
+  the current Dinosaur budget. Owner directed retaining A4's failure evidence.
 - This review branch locally combines pending PR #14 governance and PR #12
   rev5 inputs/evidence. It does not establish remote merge or main availability.
 - No production raster, authored motion or 3D is available on this baseline.
   Manifest availability is false/empty and asset rights remain pending.
+- Owner authorized importing the required skill/features into this repo and
+  continuing (2026-10-06). Repo-local character preparation skill and bounded
+  strip/review/sequence QA tools are implemented; Cat/Robot translation is next.
 
 ## Active Sprint
 
@@ -39,7 +42,8 @@
   and ref/CI status are reported separately without a post-push memory loop.
 - [ ] Owner review/merge of the governance PR (not agent-authorized).
 - [x] Owner disposition of A3: source-locked deterministic repair; texture accepted.
-- [ ] Owner disposition of failed A4 and review/merge of pending PR #12, separately.
+- [x] Owner disposition of failed A4: retain failure evidence; no budget reset.
+- [ ] Owner review/merge of pending PR #12, separately.
 - [x] Record Owner's continuous-execution instruction (2026-10-06):
   「導入後按照slice 做下去 除非有問題 不然就做到完」.
   Proceed through the snack critical path without re-asking about routine steps;
@@ -49,9 +53,21 @@
 - [x] Execute the remaining A4 slot with unchanged original inputs and handoff.
   Input gates PASS; output eye identity/highlight gates FAIL. Budget 2/2.
 - [x] Search GitHub reuse options at Owner request; save source-linked analysis in
-  `docs/character-pipeline-reuse-review.md`. No external skill installed or run.
-- [ ] Owner disposition of A4 failure and review of corrected A3 before advancing
-  visual selection; no budget reset, broad correction or production promotion.
+  `docs/character-pipeline-reuse-review.md`. Initial research ran no third-party code.
+- [x] Import selected Apache-2.0 hatch-pet preview routines with pinned source,
+  license and modification ledger; add repo-local character skill, fixed-slot
+  extraction, source-verified shared-scale/anchor QA, APNG timing checks and CI.
+- [x] Prepare actual A1/A2/corrected-A3/A4 review on checker/white/black plus 64px
+  views; keep original hashes, A2 codec caveat, A4 failures and candidate status.
+- [x] Owner approved corrected A3 as Dinosaur style key after actual four-way
+  review: 「核准修正 A3 作 style key，A4 保留失敗紀錄」. B1-B static translation
+  may proceed; three-character lineup, model sheets and production remain gated.
+- [x] Prepare Cat/Robot exact references from pinned source commit and saved
+  B1-B instructions; both original hashes match existing provenance.
+- [x] Generate one static Cat and one Robot candidate with approved A3 rendering
+  reference, preserving raw output and explicit tool-input verification limits.
+- [ ] Resolve Robot upper-right eye highlight failure. Cat identity/rendering
+  and three-character lineup remain Owner pending; no automatic retry/repair.
 
 ## Backlog
 
@@ -91,6 +107,9 @@ Do not interpret equal canvas/anchor as equal character height.
   `https://github.com/Gavin0099/ai-governance-framework.git`, pinned at
   `fb8f6abb09d6419923247183a2ce744d75e65b29` (release 1.3.0, interface 1).
   Existing `GOVERNANCE.md` Owner/provenance/rights/slice rules remain authoritative.
+- 2026-10-06: Owner requested 「把需要的skill或是feature 導入目前的repo再往下做」.
+  Imported only bounded asset-preparation/QA functionality; no art approval,
+  new generation budget, manifest promotion or model-sheet waiver was inferred.
 - 2026-10-06: Owner opened continuous execution of the snack critical path
   (quoted above). Owner subsequently approved the proposed programmatic A3 repair
   (「好的 做下去」), leaving the remaining generation slot for A4. The A4 output
@@ -105,9 +124,9 @@ Do not interpret equal canvas/anchor as equal character height.
      representation contract identifies selected source-app assets as masters.
   3. Resolve junior/parent `visual_scale`, per-character semantic ground anchors
      and Dinosaur's locked magnifying-glass identity when carrying a snack.
-  4. Decide failed A4 disposition and corrected-A3 visual acceptance. The current
-     branch includes PR #12 inputs/evidence without claiming remote merge;
-     installing governance does not decide artwork acceptance or reset budget.
+  4. Corrected A3 style-key selection is now explicitly approved; retain failed A4.
+     The current branch includes PR #12 inputs/evidence without claiming remote
+     merge. No retry or new Dinosaur generation budget is authorized.
 
 ## Known Risks
 

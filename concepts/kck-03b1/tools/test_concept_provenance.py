@@ -24,11 +24,14 @@ class ConceptProvenance(unittest.TestCase):
             if path.name != 'provenance.schema.json':
                 self.validator.validate(json.loads(path.read_text()))
         concepts = sorted((ROOT / 'concepts').glob('**/*.provenance.json'))
-        self.assertEqual(len(concepts), 3)
+        self.assertEqual({json.loads(path.read_text())['id'] for path in concepts},
+                         {'dinosaur-concept-02', 'dinosaur-concept-03', 'dinosaur-concept-04',
+                          'cat-concept-01', 'robot-concept-01'})
         for path in concepts:
             record = json.loads(path.read_text())
             self.validator.validate(record)
-            self.assertEqual(record['status'], 'candidate')
+            expected_status = 'approved_reference' if record['id'] == 'dinosaur-concept-03' else 'candidate'
+            self.assertEqual(record['status'], expected_status)
             output = ROOT / record['file']['path']
             self.assertEqual(hashlib.sha256(output.read_bytes()).hexdigest(), record['file']['sha256'])
             self.assertEqual(output.stat().st_size, record['file']['bytes'])

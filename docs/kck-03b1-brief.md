@@ -949,6 +949,27 @@ claim that any output is approved.
 
 ## 2026-10-06 checkpoint: Owner-authorized repair and A4 result
 
+**Later Owner disposition:** after the actual A1/A2/corrected-A3/A4 review,
+Owner stated 「核准修正 A3 作 style key，A4 保留失敗紀錄」. The corrected
+derivative is now `approved_reference` for B1-B style translation; A4 remains a
+failed candidate record and budget stays 2/2. See
+[decision evidence](../concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json).
+Historical pre-acceptance notes below are retained; this decision does not accept
+the three-character lineup, Style Bible v1, production, rights or new Dino retry.
+
+**B1-B continuation:** exact Cat `cat-02` and Robot `robot-01` references were
+retrieved from the pinned source commit and local raw hashes matched their
+provenance. One built-in `imagegen` edit per character used its identity source
+plus approved A3 as rendering-only reference; exact prompts and native outputs
+are preserved. The built-in tool does not expose held-input bytes/internal prompt
+or model/seed/id: these limits are recorded without claiming generator-side hash
+PASS. Cat retains the raised-paw/striped-tail identity by agent visual review;
+Robot retains its long limbs, box head and four buttons, but its two main eye
+highlights remain upper right and fail the approved upper-left light direction.
+No retry or Robot pixel correction was performed. See the
+[three-character QA review](../artifacts/qa/2026-10-06-b1b-lineup/contact-sheet.png).
+Cat/Robot and shared-world lineup remain Owner pending; B1-C/03B2 are not complete.
+
 Owner accepted the proposed programmatic A3 highlight-only repair and original
 Balanced texture in session (「好的 做下去」). The original PNG and its failed
 gate-4 record remain unchanged. The source-locked derivative swaps only original

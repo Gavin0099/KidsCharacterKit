@@ -6,13 +6,19 @@
   "slice": "KCK-03B1",
   "stage": "B1-A",
   "variant": "A3 Balanced highlight derivative",
-  "status": "candidate",
+  "status": "approved_reference",
   "status_evidence": [
     {
       "decision": "Execute exploration/repair only; no artwork promotion",
       "date": "2026-10-06",
       "stated_in": "current Owner session",
       "quote": "好的 做下去"
+    },
+    {
+      "decision": "Approve corrected A3 as Dinosaur style key for B1-B; not production or rights clearance",
+      "date": "2026-10-06",
+      "stated_in": "current Owner session after candidate lineup review",
+      "quote": "核准修正 A3 作 style key，A4 保留失敗紀錄"
     }
   ],
   "file": {
@@ -153,8 +159,8 @@
   ],
   "owner_review": {
     "variant_intensity": "A3 Balanced accepted; outside-eye texture retained",
-    "overall_identity": "pending",
-    "note": "Repair-method/execution authorization does not approve corrected artwork, style anchor, production or rights."
+    "overall_identity": "Owner accepted corrected A3 as Dinosaur style key",
+    "note": "Explicit style-key acceptance recorded; Cat/Robot lineup, formal Style Bible, production and rights remain separate gates."
   },
   "rights": {
     "commercial_use_status": "pending",
@@ -170,10 +176,14 @@
     {
       "path": "concepts/kck-03b1/evidence/2026-10-06-a3-highlight-correction-measurements.json",
       "supports": "Independent output measurements using unchanged method."
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json",
+      "supports": "Explicit Owner style-key approval after candidate review"
     }
   ],
   "unresolved_questions": [
-    "Owner artwork and style-anchor approval pending.",
+    "Three-character shared-world lineup and Style Bible v1 acceptance remain pending.",
     "Commercial use, rights review and ownership unresolved."
   ]
 }

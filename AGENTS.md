@@ -15,6 +15,10 @@ Repository authority and scope:
   approved representation contract, style-bible rule or exploration stop condition.
 - This is a technology-neutral asset library. Consumer apps own gameplay,
   procedural motion, platform adapters and app release decisions.
+- For candidate review and authorized raster/motion preparation, use the repo
+  skill `.agents/skills/kck-character-pipeline/SKILL.md` and its documented QA
+  tools. Candidate QA is not artwork acceptance or a production representation;
+  apply the active budget, source-integrity and model-sheet gates first.
 - Framework runtime language rules apply to framework tooling; existing image
   diagnostics may use Pillow and JSON record validation may use jsonschema.
   Do not introduce a product runtime or application framework here.
@@ -383,6 +387,9 @@ NOT CLAIMED unless separately implemented and validated:
 - Manifest/provenance changes: validate records against their committed JSON
   schemas. Hash/pixel checks and provenance evidence are also required when
   actual assets are added or transformed; a schema PASS is not visual approval.
+- Character pipeline changes: run
+  `python .agents/skills/kck-character-pipeline/scripts/test_pipeline.py`.
+  Keep source/license ledger hashes current when adapting bundled upstream code.
 - `memory/**`: use the canonical writer for session-derived records, then run
   `python ai-governance-framework/governance_tools/memory_workflow.py --check
   --repo . --run-guard` before claiming memory verification.

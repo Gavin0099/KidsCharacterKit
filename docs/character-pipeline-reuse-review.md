@@ -1,6 +1,6 @@
 # 角色繪圖與動畫流程的 GitHub 重用評估
 
-評估日期：2026-10-06。這是工具選型研究，尚未安裝第三方 skill、執行其腳本或變更已核定的生成輸入與 gate。以下效益是閱讀原始文件與程式後的工程判斷，尚未對 KidsCharacterKit 素材做實測。
+評估日期：2026-10-06。初次研究只閱讀原始文件與程式；下列分析保留當時選型判斷。Owner 後續已授權導入，實作與測試範圍記在文末；已核定的生成輸入與 gate 沿用。
 
 目前建議：保留現有生成與證據 gate，以 `sprite-pipeline` 的動作流程為參考，優先評估 `hatch-pet` 中授權明確的預覽與驗證工具。只補這個角色庫需要的規格轉接，不建立另一套通用生成平台。
 
@@ -27,3 +27,16 @@
 5. **03C2**：重用 contact sheet／動畫預覽的方式，再在消費端測試角色不跳位、不變比例、腳底接觸與點心交接。Python 工具通過不等於遊戲 motion feel 通過。
 
 導入時固定來源 commit、保留 LICENSE／notice、記錄修改，再用 Cat／Dino 的實際 fixture 驗證。現在可以先重用流程與預覽方法；是否引入完整模型系統，等既有路線有實際無法解決的產量或一致性問題再決定。
+
+## 已授權導入（2026-10-06）
+
+已建立 repo-local `kck-character-pipeline` skill，改寫 `hatch-pet` 的兩支
+contact-sheet／preview 程式，保留 Apache-2.0 LICENSE、固定 commit、原始與
+修改後 hash、檔頭變更註記。另補 KCK 的固定 slot 分割、來源 hash 驗證、
+整段共同 scale、明確語意 anchor、裁切／覆寫拒絕及 APNG 時間驗證。
+具體 CLI 與限制見 [character-pipeline.md](character-pipeline.md)。
+
+已對實際 Dinosaur A1/A2/A3/A4 產生 read-only review，並用中性幾何 fixture
+驗證 sequence 正規化、透明與 timing。尚未對 Cat 素材或正式角色動作做實測；
+不把 fixture PASS 當成 motion feel／03C2 完成。沒有移植整套 pet skill、
+複製 `sprite-pipeline` 程式、安裝模型或修改 03B1 budget。

@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "cat-concept-01",
+  "character": "cat",
+  "slice": "KCK-03B1",
+  "stage": "B1-B",
+  "variant": "A3 style-key translation, initial static candidate",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized continuing static B1-B using corrected A3; output remains unapproved candidate",
+      "date": "2026-10-06",
+      "stated_in": "current Owner session",
+      "quote": "核准修正 A3 作 style key，A4 保留失敗紀錄"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1428356,
+    "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+    "relationship_to_original": "Exact byte copy of built-in tool saved PNG; no post-generation pixel editing"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1428356,
+    "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+    "held_in_repo": true,
+    "basis": "Built-in imagegen saved artifact exec-90026c54-f858-4879-8d3f-6576963b7948.png; workspace copy hash independently computed; model and generation id not exposed"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/inputs/cat-02_CatRaisedPaw.png",
+        "role": "identity and pose edit target",
+        "bytes": 1255317,
+        "sha256": "9d77b5ba7b6174a0f4a5bec9849ea8fd47e67f407de00e66642a6f0107792f30"
+      },
+      {
+        "name": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+        "role": "Owner-approved rendering-only style key",
+        "bytes": 1439076,
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+      },
+      {
+        "name": "concepts/kck-03b1/instructions/Cat_B1B_instruction_v1.txt",
+        "role": "exact text passed as built-in tool prompt",
+        "bytes": 1376,
+        "sha256": "83ed7f409605b78a03937ce3868ec351fe7a9f87079c078e175d4a0a6257fcd6"
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "B1-B v1",
+      "path": "concepts/kck-03b1/instructions/Cat_B1B_instruction_v1.txt",
+      "locator": "Entire saved UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "Cat_B1B_instruction_v1.txt",
+        "bytes": 1376,
+        "sha256": "83ed7f409605b78a03937ce3868ec351fe7a9f87079c078e175d4a0a6257fcd6",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: style-transfer. KCK-03B1 B1-B static rendering translation, not an animation or model sheet. Image 1 is the identity/pose edit target. Image 2 is the Owner-approved Dinosaur A3 style key, rendering reference ONLY: do not copy dinosaur anatomy, props or mint palette. Apply its warm brown outline, subtle controlled paper/pencil grain, softly modeled flat color and upper-left lighting. One isolated full-body character, true transparent background, clean edges, no text, labels, panels, duplicate characters, floor or cast shadow. Preserve identity, silhouette, pose, proportions and character-specific palette. Do not chibify or add props. Large eye highlight upper left, smaller secondary highlight consistent with upper-left light; keep character-specific eye anatomy. Return exactly one PNG candidate.\nSubject: the original orange-and-cream striped seated kitten, front/three-quarter view, raised paw on viewer right with pink pads, pink inner ears, pink cheeks, brown iris and visible eye whites, whiskers, small brown nose, open smiling mouth and tongue, curled striped tail, short feet. Preserve the exact target anatomy and pose. Simplify excessive fur/airbrush polish into the same Soft Handmade 2.5D world as image 2, retaining recognizable stripes and soft volume. Square canvas with the whole tail, ear tips, paws and whiskers inside transparent margin.\n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": false
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": 1,
+    "counts_toward_budget": false,
+    "basis": "Initial B1-B job for this character, registered locally before call; not a Dinosaur v2d attempt, which stays 2/2. No new retry budget inferred."
+  },
+  "deviations": [
+    "Generator-held byte/pixel hashes and internal augmented prompt are not exposed; canonical_match=false means match not established, not proof of mismatched input. Explicit exact local file paths were submitted as tool references. No generator-side hash gate PASS claimed.",
+    "Fresh internal generation context/model/seed/id not independently exposed."
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/inputs/cat-02_CatRaisedPaw.png (identity); approved A3 (rendering only)",
+      "method": "pipeline.py read-only review and direct image inspection; no Dino-specific geometry thresholds transferred",
+      "results": {
+        "one_full_body_character": "PASS (agent visual review)",
+        "true_alpha": "PASS (RGBA and zero-alpha exterior, structural review report)",
+        "identity": "Agent visual: raised paw/pads, stripes, curled tail, ears, eyes/whites/iris, tongue and seated silhouette retained; Owner acceptance pending",
+        "upper_left_eye_highlight": "PASS (agent visual review)",
+        "shared_world": "Owner pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Only the Dinosaur style key is approved; new Cat/Robot outputs and lineup are pending"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-b1b-inputs.json",
+      "supports": "Exact source commit, local hashes, job authorization and input verification limitations"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-b1b-lineup/report.json",
+      "supports": "Exact output hashes, native canvas and transparency facts"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json",
+      "supports": "Owner-approved rendering reference and separate Dinosaur budget"
+    }
+  ],
+  "unresolved_questions": [
+    "Owner identity/rendering/lineup acceptance pending",
+    "Production, model sheets and rights unresolved"
+  ]
+}

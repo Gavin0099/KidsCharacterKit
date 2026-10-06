@@ -54,3 +54,5 @@ jobs:
                   validator.validate(json.loads(record.read_text()))
                   print('VALID', record)
           PY
+      - name: Verify character preparation and QA invariants
+        run: python .agents/skills/kck-character-pipeline/scripts/test_pipeline.py
