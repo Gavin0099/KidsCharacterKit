@@ -687,7 +687,7 @@ per sample; it does not change the status model or any rule in [GOVERNANCE.md](.
 |---|---|---|
 | Inputs | fixed `dinosaur-01` and fixed instruction file; fresh conversation; the verify-first message of the pre-flight gate (rev. 3 as written; it is one message, not a separate step) | same |
 | After generation | the five hard gates, measured once by the agent and put in a comparison table for the Owner | plus an independent second measurement, each actor and copy recorded separately |
-| Retained at generation time (no later cost) | generation id (or `not exposed`); the verification output the generation side printed; the original artifact's format, dimensions and SHA-256 | plus the delivered copy's SHA-256, the held raw SHA or `raw bytes not exposed`, and the pinned commit if the repository route was used |
+| Retained at generation time (no later cost) | generation id (or `not exposed`); the verification output the generation side printed; the original artifact's format, dimensions and SHA-256 | plus the delivered copy's SHA-256, the held raw SHA or `raw bytes not exposed` |
 | Repository record | none per sample; one batched PR after the variants of a round are done, holding the comparison table and the retained items. Samples are not committed | a `concept` provenance record, the image file under `concepts/`, and a PR of its own |
 | Status | exploration sample: not a candidate in the repository, not approved | `candidate` (Governance rule 1); only the Owner promotes further |
 
@@ -714,15 +714,9 @@ keeps only the items marked (E); the promotion tier keeps all of them (see the t
   fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
   a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all
   full 64-hex);
-<<<<<<< HEAD
 - (E) the verification output the generation side printed before generating;
-- the exact generation-input message and the transport used (upload, or repository fetch with
-  the pinned commit);
-- (E) original generation artifact: format, dimensions, SHA-256;
-=======
 - the exact generation-input message and the transport used (upload);
-- original generation artifact: format, dimensions, SHA-256;
->>>>>>> feature/kck-03b1-preflight-rev3
+- (E) original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
   any independent measurement recorded separately; never overwrite);
 - (E) the five hard gates and the highlight coordinates;
