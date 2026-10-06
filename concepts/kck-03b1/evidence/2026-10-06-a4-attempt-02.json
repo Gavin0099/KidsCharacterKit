@@ -1,0 +1,251 @@
+{
+  "record_type": "registered_v2d_attempt",
+  "variant": "A4 Handmade",
+  "attempt": 2,
+  "date": "2026-10-06",
+  "status": "candidate",
+  "validation": "FAIL",
+  "owner_artwork_approval": "pending",
+  "authorization": {
+    "actor": "Owner",
+    "statement": "好的 做下去",
+    "scope": "Owner accepted deterministic A3 highlight repair and original Balanced texture; remaining slot reserved for A4 under unchanged original inputs and handoff. Continuous slice authorization remains bounded by hard gates and budget.",
+    "submission_actor": "Codex on behalf of Owner"
+  },
+  "generation": {
+    "id": "4b37cb4e-5cdc-409c-81bb-0de5a1221290",
+    "tool": "image_gen.text2im",
+    "model_version": "not exposed",
+    "seed": "not exposed",
+    "exact_internal_tool_prompt": "not exposed",
+    "chat_url": "https://chatgpt.com/c/6ac46fe1-dde8-83e8-9720-a341b4928773",
+    "chat_title": "Verify Assets Generate Image",
+    "source_commit": "8209a41ecf4694167875b796d2f98c3fdc4efc9d",
+    "instruction_reference": "../instructions/A4_instruction_v2d.txt",
+    "owner_prompt_reference": "../handoff.md; unchanged message with only A3 filename/hash replaced by A4 filename/hash",
+    "calls_reported": 1,
+    "basis": "One generated image independently observed in browser; generation metadata is generation-side reported."
+  },
+  "preflight": {
+    "revision": 5,
+    "result": "PASS",
+    "fresh_context": {
+      "new_non_project_chat": true,
+      "source_objects_before_generation": 2,
+      "messages_before_generation": 1
+    },
+    "image": {
+      "result": "PASS",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "raw_sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76",
+      "rgba8_sha256": "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8",
+      "route": "canonical",
+      "display_filename": "dinosaur-01_DinosaurResearcher(1).png",
+      "held_form": "PNG attachment; exact raw bytes exposed"
+    },
+    "instruction": {
+      "result": "PASS",
+      "held_form": "text attachment; exact raw bytes exposed",
+      "raw_sha256": "d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34",
+      "canonical_bytes": 2389,
+      "canonical_sha256": "99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee"
+    },
+    "basis": "Computed hashes observed before generation in browser. Attachment bytes exposed by read_thread independently equal repo sources; filename suffix is display metadata only. No input transform or tolerance used."
+  },
+  "output": {
+    "file": "A4-v2d-attempt-02.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1611452,
+    "raw_sha256": "bba83eaf57e2796e6ad29d4277b67220a27c6bc4e46c05d433731c0180a426f8",
+    "rgba8_sha256": "f62d79305bce84eb1b004caf3d0a6a203fb0411cbd08810ac20cb7da073ef7b0",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      171,
+      52,
+      1179,
+      1204
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 770945,
+    "alpha_partial": 801483,
+    "alpha_opaque": 88,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          448,
+          483,
+          584,
+          630
+        ],
+        "width": 0.1349206349206349,
+        "height": 0.14583333333333334,
+        "cx": 0.34226190476190477,
+        "cy": 0.4379340277777778,
+        "dark_rgb_mean": [
+          86.45389282967268,
+          37.81172549354756,
+          12.873173233057004
+        ],
+        "highlights": [
+          {
+            "pixels": 1919,
+            "normalized_centroid": [
+              0.5976458326947246,
+              0.26291683948201483
+            ],
+            "bbox": [
+              505,
+              497,
+              559,
+              552
+            ]
+          },
+          {
+            "pixels": 260,
+            "normalized_centroid": [
+              0.644089366515837,
+              0.6181318681318682
+            ],
+            "bbox": [
+              527,
+              565,
+              548,
+              586
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      },
+      {
+        "bbox": [
+          789,
+          385,
+          915,
+          531
+        ],
+        "width": 0.125,
+        "height": 0.14484126984126985,
+        "cx": 0.6755952380952381,
+        "cy": 0.3524305555555556,
+        "dark_rgb_mean": [
+          86.16185625353707,
+          37.417374080362194,
+          12.377287304282211
+        ],
+        "highlights": [
+          {
+            "pixels": 1700,
+            "normalized_centroid": [
+              0.5372315592903828,
+              0.24531829170024178
+            ],
+            "bbox": [
+              834,
+              398,
+              884,
+              448
+            ]
+          },
+          {
+            "pixels": 302,
+            "normalized_centroid": [
+              0.6376800168190897,
+              0.6242629048353443
+            ],
+            "bbox": [
+              860,
+              466,
+              882,
+              490
+            ]
+          },
+          {
+            "pixels": 41,
+            "normalized_centroid": [
+              0.6457607433217188,
+              0.41346475108586705
+            ],
+            "bbox": [
+              868,
+              439,
+              876,
+              451
+            ]
+          }
+        ],
+        "style_gate": "FAIL"
+      }
+    ],
+    "path": "concepts/kck-03b1/outputs/A4-v2d-attempt-02.png",
+    "generation_side_filename": "a_clean_standalone_cute_illustration_on_a_transpa.png",
+    "downloaded_filename": "拿放大鏡的可愛小恐龍.png",
+    "identity_basis": "Browser original-download raw and RGBA8 hashes, byte count and dimensions independently equal generation-side tool-artifact report; preserved copy without re-encoding.",
+    "browser_proof_local_path": "/Users/pc49-58/.codex/visualizations/kck-a4/A4-browser-proof.png"
+  },
+  "independent_output_gates": [
+    {
+      "gate": 1,
+      "result": "PASS",
+      "basis": "One full-body character, no text/panels/variants by visual review; square canvas and one foreground component over ten pixels."
+    },
+    {
+      "gate": 2,
+      "result": "PASS",
+      "basis": "Actual alpha-zero background, four transparent corners, no matte by independent pixels and visual review."
+    },
+    {
+      "gate": 3,
+      "result": "FAIL",
+      "basis": "Eye center maximum deviation .028322 > .02, spacing .026114 > .02, RGB maximum deviation 17.865712 > 15. Eye-size deviation .011841 remains within .015."
+    },
+    {
+      "gate": 4,
+      "result": "FAIL",
+      "basis": "Large highlight centroid x left .597646 / right .537232, outside .30-.40; unchanged read-only measurement method."
+    },
+    {
+      "gate": 5,
+      "result": "PASS",
+      "basis": "Visual review retains full silhouette, anatomy, mint body/cream belly with two lines, yellow spikes, peach cheeks, tail, feet and magnifying glass; eye-specific failures remain gates 3 and 4."
+    }
+  ],
+  "measurement_evidence": "2026-10-06-a4-attempt-02-measurements.json",
+  "generation_side_evidence": "2026-10-06-a4-generation-side-report.txt",
+  "texture": {
+    "observation": "Rich fine paper/pencil grain with visible fill shading",
+    "owner_acceptance": "pending"
+  },
+  "budget": {
+    "total_slots": 2,
+    "consumed_this_attempt": 1,
+    "used": 2,
+    "remaining": 0,
+    "A3_derivation_generation_calls": 0
+  },
+  "disposition": {
+    "sequence": "stopped after output hard-gate failures and exhausted budget",
+    "automatic_retry": false,
+    "A4_corrected": false,
+    "next_required_decision": "Owner disposition of failed A4 and corrected A3 visual review; tool-reuse research continues without further generation.",
+    "carry_into": "exploration consolidation PR; no completed style anchor or lineup claim"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown"
+  }
+}

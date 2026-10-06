@@ -3,7 +3,8 @@
 **Status: brief for the owner-run generation work (KCK-03B1).** It records decisions
 the Owner stated in session on 2026-10-05 so they exist in the repo
 ([GOVERNANCE.md](../GOVERNANCE.md) rule 1). Everything produced under this brief is a
-`candidate`. No artwork is added by this PR.
+`candidate`. The current checkpoint preserves A3/A4 originals and the separately
+authorized A3 highlight derivative under `concepts/`; none is a character master.
 
 ## Terminology: three different "versions" (Owner, 2026-10-05)
 
@@ -13,7 +14,7 @@ Do not mix these up:
 |---|---|---|
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
-| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3 candidate, output gate 4 FAIL; A4 pending, sequence stopped. |
+| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3 original gate 4 FAIL, highlight derivative five gates PASS; A4 gates 3/4 FAIL. Budget 2/2; generation stopped. |
 | **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 5 is current (Owner decision, 2026-10-06). |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
@@ -945,3 +946,29 @@ claim that any output is approved.
 2. The exact prompt and the tool used.
 3. Which input images were attached (cat-02 / dinosaur-01 / robot-01 / B1-A output).
 4. Anything rejected and why (kept as `rejected` history if useful).
+
+## 2026-10-06 checkpoint: Owner-authorized repair and A4 result
+
+Owner accepted the proposed programmatic A3 highlight-only repair and original
+Balanced texture in session (「好的 做下去」). The original PNG and its failed
+gate-4 record remain unchanged. The source-locked derivative swaps only original
+RGB in two eye patches; all alpha, small glints and unrelated pixels remain exact.
+[Correction validation](../concepts/kck-03b1/evidence/2026-10-06-a3-highlight-correction-validation.json)
+records five independent PASS results. Corrected-image / style-anchor approval is
+still pending; repair authorization is not unseen artwork approval.
+
+A4 used the unchanged original Dino PNG and A4 instruction in a fresh non-project
+chat with exactly two source attachments and one unchanged handoff message. Both
+actual held-content hashes passed. One raw tool-emitted PNG was preserved without
+re-encoding. [A4 evidence](../concepts/kck-03b1/evidence/2026-10-06-a4-attempt-02.json)
+records independent gate 3 and 4 failures: eye identity drift and misplaced large
+highlights. The shared v2d generation budget is **2/2**, with no retry, budget reset
+or A4 repair. Owner disposition is required before advancing visual selection.
+
+Formal concept provenance records reuse the existing `conceptRecord` proposal from
+pending PR #10 at `01053171c8d6c815415df1a8c0bfc37441fd7423`, with
+explicit `candidate` status and pending/unknown rights. IDs 02–04 leave the A2
+ID 01 in PR #10 unchanged; copying its schema does not establish PR #10 merge. Existing original asset
+records and manifest remain unchanged. GitHub workflow reuse research is in
+[character-pipeline-reuse-review.md](character-pipeline-reuse-review.md); no external
+skill installed or run, and no current gate changed by that research.

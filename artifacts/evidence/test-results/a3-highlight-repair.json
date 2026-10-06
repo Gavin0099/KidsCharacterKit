@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python -m unittest discover -s concepts/kck-03b1/tools -p test_*.py",
+  "exit_code": 0,
+  "started_at": "2026-10-06T03:54:50Z",
+  "finished_at": "2026-10-06T03:54:54Z",
+  "runner": "python-unittest",
+  "linked_commit": "8209a41ecf4694167875b796d2f98c3fdc4efc9d",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/a3-highlight-repair.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

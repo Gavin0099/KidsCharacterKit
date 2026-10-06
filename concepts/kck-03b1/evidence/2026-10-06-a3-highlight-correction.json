@@ -1,0 +1,90 @@
+{
+  "record_type": "deterministic_candidate_derivation",
+  "date": "2026-10-06",
+  "status": "candidate",
+  "owner_authorization": {
+    "statement": "好的 做下去",
+    "context": "Owner accepted proposed programmatic highlight-only correction, retaining V2 and other pixels, separate derivation; remaining generation slot reserved for A4. A3 Balanced texture accepted in the same reply.",
+    "does_not_approve": [
+      "corrected image before review",
+      "style anchor",
+      "production",
+      "rights"
+    ]
+  },
+  "input": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01.png",
+    "raw_sha256": "345b25c5f9b390497d71267b66546dcebd4cb643872ccadf347108072fd03baf"
+  },
+  "output": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+    "raw_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  "tool": {
+    "name": "correct_a3_highlights.py",
+    "script_sha256": "87fc67a782dd797e0108a02e082753686917ddbc4e0193544b05a7b1594b0320"
+  },
+  "method": "Symmetric RGB swaps of the original large-highlight bounding patch plus two-pixel halo and its reflection, clipped to the filled original eye shape with a three-pixel untouched outer rim on both sides; all donors are original pixels. Alpha untouched. Reflection sums target large centroids near eye x=0.35; y unchanged.",
+  "development_validation": "Initial uncommitted local patch failed left-eye measurement because bounding-box interior included pixels outside the actual eye shape. Added filled-eye support on both source and donor sides before producing this final derivation. No image-generation call or original-byte modification occurred.",
+  "patches": [
+    {
+      "eye_bbox": [
+        445,
+        497,
+        582,
+        647
+      ],
+      "large_bbox": [
+        504,
+        516,
+        554,
+        568
+      ],
+      "reflection_sum_x": 1021,
+      "source_roi": [
+        502,
+        514,
+        556,
+        570
+      ],
+      "mask_pixels": 4930,
+      "changed_pixels": 4920
+    },
+    {
+      "eye_bbox": [
+        796,
+        390,
+        929,
+        542
+      ],
+      "large_bbox": [
+        850,
+        407,
+        899,
+        459
+      ],
+      "reflection_sum_x": 1717,
+      "source_roi": [
+        848,
+        405,
+        901,
+        461
+      ],
+      "mask_pixels": 4592,
+      "changed_pixels": 4574
+    }
+  ],
+  "budget": {
+    "v2d_generated_attempts_used_before": 1,
+    "used_after": 1,
+    "limit": 2,
+    "image_generation_calls": 0,
+    "derivation_does_not_erase_original_failure": true
+  },
+  "original_attempt_record": "concepts/kck-03b1/evidence/2026-10-06-a3-attempt-01.json"
+}

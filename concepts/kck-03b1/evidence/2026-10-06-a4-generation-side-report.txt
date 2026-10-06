@@ -1,0 +1,60 @@
+分享
+你說：
+A4_instruction_v2d.txt
+文件
+Use the provided dinosaur image as the only image reference. Follow A4_instruction_v2d.txt exactly and generate exactly one image.
+
+Before generating, verify the content you actually hold for dinosaur-01_DinosaurResearcher.png and A4_instruction_v2d.txt (not a preview, display name or metadata) and report the full 64-hex values you computed:
+1. Image (gate): decode to RGBA8, confirm 1448x1086, and compute the SHA-256 of the raw RGBA bytes read row by row from the top. It must equal exactly one of: 5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8 (route canonical), or b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d (route premultiply-roundtrip). Report the matching route. Do not transform the held pixels or apply an RGB/alpha tolerance to make the gate pass.
+2. Instruction (gate): take the UTF-8 text you hold, drop a leading BOM, convert CRLF/CR to LF, remove all empty lines (zero characters; preserve spaces and tabs), join remaining lines with LF and append exactly one LF, and compute the SHA-256. It must equal 99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee. Say whether you hold it as an attachment, a fetched file, or expanded text.
+3. Provenance (not a gate): if you hold the raw file bytes of either object, also report their SHA-256; if you only see expanded text, write "raw bytes not exposed".
+Only if both gates PASS, generate exactly one image following A4_instruction_v2d.txt. If a gate fails, or you cannot access the content or cannot compute a gate hash, stop: report PRE-FLIGHT FAILED or INCONCLUSIVE and do not call image generation.
+…
+顯示較多
+處理時間為 1m 17s
+已分析
+ChatGPT 說：
+編輯
+你說：
+No image generation. Diagnostics and provenance only for the one image already generated in this conversation. Report the tool-emitted output artifact filename, original raw-file byte length and full SHA-256, decoded RGBA8 dimensions and pixel SHA-256, generation ID/tool name/model version/seed (write not exposed where unavailable). Provide a download link to the exact original tool-emitted PNG, without re-encoding or editing. Also repeat the two computed pre-generation gate hashes and matching image route, and report the number of image generation calls. Do not generate, retry, correct, remove the background or alter any pixels.
+處理時間為 22s
+ChatGPT 說：
+
+已依你要求只做唯讀 diagnostics / provenance；本回合沒有呼叫 image generation，也沒有重新編碼、修圖、去背或改動任何像素。
+
+項目	結果
+Tool-emitted filename	a_clean_standalone_cute_illustration_on_a_transpa.png
+原始格式	PNG
+原始檔案大小	1,611,452 bytes
+原始 PNG SHA-256	bba83eaf57e2796e6ad29d4277b67220a27c6bc4e46c05d433731c0180a426f8
+解碼格式	RGBA8
+解碼尺寸	1254 × 1254
+RGBA8 raw pixel bytes	6,290,064 bytes
+RGBA8 pixel SHA-256	f62d79305bce84eb1b004caf3d0a6a203fb0411cbd08810ac20cb7da073ef7b0
+Generation ID	4b37cb4e-5cdc-409c-81bb-0de5a1221290
+Tool	image_gen.text2im
+Model/version	not exposed
+Seed	not exposed
+Pre-generation gates
+
+Source-image RGBA8 gate SHA-256:
+5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8
+Matching route: canonical
+
+A4 instruction normalized-text gate SHA-256:
+99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee
+
+Generation-call count
+
+1 image-generation call total for this generated image.
+0 additional calls were made for this diagnostics request.
+
+a_clean_standalone_cute_illustration_on_a_transpa.png
+圖像
+ChatGPT 可能會出錯。請查證重要資訊。
+最新回覆
+
+
+
+
+極高

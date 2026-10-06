@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -22,7 +21,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install check dependencies
-        run: python -m pip install PyYAML==6.0.3 Pillow==12.3.0 jsonschema==4.26.0
+        run: python -m pip install PyYAML==6.0.3 Pillow==12.3.0 numpy==2.3.5 jsonschema==4.26.0
       - name: Verify governance baseline
         run: |
           python ai-governance-framework/governance_tools/governance_drift_checker.py \
@@ -31,6 +30,11 @@ jobs:
             --format human
       - name: Run existing input identity regressions
         run: python concepts/kck-03b1/tools/test_preflight_hash.py
+      - name: Verify output measurement and deterministic repair invariants
+        run: |
+          python concepts/kck-03b1/tools/test_measure_output.py
+          python concepts/kck-03b1/tools/test_correct_a3_highlights.py
+          python concepts/kck-03b1/tools/test_concept_provenance.py
       - name: Validate asset records against existing schemas
         run: |
           python - <<'PY'
@@ -39,7 +43,7 @@ jobs:
           from jsonschema import Draft202012Validator
           for schema_path, records in (
               (Path('manifests/character-manifest.schema.json'), [Path('manifests/characters.json')]),
-              (Path('provenance/schema/provenance.schema.json'), sorted(Path('provenance').glob('*/*.json'))),
+              (Path('provenance/schema/provenance.schema.json'), sorted(Path('provenance').glob('*/*.json')) + sorted(Path('concepts').glob('**/*.provenance.json'))),
           ):
               schema = json.loads(schema_path.read_text())
               Draft202012Validator.check_schema(schema)
