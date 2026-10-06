@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-side-02",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
+    "rgba8_sha256": "a95adec15ff2e136c360fcb7556a725e443ccdf186ef08fc8e13ff4b6f25f9ba",
+    "bytes": 1036991,
+    "alpha_zero": 1060747,
+    "alpha_partial": 511282,
+    "alpha_opaque": 487,
+    "alpha_gt10_bbox_exclusive": [
+      292,
+      56,
+      978,
+      1203
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: upright rear curl removed; striped tail now rests at foot level and wraps forward around seated body. Profile face, one eye with iris/white sclera and left-upper primary/right-lower secondary glints, raised paw/pads, ears/stripes/seated proportions retained. No scene/text/duplicates/matte. This is generated correction, not pixel-exact body preservation; Owner anatomy/view acceptance pending.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

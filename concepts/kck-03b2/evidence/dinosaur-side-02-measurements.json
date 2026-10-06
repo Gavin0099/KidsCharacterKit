@@ -1,0 +1,80 @@
+{
+  "method": "Unchanged measure_output.measure; expected one eye in profile; highlight result does not cure 3 belly-line identity failure",
+  "candidate": {
+    "file": "dinosaur-side-02.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1178645,
+    "raw_sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+    "rgba8_sha256": "1960dcecfd43febddd3dcdd2c880d8313af2f26323eb057d47b9c92abe5d9edb",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      177,
+      67,
+      1061,
+      1188
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 916924,
+    "alpha_partial": 654981,
+    "alpha_opaque": 611,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          381,
+          458,
+          515,
+          608
+        ],
+        "width": 0.1515837104072398,
+        "height": 0.16968325791855204,
+        "cx": 0.3065610859728507,
+        "cy": 0.41570026761819806,
+        "dark_rgb_mean": [
+          89.05429654265605,
+          38.41828447675768,
+          10.173950034805475
+        ],
+        "highlights": [
+          {
+            "pixels": 1979,
+            "normalized_centroid": [
+              0.35101777620236363,
+              0.2801010611419909
+            ],
+            "bbox": [
+              404,
+              475,
+              453,
+              526
+            ]
+          },
+          {
+            "pixels": 416,
+            "normalized_centroid": [
+              0.6021455223880597,
+              0.6557852564102564
+            ],
+            "bbox": [
+              450,
+              545,
+              474,
+              569
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  }
+}

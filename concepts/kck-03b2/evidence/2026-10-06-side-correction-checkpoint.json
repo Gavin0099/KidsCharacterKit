@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-06",
+  "previous_checkpoint_commit": "1ef6868c9d4e0aff3f1c86f364cac32baece7b11",
+  "authorization": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+  "new_calls": 5,
+  "total_03b2_calls": 11,
+  "cat": "six current candidates pass agent review; failed original side retained; Owner review pending",
+  "dinosaur": "side-angle improvement but THREE belly-line ends FAIL vs required TWO; correction slot consumed, back/happy/confused unexecuted",
+  "proposed_followup": "Owner pending: remove only upper extra belly stroke with bounded deterministic local RGB patch, preserve other two/outline/alpha/outside pixels; zero generation",
+  "owner_decision_pending": [
+    "Cat six-sheet approval",
+    "Dino extra-line programmatic repair authorization"
+  ],
+  "tool": "image_gen.imagegen",
+  "limits": "No generator-held input hashes/internal prompt/model/seed/id available",
+  "dinosaur_v2d_budget": {
+    "used": 2,
+    "maximum": 2,
+    "remaining": 0
+  },
+  "rights": "pending/unknown",
+  "production_or_motion": "not_created"
+}

@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-confused-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+    "rgba8_sha256": "ce6fde1463b8af81d3bde5ef5cdd8952eeb76e052404fdf51bb84ec2d68acb15",
+    "bytes": 1373586,
+    "alpha_zero": 856682,
+    "alpha_partial": 715424,
+    "alpha_opaque": 410,
+    "alpha_gt10_bbox_exclusive": [
+      224,
+      34,
+      1076,
+      1240
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: original pose/eyes/paw/stripes/grounded tail and palette retained. Mild uncertain furrowed/asymmetric brows and small closed frown, no text/symbols/new props; tongue naturally occluded by closed mouth. Both open eyes retain iris/white sclera and correct two-glint direction. Owner must judge whether expression reads confused rather than worried and approve facial variation.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

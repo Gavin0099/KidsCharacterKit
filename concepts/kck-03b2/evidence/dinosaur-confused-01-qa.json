@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-confused-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2",
+    "rgba8_sha256": "365905c488800fc83661058a6c4d6ec21473bf59c984658334a517104338fff2",
+    "bytes": 1277753,
+    "alpha_zero": 816471,
+    "alpha_partial": 755193,
+    "alpha_opaque": 852,
+    "alpha_gt10_bbox_exclusive": [
+      205,
+      81,
+      1186,
+      1194
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: mild asymmetric uncertain brows/wavy mouth, eyes stay original open brown with no iris/sclera; original pose/hand/magnifier/spikes/tail/feet/two belly lines retained. Unchanged original-pose eye identity and dual-highlight metrics PASS. No text/symbols/new props/matte. Owner expression readability and newly introduced brow variation remain pending.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

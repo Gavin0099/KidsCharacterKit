@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-happy-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "ff3a4e117c6f8b6834938c466b260c0470aeaf1a2039084489d2ceb43555d8f8",
+    "rgba8_sha256": "3eb5a187c3e5636e61552e14d5e84ba70416459a6f4b785cd764cbccc7fd5f86",
+    "bytes": 1352953,
+    "alpha_zero": 862692,
+    "alpha_partial": 709480,
+    "alpha_opaque": 344,
+    "alpha_gt10_bbox_exclusive": [
+      225,
+      40,
+      1077,
+      1239
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: broader open smile/tongue than reference, both original open eyes with iris/white sclera and correct dual glints. Reference tilted pose, paw/pads/stripes/grounded forward tail/feet and palette preserved visually. Single full character/no text/matte/scene. Generated image is not byte-identical outside face; expression distinctness at game scale and final identity need Owner acceptance.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

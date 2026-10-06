@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "current Owner asynchronous response after actual Cat six-sheet normal/64px review and Dino three-line crop",
+  "question": "看過 Cat 六張並排圖後，是否核准這組 front／three-quarter／修正 side／back／happy／confused 作 model-sheet 參考（含背面斑紋、尾巴接續與困惑表情），並同意 Dinosaur 只用程式局部去除最上方多餘肚紋，保留另兩條、外框、所有 alpha 與其他像素？Dino 修正通過後再繼續剩餘三張，不重設 A4 預算。",
+  "quote": "核准 Cat 六張，並同意 Dino 局部修圖後繼續",
+  "cat_approved_references": [
+    {
+      "view": "front",
+      "concept_id": "cat-concept-02",
+      "path": "concepts/kck-03b2/outputs/cat-front-01.png",
+      "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49"
+    },
+    {
+      "view": "three-quarter",
+      "concept_id": "cat-concept-03",
+      "path": "concepts/kck-03b2/outputs/cat-three-quarter-01.png",
+      "sha256": "c9126c6e8e286895e153125018da7bcc6d0da95f694a8d8fee7d6308ed04fe9a"
+    },
+    {
+      "view": "side",
+      "concept_id": "cat-concept-08",
+      "path": "concepts/kck-03b2/outputs/cat-side-02.png",
+      "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2"
+    },
+    {
+      "view": "back",
+      "concept_id": "cat-concept-05",
+      "path": "concepts/kck-03b2/outputs/cat-back-01.png",
+      "sha256": "aea09e7a2c40ad362d6f965650f2da5c0791aa6e32a23388e68a612eb75a4206"
+    },
+    {
+      "view": "happy",
+      "concept_id": "cat-concept-06",
+      "path": "concepts/kck-03b2/outputs/cat-happy-01.png",
+      "sha256": "ff3a4e117c6f8b6834938c466b260c0470aeaf1a2039084489d2ceb43555d8f8"
+    },
+    {
+      "view": "confused",
+      "concept_id": "cat-concept-07",
+      "path": "concepts/kck-03b2/outputs/cat-confused-01.png",
+      "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68"
+    }
+  ],
+  "dino_repair_authorization": {
+    "source": "concepts/kck-03b2/outputs/dinosaur-side-02.png",
+    "sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+    "scope": "Only upper extra belly stroke removed locally with bounded RGB repair; preserve remaining two strokes, outline, all alpha and outside pixels. Continue remaining sheets after repair checks pass, not another generation retry."
+  },
+  "not_approved": [
+    "Unseen Dino derivative/back/happy/confused",
+    "Production/master/visual_scale/ground anchors/rights",
+    "Dino v2d reset",
+    "Remote PR merge"
+  ]
+}

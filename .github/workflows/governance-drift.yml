@@ -36,6 +36,7 @@ jobs:
           python concepts/kck-03b1/tools/test_correct_a3_highlights.py
           python concepts/kck-03b1/tools/test_correct_robot_highlights.py
           python concepts/kck-03b1/tools/test_concept_provenance.py
+          python concepts/kck-03b2/tools/test_correct_dinosaur_side_belly.py
       - name: Validate asset records against existing schemas
         run: |
           python - <<'PY'

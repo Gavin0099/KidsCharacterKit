@@ -6,13 +6,19 @@
   "slice": "KCK-03B2",
   "stage": "model-sheet",
   "variant": "three-quarter initial individual model-sheet candidate",
-  "status": "candidate",
+  "status": "approved_reference",
   "status_evidence": [
     {
       "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
       "date": "2026-10-06",
       "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
       "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    },
+    {
+      "decision": "Owner accepted exact Cat model-sheet view/anatomy/pose/pattern/expression as reference, not production/rights",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "quote": "核准 Cat 六張，並同意 Dino 局部修圖後繼續"
     }
   ],
   "file": {
@@ -134,9 +140,9 @@
     }
   ],
   "owner_review": {
-    "variant_intensity": "pending",
-    "overall_identity": "pending",
-    "note": "Approval of input reference/v1 does not approve this new sheet"
+    "variant_intensity": "Owner accepted model-sheet rendering",
+    "overall_identity": "Owner accepted exact view, back pattern/tail continuity and happy/confused expressions",
+    "note": "Approved model-sheet reference only; production and rights remain separate."
   },
   "rights": {
     "commercial_use_status": "pending",
@@ -160,11 +166,13 @@
     {
       "path": "artifacts/qa/2026-10-06-cat-model-sheets/report.json",
       "supports": "Source-verified common-scale checker/white/black/64px review; not anchor alignment"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "supports": "Explicit six-sheet Owner acceptance"
     }
   ],
   "unresolved_questions": [
-    "Owner individual sheet acceptance",
-    "Unseen anatomy/side and pose continuity",
-    "Production, visual_scale, anchors and rights unresolved"
+    "Production/master/visual_scale/ground anchors and rights unresolved"
   ]
 }

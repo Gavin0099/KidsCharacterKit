@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "record_type": "concept",
+  "id": "dinosaur-concept-12",
+  "character": "dinosaur",
+  "slice": "KCK-03B2",
+  "stage": "model-sheet",
+  "variant": "side model-sheet, upper extra-stroke deterministic derivative",
+  "status": "candidate",
+  "status_evidence": [
+    {
+      "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    },
+    {
+      "decision": "Owner explicitly authorizes one side correction, not output acceptance",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "quote": "ok沒問題 往下做"
+    },
+    {
+      "decision": "Owner authorizes local removal of extra upper belly stroke; derivative remains candidate",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "quote": "核准 Cat 六張，並同意 Dino 局部修圖後繼續"
+    }
+  ],
+  "file": {
+    "path": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1146927,
+    "sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
+    "relationship_to_original": "Separate Owner-authorized local RGB derivative; underlying side #2 raw output and failure retained"
+  },
+  "original_artifact": {
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1178645,
+    "sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+    "held_in_repo": true,
+    "basis": "Exact byte copy of built-in saved PNG exec-ea84d28e-da15-4d6a-a317-8b64cbf02267.png; output filename is not a model generation id"
+  },
+  "inputs": {
+    "requested": [
+      {
+        "name": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+        "role": "Only Owner-approved identity/rendering reference",
+        "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+        "bytes": 1439076
+      },
+      {
+        "name": "concepts/kck-03b2/instructions/dinosaur-side-correction-v1.txt",
+        "role": "Exact text passed as built-in tool prompt",
+        "sha256": "f5a68163104f824f4c30859e9e26e98cdcecef4bb8e14640f1ec587d7e59d3ff",
+        "bytes": 2004
+      },
+      {
+        "name": "docs/character-style-bible-v1.md",
+        "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
+        "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
+        "bytes": 9824
+      },
+      {
+        "name": "concepts/kck-03b2/outputs/dinosaur-side-01.png",
+        "role": "Failed side image edit target, retained unchanged",
+        "sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+        "bytes": 1109164
+      },
+      {
+        "name": "concepts/kck-03b2/outputs/dinosaur-side-02.png",
+        "role": "Immutable local RGB-repair source, not new generation input",
+        "sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+        "bytes": 1178645
+      }
+    ],
+    "actually_mounted": [],
+    "canonical_match": false
+  },
+  "generation": {
+    "tool": "image_gen.imagegen",
+    "model": null,
+    "generation_id": null,
+    "prompt": {
+      "version": "model-sheet v1",
+      "path": "concepts/kck-03b2/instructions/dinosaur-side-correction-v1.txt",
+      "locator": "Entire UTF-8 file passed as prompt",
+      "instruction_file": {
+        "name": "dinosaur-side-correction-v1.txt",
+        "bytes": 2004,
+        "sha256": "f5a68163104f824f4c30859e9e26e98cdcecef4bb8e14640f1ec587d7e59d3ff",
+        "attached_in_generation": false
+      }
+    },
+    "execution_message": {
+      "text": "Use case: precise-object-edit. Asset: KCK-03B2 side model-sheet correction, ONE PNG candidate only. Image 1 is the failed SIDE edit target; Image 2 is the Owner-approved identity/rendering reference ONLY, not the output camera pose. Preserve exact Soft Handmade 2.5D paper grain, warm brown outline, palette, large-head/short-body proportions and genuine alpha. Entire full body on square canvas with clear transparent margin; no text, collage, duplicate character, floor, cast shadow, new props, white matte or watermark. Screen light stays upper left. Keep visible eye anatomy and upper-left primary/lower-right small glints. Do NOT return Image 2 front camera; keep side nose pointing SCREEN LEFT. Correct Image 1 BODY CAMERA: head, torso, shoulder/hip and feet must ALL be orthographic anatomical LEFT SIDE profile facing SCREEN LEFT. The failed target has profile head but a broad FRONT-FACING belly; rotate the TORSO so the belly is on the FORWARD EDGE of the body, seen only as a narrow cream edge/side sliver on the LEFT outline. Do not show a full cream oval with two complete horizontal lines. The original TWO curved belly lines still exist on the anatomical FRONT surface but are naturally mostly OCCLUDED from strict side; show only short line ends if visible on the narrow cream edge. This is natural view occlusion, not deletion/redesign. One near-side foot visible in full; far foot naturally overlaps/occludes in strict projection, no splayed front-facing feet. Near anatomical LEFT hand still holds original yellow-orange magnifying glass with pale blue lens in front at screen LEFT; far right chest hand may occlude, never swap hands or add a new arm. Keep existing profile head/one warm brown eye/cheek/mouth, dorsal yellow spikes and rear tail, head/body size, original standing pose and all identity colors. Preserve two eye glints; primary centroid about x=.35,y=.28 in visible eye, secondary smaller lower right. Do not turn head/torso toward camera or show a broad front belly. \n",
+      "certified_sole_message": false
+    },
+    "fresh_context": "unknown",
+    "post_generation_pixel_edit": true
+  },
+  "registration": {
+    "status": "registered",
+    "valid_attempt_number": null,
+    "counts_toward_budget": false,
+    "basis": "Deterministic derivative of authorized side #2; zero image-generation calls. Original generation metadata inherited; no v2d reset or new retry."
+  },
+  "deviations": [
+    "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
+    "Unseen side/back anatomy is proposed for Owner review, never inferred as previously approved.",
+    "Owner-authorized bounded RGB replacement of upper extra belly stroke; transformation record retained"
+  ],
+  "measurements": [
+    {
+      "actor": "Codex structural and visual review",
+      "copy": {
+        "description": "Exact saved tool PNG",
+        "format": "png",
+        "sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef"
+      },
+      "reference_for_comparison": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
+      "results": {
+        "structural": {
+          "canvas": [
+            1254,
+            1254
+          ],
+          "mode": "RGBA",
+          "raw_sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+          "rgba8_sha256": "1960dcecfd43febddd3dcdd2c880d8313af2f26323eb057d47b9c92abe5d9edb",
+          "bytes": 1178645,
+          "alpha_zero": 916924,
+          "alpha_partial": 654981,
+          "alpha_opaque": 611,
+          "alpha_gt10_bbox_exclusive": [
+            177,
+            67,
+            1061,
+            1188
+          ],
+          "corners": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "agent_hard_gate": "FAIL",
+        "visual_review": "Agent visual: torso now side-on, front belly reduced to narrow forward sliver and far foot occluded; original side-angle problem improved. NEW identity failure: cream belly has THREE visible short curved brown line ends instead of the required TWO. One correction consumed; do not resume back/happy/confused or retry. Magnifier/eye/spikes/palette preserved by visual review; artwork remains candidate.",
+        "owner_acceptance": "pending"
+      }
+    },
+    {
+      "actor": "Codex independent repair review",
+      "copy": {
+        "description": "Local side derivative with original alpha",
+        "format": "png",
+        "sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018"
+      },
+      "reference_for_comparison": "concepts/kck-03b2/outputs/dinosaur-side-02.png",
+      "method": "Visual inspection plus 4 independent real-image regressions and exact source/output comparisons",
+      "results": {
+        "extra_upper_stroke": "removed; visible lower two retained",
+        "all_alpha": "exact",
+        "outside_patch": "exact",
+        "lower_two_strokes": "exact",
+        "pose_eye_prop_palette": "unchanged outside bounded patch",
+        "agent_hard_gate": "PASS",
+        "owner_acceptance": "pending"
+      }
+    }
+  ],
+  "owner_review": {
+    "variant_intensity": "pending",
+    "overall_identity": "pending",
+    "note": "Repair execution is approved; unseen derivative/model set still needs acceptance"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "supports": "Model-sheet preparation authorization and exact approved references"
+    },
+    {
+      "path": "concepts/kck-03b2/model-sheet-jobs.json",
+      "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-side-02-qa.json",
+      "supports": "Structural facts and independent agent review; Owner acceptance pending"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "supports": "Explicit bounded side correction and conditional continuation"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "supports": "Explicit one-per-side correction and conditional remaining-sheet continuation; not artwork acceptance"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-side-correction/report.json",
+      "supports": "Actual common native-canvas review on checker/white/black/64px; no semantic anchor fit"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-side-02-measurements.json",
+      "supports": "One-eye highlight measurement passes; does not cure three-line visual failure"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
+      "supports": "Explicit programmatic repair and conditional continuation authority"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/dinosaur-side-belly-correction.json",
+      "supports": "Exact source/output hashes, patch/donor/tool versions and zero generation"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-dinosaur-six-sheets/report.json",
+      "supports": "Exact locally repaired side displayed in six-sheet Owner review"
+    }
+  ],
+  "unresolved_questions": [
+    "Owner individual sheet acceptance",
+    "Unseen anatomy/side and pose continuity",
+    "Production, visual_scale, anchors and rights unresolved"
+  ]
+}

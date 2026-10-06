@@ -27,12 +27,17 @@ class ConceptProvenance(unittest.TestCase):
         self.assertEqual({json.loads(path.read_text())['id'] for path in concepts},
                          {'dinosaur-concept-02', 'dinosaur-concept-03', 'dinosaur-concept-04',
                           'cat-concept-01', 'cat-concept-02', 'cat-concept-03', 'cat-concept-04',
+                          'cat-concept-05', 'cat-concept-06', 'cat-concept-07', 'cat-concept-08',
                           'dinosaur-concept-05', 'dinosaur-concept-06', 'dinosaur-concept-07',
+                          'dinosaur-concept-08', 'dinosaur-concept-09', 'dinosaur-concept-10',
+                          'dinosaur-concept-11', 'dinosaur-concept-12',
                           'robot-concept-01', 'robot-concept-02'})
         for path in concepts:
             record = json.loads(path.read_text())
             self.validator.validate(record)
-            expected_status = 'approved_reference' if record['id'] in {'dinosaur-concept-03', 'cat-concept-01', 'robot-concept-02'} else 'candidate'
+            expected_status = 'approved_reference' if record['id'] in {'dinosaur-concept-03', 'cat-concept-01', 'robot-concept-02',
+                                                                     'cat-concept-02', 'cat-concept-03', 'cat-concept-05',
+                                                                     'cat-concept-06', 'cat-concept-07', 'cat-concept-08'} else 'candidate'
             self.assertEqual(record['status'], expected_status)
             output = ROOT / record['file']['path']
             self.assertEqual(hashlib.sha256(output.read_bytes()).hexdigest(), record['file']['sha256'])
@@ -52,22 +57,40 @@ class ConceptProvenance(unittest.TestCase):
         self.assertEqual({(x['character'], x['view']) for x in jobs},
                          {(c, v) for c in ('cat', 'dinosaur')
                           for v in ('front', 'three-quarter', 'side', 'back', 'happy', 'confused')})
-        self.assertEqual(sum(x['calls'] for x in jobs), 6)
+        self.assertEqual(sum(x['calls'] for x in jobs), 14)
+        repairs = [x for x in jobs if x.get('kind') == 'authorized_targeted_correction']
+        self.assertEqual({x['character'] for x in repairs}, {'cat', 'dinosaur'})
+        self.assertEqual(len(repairs), 2)
+        for job in repairs:
+            self.assertEqual(job['calls'], 1)
+            self.assertTrue((ROOT / job['authorization']).is_file())
+            self.assertEqual(hashlib.sha256((ROOT / job['edit_target']).read_bytes()).hexdigest(), job['edit_target_sha256'])
         recorded = set()
         for job in jobs:
             self.assertLessEqual(job['calls'], job['initial_call_limit'])
             self.assertEqual(hashlib.sha256((ROOT / job['reference']).read_bytes()).hexdigest(), job['reference_sha256'])
             self.assertEqual(hashlib.sha256((ROOT / job['instruction']).read_bytes()).hexdigest(), job['instruction_sha256'])
             if job['calls']:
+                if job.get('requires_pass'):
+                    predecessor = next(x for x in jobs + ledger.get('derivations', []) if x['job_id'] == job['requires_pass'])
+                    self.assertEqual(predecessor['agent_hard_gate'], 'PASS')
+                    self.assertTrue((ROOT / job['continuation_authorization']).is_file())
                 self.assertEqual(job['status'], 'candidate_recorded')
                 record = json.loads((ROOT / job['provenance']).read_text())
                 self.assertEqual(record['id'], job['concept_id'])
-                self.assertEqual(record['status'], 'candidate')
+                expected_status = 'approved_reference' if job['character'] == 'cat' and job['job_id'] != 'cat-side-01' else 'candidate'
+                self.assertEqual(record['status'], expected_status)
                 self.assertEqual(hashlib.sha256((ROOT / job['output']).read_bytes()).hexdigest(), job['output_sha256'])
                 recorded.add(ROOT / job['provenance'])
             else:
                 self.assertEqual(job['status'], 'blocked_after_hard_failure')
                 self.assertNotIn('output', job)
+        for derivative in ledger.get('derivations', []):
+            self.assertEqual(derivative['calls'], 0)
+            self.assertEqual(derivative['agent_hard_gate'], 'PASS')
+            self.assertTrue((ROOT / derivative['authorization']).is_file())
+            self.assertEqual(hashlib.sha256((ROOT / derivative['output']).read_bytes()).hexdigest(), derivative['output_sha256'])
+            recorded.add(ROOT / derivative['provenance'])
         self.assertEqual(recorded, set((ROOT / 'concepts/kck-03b2').glob('**/*.provenance.json')))
 
     def test_missing_rights_or_invalid_hash_rejected(self):

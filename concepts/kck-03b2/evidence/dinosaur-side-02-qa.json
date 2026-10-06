@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-side-02",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "c864809df3793c82d46462bdee953d1b1928b7d3aea538072071b4ff40ead0ef",
+    "rgba8_sha256": "1960dcecfd43febddd3dcdd2c880d8313af2f26323eb057d47b9c92abe5d9edb",
+    "bytes": 1178645,
+    "alpha_zero": 916924,
+    "alpha_partial": 654981,
+    "alpha_opaque": 611,
+    "alpha_gt10_bbox_exclusive": [
+      177,
+      67,
+      1061,
+      1188
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Agent visual: torso now side-on, front belly reduced to narrow forward sliver and far foot occluded; original side-angle problem improved. NEW identity failure: cream belly has THREE visible short curved brown line ends instead of the required TWO. One correction consumed; do not resume back/happy/confused or retry. Magnifier/eye/spikes/palette preserved by visual review; artwork remains candidate.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

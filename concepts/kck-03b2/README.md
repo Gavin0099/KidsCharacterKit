@@ -1,51 +1,65 @@
 # KCK-03B2 model-sheet checkpoint
 
-Owner approved [Style Bible v1](../../docs/character-style-bible-v1.md) and the exact
-three-character reference set on 2026-10-06. [Approval evidence](evidence/2026-10-06-owner-v1-approval.json)
-binds the reviewed draft hash and artwork hashes; Cat/corrected Robot are now
-approved references. New model sheets remain candidates, not masters or production.
+Owner approved [Style Bible v1](../../docs/character-style-bible-v1.md) and three
+exact character references. [Cat six-sheet acceptance](evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json)
+now accepts front/three-quarter/corrected side/back/happy/confused, including newly
+proposed back patterns, tail continuity and expressions. Cat sheets are
+`approved_reference`, not production. [Exact review set](model-sheet-review-set.json)
+binds every selected view to its PNG hash and provenance.
 
-Six initial built-in `image_gen.imagegen` calls produced six separate **1254×1254
-RGBA** PNGs, copied byte-for-byte. No repair/retry/normalization was performed.
-The [job ledger](model-sheet-jobs.json) registers one initial call per requested
-sheet, exact source/prompt hashes, outcomes and unexecuted jobs. All twelve prompts
-are prepared under `instructions/`; a saved prompt does not mean a generation ran.
+Dinosaur has all six current sheet candidates, structurally/visually checked;
+Owner acceptance is **pending**, including back spike/foot anatomy, hand/prop
+continuity and new expressions. Document acceptance does not alone complete 03B2.
 
-| Character | Front | Three-quarter | Side | Back / happy / confused |
-|---|---|---|---|---|
-| Cat | candidate, agent review passes | candidate, agent review passes | **pose continuity FAIL**: tail rises behind instead of resting across front feet | not generated; stopped after side failure |
-| Dinosaur | candidate, agent review passes; strict front anatomy Owner pending | candidate; original-pose eye identity + highlight measurements PASS | **view continuity FAIL**: profile head but torso/broad front belly still faces camera | not generated; stopped after side failure |
+- [Cat six views on checker/white/black](../../artifacts/qa/2026-10-06-cat-six-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-cat-six-sheets/small-64.png).
+- [Dinosaur six views on checker/white/black](../../artifacts/qa/2026-10-06-dinosaur-six-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-dinosaur-six-sheets/small-64.png).
 
-Agent review is not Owner artwork acceptance. Side failures are preserved as
-`candidate`, not assigned the Owner-only `rejected` status. Proposed resolution:
-one targeted edit per failed side, preserving approved identity/rendering and
-anatomical hand; await Owner disposition before edits or remaining sheets.
+All PNGs are 1254×1254 RGBA. Source canvases use a common preview factor without
+independent bbox fit or invented ground anchors. Raw generated outputs are exact
+copies; the one separate local repair has documented RGB derivation.
 
-## Actual review artifacts
+## Failures and authorized continuation
 
-- [Cat normal checker/white/black](../../artifacts/qa/2026-10-06-cat-model-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-cat-model-sheets/small-64.png).
-- [Dinosaur normal checker/white/black](../../artifacts/qa/2026-10-06-dinosaur-model-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-dinosaur-model-sheets/small-64.png).
+First side jobs failed: Cat reposed its grounded forward tail into an upright
+rear curl; Dinosaur kept a front-facing torso under a profile head. Owner
+[authorized one targeted edit per side](evidence/2026-10-06-owner-side-correction.json).
+Cat side corrected, passing checks; its back/happy/confused were then completed.
+Dino torso improved but acquired three belly-line ends instead of two. Stop and
+[before/after evidence](../../artifacts/qa/2026-10-06-dinosaur-side-correction/contact-sheet.png)
+are retained; the extra line was never waived as acceptable identity.
 
-One common native-canvas factor is used, without independent bbox fit. These views
-do not establish semantic ground anchors or approved `visual_scale`.
+Owner then explicitly authorized removal of only the upper extra line locally.
+[Transformation](evidence/dinosaur-side-belly-correction.json) fixes the exact
+source hash and records bounded cream-interior RGB copy, donor offset, encoder
+and library versions. All alpha/outside pixels, outer contour and remaining two
+strokes are exact; four real-image regressions check these invariants, removal,
+reproducibility, wrong-source refusal and overwrite refusal. This made zero new
+generation calls. Dino back/happy/confused resumed only after repair validation.
+The [completed checkpoint](evidence/2026-10-06-complete-model-sheet-checkpoint.json)
+records eight new calls this continuation and fourteen total 03B2 generation
+outputs (twelve initial sheets + two authorized side edits), plus one local
+RGB derivative. All three failed side originals remain unchanged candidates.
+Historical [first side correction checkpoint](evidence/2026-10-06-side-correction-checkpoint.json)
+records the intermediate stop before local-repair authorization.
 
 ## Measurement and authority boundaries
 
-Dinosaur three-quarter retains the original pose, so the unchanged eye-identity
-comparison is applicable and passes, alongside both highlight gates. The new front
-view intentionally levels the original tilted eyes: its original-pose eye-center
-comparison reports FAIL and is retained as an **inapplicable pose comparison**, not
-a new front-view PASS. Its two actual highlight coordinates independently pass.
-Side has one eye by design; its numeric highlight gate passes. Neither a highlight
-PASS nor schema validity cures the side torso/pose failure.
+Unchanged original-pose eye-identity and highlight gates pass for Dino
+three-quarter/happy/confused. New front intentionally levels originally tilted
+eyes: its old-pose eye-center comparison FAIL is preserved as inapplicable to a
+front-view camera change, never relabeled numeric PASS. Front/side actual highlight
+coordinates pass. Back has no visible eyes; no eye test is claimed for that view.
+Highlight/schema/hash validity alone does not approve anatomy or expressions.
 
-The generator-held bytes/internal augmented prompt/model/seed/id are unavailable.
-Records preserve the exact local requested inputs/instruction and returned raw PNG;
-no generator-side input-hash PASS is claimed. Some faint nonzero alpha pixels reach
-source canvas edges; preserve them. These candidate canvases are not delivery-ready,
-and any later clipping/transparent-edge cleanup needs explicit transform evidence.
+[Job ledger](model-sheet-jobs.json) preserves registered call limits, exact source
+and instruction hashes, older unsubmitted prompt versions, conditional resumes
+and zero-call derivation. Input images are individual approved references, never
+QA collages. Generated tool-held hashes/internal model prompt/model/seed/id are
+not exposed, so local requested input hashes are not a generator-side gate PASS.
+Some faint alpha reaches raw source canvas edges; preserve it, and require actual
+transform/transparent-edge evidence before delivery.
 
-Dinosaur **v2d stays 2/2**, no reset/retry; 03B2 initial jobs are a separate explicitly
-authorized scope. All rights remain pending/unknown. No character originals,
-manifest availability, production, authored motion or 3D is changed. Style Bible
-file acceptance is complete; 03B2 model-sheet acceptance and later slices are not.
+Dinosaur v2d budget remains **2/2**. 03B2 is a separate explicitly authorized
+scope, with no reset. Rights remain pending/unknown. Source-app masters and manifest
+availability remain untouched. Production/master/visual_scale/semantic anchors,
+authored motion and consumer-scene delivery remain later gated work.

@@ -86,11 +86,14 @@
   approved rules authoritative and all artwork/rights/availability statuses intact.
 - [x] Owner acceptance of v1 plus remaining identity/silhouette/reference gates;
   then prepare Cat/Dinosaur model sheets with separate visual acceptance.
-- [ ] Cat/Dinosaur six-view/expression candidate set: six initial outputs saved
-  (front/three-quarter/side each); 4 pass agent review, both side views fail continuity.
-  Back/happy/confused are not generated. Exact prompts, raw PNGs, provenance,
-  numeric Dino measurements and common-scale review retained in 03B2 checkpoint.
-- [ ] Owner accepts individual model sheets before authored motion.
+- [x] Cat/Dinosaur six-view/expression candidate set prepared: fourteen initial/edit
+  generation outputs plus one local RGB derivative; all original failures retained.
+- [x] Owner accepts Cat six sheets (front/three-quarter/corrected side/back/happy/confused),
+  including back pattern/tail continuity and expressions, as approved references.
+- [ ] Owner accepts Dinosaur six current sheets, including corrected side and new
+  back/spike/foot details/expressions; actual normal/64px review ready.
+- [ ] Resolve 03B selected-master/version policy, visual_scale and semantic anchors
+  before production; do not treat sheet acceptance as production/rights approval.
 
 ## Backlog
 
@@ -170,6 +173,21 @@ Do not interpret equal canvas/anchor as equal character height.
   resting across front feet; Dinosaur profile head on a three-quarter/front torso.
   Stopped both sequences after 6 initial calls; 6 later sheets unexecuted. Propose
   one targeted side edit per character, pending Owner disposition. No automatic retry.
+
+- 2026-10-06: Owner replied 「ok沒問題 往下做」 to the concrete one-per-side
+  edit proposal. Cat corrected grounded tail passes; back/happy/confused completed
+  as candidates. Dino corrected torso angle improves, but an extra THIRD belly line
+  violates two-line identity, so its sequence stops again. Both original side
+  failures remain. Proposed bounded local extra-line repair and Cat six-sheet
+  acceptance are Owner pending; no further generation or art promotion inferred.
+
+- 2026-10-06: Owner explicitly approved Cat six-sheet set and bounded local Dino
+  extra-line repair. Cat six exact PNGs promoted to approved_reference. Dino local
+  derivative removes only upper extra stroke, with alpha/outside/contour/two lower
+  strokes preserved and four regression tests PASS; zero generation. Remaining
+  Dino back/happy/confused completed; all six current Dino sheets await Owner
+  acceptance. This continuation used eight generation calls; total 03B2 fourteen,
+  plus one derivative, without v2d reset.
 
 ## Known Risks
 

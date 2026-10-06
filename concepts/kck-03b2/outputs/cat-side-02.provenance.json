@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "record_type": "concept",
-  "id": "cat-concept-02",
+  "id": "cat-concept-08",
   "character": "cat",
   "slice": "KCK-03B2",
   "stage": "model-sheet",
-  "variant": "front initial individual model-sheet candidate",
+  "variant": "side Owner-authorized targeted correction candidate",
   "status": "approved_reference",
   "status_evidence": [
     {
@@ -15,6 +15,12 @@
       "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
     },
     {
+      "decision": "Owner explicitly authorizes one side correction, not output acceptance",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "quote": "ok沒問題 往下做"
+    },
+    {
       "decision": "Owner accepted exact Cat model-sheet view/anatomy/pose/pattern/expression as reference, not production/rights",
       "date": "2026-10-06",
       "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",
@@ -22,13 +28,13 @@
     }
   ],
   "file": {
-    "path": "concepts/kck-03b2/outputs/cat-front-01.png",
+    "path": "concepts/kck-03b2/outputs/cat-side-02.png",
     "format": "png",
     "width": 1254,
     "height": 1254,
     "color_type": "RGBA",
-    "bytes": 1359332,
-    "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+    "bytes": 1036991,
+    "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
     "relationship_to_original": "Exact byte copy of built-in saved output; no post-generation pixel edits"
   },
   "original_artifact": {
@@ -36,10 +42,10 @@
     "width": 1254,
     "height": 1254,
     "color_type": "RGBA",
-    "bytes": 1359332,
-    "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+    "bytes": 1036991,
+    "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
     "held_in_repo": true,
-    "basis": "Exact byte copy of built-in saved PNG exec-e48623f5-cf17-44c7-8af9-4bd95f96049a.png; output filename is not a model generation id"
+    "basis": "Exact byte copy of built-in saved PNG exec-462e6944-83bf-4291-9901-7a696bf6d7ff.png; output filename is not a model generation id"
   },
   "inputs": {
     "requested": [
@@ -50,16 +56,22 @@
         "bytes": 1428356
       },
       {
-        "name": "concepts/kck-03b2/instructions/cat-front-v1.txt",
+        "name": "concepts/kck-03b2/instructions/cat-side-correction-v1.txt",
         "role": "Exact text passed as built-in tool prompt",
-        "sha256": "4af4ef2ab28614b0b0e325cf7fb5269041e5f5a71dded8c07fc8afefce53ba83",
-        "bytes": 1918
+        "sha256": "fae304f01eecc632ff2ec121d81ff7dd8975c07cf91cdf87a0a2db7be7d52bb7",
+        "bytes": 1512
       },
       {
         "name": "docs/character-style-bible-v1.md",
         "role": "Owner-approved drawing specification informing saved instruction; not separately mounted",
         "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1",
         "bytes": 9824
+      },
+      {
+        "name": "concepts/kck-03b2/outputs/cat-side-01.png",
+        "role": "Failed side image edit target, retained unchanged",
+        "sha256": "ca192312473ccdde6c7fe7ea93f88e7c1104d0107553fc6f7621aecc60c6bffe",
+        "bytes": 1163355
       }
     ],
     "actually_mounted": [],
@@ -71,17 +83,17 @@
     "generation_id": null,
     "prompt": {
       "version": "model-sheet v1",
-      "path": "concepts/kck-03b2/instructions/cat-front-v1.txt",
+      "path": "concepts/kck-03b2/instructions/cat-side-correction-v1.txt",
       "locator": "Entire UTF-8 file passed as prompt",
       "instruction_file": {
-        "name": "cat-front-v1.txt",
-        "bytes": 1918,
-        "sha256": "4af4ef2ab28614b0b0e325cf7fb5269041e5f5a71dded8c07fc8afefce53ba83",
+        "name": "cat-side-correction-v1.txt",
+        "bytes": 1512,
+        "sha256": "fae304f01eecc632ff2ec121d81ff7dd8975c07cf91cdf87a0a2db7be7d52bb7",
         "attached_in_generation": false
       }
     },
     "execution_message": {
-      "text": "Use case: identity-preserve. Asset type: KCK-03B2 individual model-sheet candidate, NOT animation or production. Input image 1 is the ONLY approved identity and rendering reference. Keep the exact Soft Handmade 2.5D illustrator treatment: dark warm brown hand outline, controlled fine paper/pencil grain, flat base colors with gentle volume, soft upper-left light. One isolated whole-body character only, genuine transparent background; no text, labels, panels, duplicates, floor, cast shadow, white matte or new props. Square canvas; entire ears, tail, feet and required prop inside a generous transparent margin on all sides. Keep approximately the same character mass/size and proportions across sheets; do not enlarge the head or shrink limbs. Eyes keep reference anatomy: large primary white glint in the UPPER LEFT of each visible open eye, small secondary glint LOWER RIGHT. Light direction is SCREEN upper left regardless of body rotation. Do not mirror the reference or transfer props between anatomical hands. This is one still PNG, no collage. Subject: approved orange-and-cream tabby Cat cat-02. Round broad head, pink inner ears and cheeks, brown iris AND visible white sclera, small brown nose, smile and tongue, three whiskers each side, clearly striped body and long curled striped tail, seated short-legged body with two cream feet. Raised pad-visible paw is the CAT'S LEFT paw (viewer right in front view); retain pink large central pad and three small toe pads. Other forepaw rests low. Keep original proportions and palette, no hair strands, clothing or accessories. View: strict straight-on orthographic FRONT, both eyes at equal screen height and whole face centered without head tilt. Retain reference neutral friendly expression and pose. Torso faces camera; retain both feet and curled tail visible to the extent physically appropriate. Do not return the original tilted three-quarter camera.\n",
+      "text": "Use case: precise-object-edit. Asset: KCK-03B2 side model-sheet correction, ONE PNG candidate only. Image 1 is the failed SIDE edit target; Image 2 is the Owner-approved identity/rendering reference ONLY, not the output camera pose. Preserve exact Soft Handmade 2.5D paper grain, warm brown outline, palette, large-head/short-body proportions and genuine alpha. Entire full body on square canvas with clear transparent margin; no text, collage, duplicate character, floor, cast shadow, new props, white matte or watermark. Screen light stays upper left. Keep visible eye anatomy and upper-left primary/lower-right small glints. Do NOT return Image 2 front camera; keep side nose pointing SCREEN LEFT. Change ONLY the tail in Image 1. The Cat must keep the reference's seated tail pose: it emerges at rump, lies FLAT ALONG THE GROUND, wraps around the seated body to rest in FRONT of the feet toward the nose (screen LEFT in this side view). Tail tip must lie low, at foot level, in front of the toes. REMOVE the upright curl behind the back entirely. There must be NO tail section rising behind the torso and NO high curled tail tip on screen right. Preserve tail thickness, length and orange/cream stripes; show plausible side projection of the grounded curl. Keep Image 1 head/face/ears, one near eye with brown iris and white sclera, whiskers, tongue, raised anatomical left paw with pads, resting forepaw, seated haunch and feet unchanged. Do not rotate the head/torso further, change pose or redesign Cat. \n",
       "certified_sole_message": false
     },
     "fresh_context": "unknown",
@@ -91,7 +103,7 @@
     "status": "registered",
     "valid_attempt_number": 1,
     "counts_toward_budget": false,
-    "basis": "Separate authorized 03B2 initial job; 1 call per sheet. Does not consume or reset exhausted Dinosaur v2d 2/2 ledger; no retry inferred."
+    "basis": "One Owner-authorized side correction call; failed original kept. Separate 03B2 scope, no Dino v2d reset."
   },
   "deviations": [
     "Generator-held input hashes/internal augmented prompt/model/seed/id not exposed; canonical_match=false means match not established, not mismatch.",
@@ -103,7 +115,7 @@
       "copy": {
         "description": "Exact saved tool PNG",
         "format": "png",
-        "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49"
+        "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2"
       },
       "reference_for_comparison": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
       "method": "Direct visual review plus decoded RGBA8/alpha measurements; source canvases not fit independently",
@@ -114,17 +126,17 @@
             1254
           ],
           "mode": "RGBA",
-          "raw_sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
-          "rgba8_sha256": "be8c11a00cf132b53c6d807b51de8b0b6ff6ce5ceeabcfbadf2709e27f7be9ff",
-          "bytes": 1359332,
-          "alpha_zero": 866939,
-          "alpha_partial": 705125,
-          "alpha_opaque": 452,
+          "raw_sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
+          "rgba8_sha256": "a95adec15ff2e136c360fcb7556a725e443ccdf186ef08fc8e13ff4b6f25f9ba",
+          "bytes": 1036991,
+          "alpha_zero": 1060747,
+          "alpha_partial": 511282,
+          "alpha_opaque": 487,
           "alpha_gt10_bbox_exclusive": [
-            217,
-            91,
-            1034,
-            1199
+            292,
+            56,
+            978,
+            1203
           ],
           "corners": [
             0,
@@ -134,7 +146,7 @@
           ]
         },
         "agent_hard_gate": "PASS",
-        "visual_review": "Agent visual: true front/equal eye height; raised left paw on viewer right, three toe pads, stripes, curled tail, iris/whites, tongue and seated proportions retained; upper-left primary and lower-right secondary glints. Single character/no text/floor/matte. Owner acceptance pending.",
+        "visual_review": "Agent visual: upright rear curl removed; striped tail now rests at foot level and wraps forward around seated body. Profile face, one eye with iris/white sclera and left-upper primary/right-lower secondary glints, raised paw/pads, ears/stripes/seated proportions retained. No scene/text/duplicates/matte. This is generated correction, not pixel-exact body preservation; Owner anatomy/view acceptance pending.",
         "owner_acceptance": "pending"
       }
     }
@@ -160,12 +172,20 @@
       "supports": "Registered initial job, bounded calls and immutable prompt/source hashes"
     },
     {
-      "path": "concepts/kck-03b2/evidence/cat-front-01-qa.json",
+      "path": "concepts/kck-03b2/evidence/cat-side-02-qa.json",
       "supports": "Structural facts and independent agent review; Owner acceptance pending"
     },
     {
-      "path": "artifacts/qa/2026-10-06-cat-model-sheets/report.json",
-      "supports": "Source-verified common-scale checker/white/black/64px review; not anchor alignment"
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "supports": "Explicit bounded side correction and conditional continuation"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-side-correction.json",
+      "supports": "Explicit one-per-side correction and conditional remaining-sheet continuation; not artwork acceptance"
+    },
+    {
+      "path": "artifacts/qa/2026-10-06-cat-six-sheets/report.json",
+      "supports": "Actual common native-canvas review on checker/white/black/64px; no semantic anchor fit"
     },
     {
       "path": "concepts/kck-03b2/evidence/2026-10-06-owner-cat-sheets-and-dino-repair.json",

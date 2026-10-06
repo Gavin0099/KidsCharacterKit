@@ -1,0 +1,161 @@
+{
+  "format": "kck-qa-review-v1",
+  "candidate_only": true,
+  "manual_pending": [
+    "Owner identity/style acceptance",
+    "semantic ground contact and pivot",
+    "relative character visual scale",
+    "consumer-scene timing and prop handoff",
+    "rights evidence"
+  ],
+  "sources": [
+    {
+      "path": "concepts/kck-03b2/outputs/cat-front-01.png",
+      "label": "Front",
+      "bytes": 1359332,
+      "sha256": "4329a28106b5f046848de5ea6bfec30d3842b266c18e588a23c1fc31a2232c49",
+      "rgba_sha256": "be8c11a00cf132b53c6d807b51de8b0b6ff6ce5ceeabcfbadf2709e27f7be9ff",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 866939,
+        "partial": 705125,
+        "opaque": 452
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        53,
+        1218,
+        1214
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-three-quarter-01.png",
+      "label": "3/4",
+      "bytes": 1350018,
+      "sha256": "c9126c6e8e286895e153125018da7bcc6d0da95f694a8d8fee7d6308ed04fe9a",
+      "rgba_sha256": "9e6e47030c861310ef42efe4f72e8d41d591252dfee56b9ec37c173899ff4896",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 883290,
+        "partial": 688681,
+        "opaque": 545
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        0,
+        25,
+        1214,
+        1236
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-side-02.png",
+      "label": "Side v2",
+      "bytes": 1036991,
+      "sha256": "85f80929399c75a23da5e8a9b96601a809cb2a349a9c5b140b81650f492e61c2",
+      "rgba_sha256": "a95adec15ff2e136c360fcb7556a725e443ccdf186ef08fc8e13ff4b6f25f9ba",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 1060747,
+        "partial": 511282,
+        "opaque": 487
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        57,
+        48,
+        1198,
+        1206
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-back-01.png",
+      "label": "Back",
+      "bytes": 1345540,
+      "sha256": "aea09e7a2c40ad362d6f965650f2da5c0791aa6e32a23388e68a612eb75a4206",
+      "rgba_sha256": "05acb6e8d5b2a645ffee5c178aab915ac750c77ff5848bd08e2dab538862c57c",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 920884,
+        "partial": 650708,
+        "opaque": 924
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        27,
+        21,
+        1190,
+        1214
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-happy-01.png",
+      "label": "Happy",
+      "bytes": 1352953,
+      "sha256": "ff3a4e117c6f8b6834938c466b260c0470aeaf1a2039084489d2ceb43555d8f8",
+      "rgba_sha256": "3eb5a187c3e5636e61552e14d5e84ba70416459a6f4b785cd764cbccc7fd5f86",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 862692,
+        "partial": 709480,
+        "opaque": 344
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        104,
+        37,
+        1210,
+        1241
+      ]
+    },
+    {
+      "path": "concepts/kck-03b2/outputs/cat-confused-01.png",
+      "label": "Confused",
+      "bytes": 1373586,
+      "sha256": "2dda5f386b76e957cc39dff1b894fc6b1b444ba098fe582e53c566e2f55a2d68",
+      "rgba_sha256": "ce6fde1463b8af81d3bde5ef5cdd8952eeb76e052404fdf51bb84ec2d68acb15",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": {
+        "zero": 856682,
+        "partial": 715424,
+        "opaque": 410
+      },
+      "nonzero_alpha_bbox_exclusive": [
+        111,
+        32,
+        1212,
+        1242
+      ]
+    }
+  ],
+  "contact_sheet": {
+    "common_preview_scale": 0.22328548644338117,
+    "extent": 280,
+    "anchor_alignment": false
+  },
+  "small_view": {
+    "common_preview_scale": 0.051036682615629984,
+    "extent": 64,
+    "anchor_alignment": false
+  }
+}
