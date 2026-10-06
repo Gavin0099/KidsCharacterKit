@@ -521,7 +521,7 @@ required content and a fill-in template (with the hashes above) are in
 [`concepts/kck-03b1/handoff.md`](../concepts/kck-03b1/handoff.md). It includes the execution
 sentence `Use the provided dinosaur image as the only image reference. Follow
 A<n>_instruction_v2d.txt exactly and generate exactly one image.` (`<n>` = the variant;
-"provided" is transport-neutral, it covers uploaded and repository-fetched files) and asks the
+"provided" is transport-neutral, so the same sentence stays valid if the transport changes) and asks the
 generation side to run the pre-flight checks itself before generating.
 
 #### Gates, split into identity and style
@@ -603,11 +603,14 @@ implements them itself.
 1. **Fresh-context generation input.** A brand-new conversation, not an existing project
    conversation. Before the first image generation, the Owner supplies exactly two source
    objects (the source image and the instruction file) and exactly one Owner-authored
-   message (the generation-input message). The source objects are either uploaded files or,
-   as an alternative, files the generation side fetches from this repository
-   (`concepts/kck-03b1/inputs/` and `concepts/kck-03b1/instructions/`) at a pinned commit; in
-   both cases the checks below apply to the bytes the generation side actually holds. Every
-   new conversation gets the objects again; a previous upload or fetch does not carry over.
+   message (the generation-input message). The source objects are **uploaded files** (the Owner
+   can download them from `concepts/kck-03b1/inputs/` and `concepts/kck-03b1/instructions/`);
+   the checks below apply to the content the generation side actually holds. A
+   repository-fetch route is **not used**: in a Codex run on 2026-10-06 the generation side
+   fetched both files at a pinned commit and passed both gates, but the image tool would not
+   accept the fetched PNG as the image reference, so nothing was generated (no attempt
+   consumed). Every new conversation gets the objects uploaded again; a previous upload does
+   not carry over.
    Platform expansion of an attachment into text is not Owner-authored content. That one
    message may ask the generation side to run the pre-flight verification first; hashing and
    tool use done by the generation side within that turn is not additional Owner input.
@@ -666,9 +669,11 @@ message, while rev. 2 allowed only the bare execution sentence. A separate rehea
 followed by a formal chat was rejected as the main method: a rehearsal shows only that an
 upload route worked once, not that the formal fresh chat holds the same bytes, and checking
 afterwards is weaker than checking first. Rev. 3 therefore lets the one Owner message carry
-the verify-first request and adds the fail-closed rule. It also allows the inputs to come
-from this repository (Owner request, 2026-10-06) so the Owner does not have to re-upload
-files by hand.
+the verify-first request and adds the fail-closed rule. It first also allowed inputs fetched
+from this repository (Owner request, 2026-10-06, to avoid copying files by hand). The first
+Codex run showed the image tool does not accept a fetched PNG as the image reference, so that
+route was withdrawn; the inputs are uploaded, and the repository only hosts the files for
+download.
 
 #### Post-generation provenance capture
 
@@ -681,8 +686,7 @@ Recorded after generation (a generation id does not exist before it):
   fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
   a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all
   full 64-hex);
-- the exact generation-input message and the transport used (upload, or repository fetch with
-  the pinned commit);
+- the exact generation-input message and the transport used (upload);
 - original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
   any independent measurement recorded separately; never overwrite);
