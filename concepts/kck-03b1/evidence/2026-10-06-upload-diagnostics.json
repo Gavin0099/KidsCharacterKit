@@ -1,0 +1,537 @@
+{
+  "measurement_actor": "Codex, local independent measurement, 2026-10-06 Asia/Taipei",
+  "tool_versions": {
+    "pillow": "12.3.0",
+    "numpy": "2.3.5"
+  },
+  "coordinate_convention": "zero-based; bounding boxes inclusive; RGBA8 row-major top-to-bottom; no color management",
+  "canonical": {
+    "file": "dinosaur-01_DinosaurResearcher.png",
+    "raw_bytes": 770614,
+    "raw_sha256": "1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76",
+    "pixel_sha256": "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "alpha_counts": {
+      "zero": 985719,
+      "partial": 585294,
+      "opaque": 1515
+    },
+    "alpha_top_four": [
+      {
+        "value": 0,
+        "count": 985719
+      },
+      {
+        "value": 253,
+        "count": 403941
+      },
+      {
+        "value": 252,
+        "count": 91771
+      },
+      {
+        "value": 254,
+        "count": 70367
+      }
+    ],
+    "alpha_gt_10_bbox_inclusive": [
+      353,
+      64,
+      1220,
+      1038
+    ],
+    "alpha_gt_200_count": 575474,
+    "alpha_gt_200_mean_rgb": [
+      185.22599630912953,
+      194.76659935983207,
+      148.75110952015208
+    ],
+    "png_chunks": [
+      {
+        "type": "IHDR",
+        "bytes": 13
+      },
+      {
+        "type": "caBX",
+        "bytes": 23654
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 65536
+      },
+      {
+        "type": "IDAT",
+        "bytes": 25863
+      },
+      {
+        "type": "IEND",
+        "bytes": 0
+      }
+    ],
+    "ihdr_bit_depth": 8,
+    "ihdr_color_type": 6
+  },
+  "held_attachment_copy": {
+    "file": "image(7).png",
+    "raw_bytes": 929481,
+    "raw_sha256": "cac0f4fcc8138e2504a0bd0ad65a2fb4c6e6ea91a8bdd6c0bd6855b5e300777a",
+    "pixel_sha256": "b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "alpha_counts": {
+      "zero": 985719,
+      "partial": 585294,
+      "opaque": 1515
+    },
+    "alpha_top_four": [
+      {
+        "value": 0,
+        "count": 985719
+      },
+      {
+        "value": 253,
+        "count": 403941
+      },
+      {
+        "value": 252,
+        "count": 91771
+      },
+      {
+        "value": 254,
+        "count": 70367
+      }
+    ],
+    "alpha_gt_10_bbox_inclusive": [
+      353,
+      64,
+      1220,
+      1038
+    ],
+    "alpha_gt_200_count": 575474,
+    "alpha_gt_200_mean_rgb": [
+      185.23062379881628,
+      194.76750296277504,
+      148.83291165195996
+    ],
+    "png_chunks": [
+      {
+        "type": "IHDR",
+        "bytes": 13
+      },
+      {
+        "type": "sRGB",
+        "bytes": 1
+      },
+      {
+        "type": "eXIf",
+        "bytes": 68
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384
+      },
+      {
+        "type": "IDAT",
+        "bytes": 11155
+      },
+      {
+        "type": "IEND",
+        "bytes": 0
+      }
+    ],
+    "ihdr_bit_depth": 8,
+    "ihdr_color_type": 6
+  },
+  "comparison": {
+    "same_dimensions": true,
+    "alpha_identical": true,
+    "changed_pixels": 63143,
+    "changed_pixels_per_rgba_channel": [
+      11569,
+      4957,
+      51062,
+      0
+    ],
+    "max_absolute_rgba_difference": [
+      5,
+      7,
+      8,
+      0
+    ],
+    "max_absolute_rgba_difference_alpha_gt_0": [
+      1,
+      1,
+      1,
+      0
+    ],
+    "mean_absolute_rgba_difference": [
+      0.0073925551723085375,
+      0.003236826307703265,
+      0.032567941556525544,
+      0.0
+    ],
+    "changed_pixels_alpha_zero": 591,
+    "roundtrip_formula": {
+      "premultiply": "p = floor((c * a + 127) / 255)",
+      "unpremultiply": "c2 = floor((p * 255 + floor(a / 2)) / a) if a > 0 else 0",
+      "alpha": "unchanged"
+    },
+    "roundtrip_pixel_sha256": "b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d",
+    "roundtrip_matches_held_exactly": true,
+    "interpretation": "An exact match establishes a reproducible transform, not which platform component ran it. Image gate remains unchanged."
+  },
+  "generation_side_report": {
+    "actor": "ChatGPT generation side; reported, independently compared with local attachment copy",
+    "chat_id": "6ac4547a-89a0-83ee-902c-1157bab39e5b",
+    "failure_turn_id": "0e78263a-6005-4f81-be6f-a6477a10ecc3",
+    "diagnostics_turn_id": "0b14032c-9fd3-4319-a488-c856154ad601",
+    "generation_called": false,
+    "v2d_budget_used": 0,
+    "v2d_budget_limit": 2,
+    "exact_copy_name": "held_image_exact.png",
+    "exact_copy_raw_bytes": 929481,
+    "exact_copy_raw_sha256": "cac0f4fcc8138e2504a0bd0ad65a2fb4c6e6ea91a8bdd6c0bd6855b5e300777a",
+    "alpha_counts": {
+      "zero": 985719,
+      "partial": 585294,
+      "opaque": 1515
+    },
+    "alpha_top_four": [
+      {
+        "value": 0,
+        "count": 985719
+      },
+      {
+        "value": 253,
+        "count": 403941
+      },
+      {
+        "value": 252,
+        "count": 91771
+      },
+      {
+        "value": 254,
+        "count": 70367
+      }
+    ],
+    "alpha_gt_10_bbox_inclusive": [
+      353,
+      64,
+      1220,
+      1038
+    ],
+    "alpha_gt_200_count": 575474,
+    "alpha_gt_200_mean_rgb": [
+      185.230624,
+      194.767503,
+      148.832912
+    ],
+    "png_chunk_runs": [
+      {
+        "type": "IHDR",
+        "bytes": 13,
+        "count": 1
+      },
+      {
+        "type": "sRGB",
+        "bytes": 1,
+        "count": 1
+      },
+      {
+        "type": "eXIf",
+        "bytes": 68,
+        "count": 1
+      },
+      {
+        "type": "IDAT",
+        "bytes": 16384,
+        "count": 56
+      },
+      {
+        "type": "IDAT",
+        "bytes": 11155,
+        "count": 1
+      },
+      {
+        "type": "IEND",
+        "bytes": 0,
+        "count": 1
+      }
+    ],
+    "ihdr_bit_depth": 8,
+    "ihdr_color_type": 6,
+    "instruction": {
+      "form": "expanded text",
+      "scope": "Use the attached\u2026 through Use subtle visible handmade grain\u2026; execution and verification excluded",
+      "canonical_bytes_empty_lines_removed": 2364,
+      "canonical_sha256_empty_lines_removed": "53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09",
+      "raw_bytes": "not exposed"
+    },
+    "fresh_context_formal_attempt": false
+  }
+}

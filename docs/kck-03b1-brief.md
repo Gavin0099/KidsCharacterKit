@@ -13,8 +13,8 @@ Do not mix these up:
 |---|---|---|
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
-| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
-| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 2 is current. |
+| **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3 candidate, output gate 4 FAIL; A4 pending, sequence stopped. |
+| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 5 is current (Owner decision, 2026-10-06). |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
 transport, not from V2. A new design version would only be justified by a decision to change
@@ -507,20 +507,32 @@ trailing newline. They differ only in that last line. The files are committed in
 [`concepts/kck-03b1/instructions/`](../concepts/kck-03b1/instructions/); the Owner uploads them
 from there (or from the copies sent by the agent) into each fresh generation conversation.
 
-| File | Variant line | Size | SHA-256 (also the canonical-content hash) |
+| File | Variant line | Size | Raw-file SHA-256 (provenance) |
 |---|---|---|---|
 | `A2_instruction_v2d.txt` | A2 Clean | 2342 bytes | `12c67216741b4bf308d61cdf4390bb773080e9eb5fb5398e9627e49df9a47e1e` |
 | `A3_instruction_v2d.txt` | A3 Balanced | 2371 bytes | `c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884` |
 | `A4_instruction_v2d.txt` | A4 Handmade | 2396 bytes | `d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34` |
 
-The committed bytes are checked by `concepts/kck-03b1/tools/test_preflight_hash.py`, which also
-holds the BOM / CRLF / trailing-newline regression cases for the canonicalization.
+The instruction source files keep their original bytes and seven empty lines. Under rev. 4/5, the gate uses these canonical-content values instead of the raw-file hashes:
 
-Execution message (the only user-authored text sent, verbatim; `<n>` = the variant):
+| File | Canonical size (empty lines removed) | Canonical-content SHA-256 (gate) |
+|---|---|---|
+| `A2_instruction_v2d.txt` | 2335 bytes | `b1b54564a7b6b5e4a8ee0420a9d52c7053eb2edf7d108561493a913a51a668d1` |
+| `A3_instruction_v2d.txt` | 2364 bytes | `53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09` |
+| `A4_instruction_v2d.txt` | 2389 bytes | `99679d30a86d32be6555e1071babecf50aa25233feff69ab3db9c0b923c522ee` |
 
-```text
-Use the attached dinosaur image as the only image reference. Follow A<n>_instruction_v2d.txt exactly and generate exactly one image.
-```
+The committed bytes and the separate canonical hashes are checked by
+`concepts/kck-03b1/tools/test_preflight_hash.py`. Regression cases cover BOM, CRLF/CR,
+trailing LF, inserted/removed empty lines and combined transport differences; characters,
+numbers, Markdown escapes, nonempty line breaks, spaces and tabs still affect the hash.
+
+Generation-input message: the single Owner-authored message that starts a generation. Its
+required content and a fill-in template (with the hashes above) are in
+[`concepts/kck-03b1/handoff.md`](../concepts/kck-03b1/handoff.md). It includes the execution
+sentence `Use the provided dinosaur image as the only image reference. Follow
+A<n>_instruction_v2d.txt exactly and generate exactly one image.` (`<n>` = the variant;
+"provided" is transport-neutral, so the same sentence stays valid if the transport changes) and asks the
+generation side to run the pre-flight checks itself before generating.
 
 #### Gates, split into identity and style
 
@@ -573,11 +585,15 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 
 #### Retry budget and attempt definition (v2d)
 
-- v2d attempts: **0 of 2** used.
-- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 2) pass
+- v2d attempts: **1 of 2** used (A3 attempt #1, 2026-10-06; output gate 4 FAIL, record below).
+- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 5) pass
   and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
-- v2d permits at most two valid generation attempts. After the second valid generated
+- v2d permits at most two valid generation attempts **in total**, shared across A3, A4
+  and any retry (Owner accepted the proposed execution plan, "好的 往下做", 2026-10-06).
+  A3 once then A4 once uses both slots; an A3 retry uses the slot otherwise available to
+  A4. A failed A3 validation stops the sequence; no automatic retry or budget reset.
+  Owner acceptance of A3 variant intensity is required before starting A4. After the second valid generated
   artifact, any failed hard gate stops prompt-only retry; an Owner decision is then needed.
 - If both eyes' large highlight stays at x > 0.45 in two valid attempts, record it
   additionally as "highlight position stays at a reference-like location". That is a
@@ -587,37 +603,91 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
   style rule, or treat the highlight as a deterministic post-process by the image tool with a
   transformation record. Either is an Owner decision.
 
-#### v2d pre-flight gate, rev. 2 (hard; before calling the generator)
+#### v2d pre-flight gate, rev. 5 (hard; before calling the generator)
 
-Owner-approved 2026-10-05, replacing the original four-item gate (revision recorded below).
-All four must PASS. Any FAIL: do not generate, do not consume an attempt. Tool for the two
-hashes: [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
-(a pre-flight helper; no product or runtime code).
+Rev. 2 (content-based identity) Owner-approved 2026-10-05; rev. 3 (single verify-first
+message, fail-closed and uploaded inputs) Owner-approved 2026-10-06. Rev. 4 removes empty
+instruction lines. Rev. 5 accepts exactly two known decoded image results: canonical or
+the independently reproduced 8-bit premultiply/unpremultiply result. Owner decision,
+2026-10-06: after the agent proposed this exact two-result gate, synchronized helpers/tests/
+handoff, A3 then validated A4, and a shared two-attempt budget, the Owner replied
+**"好的 往下做"**. This accepts those procedural changes and authorizes their execution;
+it does not approve artwork or promote any character status.
 
-1. **Fresh context, defined by Owner input.** A brand-new conversation, not the current
-   project conversation. The Owner supplies exactly two source objects (the image and the
-   instruction file) and exactly one authored execution message. Platform expansion of an
-   attachment into text is not additional Owner-authored content. Both files are uploaded
-   again in every new conversation; a previous upload does not carry over.
-2. **Source image: pixel identity.** The image the generation side actually received decodes
-   to **width 1448, height 1086** and its decoded-pixel hash equals
-   `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
+All four must PASS. Any FAIL, or any check that cannot be completed: do not generate, do not consume an attempt. Reference helper for the two hashes:
+[`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
+(a pre-flight helper; no product or runtime code). It is **not** a third input to a
+generation conversation: the message describes the algorithms and the generation side
+implements them itself.
+
+1. **Fresh-context generation input.** A brand-new conversation, not an existing project
+   conversation. Before the first image generation, the Owner supplies exactly two source
+   objects (the source image and the instruction file) and exactly one Owner-authored
+   message (the generation-input message). The source objects are **uploaded files** (the Owner
+   can download them from `concepts/kck-03b1/inputs/` and `concepts/kck-03b1/instructions/`);
+   the checks below apply to the content the generation side actually holds. A
+   repository-fetch route is **not used**: in a Codex run on 2026-10-06 the generation side
+   fetched both files at a pinned commit and passed both gates, but the image tool would not
+   accept the fetched PNG as the image reference, so nothing was generated (no attempt
+   consumed). Every new conversation gets the objects uploaded again; a previous upload does
+   not carry over.
+   Platform expansion of an attachment into text is not Owner-authored content. That one
+   message may ask the generation side to run the pre-flight verification first; hashing and
+   tool use done by the generation side within that turn is not additional Owner input.
+   Messages sent after the first generation (evidence collection) do not count toward the
+   generation input.
+2. **Source image: pixel identity.** The image the generation side actually holds decodes
+   to **width 1448, height 1086** and its decoded-pixel hash equals exactly one of:
+   - `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`: route `canonical`;
+   - `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d`: route `premultiply-roundtrip`, the specific transport result reproduced in the diagnostic record below.
+
    Algorithm (fixed): decode, convert to RGBA8, row-major top to bottom, SHA-256 of the raw
    RGBA bytes (no color management, no alpha premultiplication; ancillary PNG chunks
-   ignored). Compare full 64-hex values, never abbreviations. The **file** SHA-256
-   (`1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`) and the received
-   file's own SHA-256 are recorded as provenance but are **not** a pass/fail criterion.
+   ignored). Compute the hash of the actual held pixels without modifying them. Compare
+   full 64-hex values, never abbreviations, and report the matching route. Dimensions plus
+   exact membership in this two-hash set is the **only** image pass/fail criterion. No
+   RGB/alpha tolerance, additional transforms or alternate hashes are accepted. The older
+   `1fc77702…e45dacd` result remains FAIL. This transport allowance is specific to the B1-A
+   input and does not redefine master identity in the representation contract. Three different hashes are
+   kept apart in the record:
+   - *canonical/source file SHA-256*: fixed,
+     `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76` (the repository file);
+   - *actual held raw SHA-256*: the SHA-256 of the file bytes the generation side actually
+     holds, reported when raw bytes are available; it differs from the canonical file SHA for a
+     pixel-identical re-encode or the one accepted transport result; raw SHA is not a gate;
+   - *pixel SHA-256 and matching route*: the gate above.
 3. **Instruction: canonical-content identity.** The instruction text the generation side
-   received (whether it arrives as an attachment or is expanded from the attachment into
-   text by the platform) canonicalizes to the variant's expected hash in the table above.
-   Canonicalization: UTF-8, no BOM, CRLF/CR converted to LF, exactly one trailing LF. Any
-   other difference (changed characters, Markdown escapes, edits) FAILs. The generation side
-   states whether it came from an attachment or was expanded from one.
-4. **Execution message and authorship.** The only text the Owner **authored** in that
-   conversation is the execution message above, verbatim: no preamble, no extra rules, no
-   restated instruction, no gate script. Instruction content that appears in the context
-   because the platform expanded the attachment is allowed. Instruction text the Owner
-   pasted or typed into a message is **not**, even if its hash comes out correct.
+   holds (whether it arrives as an attachment, a fetched file, or is expanded from an
+   attachment into text by the platform) canonicalizes to the variant's expected hash in the
+   canonical-content table above. Canonicalization: UTF-8, remove a leading BOM, CRLF/CR
+   converted to LF, remove every empty line, join remaining lines with LF and append exactly
+   one LF. An empty line has zero characters after newline conversion; do not strip spaces
+   or tabs, merge nonempty lines, or rewrite characters. The instruction alone is hashed,
+   excluding the execution and verification message. Any other difference (changed
+   characters, numbers, Markdown escapes, edits) FAILs. This
+   canonical-content SHA-256 of the text actually held is the **only** pass/fail criterion for
+   the instruction. The generation side states whether it came from an attachment, a fetch, or
+   expanded text. Provenance: the actual held raw SHA-256 when raw file bytes are available;
+   when the transport exposes only expanded text, it reports `raw bytes not exposed`, and that
+   alone is not a failure.
+4. **Generation-input message and authorship.** The single Owner-authored message contains
+   the execution sentence, the expected full hashes, the instruction to verify first, and the
+   stop rule; nothing else (no design rules, no restated instruction, no gate script).
+   Instruction text the Owner pasted or typed into a message is **not** allowed, even if its
+   hash comes out correct.
+   For this execution, the Owner's 2026-10-06 "好的 往下做" delegates upload of the two
+   specified files and submission of the unchanged, single handoff-template message to
+   Codex. Record the submission actor and this authorization separately; this does not
+   permit an extra message, inline prompt paste or additional generation input.
+
+**Fail-closed rule.** If the generation side cannot access the content that will actually be
+used for generation (for the image, the decoded pixels; for the instruction, the text) because
+it only sees a display name, a preview image or platform metadata, or cannot compute the
+content-identity hash of item 2 or 3, the result is **PRE-FLIGHT INCONCLUSIVE**, which is a
+failure: stop and do not call image generation. A claimed verification without the computed
+full 64-hex gate values reported back is also INCONCLUSIVE. A missing raw-file SHA by itself
+(`raw bytes not exposed`) is a provenance gap, not an INCONCLUSIVE, provided the content
+hash was computed from the content actually held and passes.
 
 **Revision history.** The original gate required the received files' own SHA-256 to equal the
 canonical files'. The repository contract already allows different PNG encodings of the same
@@ -625,8 +695,146 @@ pixels ([contract](character-representation-contract.md) section 10), so file-by
 the wrong test of content identity. A3 generation `3871ee32…` exposed this, and also showed
 that a text attachment may reach the generation side as inline text. That run did **not**
 demonstrate a pure re-encode: its decoded pixels differed too (see below), so it failed pixel
-identity as well. Rev. 2 makes the identity check content-based and fixes the algorithm so it
+identity as well. Rev. 2 made the identity check content-based and fixed the algorithm so it
 cannot be read two ways.
+
+Rev. 3 resolves a conflict in rev. 2: verifying inside the generation conversation needs a
+message, while rev. 2 allowed only the bare execution sentence. A separate rehearsal chat
+followed by a formal chat was rejected as the main method: a rehearsal shows only that an
+upload route worked once, not that the formal fresh chat holds the same bytes, and checking
+afterwards is weaker than checking first. Rev. 3 therefore lets the one Owner message carry
+the verify-first request and adds the fail-closed rule. It first also allowed inputs fetched
+from this repository (Owner request, 2026-10-06, to avoid copying files by hand). The first
+Codex run showed the image tool does not accept a fetched PNG as the image reference, so that
+route was withdrawn; the inputs are uploaded, and the repository only hosts the files for
+download.
+
+Rev. 4 addresses a narrower transport difference: expanded A3 text contained exactly the
+same nonempty lines but omitted seven empty lines (2371 -> 2364 bytes). Removing those
+lines locally reproduces its reported SHA-256 exactly. It does not loosen character or
+number identity. Rev. 4 alone did not waive the image mismatch.
+
+Rev. 5 adds only the independently reproduced pixel hash `b9ec2237…dd27d` to the exact
+accepted set. It does not apply a transform to the held pixels, compare perceptual
+similarity, accept per-channel error or retroactively register failed chats. The source
+PNG and all instruction source-file bytes remain unchanged. The original strict image
+hash remains an accepted route. The two accepted pixel hashes and dimension requirement
+are tested using the original source and an independently constructed transport result;
+re-encoding passes, but single visible RGB/alpha changes, wrong dimensions and unknown
+hashes fail.
+
+#### Failed upload pre-flight and diagnostics, 2026-10-06 (no generation)
+
+Chat: `預檢失敗 റിപ്പോർ‍ട്ട്`, id `6ac4547a-89a0-83ee-902c-1157bab39e5b`.
+The initial request exposed neither source object and was INCONCLUSIVE. The later request
+in the same chat held one PNG and expanded A3 text and reported both content gates FAIL.
+No image generation was called; no v2d attempt was consumed; budget was **0/2 at that point**. This
+chat is for diagnostics only and cannot be reused as a formal fresh-context attempt.
+The retrieved transcript alone does not establish whether the expanded text originated
+from a platform-expanded attachment or an Owner paste, so item 4 is not certified.
+
+| Evidence | Value | Actor |
+|---|---|---|
+| Local canonical input | 770614 bytes; raw SHA-256 `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76`; decoded RGBA8 SHA-256 `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8` | Codex independent local measurement |
+| Held attachment `image(7).png` | 929481 bytes; 1448x1086; raw SHA-256 `cac0f4fcc8138e2504a0bd0ad65a2fb4c6e6ea91a8bdd6c0bd6855b5e300777a`; decoded RGBA8 SHA-256 `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d` | Generation-side report; independently matched on the local attachment copy |
+| Held A3 expanded instruction, empty lines removed | 2364 bytes; SHA-256 `53e34cde5ec972a98347dd8e808f49a4ac3fb831621ddd3f1acf33c85eeaff09`; raw bytes not exposed | Generation-side diagnostic report; local canonical instruction independently gives the same value |
+
+The diagnostic-only message requested an exact held-file copy, alpha statistics, PNG
+chunks/IHDR and the instruction hash after removing empty lines. The generation side
+returned `held_image_exact.png` with the same raw SHA above. A byte-exact local attachment
+copy was preserved for the Owner; it was copied, not re-encoded. The local canonical hash
+confirms the intended source in this checkout; the historical file-picker selection is
+not independently observable from this session.
+
+Independent measurements and the reproducible transform are in
+[`2026-10-06-upload-diagnostics.json`](../concepts/kck-03b1/evidence/2026-10-06-upload-diagnostics.json),
+using [`diagnose_png_transport.py`](../concepts/kck-03b1/tools/diagnose_png_transport.py)
+(Pillow/numpy versions recorded in the JSON). Generation-side statistics agree:
+
+- Both images have exactly the same alpha at every pixel: alpha 0 = 985719 pixels,
+  partial alpha = 585294, alpha 255 = 1515. Top four alpha values/counts:
+  0/985719, 253/403941, 252/91771, 254/70367.
+- Both have inclusive alpha > 10 bounds `(353, 64, 1220, 1038)` and 575474 pixels
+  with alpha > 200. Held mean RGB on those pixels is
+  `(185.230624, 194.767503, 148.832912)`.
+- 63143 pixels differ in RGB, including 591 alpha-zero pixels. At alpha > 0,
+  the maximum channel difference is 1; alpha is unchanged everywhere.
+- For each original RGB channel `c` and alpha `a`, the integer transform
+  `p = floor((c*a + 127)/255)`, then
+  `c2 = floor((p*255 + floor(a/2))/a)` for `a > 0`, else `c2 = 0`,
+  reproduces **every RGBA byte** of the held image. Its hash is exactly
+  `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d`.
+  This models nearest-integer 8-bit premultiplication followed by unpremultiplication,
+  with RGB zeroed at alpha 0. It establishes an exact reproducible mapping;
+  attribution to a particular platform component remains an inference.
+- Canonical PNG: IHDR, caBX, IDAT x12, IEND. Held PNG: IHDR, sRGB, eXIf,
+  IDAT x57, IEND. Both are bit depth 8, color type 6 (RGBA).
+  Removing caBX alone cannot explain changed decoded RGB.
+
+At the time of this diagnostic run, the transform was not an image gate and no alternate
+hash was accepted. The subsequent Owner-accepted rev. 5 admits its exact output hash as a
+second route; the transform still is not applied to held pixels for gate checking.
+The older `1fc77702…e45dacd` attachment has not been independently tested against this
+transform and remains outside the accepted set. The Owner decides any image-gate revision
+from this evidence; rev. 5 records the accepted decision above. Carry this failure/diagnostic record into the eventual exploration
+consolidation PR after A3 and A4; neither is completed by this diagnostic work.
+
+#### Registered A3 attempt #1 — output gate 4 FAIL (2026-10-06)
+
+Under Owner's delegated execution decision ("好的 往下做", 2026-10-06), Codex opened
+the fresh, non-project chat [圖片生成前置檢查](https://chatgpt.com/c/6ac45d5c-cc34-83ee-a462-2c8c6111a431),
+uploaded exactly the source PNG and original A3 instruction file from commit
+`be38c12571ce6380aefdbd32bed706bd1c6b220f`, and submitted the unchanged handoff message
+once. All four rev. 5 pre-flight checks passed before generation. The actual held PNG
+matched the **canonical** route and original raw SHA; A3 was a raw attachment with
+2371 bytes, canonicalizing to 2364 bytes and the expected `53e34cde…eaff09` hash.
+The post-generation evidence request was sent only after the single image existed;
+it requested no generation, editing or retry.
+
+The generation side reports generation ID `97104382-f63f-43c1-8207-c2ea6c1ff71a`, tool
+`image_gen.text2im`, model/version and seed not exposed. Its tool-emitted artifact is
+PNG/RGBA, **1254×1254**, **1,467,699 bytes**, raw SHA-256
+`345b25c5f9b390497d71267b66546dcebd4cb643872ccadf347108072fd03baf`, decoded RGBA8 SHA-256
+`aff2a4a2a01505f4876581c7d2a7c2b913f7f9ef96e193e725b00d0fdbf5589f`.
+Codex downloaded the image through its image-viewer download control, preserved it
+without editing, and independently obtained **both identical hashes**, dimensions
+and byte count. It is therefore the same byte sequence as the reported tool-emitted
+artifact, not merely a matching preview. More upstream internal buffers are not exposed.
+
+| Output gate | Independent result | Evidence |
+|---|---|---|
+| 1 — one full-body character, square canvas, no text/panels/duplicates | PASS | visual review; 1254×1254; one alpha>10 component larger than 10 pixels |
+| 2 — true alpha, no matte | PASS | all four corner alpha values 0; 815,923 alpha-zero pixels; visual review finds no matte/background scene |
+| 3 — eye identity | PASS | max size deviation 0.002052, center 0.003153, spacing 0.003688, RGB 13.665; all within confirmed tolerances; eye shapes visually retained |
+| 4 — eye highlight style | **FAIL** | large centroid left (0.6062, 0.2955), right (0.5885, 0.2831); both x exceed 0.40; small highlights are below/right |
+| 5 — overall identity | PASS | visual review retains anatomy, silhouette/proportions, mint body, cream belly with two lines, yellow spikes, peach cheeks, tail, feet and magnifying glass |
+
+The independent measurement uses the prior A2 dark-eye threshold and four-neighbor
+connectivity; bounding-box maxima are exclusive. The generation-side report uses a
+different brown threshold, eight-neighbor connectivity and inclusive maxima, and reports
+large centroids (0.6123, 0.2975) / (0.5928, 0.2851). Keep these actors/methods separate:
+both find a clear gate 4 failure, not a borderline disagreement. Its eye-height values
+are normalized to visible height; the independent measurements use visible width for
+eye size, as required by the confirmed tolerance convention above. Generation-side
+IoU values are source-stated, not independently recomputed.
+
+Texture observation only: visible fine paper/pencil grain across the body and other fills,
+with the outline and silhouette still legible. **Owner variant-intensity acceptance is
+pending**. The artwork remains a `candidate`; this validation failure does not assign the
+Owner-only `rejected` status or approve an artwork/master/rights change.
+
+This is the **first registered v2d attempt**, consuming one slot despite output failure.
+Budget is **1/2**. The sequence stops under the existing failed-A3 rule: **no retry and no
+A4 were started**. The older unregistered and pre-flight-failed records remain unchanged.
+Keep this evidence for the eventual exploration consolidation; A3 is not accepted and
+A4 is not completed.
+
+Evidence:
+
+- [`2026-10-06-a3-attempt-01.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-attempt-01.json): input/output provenance, actor, authority, artifact location and gate disposition.
+- [`2026-10-06-a3-attempt-01-measurements.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-attempt-01-measurements.json): independent values, exact bboxes, thresholds and library versions.
+- [`2026-10-06-a3-generation-side-report.json`](../concepts/kck-03b1/evidence/2026-10-06-a3-generation-side-report.json): captured input/evidence request and attributed generation-side response.
+- [`measure_output.py`](../concepts/kck-03b1/tools/measure_output.py): read-only reproduction helper; generated PNG is preserved locally, outside this procedural PR.
 
 #### Post-generation provenance capture
 
@@ -634,10 +842,12 @@ Recorded after generation (a generation id does not exist before it):
 
 - attempt number (v2d attempt N);
 - generation id, or `not exposed` if the product does not expose one;
-- source image: width, height, decoded-pixel SHA-256 and, separately, the received file's
-  SHA-256; instruction: canonical-content SHA-256 and whether it arrived as an attachment or
-  expanded text (all full 64-hex);
-- the exact execution message;
+- source image: width, height, decoded-pixel SHA-256 and matching route (gate), the canonical/source file SHA-256
+  (fixed) and the actual held raw SHA-256 or `raw bytes not exposed`, kept as separate
+  fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
+  a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all
+  full 64-hex);
+- the exact generation-input message and the transport used (upload);
 - original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
   any independent measurement recorded separately; never overwrite);
