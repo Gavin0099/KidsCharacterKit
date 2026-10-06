@@ -1,0 +1,23 @@
+{
+  "validation": "PASS",
+  "schema_counts": {
+    "manifest": 1,
+    "provenance": 22
+  },
+  "approved_reference_hashes": 3,
+  "candidate_output_and_input_hashes": 6,
+  "local_markdown_links": 22,
+  "generation_calls": 6,
+  "side_visual_failures": [
+    "cat-side-01",
+    "dinosaur-side-01"
+  ],
+  "unexecuted_sheets": 6,
+  "owner_sheet_acceptance": "pending",
+  "document": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
+  },
+  "claim_boundary": "Schema/hash PASS is not artwork acceptance; both sequences stopped after side failures; v2d 2/2 unchanged.",
+  "implementation_commit": "fd55b400f6c30929b52a62aa05cdae83c049021a"
+}
