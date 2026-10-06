@@ -86,7 +86,7 @@ def compare(source, held):
         },
         "roundtrip_pixel_sha256": hashlib.sha256(modeled.tobytes()).hexdigest(),
         "roundtrip_matches_held_exactly": bool(np.array_equal(modeled, held)),
-        "interpretation": "An exact match establishes a reproducible transform, not which platform component ran it. Image gate remains unchanged.",
+        "interpretation": "An exact match establishes a reproducible transform, not which platform component ran it. Gate checking separately requires exact dimensions and one explicitly accepted pixel hash; this diagnostic does not change held pixels.",
     }
 
 

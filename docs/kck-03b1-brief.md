@@ -14,7 +14,7 @@ Do not mix these up:
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
 | **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
-| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 3 is current; rev. 4 is proposed in PR #12. |
+| **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 5 is current (Owner decision, 2026-10-06). |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
 transport, not from V2. A new design version would only be justified by a decision to change
@@ -513,8 +513,7 @@ from there (or from the copies sent by the agent) into each fresh generation con
 | `A3_instruction_v2d.txt` | A3 Balanced | 2371 bytes | `c93b136768f35baf12e9c55da09571cd6a86ab307221abbe875ff511555c9884` |
 | `A4_instruction_v2d.txt` | A4 Handmade | 2396 bytes | `d667795522e258351cb0686230fba66d829698057404c86738ba32d5fba4bf34` |
 
-The instruction source files keep their original bytes and seven empty lines. Under proposed
-rev. 4, the gate uses these canonical-content values instead of the raw-file hashes:
+The instruction source files keep their original bytes and seven empty lines. Under rev. 4/5, the gate uses these canonical-content values instead of the raw-file hashes:
 
 | File | Canonical size (empty lines removed) | Canonical-content SHA-256 (gate) |
 |---|---|---|
@@ -587,10 +586,14 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
 #### Retry budget and attempt definition (v2d)
 
 - v2d attempts: **0 of 2** used.
-- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 4, once Owner-accepted) pass
+- **An attempt is consumed only when all four checks of the pre-flight gate (rev. 5) pass
   and the generation request is actually sent.** Tool/transport failures that produce no reviewable generated
   artifact do not consume it.
-- v2d permits at most two valid generation attempts. After the second valid generated
+- v2d permits at most two valid generation attempts **in total**, shared across A3, A4
+  and any retry (Owner accepted the proposed execution plan, "好的 往下做", 2026-10-06).
+  A3 once then A4 once uses both slots; an A3 retry uses the slot otherwise available to
+  A4. A failed A3 validation stops the sequence; no automatic retry or budget reset.
+  Owner acceptance of A3 variant intensity is required before starting A4. After the second valid generated
   artifact, any failed hard gate stops prompt-only retry; an Owner decision is then needed.
 - If both eyes' large highlight stays at x > 0.45 in two valid attempts, record it
   additionally as "highlight position stays at a reference-like location". That is a
@@ -600,14 +603,17 @@ A texture or surface-detail proxy is only meaningful if the comparison is contro
   style rule, or treat the highlight as a deterministic post-process by the image tool with a
   transformation record. Either is an Owner decision.
 
-#### v2d pre-flight gate, rev. 4 (proposed; hard before calling the generator)
+#### v2d pre-flight gate, rev. 5 (hard; before calling the generator)
 
-Rev. 2 (items 2 and 3, content-based identity) Owner-approved 2026-10-05; rev. 3 (items 1 and 4,
-the fail-closed rule and the input transport) Owner-approved 2026-10-06. Rev. 4 changes
-only instruction canonicalization by removing empty lines. The Owner asked this local Codex
-session to continue the proposed update and diagnostics on 2026-10-06; the agent agrees with
-the proposal, but that is not Owner acceptance. This revision is a PR #12 candidate until
-Owner acceptance is recorded. The image gate is unchanged. Revision history below.
+Rev. 2 (content-based identity) Owner-approved 2026-10-05; rev. 3 (single verify-first
+message, fail-closed and uploaded inputs) Owner-approved 2026-10-06. Rev. 4 removes empty
+instruction lines. Rev. 5 accepts exactly two known decoded image results: canonical or
+the independently reproduced 8-bit premultiply/unpremultiply result. Owner decision,
+2026-10-06: after the agent proposed this exact two-result gate, synchronized helpers/tests/
+handoff, A3 then validated A4, and a shared two-attempt budget, the Owner replied
+**"好的 往下做"**. This accepts those procedural changes and authorizes their execution;
+it does not approve artwork or promote any character status.
+
 All four must PASS. Any FAIL, or any check that cannot be completed: do not generate, do not consume an attempt. Reference helper for the two hashes:
 [`concepts/kck-03b1/tools/preflight_hash.py`](../concepts/kck-03b1/tools/preflight_hash.py)
 (a pre-flight helper; no product or runtime code). It is **not** a third input to a
@@ -631,19 +637,25 @@ implements them itself.
    Messages sent after the first generation (evidence collection) do not count toward the
    generation input.
 2. **Source image: pixel identity.** The image the generation side actually holds decodes
-   to **width 1448, height 1086** and its decoded-pixel hash equals
-   `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`.
+   to **width 1448, height 1086** and its decoded-pixel hash equals exactly one of:
+   - `5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8`: route `canonical`;
+   - `b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d`: route `premultiply-roundtrip`, the specific transport result reproduced in the diagnostic record below.
+
    Algorithm (fixed): decode, convert to RGBA8, row-major top to bottom, SHA-256 of the raw
    RGBA bytes (no color management, no alpha premultiplication; ancillary PNG chunks
-   ignored). Compare full 64-hex values, never abbreviations. This (dimensions plus pixel
-   SHA-256) is the **only** pass/fail criterion for the image. Three different hashes are
+   ignored). Compute the hash of the actual held pixels without modifying them. Compare
+   full 64-hex values, never abbreviations, and report the matching route. Dimensions plus
+   exact membership in this two-hash set is the **only** image pass/fail criterion. No
+   RGB/alpha tolerance, additional transforms or alternate hashes are accepted. The older
+   `1fc77702…e45dacd` result remains FAIL. This transport allowance is specific to the B1-A
+   input and does not redefine master identity in the representation contract. Three different hashes are
    kept apart in the record:
    - *canonical/source file SHA-256*: fixed,
      `1515f5860c6f497c5a9a84da11b9e125b05aa63ead4e08ffe8142899872dbb76` (the repository file);
    - *actual held raw SHA-256*: the SHA-256 of the file bytes the generation side actually
      holds, reported when raw bytes are available; it differs from the canonical file SHA for a
-     pixel-identical re-encode, which still passes;
-   - *pixel SHA-256*: the gate above.
+     pixel-identical re-encode or the one accepted transport result; raw SHA is not a gate;
+   - *pixel SHA-256 and matching route*: the gate above.
 3. **Instruction: canonical-content identity.** The instruction text the generation side
    holds (whether it arrives as an attachment, a fetched file, or is expanded from an
    attachment into text by the platform) canonicalizes to the variant's expected hash in the
@@ -663,6 +675,10 @@ implements them itself.
    stop rule; nothing else (no design rules, no restated instruction, no gate script).
    Instruction text the Owner pasted or typed into a message is **not** allowed, even if its
    hash comes out correct.
+   For this execution, the Owner's 2026-10-06 "好的 往下做" delegates upload of the two
+   specified files and submission of the unchanged, single handoff-template message to
+   Codex. Record the submission actor and this authorization separately; this does not
+   permit an extra message, inline prompt paste or additional generation input.
 
 **Fail-closed rule.** If the generation side cannot access the content that will actually be
 used for generation (for the image, the decoded pixels; for the instruction, the text) because
@@ -696,7 +712,16 @@ download.
 Rev. 4 addresses a narrower transport difference: expanded A3 text contained exactly the
 same nonempty lines but omitted seven empty lines (2371 -> 2364 bytes). Removing those
 lines locally reproduces its reported SHA-256 exactly. It does not loosen character or
-number identity. The image mismatch is a separate issue and is not waived by this change.
+number identity. Rev. 4 alone did not waive the image mismatch.
+
+Rev. 5 adds only the independently reproduced pixel hash `b9ec2237…dd27d` to the exact
+accepted set. It does not apply a transform to the held pixels, compare perceptual
+similarity, accept per-channel error or retroactively register failed chats. The source
+PNG and all instruction source-file bytes remain unchanged. The original strict image
+hash remains an accepted route. The two accepted pixel hashes and dimension requirement
+are tested using the original source and an independently constructed transport result;
+re-encoding passes, but single visible RGB/alpha changes, wrong dimensions and unknown
+hashes fail.
 
 #### Failed upload pre-flight and diagnostics, 2026-10-06 (no generation)
 
@@ -746,10 +771,12 @@ using [`diagnose_png_transport.py`](../concepts/kck-03b1/tools/diagnose_png_tran
   IDAT x57, IEND. Both are bit depth 8, color type 6 (RGBA).
   Removing caBX alone cannot explain changed decoded RGB.
 
-The diagnostic transform is **not an image gate**. No alpha/RGB tolerance or alternate
-accepted hash is introduced. The older `1fc77702…e45dacd` attachment has not been
-independently tested against this transform. The Owner decides any image-gate revision
-from this evidence. Carry this failure/diagnostic record into the eventual exploration
+At the time of this diagnostic run, the transform was not an image gate and no alternate
+hash was accepted. The subsequent Owner-accepted rev. 5 admits its exact output hash as a
+second route; the transform still is not applied to held pixels for gate checking.
+The older `1fc77702…e45dacd` attachment has not been independently tested against this
+transform and remains outside the accepted set. The Owner decides any image-gate revision
+from this evidence; rev. 5 records the accepted decision above. Carry this failure/diagnostic record into the eventual exploration
 consolidation PR after A3 and A4; neither is completed by this diagnostic work.
 
 #### Post-generation provenance capture
@@ -758,7 +785,7 @@ Recorded after generation (a generation id does not exist before it):
 
 - attempt number (v2d attempt N);
 - generation id, or `not exposed` if the product does not expose one;
-- source image: width, height, decoded-pixel SHA-256 (gate), the canonical/source file SHA-256
+- source image: width, height, decoded-pixel SHA-256 and matching route (gate), the canonical/source file SHA-256
   (fixed) and the actual held raw SHA-256 or `raw bytes not exposed`, kept as separate
   fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
   a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all

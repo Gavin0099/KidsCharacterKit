@@ -3,7 +3,9 @@
 Needs pillow only for the image case. Checks the committed instruction files against the
 hashes in docs/kck-03b1-brief.md and that transport differences do not change the hash."""
 import hashlib
+import io
 import os
+from pathlib import Path
 import unittest
 
 import preflight_hash as P
@@ -68,6 +70,21 @@ class InstructionHashes(unittest.TestCase):
             self.assertNotIn(b"\n\n", c, v)
             self.assertTrue(c.endswith(b"\n"), v)
 
+    def test_docs_and_handoff_use_the_same_gate_values(self):
+        root = Path(HERE).parents[2]
+        brief = (root / "docs/kck-03b1-brief.md").read_text()
+        handoff = (root / "concepts/kck-03b1/handoff.md").read_text()
+        for v, (sha, size) in EXPECTED.items():
+            self.assertIn(sha, brief, v)
+            self.assertIn(sha, handoff, v)
+            self.assertIn("%d bytes" % size, brief, v)
+        for sha, route in P.IMAGE_PIXEL_ROUTES.items():
+            for document in (brief, handoff):
+                self.assertIn(sha, document)
+                self.assertIn(route, document)
+        self.assertIn("rev. 5", handoff)
+        self.assertNotIn("Owner acceptance is pending", handoff)
+
 
 class ImageIdentity(unittest.TestCase):
     def test_pixels_not_container(self):
@@ -84,6 +101,66 @@ class ImageIdentity(unittest.TestCase):
         b3 = io.BytesIO()
         im2.save(b3, "PNG")
         self.assertNotEqual(P.image_identity(io.BytesIO(b3.getvalue())), P.image_identity(io.BytesIO(b1.getvalue())))
+
+
+class SourceImageGate(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from PIL import Image
+        path = os.path.join(HERE, "..", "inputs", "dinosaur-01_DinosaurResearcher.png")
+        with Image.open(path) as im:
+            cls.canonical = im.convert("RGBA")
+        raw = cls.canonical.tobytes()
+        # Independently construct the specifically approved transport result.
+        transformed = bytearray(len(raw))
+        for offset in range(0, len(raw), 4):
+            alpha = raw[offset + 3]
+            transformed[offset + 3] = alpha
+            for channel in range(3):
+                premultiplied = (raw[offset + channel] * alpha + 127) // 255
+                transformed[offset + channel] = (premultiplied * 255 + alpha // 2) // alpha if alpha else 0
+        cls.roundtrip = Image.frombytes("RGBA", cls.canonical.size, bytes(transformed))
+        cls.opaque_xy = next((i % cls.canonical.width, i // cls.canonical.width)
+                             for i, alpha in enumerate(raw[3::4]) if alpha == 255)
+
+    def gate(self, image, compress_level=6):
+        data = io.BytesIO()
+        image.save(data, "PNG", compress_level=compress_level)
+        return P.image_gate(io.BytesIO(data.getvalue()))
+
+    def test_exact_canonical_and_roundtrip_pass(self):
+        cases = [(self.canonical, "canonical", "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8"),
+                 (self.roundtrip, "premultiply-roundtrip", "b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d")]
+        for image, route, sha in cases:
+            result = self.gate(image)
+            self.assertEqual(result["gate"], "PASS")
+            self.assertEqual(result["route"], route)
+            self.assertEqual(result["pixel_sha256"], sha)
+
+    def test_reencoding_preserves_accepted_route(self):
+        for image in (self.canonical, self.roundtrip):
+            self.assertEqual(self.gate(image, 0), self.gate(image, 9))
+
+    def test_visible_rgb_or_alpha_change_fails_on_both_routes(self):
+        for image in (self.canonical, self.roundtrip):
+            for channel in (0, 3):
+                changed = image.copy()
+                pixel = list(changed.getpixel(self.opaque_xy))
+                pixel[channel] = pixel[channel] - 1 if pixel[channel] else 1
+                changed.putpixel(self.opaque_xy, tuple(pixel))
+                result = self.gate(changed)
+                self.assertEqual(result["gate"], "FAIL", (image is self.roundtrip, channel))
+                self.assertIsNone(result["route"])
+
+    def test_wrong_dimensions_fail(self):
+        for image in (self.canonical, self.roundtrip):
+            self.assertEqual(self.gate(image.crop((0, 0, 1447, 1086)))["gate"], "FAIL")
+        for sha in P.IMAGE_PIXEL_ROUTES:
+            self.assertIsNone(P.image_route(1086, 1448, sha))
+
+    def test_unknown_or_older_hash_fails(self):
+        for sha in ("1fc77702e4ee5b2b6860b5c621895942c2db950303c6b9a7c8f9ab211e45dacd", "0" * 64):
+            self.assertIsNone(P.image_route(1448, 1086, sha))
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""KCK-03B1 pre-flight rev. 4 content-identity helper (docs/kck-03b1-brief.md).
-Rev. 4 removes empty instruction lines; the image gate is unchanged.
+"""KCK-03B1 pre-flight rev. 5 content-identity helper (docs/kck-03b1-brief.md).
+Instruction identity removes empty lines; image gate accepts exactly two pixel hashes.
 It does not compute raw-file SHA-256: that is provenance, not a gate.
 
-  python3 preflight_hash.py image <file.png>        -> width, height, pixel SHA-256
+  python3 preflight_hash.py image <file.png>        -> width, height, pixel SHA-256, gate, route
   python3 preflight_hash.py text  <instruction.txt> -> canonical-content SHA-256
   (text also reads stdin when the path is "-", e.g. the instruction text the generation
    side actually received)
@@ -18,13 +18,33 @@ Requires: pillow."""
 import hashlib
 import sys
 
+IMAGE_SIZE = (1448, 1086)
+IMAGE_PIXEL_ROUTES = {
+    "5b9b014e0347ec89aab3fe896ae7a94d76202d92adb24aefce404533b71aeab8": "canonical",
+    "b9ec2237b6658c2e4c94cf90c2206e416245881544d2700fc8ce1543655dd27d": "premultiply-roundtrip",
+}
+
 
 def image_identity(path):
     from PIL import Image
-    im = Image.open(path)
-    im.load()
-    rgba = im.convert("RGBA")
-    return rgba.size[0], rgba.size[1], hashlib.sha256(rgba.tobytes()).hexdigest()
+    with Image.open(path) as im:
+        im.load()
+        rgba = im.convert("RGBA")
+        return rgba.size[0], rgba.size[1], hashlib.sha256(rgba.tobytes()).hexdigest()
+
+
+def image_route(width, height, pixel_sha256):
+    """Return the exact accepted route, or None. Never transform the held pixels."""
+    if (width, height) != IMAGE_SIZE:
+        return None
+    return IMAGE_PIXEL_ROUTES.get(pixel_sha256)
+
+
+def image_gate(path):
+    width, height, pixel_sha256 = image_identity(path)
+    route = image_route(width, height, pixel_sha256)
+    return {"width": width, "height": height, "pixel_sha256": pixel_sha256,
+            "gate": "PASS" if route else "FAIL", "route": route}
 
 
 def canonical_text(raw):
@@ -43,8 +63,9 @@ def text_identity(raw):
 if __name__ == "__main__":
     kind, path = sys.argv[1], sys.argv[2]
     if kind == "image":
-        w, h, d = image_identity(path)
-        print("width=%d height=%d pixel_sha256=%s" % (w, h, d))
+        result = image_gate(path)
+        print("width={width} height={height} pixel_sha256={pixel_sha256} gate={gate} route={route}".format(**result))
+        sys.exit(0 if result["gate"] == "PASS" else 1)
     elif kind == "text":
         raw = sys.stdin.buffer.read() if path == "-" else open(path, "rb").read()
         n, d = text_identity(raw)
