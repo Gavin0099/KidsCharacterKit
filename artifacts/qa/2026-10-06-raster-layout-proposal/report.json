@@ -1,0 +1,243 @@
+{
+  "format": "kck-03b-layout-proposal-v1",
+  "status": "candidate_QA_only",
+  "owner_approval": "pending",
+  "tool": "concepts/kck-03b/tools/build_layout_review.py",
+  "tool_sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98",
+  "versions": {
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12"
+  },
+  "transform": "Uniform inverse AFFINE BICUBIC on premultiplied RGBa, converted back to RGBA; no artwork retouch, alpha cleanup, independent axis stretch or profile conversion",
+  "target_canvas": [
+    1024,
+    1024
+  ],
+  "target_anchor": [
+    512,
+    960
+  ],
+  "visible_threshold": "alpha>=13 (>5% of 255)",
+  "sources": {
+    "cat": {
+      "source": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "rgba8_sha256": "510c81cade10883b22caa1bb427546d7d86d20b30de02b2671fd1836cb899387",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "visible_bounds_exclusive": [
+        224,
+        40,
+        1074,
+        1239
+      ],
+      "nonzero_alpha_bounds_exclusive": [
+        0,
+        15,
+        1214,
+        1241
+      ],
+      "proposed_anchor": [
+        705,
+        1235
+      ],
+      "anchor_type": "support-baseline (proposed seated exception)",
+      "safe_fit_scale": 0.7472894078398665,
+      "icc_profile_present": false,
+      "qa_color_policy": "No profile conversion; candidate preview interprets source samples as sRGB; delivery policy pending"
+    },
+    "dinosaur": {
+      "source": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "visible_bounds_exclusive": [
+        205,
+        82,
+        1186,
+        1193
+      ],
+      "nonzero_alpha_bounds_exclusive": [
+        0,
+        33,
+        1212,
+        1246
+      ],
+      "proposed_anchor": [
+        650,
+        1176
+      ],
+      "anchor_type": "ground-center",
+      "safe_fit_scale": 0.8064806480648065,
+      "icc_profile_present": false,
+      "qa_color_policy": "No profile conversion; candidate preview interprets source samples as sRGB; delivery policy pending"
+    }
+  },
+  "scale_options": [
+    {
+      "label": "A - smaller Cat",
+      "parameters": {
+        "cat": {
+          "visual_scale": 0.75,
+          "final_scale": 0.5604670558798999,
+          "qa_png": "cat-option-a.png",
+          "file_sha256": "e50d3462cf51ec8f77157e65db2a403439b95d86a4307411f5182a9e65a46696",
+          "rgba8_sha256": "46686367b54ebf9e7d95426cdd7333684266daac307e801d3ad058569bc8afa5",
+          "delivery_visible_bounds_exclusive": [
+            243,
+            290,
+            719,
+            962
+          ],
+          "visible_height_px": 672,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        },
+        "dinosaur": {
+          "visual_scale": 0.95,
+          "final_scale": 0.7661566156615661,
+          "qa_png": "dinosaur-option-a.png",
+          "file_sha256": "8aead52b5ac462b2a7cf5cc758d9a9972926e6babec56103f583fbfac062cecb",
+          "rgba8_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+          "delivery_visible_bounds_exclusive": [
+            171,
+            122,
+            922,
+            973
+          ],
+          "visible_height_px": 851,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        }
+      },
+      "visible_height_ratio_cat_to_dinosaur": 0.7896592244418331
+    },
+    {
+      "label": "B - recommended",
+      "parameters": {
+        "cat": {
+          "visual_scale": 0.8,
+          "final_scale": 0.5978315262718933,
+          "qa_png": "cat-option-b.png",
+          "file_sha256": "98d6b3aa35bb0d79dfc9804a6a3be5b52e6efe3fe5d6196d042f16bb9a90f88a",
+          "rgba8_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+          "delivery_visible_bounds_exclusive": [
+            225,
+            245,
+            733,
+            963
+          ],
+          "visible_height_px": 718,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        },
+        "dinosaur": {
+          "visual_scale": 0.95,
+          "final_scale": 0.7661566156615661,
+          "qa_png": "dinosaur-option-b.png",
+          "file_sha256": "8aead52b5ac462b2a7cf5cc758d9a9972926e6babec56103f583fbfac062cecb",
+          "rgba8_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+          "delivery_visible_bounds_exclusive": [
+            171,
+            122,
+            922,
+            973
+          ],
+          "visible_height_px": 851,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        }
+      },
+      "visible_height_ratio_cat_to_dinosaur": 0.8437132784958872
+    },
+    {
+      "label": "C - larger Cat",
+      "parameters": {
+        "cat": {
+          "visual_scale": 0.85,
+          "final_scale": 0.6351959966638865,
+          "qa_png": "cat-option-c.png",
+          "file_sha256": "851517bdb3831de91f90d464c8aca5d3a61d5ff68afd070f5026a299a78f43da",
+          "rgba8_sha256": "9f82dd99ddf02fcbeba9036e32d932eb192c9adb3a5a4c14a5a13e85b8a28f70",
+          "delivery_visible_bounds_exclusive": [
+            207,
+            201,
+            747,
+            963
+          ],
+          "visible_height_px": 762,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        },
+        "dinosaur": {
+          "visual_scale": 0.95,
+          "final_scale": 0.7661566156615661,
+          "qa_png": "dinosaur-option-c.png",
+          "file_sha256": "8aead52b5ac462b2a7cf5cc758d9a9972926e6babec56103f583fbfac062cecb",
+          "rgba8_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+          "delivery_visible_bounds_exclusive": [
+            171,
+            122,
+            922,
+            973
+          ],
+          "visible_height_px": 851,
+          "projected_anchor": [
+            512,
+            960
+          ],
+          "clipped_nonzero_alpha_pixels": 0
+        }
+      },
+      "visible_height_ratio_cat_to_dinosaur": 0.8954171562867215
+    }
+  ],
+  "cat_contact_problem": {
+    "feet_anchor": [
+      705,
+      1144
+    ],
+    "proposed_seated_support_anchor": [
+      705,
+      1235
+    ],
+    "vertical_difference_source_px": 91,
+    "reason": "Resting foreground tail projects lower than feet. Feet anchoring would put tail below a flat ground line. Proposed seated support uses manually inspected tail-contact tangent, not automatic alpha minimum.",
+    "requires_contract_decision": "Extend support-baseline to footed seated poses; feet remain about 54 delivery pixels above projected foreground support at option B. Owner must accept the perspective convention or request a new pose."
+  },
+  "checks": [
+    "Source raw hashes fixed",
+    "Source files rehashed unchanged after preview",
+    "Each transform repeated with identical RGBA pixels",
+    "Padded affine replay identical inside and zero nonzero-alpha clipping",
+    "Visible bounds satisfy left/right/top safe margin and bottom canvas limit"
+  ],
+  "not_claimed": [
+    "Master selection",
+    "Approved contract change",
+    "Production normalization or availability",
+    "Rights clearance",
+    "Ground contact in a consumer scene"
+  ]
+}

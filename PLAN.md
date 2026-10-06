@@ -24,7 +24,7 @@
   the current Dinosaur budget. Owner directed retaining A4's failure evidence.
 - This review branch locally combines pending PR #14 governance and PR #12
   rev5 inputs/evidence. It does not establish remote merge or main availability.
-- No production raster, authored motion or 3D is available on this baseline.
+- No accepted production raster, authored motion or 3D is available on this baseline.
   Manifest availability is false/empty and asset rights remain pending.
 - Owner authorized importing the required skill/features into this repo and
   continuing (2026-10-06). Repo-local character preparation skill and bounded
@@ -37,8 +37,10 @@
 - Style Bible v1 review candidate is prepared under continuous-execution scope.
   It consolidates real references, rendering/identity locks and sheet requirements;
   Owner explicitly accepted v1/reference set, including Robot single-glint exception.
-  **KCK-03B2** is active: prepare Cat/Dinosaur model-sheet candidates, then obtain
-  their individual visual acceptance; document approval alone does not complete it.
+  **KCK-03B2** visual gates are complete for Cat/Dinosaur: both six-sheet sets
+  accepted. **KCK-03B** master/version/scale/anchor review preparation is active;
+  Owner has separately accepted the 03B master/version/scale/anchor proposal;
+  two deterministic 1024 delivery candidates are ready for actual production review.
 
 ## Active Sprint
 
@@ -90,10 +92,16 @@
   generation outputs plus one local RGB derivative; all original failures retained.
 - [x] Owner accepts Cat six sheets (front/three-quarter/corrected side/back/happy/confused),
   including back pattern/tail continuity and expressions, as approved references.
-- [ ] Owner accepts Dinosaur six current sheets, including corrected side and new
-  back/spike/foot details/expressions; actual normal/64px review ready.
-- [ ] Resolve 03B selected-master/version policy, visual_scale and semantic anchors
-  before production; do not treat sheet acceptance as production/rights approval.
+- [x] Owner accepts Dinosaur six current sheets, including corrected side and new
+  back/spike/foot details/expressions: contextual reply 「Ok 再往下」 after review.
+- [x] Prepare source-hashed 03B master/version/anchor proposal and three actual
+  layout options; Cat foreground tail needs an explicit seated support exception.
+  See `docs/kck-03b-master-layout-proposal.md`; preview checks pass, not production.
+- [x] Resolve 03B selected-master/version policy, visual_scale and semantic anchors:
+  「核准整份提案，採 B 尺寸」; preserve source-app records, accept seated Cat support.
+- [x] Prepare immutable concept-master copies, schema-compatible selection/transform
+  evidence, deterministic 1024 RGBA sRGB delivery candidates and actual background QA.
+- [ ] Owner accepts two actual production outputs before manifest availability.
 
 ## Backlog
 
@@ -188,6 +196,16 @@ Do not interpret equal canvas/anchor as equal character height.
   Dino back/happy/confused completed; all six current Dino sheets await Owner
   acceptance. This continuation used eight generation calls; total 03B2 fourteen,
   plus one derivative, without v2d reset.
+
+- 2026-10-06: Owner replied 「Ok 再往下」 to the exact Dinosaur six-sheet acceptance
+  question after actual review. Six hash-bound records are approved_reference;
+  original failures remain candidate. Proceed to 03B review preparation, not
+  production/master/scale/anchor/rights approval.
+
+- 2026-10-06: Owner accepted the exact 03B proposal and B scale. Master copies
+  retain raw bytes; delivery uses documented uniform premultiplied-alpha BICUBIC.
+  Cat support-baseline seated exception and Dino feet anchor are explicitly accepted.
+  Output status remains candidate until actual production review; rights unchanged.
 
 ## Known Risks
 

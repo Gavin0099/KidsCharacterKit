@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "Owner asynchronous reply after actual source-annotated, contact and A/B/C size previews",
+  "quote": "核准整份提案，採 B 尺寸",
+  "question": "是否核准這份 03B 提案：沿用已核准 Cat 原風格圖／修正 A3 作 soft-handmade-v1 master，以版本目錄及完整 provenance 保留舊 source-app originals；Cat 坐姿改用尾巴落地的 support-baseline（705,1235），Dino ground-center（650,1176）；採 B 尺寸 Cat=0.80、Dino=0.95（可見高度約84%），接著製作 production 候選？Cat 腳底會保留原圖透視，約高於尾巴支撐基線54px。這是 master／合約例外／anchor／scale 決定，不核准 production、權利或合併。",
+  "approved_document_before_status_update": {
+    "path": "docs/kck-03b-master-layout-proposal.md",
+    "sha256": "baa517101f40000dca22c311bda2de05a2e7796ca72b38cc097203f7218e2f18"
+  },
+  "review_report": {
+    "path": "artifacts/qa/2026-10-06-raster-layout-proposal/report.json",
+    "sha256": "b43269e390a0dc19343670e5ebd2b1d1b8d37877a181288a740a48d3e0ae1623"
+  },
+  "approved_masters_and_anchors": {
+    "cat": {
+      "source": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e",
+      "rgba8_sha256": "510c81cade10883b22caa1bb427546d7d86d20b30de02b2671fd1836cb899387",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "visible_bounds_exclusive": [
+        224,
+        40,
+        1074,
+        1239
+      ],
+      "nonzero_alpha_bounds_exclusive": [
+        0,
+        15,
+        1214,
+        1241
+      ],
+      "proposed_anchor": [
+        705,
+        1235
+      ],
+      "anchor_type": "support-baseline (proposed seated exception)",
+      "safe_fit_scale": 0.7472894078398665,
+      "icc_profile_present": false,
+      "qa_color_policy": "No profile conversion; candidate preview interprets source samples as sRGB; delivery policy pending"
+    },
+    "dinosaur": {
+      "source": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+      "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "visible_bounds_exclusive": [
+        205,
+        82,
+        1186,
+        1193
+      ],
+      "nonzero_alpha_bounds_exclusive": [
+        0,
+        33,
+        1212,
+        1246
+      ],
+      "proposed_anchor": [
+        650,
+        1176
+      ],
+      "anchor_type": "ground-center",
+      "safe_fit_scale": 0.8064806480648065,
+      "icc_profile_present": false,
+      "qa_color_policy": "No profile conversion; candidate preview interprets source samples as sRGB; delivery policy pending"
+    }
+  },
+  "approved_scale_option": {
+    "label": "B - recommended",
+    "parameters": {
+      "cat": {
+        "visual_scale": 0.8,
+        "final_scale": 0.5978315262718933,
+        "qa_png": "cat-option-b.png",
+        "file_sha256": "98d6b3aa35bb0d79dfc9804a6a3be5b52e6efe3fe5d6196d042f16bb9a90f88a",
+        "rgba8_sha256": "769c5f7073d9ba0c8bac0d251d40a65e0ae8ef507cad98ba4477f18721fd441e",
+        "delivery_visible_bounds_exclusive": [
+          225,
+          245,
+          733,
+          963
+        ],
+        "visible_height_px": 718,
+        "projected_anchor": [
+          512,
+          960
+        ],
+        "clipped_nonzero_alpha_pixels": 0
+      },
+      "dinosaur": {
+        "visual_scale": 0.95,
+        "final_scale": 0.7661566156615661,
+        "qa_png": "dinosaur-option-b.png",
+        "file_sha256": "8aead52b5ac462b2a7cf5cc758d9a9972926e6babec56103f583fbfac062cecb",
+        "rgba8_sha256": "55a5ced721a4f5d408b911ca8021f1364736b1e9f01d124b7ff6452effa32124",
+        "delivery_visible_bounds_exclusive": [
+          171,
+          122,
+          922,
+          973
+        ],
+        "visible_height_px": 851,
+        "projected_anchor": [
+          512,
+          960
+        ],
+        "clipped_nonzero_alpha_pixels": 0
+      }
+    },
+    "visible_height_ratio_cat_to_dinosaur": 0.8437132784958872
+  },
+  "contract_amendments": [
+    "Versioned exact-copy Owner-selected concept masters with complete provenance; retain source-app originals/records",
+    "Support-baseline may apply to footed seated poses whose resting tail defines projected foreground support; preserve documented foot-contact offset"
+  ],
+  "not_approved": [
+    "Unseen production candidate output",
+    "Rights clearance",
+    "PR merge",
+    "Dinosaur v2d budget reset"
+  ]
+}

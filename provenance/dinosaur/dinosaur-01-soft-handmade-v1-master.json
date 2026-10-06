@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "asset_id": "dinosaur-01",
+  "character": "dinosaur",
+  "style_version": "soft-handmade-v1",
+  "tool": {
+    "path": "concepts/kck-03b/tools/produce_raster.py",
+    "sha256": "05d2973dacf64dada6037c21fd38d5103e5eda62e5c0191e55e007261ac3bb9e",
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "zlib": "1.2.12",
+    "helpers": [
+      {
+        "path": "concepts/kck-03b/tools/build_layout_review.py",
+        "sha256": "bc2e26c9a75c7bb7c045adc9415bf81689a8279b3c3371cb116f83ba2e520b98"
+      }
+    ]
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence": [
+    {
+      "path": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "sha256": "1f3761ef7c0ae1873f713f0b6ef8a4f0a42ba60cd4f87830a4323907f122b74d",
+      "supports": "Exact Owner-selected master/anchor/scale/versioned-copy and seated support decisions"
+    }
+  ],
+  "record_type": "master",
+  "id": "dinosaur-01-soft-handmade-v1-master",
+  "status": "approved_reference",
+  "status_evidence": [
+    {
+      "decision": "Owner selected exact approved concept as versioned immutable master, not production/rights",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+      "quote": "核准整份提案，採 B 尺寸"
+    }
+  ],
+  "input": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+    "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+  },
+  "source_provenance": {
+    "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.provenance.json",
+    "sha256": "f53ea6c93e09b6a0272583e97ee910b47e07c1703383582fe7badb33b1777558"
+  },
+  "file": {
+    "path": "characters/dinosaur/raster/versions/soft-handmade-v1/originals/dinosaur-01.png",
+    "format": "png",
+    "width": 1254,
+    "height": 1254,
+    "color_type": "RGBA",
+    "bytes": 1439076,
+    "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+  },
+  "pixel_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+  "copy_policy": "Exact source bytes; no resize/re-encoding/pixel edits",
+  "unresolved_questions": [
+    "Production acceptance and inherited rights unresolved"
+  ]
+}

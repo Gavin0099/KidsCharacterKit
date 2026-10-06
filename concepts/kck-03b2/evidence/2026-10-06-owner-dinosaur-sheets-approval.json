@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "Direct Owner reply in current session after the displayed Dinosaur six-sheet normal/64px review and explicit acceptance question",
+  "quote": "Ok 再往下",
+  "question": "是否核准剛展示的 Dinosaur 六張 model-sheet 候選：front、three-quarter、去除多餘線的 side、back、happy、confused 作參考？驗收包含側面兩條肚紋、背面背棘排列／腳部細節、放大鏡左右手接續與新增表情；核准後進入 03B 的 master／尺寸／ground anchor 交付準備，production 與權利仍另行驗收。",
+  "interpretation": "Contextual affirmative accepts the six displayed exact references and continuation to 03B preparation. The short reply is retained verbatim, not replaced by an asynchronous option label.",
+  "approved_references": [
+    {
+      "view": "front",
+      "concept_id": "dinosaur-concept-05",
+      "path": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
+      "sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023"
+    },
+    {
+      "view": "three-quarter",
+      "concept_id": "dinosaur-concept-06",
+      "path": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
+      "sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f"
+    },
+    {
+      "view": "side",
+      "concept_id": "dinosaur-concept-12",
+      "path": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
+      "sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018"
+    },
+    {
+      "view": "back",
+      "concept_id": "dinosaur-concept-08",
+      "path": "concepts/kck-03b2/outputs/dinosaur-back-01.png",
+      "sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611"
+    },
+    {
+      "view": "happy",
+      "concept_id": "dinosaur-concept-09",
+      "path": "concepts/kck-03b2/outputs/dinosaur-happy-01.png",
+      "sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54"
+    },
+    {
+      "view": "confused",
+      "concept_id": "dinosaur-concept-10",
+      "path": "concepts/kck-03b2/outputs/dinosaur-confused-01.png",
+      "sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2"
+    }
+  ],
+  "not_approved": [
+    "Production/master/version policy/visual_scale/ground anchors/rights",
+    "Dinosaur v2d budget reset",
+    "Remote merge"
+  ]
+}

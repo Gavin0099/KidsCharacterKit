@@ -6,13 +6,19 @@
   "slice": "KCK-03B2",
   "stage": "model-sheet",
   "variant": "happy initial individual model-sheet candidate",
-  "status": "candidate",
+  "status": "approved_reference",
   "status_evidence": [
     {
       "decision": "Owner authorized model-sheet preparation; this unseen output remains candidate",
       "date": "2026-10-06",
       "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
       "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
+    },
+    {
+      "decision": "Owner accepted exact Dinosaur six model sheets including corrected side, back spike/foot details, handedness and new expressions as references",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-dinosaur-sheets-approval.json",
+      "quote": "Ok 再往下"
     }
   ],
   "file": {
@@ -134,9 +140,9 @@
     }
   ],
   "owner_review": {
-    "variant_intensity": "pending",
-    "overall_identity": "pending",
-    "note": "Approval of input reference/v1 does not approve this new sheet"
+    "variant_intensity": "Owner accepted model-sheet rendering",
+    "overall_identity": "Owner accepted six displayed references including new anatomy/expressions",
+    "note": "Reference approval only; production/master/scale/anchor/rights are separate."
   },
   "rights": {
     "commercial_use_status": "pending",
@@ -168,11 +174,13 @@
     {
       "path": "concepts/kck-03b2/evidence/dinosaur-happy-01-measurements.json",
       "supports": "Unchanged original-pose eye identity and highlight numeric gates PASS"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-dinosaur-sheets-approval.json",
+      "supports": "Contextual explicit Owner acceptance of six exact displayed references"
     }
   ],
   "unresolved_questions": [
-    "Owner individual sheet acceptance",
-    "Unseen anatomy/side and pose continuity",
-    "Production, visual_scale, anchors and rights unresolved"
+    "Production/master/version policy/visual_scale/ground anchors and rights unresolved"
   ]
 }

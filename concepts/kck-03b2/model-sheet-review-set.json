@@ -5,7 +5,7 @@
     "path": "docs/character-style-bible-v1.md",
     "sha256": "782f19c6984ed4315798a263ee9e7ef1c9cdc19ea65ec1709fc7d2d452a1b8f1"
   },
-  "owner_acceptance": "Cat accepted; Dinosaur remains pending",
+  "owner_acceptance": "Cat and Dinosaur six-sheet sets accepted as references",
   "characters": [
     {
       "character": "cat",
@@ -79,7 +79,7 @@
     },
     {
       "character": "dinosaur",
-      "status": "candidate_set",
+      "status": "approved_reference_set",
       "sheets": [
         {
           "view": "front",
@@ -87,7 +87,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-front-01.png",
           "output_sha256": "bc5faecc77892c4de227c68112190bb5bb232f4446c8adffdca9df9f968dd023",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-front-01.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         },
         {
           "view": "three-quarter",
@@ -95,7 +96,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.png",
           "output_sha256": "842bf0432b517fd2125097902cacdaf778af8839e6fa2751e2644a9fa12cdd3f",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-three-quarter-01.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         },
         {
           "view": "side",
@@ -103,7 +105,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.png",
           "output_sha256": "48297387857eeb8f69bed67e9ef232c7bd953c27fe0da81e8eee32b1b7bb8018",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-side-02-belly-corrected.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         },
         {
           "view": "back",
@@ -111,7 +114,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-back-01.png",
           "output_sha256": "0f8e3f04ceaac288b1462ff939aef8ec4ef65fcedfecaeaece8672f762de9611",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-back-01.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         },
         {
           "view": "happy",
@@ -119,7 +123,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-happy-01.png",
           "output_sha256": "36bbe70c146fcadd813120e91bae3b9377fb38d175e242126b9f202c04eebd54",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-happy-01.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         },
         {
           "view": "confused",
@@ -127,7 +132,8 @@
           "output": "concepts/kck-03b2/outputs/dinosaur-confused-01.png",
           "output_sha256": "8fe9e3c77707cc0db08161b01fe98dd2a28dd28d99fc020389af0ad6173494d2",
           "provenance": "concepts/kck-03b2/outputs/dinosaur-confused-01.provenance.json",
-          "agent_hard_gate": "PASS"
+          "agent_hard_gate": "PASS",
+          "status": "approved_reference"
         }
       ],
       "acceptance_requires": [
@@ -140,7 +146,7 @@
         "Production/master/visual_scale/anchor/rights"
       ],
       "review": "artifacts/qa/2026-10-06-dinosaur-six-sheets/report.json",
-      "owner_acceptance": "pending"
+      "owner_acceptance": "concepts/kck-03b2/evidence/2026-10-06-owner-dinosaur-sheets-approval.json"
     }
   ]
 }

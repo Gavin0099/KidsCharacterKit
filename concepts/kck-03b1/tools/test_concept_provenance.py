@@ -37,7 +37,9 @@ class ConceptProvenance(unittest.TestCase):
             self.validator.validate(record)
             expected_status = 'approved_reference' if record['id'] in {'dinosaur-concept-03', 'cat-concept-01', 'robot-concept-02',
                                                                      'cat-concept-02', 'cat-concept-03', 'cat-concept-05',
-                                                                     'cat-concept-06', 'cat-concept-07', 'cat-concept-08'} else 'candidate'
+                                                                     'cat-concept-06', 'cat-concept-07', 'cat-concept-08',
+                                                                     'dinosaur-concept-05', 'dinosaur-concept-06', 'dinosaur-concept-08',
+                                                                     'dinosaur-concept-09', 'dinosaur-concept-10', 'dinosaur-concept-12'} else 'candidate'
             self.assertEqual(record['status'], expected_status)
             output = ROOT / record['file']['path']
             self.assertEqual(hashlib.sha256(output.read_bytes()).hexdigest(), record['file']['sha256'])
@@ -78,7 +80,7 @@ class ConceptProvenance(unittest.TestCase):
                 self.assertEqual(job['status'], 'candidate_recorded')
                 record = json.loads((ROOT / job['provenance']).read_text())
                 self.assertEqual(record['id'], job['concept_id'])
-                expected_status = 'approved_reference' if job['character'] == 'cat' and job['job_id'] != 'cat-side-01' else 'candidate'
+                expected_status = 'approved_reference' if job['job_id'] not in {'cat-side-01', 'dinosaur-side-01', 'dinosaur-side-02'} else 'candidate'
                 self.assertEqual(record['status'], expected_status)
                 self.assertEqual(hashlib.sha256((ROOT / job['output']).read_bytes()).hexdigest(), job['output_sha256'])
                 recorded.add(ROOT / job['provenance'])

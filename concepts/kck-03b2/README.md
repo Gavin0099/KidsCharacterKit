@@ -7,9 +7,12 @@ proposed back patterns, tail continuity and expressions. Cat sheets are
 `approved_reference`, not production. [Exact review set](model-sheet-review-set.json)
 binds every selected view to its PNG hash and provenance.
 
-Dinosaur has all six current sheet candidates, structurally/visually checked;
-Owner acceptance is **pending**, including back spike/foot anatomy, hand/prop
-continuity and new expressions. Document acceptance does not alone complete 03B2.
+[Dinosaur six-sheet acceptance](evidence/2026-10-06-owner-dinosaur-sheets-approval.json)
+records the contextual Owner reply 「Ok 再往下」 after the exact six-sheet review,
+including back spike/foot anatomy, hand/prop continuity and new expressions. Both
+sets are now approved references; production and rights remain separate. See the
+[03B master/layout proposal](../../docs/kck-03b-master-layout-proposal.md) for the
+next distinct decisions.
 
 - [Cat six views on checker/white/black](../../artifacts/qa/2026-10-06-cat-six-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-cat-six-sheets/small-64.png).
 - [Dinosaur six views on checker/white/black](../../artifacts/qa/2026-10-06-dinosaur-six-sheets/contact-sheet.png), [64px](../../artifacts/qa/2026-10-06-dinosaur-six-sheets/small-64.png).

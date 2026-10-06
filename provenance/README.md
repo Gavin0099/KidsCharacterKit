@@ -97,3 +97,20 @@ and can get records later.
 
 All five assets and all five references have `commercial_use_status: pending`.
 Nothing here clears any asset for any use.
+
+## Versioned style master and delivery records (03B)
+
+`master` records bind an exact approved concept PNG copy to a stable asset identity
+and style version, citing the Owner selection and a hashed source provenance record.
+`transformation` records bind that master/record to the 1024 delivery, both output
+hashes, semantic anchor, visible fit, visual scale, uniform resampling, color policy,
+encoder/tool/helper versions and no-clipping/replay evidence. Old source-app records
+retain their original hashes. Both kinds inherit unresolved input rights.
+
+Delivery is `candidate` until the Owner accepts the exact output; merely placing a
+file under `production/` does not promote it. The manifest stays unavailable until
+acceptance. Versioned raster metadata is optional for old manifest consumers, but
+when selected it includes style version, both evidence pointers and the anchor.
+
+See [selected pack candidate index](../concepts/kck-03b/raster-candidate-set.json)
+and [Owner master/layout decision](../concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json).
