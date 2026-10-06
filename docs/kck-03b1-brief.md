@@ -14,6 +14,7 @@ Do not mix these up:
 | **V2** | The visual specification this slice tests: the identity locks and shared rendering rules in this brief (Soft Handmade 2.5D direction, outline, palette, eye identity). | Frozen for B1-A. There is no V3. |
 | **Prompt `v2` ... `v2d`** | Revisions of the generation *instruction* that try to make the generator follow V2 reliably (highlight position, grain level, output limits). Not a new design. | `v2d` is current. |
 | **A2 / A3 / A4** | Three style-parameter experiments (grain level) on the same V2 character. Not character versions. | A2 candidate; A3, A4 pending. |
+| **Tier** | How much evidence a sample gets: exploration (find the right image) or promotion (prove the chosen one). Not a status. | Both defined below. |
 | **Pre-flight rev. N** | The procedure that proves the generator received the right inputs. Not a design change. | rev. 3 is current. |
 
 Owner's reasoning: the A3 failures (`3871ee32…`) came from input provenance and platform
@@ -670,23 +671,51 @@ the verify-first request and adds the fail-closed rule. It also allows the input
 from this repository (Owner request, 2026-10-06) so the Owner does not have to re-upload
 files by hand.
 
+#### Process tiers: exploration and promotion (Owner decision, 2026-10-06)
+
+Owner decision, stated in session 2026-10-06 ("好 往下做", in reply to the two-tier proposal): the
+purpose of A2 / A3 / A4 is to find the right image, not to prove every image. Evidence is
+therefore split by what the Owner is doing with a sample. This changes how much is recorded
+per sample; it does not change the status model or any rule in [GOVERNANCE.md](../GOVERNANCE.md).
+
+| | Exploration tier (A3, A4 and the B1-B/C comparison samples) | Promotion tier (only a sample the Owner calls a style-anchor candidate) |
+|---|---|---|
+| Inputs | fixed `dinosaur-01` and fixed instruction file; fresh conversation; the verify-first message of the pre-flight gate (rev. 3 as written; it is one message, not a separate step) | same |
+| After generation | the five hard gates, measured once by the agent and put in a comparison table for the Owner | plus an independent second measurement, each actor and copy recorded separately |
+| Retained at generation time (no later cost) | generation id (or `not exposed`); the verification output the generation side printed; the original artifact's format, dimensions and SHA-256 | plus the delivered copy's SHA-256, the held raw SHA or `raw bytes not exposed`, and the pinned commit if the repository route was used |
+| Repository record | none per sample; one batched PR after the variants of a round are done, holding the comparison table and the retained items. Samples are not committed | a `concept` provenance record, the image file under `concepts/`, and a PR of its own |
+| Status | exploration sample: not a candidate in the repository, not approved | `candidate` (Governance rule 1); only the Owner promotes further |
+
+Rules that hold in both tiers:
+
+- The pre-flight gate is not relaxed in exploration. It is cheap, and an input that differs from
+  `dinosaur-01` (A3 attempt `3871ee32…`) makes the A2 / A3 / A4 comparison meaningless because
+  the controlled variable is no longer only the grain level.
+- A sample whose retained items are missing cannot be promoted by the agent. Promotion then needs
+  either a rerun under the full gate (a rerun produces a different image, not the same one) or
+  an explicit Owner waiver recorded as for `dinosaur-concept-01` (PR #10, on hold).
+- Rights stay `pending` / `unknown`; nothing in either tier upgrades them (Governance rule 3).
+- Attempt budget, the five gates, the tolerances and the prompt are unchanged.
+
 #### Post-generation provenance capture
 
-Recorded after generation (a generation id does not exist before it):
+Recorded after generation (a generation id does not exist before it). The exploration tier
+keeps only the items marked (E); the promotion tier keeps all of them (see the tiers above):
 
-- attempt number (v2d attempt N);
-- generation id, or `not exposed` if the product does not expose one;
+- (E) attempt number (v2d attempt N);
+- (E) generation id, or `not exposed` if the product does not expose one;
 - source image: width, height, decoded-pixel SHA-256 (gate), the canonical/source file SHA-256
   (fixed) and the actual held raw SHA-256 or `raw bytes not exposed`, kept as separate
   fields; instruction: canonical-content SHA-256 (gate), whether it arrived as an attachment,
   a fetch or expanded text, and the actual held raw SHA-256 or `raw bytes not exposed` (all
   full 64-hex);
+- (E) the verification output the generation side printed before generating;
 - the exact generation-input message and the transport used (upload, or repository fetch with
   the pinned commit);
-- original generation artifact: format, dimensions, SHA-256;
+- (E) original generation artifact: format, dimensions, SHA-256;
 - measurement actor and tool version for each measurement (generation-side measurement, and
   any independent measurement recorded separately; never overwrite);
-- the five hard gates and the highlight coordinates;
+- (E) the five hard gates and the highlight coordinates;
 - which copy was measured;
 - if the delivered file was re-encoded: delivery format and SHA-256, recorded separately and
   never replacing the original artifact.

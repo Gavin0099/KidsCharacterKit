@@ -48,6 +48,10 @@ sentence says "provided" on purpose so that it is true for both routes.
 
 ## After the generation (does not count as generation input)
 
+Exploration tier (A3, A4): keep the items marked (E) in the brief's post-generation list:
+generation id, the verification output the generation side printed, and the original
+artifact's format, dimensions and SHA-256. The full list below is for promotion.
+
 Ask the generation side for: generation id (or `not exposed`); the original artifact's format,
 dimensions and SHA-256; the SHA-256 of any delivered copy; the pre-flight gate values it computed and its raw-SHA provenance (or `raw bytes not exposed`);
 the highlight coordinates and the five gate results by its own measurement. The measuring
