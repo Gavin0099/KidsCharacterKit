@@ -17,7 +17,7 @@ def main():
         for path in sorted(records):
             validator.validate(json.loads(path.read_text()));validated.append(str(path.relative_to(ROOT)))
     print(json.dumps({'schemas':'PASS','records':len(validated),'paths':validated}))
-    for command in [['concepts/kck-03b/tools/validate_raster.py'],['concepts/kck-03c/tools/validate_animation.py','concepts/kck-03c1/dinosaur-snack-partial-pack.json'],['concepts/kck-03c/tools/validate_animation.py','concepts/kck-03c1/cat-snack-candidate-pack.json']]:
+    for command in [['concepts/kck-03b/tools/validate_raster.py']]+[['concepts/kck-03c/tools/validate_animation.py',str(p.relative_to(ROOT))] for p in sorted((ROOT/'concepts/kck-03c1').glob('*pack.json'))]:
         subprocess.run([sys.executable,*command],cwd=ROOT,check=True)
 
 if __name__=='__main__':main()

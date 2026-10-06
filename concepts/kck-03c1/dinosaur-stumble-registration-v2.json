@@ -1,0 +1,44 @@
+{
+  "method": "One global mean open-eye-outline-width registration to accepted normalized master; all four eyes, no per-pose fit. Ground support baseline y835 measured in labeled native foot crops; virtual horizontal root transferred from master eye/root offset with only the 3px rigid head/torso shift between poses, not chosen from alpha minima or the extended foot.",
+  "master_native_mean_eye_width": 135,
+  "strip_mean_eye_width": 99.5,
+  "approved_master_scale": 0.7661566156615661,
+  "requested_common_scale": 1.0395089760232303,
+  "native_virtual_ground_anchors": [
+    [
+      458,
+      835
+    ],
+    [
+      455,
+      835
+    ]
+  ],
+  "contact_y_manual": 835,
+  "contact_evidence": [
+    "artifacts/qa/2026-10-06-dinosaur-stumble-retry-slots/feet-grid-000.png",
+    "artifacts/qa/2026-10-06-dinosaur-stumble-retry-slots/feet-grid-001.png"
+  ],
+  "identity_highlights": "Both identity gates and all four highlight gates PASS without tolerance change",
+  "phase": "First frame anatomical-right support (viewer left), anatomical-left foot reaches forward; recovery both grounded. Gentle stumble and recovery, not prone/fall or damage.",
+  "timing": "150ms stumble then250ms recovery; 400ms one-shot QA, no gameplay-feel claim",
+  "consumer_scene": "not available",
+  "snack_socket_review": {
+    "hand": "anatomical-right",
+    "frame_points": [
+      [
+        452,
+        721
+      ],
+      [
+        450,
+        721
+      ]
+    ],
+    "evidence": [
+      "artifacts/qa/2026-10-06-dinosaur-stumble-socket-review/hand-000.png",
+      "artifacts/qa/2026-10-06-dinosaur-stumble-socket-review/hand-001.png"
+    ],
+    "meaning": "Manual palm attachment points for external snack; release at t0; no actual prop/handoff claim"
+  }
+}

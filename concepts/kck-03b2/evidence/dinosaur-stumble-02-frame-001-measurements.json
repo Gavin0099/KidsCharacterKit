@@ -1,0 +1,303 @@
+{
+  "libraries": {
+    "python": "3.12.14",
+    "Pillow": "12.3.0",
+    "numpy": "2.3.5"
+  },
+  "method": {
+    "bbox": "maximum coordinates exclusive",
+    "connectivity": "4-neighbor, overlapping horizontal runs (equivalent to the prior scipy default)",
+    "visible": "alpha>10",
+    "dark_eye": "R<110,G<70,B<60,alpha>200; width and height each 6%-16% of canvas width; dark area>0.4% canvas area",
+    "highlight": "filled dark eye; R,G,B>235,alpha>200; connected blobs >=30 pixels; two largest; centroid/bbox width or height",
+    "identity": "eye width/height/center x normalized to visible width; center y to visible height; color from dark mask excluding highlights"
+  },
+  "candidate": {
+    "file": "frame-001.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 754755,
+    "raw_sha256": "c4d659a225711f8dd3574fcc454e1fb56b2828c97de648908fdb30c0f541246b",
+    "rgba8_sha256": "78fb3c0f5ab200b94272c9b4aa2429968b02d4d4eef5f370aaa9788d8c3ba5f4",
+    "dimensions": [
+      887,
+      887
+    ],
+    "visible_bbox": [
+      114,
+      54,
+      851,
+      847
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 385966,
+    "alpha_partial": 400514,
+    "alpha_opaque": 289,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          305,
+          354,
+          406,
+          461
+        ],
+        "width": 0.13704206241519673,
+        "height": 0.1451831750339213,
+        "cx": 0.3276797829036635,
+        "cy": 0.4457755359394704,
+        "dark_rgb_mean": [
+          74.62904836638607,
+          29.95848195177629,
+          7.137680125552861
+        ],
+        "highlights": [
+          {
+            "pixels": 1041,
+            "normalized_centroid": [
+              0.35588400338592935,
+              0.29858960201818885
+            ],
+            "bbox": [
+              323,
+              368,
+              360,
+              405
+            ]
+          },
+          {
+            "pixels": 229,
+            "normalized_centroid": [
+              0.6620692636949285,
+              0.6588172876790598
+            ],
+            "bbox": [
+              363,
+              417,
+              381,
+              433
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      },
+      {
+        "bbox": [
+          563,
+          284,
+          661,
+          395
+        ],
+        "width": 0.13297150610583447,
+        "height": 0.15061058344640435,
+        "cx": 0.6757123473541384,
+        "cy": 0.3600252206809584,
+        "dark_rgb_mean": [
+          75.64513839602554,
+          30.34151880766501,
+          6.940951029098652
+        ],
+        "highlights": [
+          {
+            "pixels": 1031,
+            "normalized_centroid": [
+              0.3580435083829846,
+              0.28040649767128917
+            ],
+            "bbox": [
+              581,
+              297,
+              616,
+              334
+            ]
+          },
+          {
+            "pixels": 237,
+            "normalized_centroid": [
+              0.6568070266081116,
+              0.6408560459193371
+            ],
+            "bbox": [
+              619,
+              347,
+              637,
+              364
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  },
+  "reference": {
+    "file": "dinosaur-01.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "bytes": 1439076,
+    "raw_sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27",
+    "rgba8_sha256": "e4b1874965e655281b2c91ab912e9b32bfa90550ee9d7c1d81fce4595059ffb7",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "visible_bbox": [
+      205,
+      82,
+      1186,
+      1193
+    ],
+    "corner_alpha_TL_TR_BL_BR": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha_zero": 815923,
+    "alpha_partial": 756342,
+    "alpha_opaque": 251,
+    "foreground_components_over_10_pixels": 1,
+    "square_canvas": true,
+    "eyes": [
+      {
+        "bbox": [
+          445,
+          497,
+          582,
+          647
+        ],
+        "width": 0.1396534148827727,
+        "height": 0.1529051987767584,
+        "cx": 0.3144750254841998,
+        "cy": 0.44104410441044106,
+        "dark_rgb_mean": [
+          79.99147511036688,
+          37.41581671487289,
+          11.771730857055868
+        ],
+        "highlights": [
+          {
+            "pixels": 2016,
+            "normalized_centroid": [
+              0.35002824122349674,
+              0.2955489417989418
+            ],
+            "bbox": [
+              468,
+              516,
+              518,
+              568
+            ]
+          },
+          {
+            "pixels": 452,
+            "normalized_centroid": [
+              0.6583554033977134,
+              0.6526106194690265
+            ],
+            "bbox": [
+              524,
+              583,
+              548,
+              608
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      },
+      {
+        "bbox": [
+          796,
+          390,
+          929,
+          542
+        ],
+        "width": 0.13557594291539246,
+        "height": 0.15494393476044852,
+        "cx": 0.6702344546381244,
+        "cy": 0.34563456345634563,
+        "dark_rgb_mean": [
+          82.01873265494912,
+          38.27844588344126,
+          11.921446191797719
+        ],
+        "highlights": [
+          {
+            "pixels": 1976,
+            "normalized_centroid": [
+              0.35136297220784757,
+              0.28312779671851696
+            ],
+            "bbox": [
+              819,
+              407,
+              868,
+              459
+            ]
+          },
+          {
+            "pixels": 454,
+            "normalized_centroid": [
+              0.6557417773508661,
+              0.6399837699976815
+            ],
+            "bbox": [
+              871,
+              476,
+              896,
+              500
+            ]
+          }
+        ],
+        "style_gate": "PASS"
+      }
+    ]
+  },
+  "eye_identity": {
+    "gate": "PASS",
+    "maximum_absolute_deviations": {
+      "size": 0.007722023742837092,
+      "center": 0.014390657224612746,
+      "rgb": 7.9369270757762465,
+      "spacing": 0.007726864703449632
+    },
+    "tolerances": {
+      "size": 0.015,
+      "center": 0.02,
+      "spacing": 0.02,
+      "rgb": 15
+    },
+    "per_eye_deltas_left_to_right": [
+      {
+        "width": -0.0026113524675759614,
+        "height": -0.007722023742837092,
+        "cx": 0.013204757419463697,
+        "cy": 0.0047314315290293285,
+        "rgb": [
+          -5.362426743980805,
+          -7.4573347630966005,
+          -4.634050731503007
+        ]
+      },
+      {
+        "width": -0.0026044368095579917,
+        "height": -0.004333351314044165,
+        "cx": 0.005477892716014066,
+        "cy": 0.014390657224612746,
+        "rgb": [
+          -6.373594258923575,
+          -7.9369270757762465,
+          -4.980495162699067
+        ]
+      }
+    ]
+  },
+  "eye_style": "PASS",
+  "visual_gates": "one-character/no-text, matte absence, eye shape and overall identity require separate visual review; corners alone do not prove no matte",
+  "owner_texture_acceptance": "pending"
+}

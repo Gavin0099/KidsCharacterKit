@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "record_type": "motion_frame",
+  "status": "candidate",
+  "character_id": "dinosaur-01",
+  "style_version": "soft-handmade-v1",
+  "file": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-normalized/frame-000.png",
+    "sha256": "47af416cd24122eb87f2239c76db42f1b6cbdebb8e8a04b39805222d8c1b18f9"
+  },
+  "pixel_sha256": "2e0056dd64529ec84a2f7e2b8d5a0899a9e69ee532a0790a475d20a230148699",
+  "source_strip": {
+    "file": {
+      "path": "concepts/kck-03b2/outputs/dinosaur-stumble-02.png",
+      "sha256": "3ed8843d587eae7d43b2e5512409c03e055d3ef19cef527bdb3ad7c9691ee84f"
+    },
+    "provenance": {
+      "path": "concepts/kck-03b2/outputs/dinosaur-stumble-02.provenance.json",
+      "sha256": "0af62f90416163a766464d373f53c381e6312363894a70d2ce56a2ac996985d8"
+    }
+  },
+  "source_slot": 0,
+  "split_report": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-slots/report.json",
+    "sha256": "4268c25646c647bd783d381ee790913ab4b6006d906f44490e2def4cc5ef79a7"
+  },
+  "transform_report": {
+    "path": "artifacts/qa/2026-10-06-dinosaur-stumble-retry-normalized/report.json",
+    "sha256": "d70c190b98f9e9978a39dfe6c43bdfdc6762261b23545bab08aa026951844c1b"
+  },
+  "recipe": {
+    "path": "concepts/kck-03c1/dinosaur-stumble-qa-recipe-v2.json",
+    "sha256": "9440b8516e94a154e6949599cc4cfb4acc557e67206a6a2f7110b19dc3c7ab71"
+  },
+  "tool": {
+    "path": ".agents/skills/kck-character-pipeline/scripts/pipeline.py",
+    "sha256": "216679df86dc616d378d75abfb29347020259e9aa5c116644fb20e974bd7d241"
+  },
+  "rights": {
+    "commercial_use_status": "pending",
+    "rights_review_status": "unknown",
+    "ownership_status": "unknown",
+    "statements": []
+  },
+  "evidence_refs": [
+    "concepts/kck-03c1/dinosaur-stumble-registration-v2.json",
+    "concepts/kck-03c1/evidence/2026-10-06-owner-bounded-retry-approval.json",
+    "concepts/kck-03b/evidence/2026-10-06-owner-conformance-continuation.json"
+  ]
+}

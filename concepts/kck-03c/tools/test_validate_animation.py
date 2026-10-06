@@ -26,6 +26,23 @@ class AnimationContract(unittest.TestCase):
         pack['actions']['receive']['frames'][0]['sockets']['snack']['hand']='anatomical-right'
         with self.assertRaisesRegex(ValueError,'Cat receiving hand'):tool.validate_semantics(pack)
 
+    def test_actual_complete_dinosaur_candidate_and_stumble_recovery(self):
+        pack=json.loads((tool.ROOT/'concepts/kck-03c1/dinosaur-snack-candidate-pack.json').read_text())
+        tool.validate_semantics(pack);result=tool.validate_files(pack)
+        self.assertEqual(set(pack['actions']),{'idle','run','carry','stumble'})
+        self.assertEqual(result['status'],'candidate');self.assertFalse(result['availability_promoted'])
+        stumble=pack['actions']['stumble']
+        self.assertEqual(stumble['duration_ms'],400);self.assertFalse(stumble['loop'])
+        self.assertEqual([f['duration_ms'] for f in stumble['frames']],[150,250])
+        self.assertNotEqual(*[f['file']['sha256'] for f in stumble['frames']])
+        self.assertEqual(stumble['events'][-1],{'type':'action_complete','time_ms':400})
+        for i in range(2):
+            diagnostic=json.loads((tool.ROOT/f'concepts/kck-03b2/evidence/dinosaur-stumble-02-frame-{i:03d}-measurements.json').read_text())
+            self.assertEqual(diagnostic['eye_identity']['gate'],'PASS');self.assertEqual(diagnostic['eye_style'],'PASS')
+        # The complete minimum set still cannot become production from its files alone.
+        pack['status']='production'
+        with self.assertRaisesRegex(ValueError,'consumer-scene'):tool.validate_semantics(pack)
+
     def test_frame_timing_sum_and_fps(self):
         for change in ['sum','fps','zero']:
             bad=copy.deepcopy(self.pack);run=bad['actions']['run']

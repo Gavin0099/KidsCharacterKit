@@ -55,7 +55,7 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-03B2 | [Style Bible v1](docs/character-style-bible-v1.md), Cat/Dinosaur formal model sheets plus Robot continuation | Cat/Dinosaur six-sheet sets approved; Robot incomplete |
 | KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. Master/version/scale/anchor approved; [1024 delivery review](artifacts/qa/2026-10-06-raster-delivery/contact-sheet.png) | Cat/Dinosaur available; Robot mouthfix static available |
 | KCK-03C | [Neutral animation contract](docs/animation-contract-v1.md), schema, timing/events/sockets and file validator | implemented; validation covered |
-| KCK-03C1 | [Snack minimum pack checkpoint](concepts/kck-03c1/README.md) | Dinosaur partial candidate; remaining art checks held |
+| KCK-03C1 | [Snack minimum pack checkpoint](concepts/kck-03c1/README.md) | Cat/Dinosaur minimum action candidates prepared; consumer QA pending |
 | KCK-03C2 | Actual consumer-scene pivot, scale, ground, timing, loop, alpha and prop handoff | pending |
 | KCK-03D | 3D contract (schema only; no models) | planned |
 | later | Platform adapter (e.g. Swift) only once an app needs it | — |

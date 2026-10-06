@@ -46,10 +46,12 @@
   Cat/Dinosaur deterministic 1024 delivery is accepted. Robot side-sheet lighting
   and generated mouth-correction crop failed. A later mouth-only local composite
   preserves the full original and passes; static mouthfix delivery is selected,
-  while six-sheet/motion requirements are incomplete.
+  while six-sheet/motion requirements are incomplete. Separately authorized side
+  retry fixed antenna lighting but failed strict side projection; Robot is held.
 - **KCK-03C**: neutral contract/schema plus semantic/file validation implemented.
-  **03C1**: Dinosaur idle static hold, two-pose run and explicit carry alias form a
-  validated partial candidate pack. Stumble remains held after identity diagnostic
+  **03C1**: Dinosaur idle static hold, two-pose run, explicit carry alias and a
+  separately authorized stumble retry form the complete action candidate pack.
+  The old stumble remains held after identity diagnostic
   FAIL; Cat receive is resolved by independent iris/sclera/glint visual comparison.
   **03C2**: no identified consumer test scene or verified prop handoff.
 
@@ -123,11 +125,13 @@
 - [x] Owner contextual 「往下做」 accepts the concrete mouth-only local composite;
   all alpha/outside pixels and full original boots preserved, four regressions PASS.
   New mouthfix master/delivery selected; old version and cropped donor unchanged.
-- [ ] Resolve Robot side-lighting/new-sheet mouth consistency and Dino stumble
-  identity diagnostic before affected model/motion continuation.
+- [x] Separately authorized Dino stumble retry passes unchanged identity/highlight
+  gates, shared scale/root, full-alpha fit and 400ms candidate replay.
+- [ ] Resolve Robot strict side projection and remaining mouthfix model sheets.
 - [x] Prepare Cat wait static hold, receive two key poses (350 ms) and happy
   static hold candidate; root/perspective/shared scale and socket evidence retained.
-- [ ] Complete Dino stumble and actual consumer-scene QA.
+- [x] Prepare complete Dinosaur action candidate plus Cat minimum candidate set.
+- [ ] Identify consumer repo and complete actual-scene motion/prop QA.
 
 ## Backlog
 
@@ -273,9 +277,16 @@ Do not interpret equal canvas/anchor as equal character height.
   are near accepted sheet views, but no new identity threshold is defined. One
   trial global scale/root clips 37 alpha=1 pixels and the actual pipeline rejects
   it; those roots are unapproved hypotheses, not proof every anchor fails.
-  `concepts/kck-03c1/retry-proposal/` prepares seven bounded calls (Dino stumble
-  one, Robot six mouthfix sheets with side first), all zero/unapproved. Explicit
-  failed-sequence Owner decision is required; no gate or old budget is reset.
+  The old diagnostic and failed file remain history. Owner 「好 幫我嘗試」 then
+  approved the prepared bounded proposal. Its separate execution ledger used two
+  calls of seven maximum: Dino retry passed unchanged gates/full-alpha fit;
+  Robot side fixed lighting but failed strict90-degree projection. Five remaining
+  Robot calls stay zero/blocked. No further retry, gate or old budget reset.
+- Dino retry did not achieve the requested10% source-slot magnifier-side margin;
+  the actual common-scale output satisfies the approved64px horizontal/top safe
+  margin and preserves full nonzero alpha. Composition deviation is retained,
+  not rewritten as exact prompt compliance. Actual consumer-scene QA and snack
+  prop selection remain pending; the source presence of a socket is not handoff.
 
 - Planning cannot silently waive model-sheet, identity or selected-master rules.
 - Main and pending PR #12 have different input-gate revisions; always identify

@@ -31,7 +31,7 @@ class ConceptProvenance(unittest.TestCase):
                           'dinosaur-concept-05', 'dinosaur-concept-06', 'dinosaur-concept-07',
                           'dinosaur-concept-08', 'dinosaur-concept-09', 'dinosaur-concept-10',
                           'dinosaur-concept-11', 'dinosaur-concept-12',
-                          'robot-concept-01', 'robot-concept-02', 'robot-concept-03', 'robot-concept-04', 'robot-concept-05', 'robot-concept-09', 'cat-concept-09', 'dinosaur-concept-13', 'dinosaur-concept-14', 'robot-concept-10'})
+                          'robot-concept-01', 'robot-concept-02', 'robot-concept-03', 'robot-concept-04', 'robot-concept-05', 'robot-concept-09', 'cat-concept-09', 'dinosaur-concept-13', 'dinosaur-concept-14', 'robot-concept-10', 'dinosaur-concept-15', 'robot-concept-11'})
         for path in concepts:
             record = json.loads(path.read_text())
             self.validator.validate(record)
@@ -93,7 +93,7 @@ class ConceptProvenance(unittest.TestCase):
             self.assertTrue((ROOT / derivative['authorization']).is_file())
             self.assertEqual(hashlib.sha256((ROOT / derivative['output']).read_bytes()).hexdigest(), derivative['output_sha256'])
             recorded.add(ROOT / derivative['provenance'])
-        self.assertEqual(recorded, {p for p in (ROOT / 'concepts/kck-03b2').glob('**/*.provenance.json') if json.loads(p.read_text())['id'] not in {'robot-concept-03','robot-concept-04','robot-concept-05','robot-concept-09','cat-concept-09','dinosaur-concept-13','dinosaur-concept-14','robot-concept-10'}})
+        self.assertEqual(recorded, {p for p in (ROOT / 'concepts/kck-03b2').glob('**/*.provenance.json') if json.loads(p.read_text())['id'] not in {'robot-concept-03','robot-concept-04','robot-concept-05','robot-concept-09','cat-concept-09','dinosaur-concept-13','dinosaur-concept-14','robot-concept-10','dinosaur-concept-15','robot-concept-11'}})
 
     def test_missing_rights_or_invalid_hash_rejected(self):
         for mutation in ('rights', 'sha256'):

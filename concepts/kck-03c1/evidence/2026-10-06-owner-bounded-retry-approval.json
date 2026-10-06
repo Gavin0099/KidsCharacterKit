@@ -1,0 +1,32 @@
+{
+  "format": "kck-owner-bounded-retry-approval-v1",
+  "date": "2026-10-06",
+  "actor": "Owner",
+  "exact_reply": "好 幫我嘗試",
+  "context": "Direct reply to the concrete proposal in the preceding completion report: Dino new stumble attempt one call and Robot six mouthfix sheets one call each, side first, failure stops affected sequence.",
+  "proposal": {
+    "path": "concepts/kck-03c1/retry-proposal/proposal.json",
+    "sha256": "8b188517983561d08fe3a7f3a0a3bd3bcebe4a1fb4933dc5d3141a0712a1934a"
+  },
+  "authorized": {
+    "dinosaur_stumble_max_calls": 1,
+    "robot_sheet_max_calls": 6,
+    "per_job_max_calls": 1,
+    "total_max_calls": 7,
+    "robot_order": [
+      "side",
+      "front",
+      "three-quarter",
+      "back",
+      "happy",
+      "confused"
+    ]
+  },
+  "rules": [
+    "Sequential conformance checks within each character; failed gate stops affected sequence",
+    "Old failures, originals and ledgers preserved",
+    "No gate relaxation, alpha cleanup or exhausted v2d budget reset",
+    "No merge or rights upgrade; no motion production without consumer QA"
+  ],
+  "consumer_repo": "not specified by this reply"
+}

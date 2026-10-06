@@ -46,4 +46,26 @@ class Lifecycle(unittest.TestCase):
         authority=json.loads((tool.ROOT/'concepts/kck-03b/evidence/2026-10-06-owner-robot-tongue-feedback.json').read_text())
         self.assertEqual(authority['quote'],'機器人舌頭有點怪')
 
+    def test_bounded_retry_authority_and_failure_stops_unspent_robot_jobs(self):
+        root=tool.ROOT
+        ledger=json.loads((root/'concepts/kck-03c1/bounded-retry-jobs.json').read_text())
+        authority=json.loads((root/ledger['authorization']).read_text())
+        self.assertEqual(authority['exact_reply'],'好 幫我嘗試')
+        p=authority['proposal'];self.assertEqual(hashlib.sha256((root/p['path']).read_bytes()).hexdigest(),p['sha256'])
+        self.assertEqual(ledger['calls'],2);self.assertEqual(ledger['maximum_calls'],7)
+        self.assertEqual(ledger['old_budget_unchanged'],{'dinosaur_v2d_used':2,'dinosaur_v2d_maximum':2,'remaining':0})
+        self.assertEqual([j.get('agent_hard_gate') for j in ledger['jobs'][:2]],['PASS','FAIL'])
+        for j in ledger['jobs']:
+            self.assertLessEqual(j['calls'],j['max_calls'])
+            for key in ['instruction','reference']:
+                entry=j[key];self.assertEqual(hashlib.sha256((root/entry['path']).read_bytes()).hexdigest(),entry['sha256'])
+            if j['calls']:
+                self.assertEqual(j['status'],'candidate_recorded')
+                self.assertEqual(hashlib.sha256((root/j['output']).read_bytes()).hexdigest(),j['output_sha256'])
+                self.assertEqual(json.loads((root/j['provenance']).read_text())['status'],'candidate')
+            else:
+                self.assertEqual(j['status'],'blocked_after_hard_failure')
+                self.assertEqual(j['blocked_by'],'robot-side-02');self.assertNotIn('output',j)
+                self.assertFalse((root/j['concept_output']).exists())
+
 if __name__=='__main__':unittest.main()

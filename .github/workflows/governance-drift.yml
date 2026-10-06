@@ -47,6 +47,7 @@ jobs:
         run: |
           python concepts/kck-03c/tools/test_validate_animation.py
           python concepts/kck-03c/tools/validate_animation.py concepts/kck-03c1/dinosaur-snack-partial-pack.json
+          python concepts/kck-03c/tools/validate_animation.py concepts/kck-03c1/dinosaur-snack-candidate-pack.json
           python concepts/kck-03c/tools/validate_animation.py concepts/kck-03c1/cat-snack-candidate-pack.json
       - name: Validate asset records against existing schemas
         run: |

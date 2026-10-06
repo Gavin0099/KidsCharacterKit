@@ -1,8 +1,12 @@
-# Bounded retry proposal — not executed
+# Bounded retry proposal — preserved pre-approval record
 
 The [exact jobs/instructions/source hashes](proposal.json) are prepared for a
 direct Owner decision. This is not an execution ledger or a new authorization.
-Every proposed call remains zero.
+The frozen proposal records zero calls before approval. The later direct Owner
+reply 「好 幫我嘗試」 is captured in [authorization](../evidence/2026-10-06-owner-bounded-retry-approval.json)
+and [separate execution ledger](../bounded-retry-jobs.json): Dino and Robot side
+one call each. Dino passed original gates; Robot side projection failed, so the
+remaining five Robot calls are blocked at zero. The proposal itself is unchanged.
 
 - Dinosaur: one replacement two-key-pose stumble strip. Preserve the reference
   head/camera/eye geometry; put the small stumble in the foot/free-hand gesture.
