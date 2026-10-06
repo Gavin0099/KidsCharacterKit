@@ -6,13 +6,19 @@
   "slice": "KCK-03B1",
   "stage": "B1-B",
   "variant": "A3 style-key translation, initial static candidate",
-  "status": "candidate",
+  "status": "approved_reference",
   "status_evidence": [
     {
       "decision": "Owner authorized continuing static B1-B using corrected A3; output remains unapproved candidate",
       "date": "2026-10-06",
       "stated_in": "current Owner session",
       "quote": "核准修正 A3 作 style key，A4 保留失敗紀錄"
+    },
+    {
+      "decision": "Owner accepts exact reference identity, shared world and 64px recognition with Style Bible v1; not production/rights",
+      "date": "2026-10-06",
+      "stated_in": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets"
     }
   ],
   "file": {
@@ -111,9 +117,9 @@
     }
   ],
   "owner_review": {
-    "variant_intensity": "pending",
-    "overall_identity": "pending",
-    "note": "Only the Dinosaur style key is approved; new Cat/Robot outputs and lineup are pending"
+    "variant_intensity": "Owner observed closer stylistic consistency in the corrected lineup (2026-10-06); not separate identity or formal-reference acceptance.",
+    "overall_identity": "Owner accepted exact reference identity/shared world/64px recognition with v1",
+    "note": "Approved reference only; unseen sheets, production and rights remain separate."
   },
   "rights": {
     "commercial_use_status": "pending",
@@ -133,10 +139,18 @@
     {
       "path": "concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json",
       "supports": "Owner-approved rendering reference and separate Dinosaur budget"
+    },
+    {
+      "path": "concepts/kck-03b1/evidence/2026-10-06-lineup-style-feedback.json",
+      "supports": "Exact Owner style-consistency feedback, limited scope and unmodified artwork hashes"
+    },
+    {
+      "path": "concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json",
+      "supports": "Explicit Owner v1 and exact reference-set acceptance; separate model-sheet execution authorization"
     }
   ],
   "unresolved_questions": [
-    "Owner identity/rendering/lineup acceptance pending",
-    "Production, model sheets and rights unresolved"
+    "New model sheets require visual acceptance; production/master/scale/anchor decisions remain open",
+    "Commercial use, rights review and ownership unresolved"
   ]
 }

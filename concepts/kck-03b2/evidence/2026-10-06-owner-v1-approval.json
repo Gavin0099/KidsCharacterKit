@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-06",
+  "stated_in": "current Owner session; asynchronous answer to concrete v1/reference-set review",
+  "question": "是否核准 Style Bible v1 草案及目前三角色參考集合（Cat／Dinosaur／修正 Robot）的 identity、同一世界與 64px 辨識？規格保留各自比例、統一左上光源，Cat／Dinosaur 雙高光，Robot 明確保留單高光；接著先準備 Cat／Dinosaur 各六張 model sheets。這不核准 production、權利或重設生成預算。",
+  "quote": "核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets",
+  "reviewed_document": {
+    "path": "docs/character-style-bible-v1.md",
+    "sha256": "5bf627d2935429ecc684a75fdb2d5060a96818da6cb2c8732703b4905961c9e0",
+    "basis": "Exact review-candidate bytes before approval-status wording updated"
+  },
+  "references": [
+    {
+      "concept_id": "cat-concept-01",
+      "path": "concepts/kck-03b1/outputs/Cat-B1B-attempt-01.png",
+      "sha256": "1ba744b5b7134e22e5881dd58cc87eec55fc517f2a4a69c74bc7f5a242ce704e"
+    },
+    {
+      "concept_id": "dinosaur-concept-03",
+      "path": "concepts/kck-03b1/outputs/A3-v2d-attempt-01-highlight-corrected.png",
+      "sha256": "16b7db693942c09c7792eb01a4fd8269c4bd8d402b6c0b3b5be29813fd430d27"
+    },
+    {
+      "concept_id": "robot-concept-02",
+      "path": "concepts/kck-03b1/outputs/Robot-B1B-attempt-01-highlight-corrected.png",
+      "sha256": "6865f582ac502ecd73574c06aa1328e574712a63175beaba8662cb575bd85216"
+    }
+  ],
+  "accepted": [
+    "Style Bible v1 rendering/identity/palette/proportion requirements",
+    "Cat/Dinosaur/corrected Robot reference identities, shared world and 64px recognition",
+    "Robot single upper-left glint exception",
+    "Cat/Dinosaur six individual model-sheet candidates first; each still needs visual acceptance"
+  ],
+  "not_approved": [
+    "Unseen model sheets",
+    "Production/selected master/visual_scale/ground anchors",
+    "Rights/commercial use",
+    "Dinosaur v2d retry or reset of exhausted 2/2 budget",
+    "Remote PR merge"
+  ]
+}

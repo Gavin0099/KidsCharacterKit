@@ -1,0 +1,38 @@
+{
+  "job_id": "dinosaur-side-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "577a1c557a91d20827dd987981670d8ddd0b58a900cc37434f0600fd2f6c9e68",
+    "rgba8_sha256": "651c410f0698d338045941cfacfae632d4f83e7fdba80cb3cebe2bcbfc6c6965",
+    "bytes": 1109164,
+    "alpha_zero": 961190,
+    "alpha_partial": 610787,
+    "alpha_opaque": 539,
+    "alpha_gt10_bbox_exclusive": [
+      191,
+      88,
+      1060,
+      1178
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "FAIL",
+  "agent_visual_review": "Agent visual: one profile eye/nose facing left; mint palette/spikes/tail/two belly lines/left-hand magnifying glass retained, one-eye numeric glint PASS. Strict side-view continuity FAIL: torso remains turned toward viewer, presenting a broad front cream belly with both complete horizontal lines; this is a profile head on a three-quarter torso, not the requested orthographic left-side model. Stop remaining Dinosaur sheets, retain candidate/no retry or repair. Exact anatomy and handedness still Owner review.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

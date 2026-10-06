@@ -229,7 +229,7 @@
     },
 
     "conceptRecord": {
-      "description": "A style-exploration output (KCK-03B1). Never a character master: it lives under concepts/, not characters/.",
+      "description": "A style-exploration or model-sheet candidate (KCK-03B1/03B2). Never a character master: it lives under concepts/, not characters/.",
       "type": "object",
       "additionalProperties": false,
       "required": [

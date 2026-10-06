@@ -5,6 +5,11 @@ owner during the PR #3 review**. The numeric values in §3 are **exploration sta
 ranges** for KCK-03B1 and are **not** approved rules. No artwork is produced or
 changed by this slice.
 
+The [Owner-approved Style Bible v1](character-style-bible-v1.md) consolidates the
+actual three-character exploration and is the active drawing specification. This
+v0 remains historical evidence of the originally approved direction and unapproved
+exploration ranges; v1 does not waive the representation contract or rights gates.
+
 Purpose: if Cat, Dinosaur and Robot are to look like one world across apps, 2D
 animation and later 3D, they need shared visual rules. Normalizing file sizes does
 not do that; it only makes differently-styled images the same size.

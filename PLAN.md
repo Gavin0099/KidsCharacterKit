@@ -14,7 +14,7 @@
   framework, official adoption baseline, calibrated repo rules and contract,
   proposed slice plan, honest local evidence, canonical memory and one reviewable
   PR. Initial adoption is distinct from runtime/hook rollout and full adoption.
-- **KCK-03B1 — style exploration** remains active. Owner approved deterministic
+- **KCK-03B1 — style exploration** visual-selection gate is accepted. Owner approved deterministic
   A3 highlight-only repair and accepted A3 Balanced texture. The preserved A3
   derivative passes all five independent output gates; Owner explicitly approved
   it as Dinosaur style key after A1/A2/A3/A4 review. Original A3 failure remains.
@@ -30,6 +30,15 @@
   continuing (2026-10-06). Repo-local character preparation skill and bounded
   strip/review/sequence QA tools are implemented; Cat/Robot translations and
   Owner-authorized Robot highlight derivative are ready for lineup review.
+- Owner reviewed the corrected lineup and stated 「有 風格比較一治了」,
+  confirming closer stylistic consistency. Record that feedback; retain that
+  earlier narrower scope. Subsequent explicit v1 approval supplies identity/silhouette
+  reference acceptance, while production and rights remain pending.
+- Style Bible v1 review candidate is prepared under continuous-execution scope.
+  It consolidates real references, rendering/identity locks and sheet requirements;
+  Owner explicitly accepted v1/reference set, including Robot single-glint exception.
+  **KCK-03B2** is active: prepare Cat/Dinosaur model-sheet candidates, then obtain
+  their individual visual acceptance; document approval alone does not complete it.
 
 ## Active Sprint
 
@@ -70,8 +79,18 @@
 - [x] Owner authorized Robot source-locked highlight-only repair (「好的 可以這樣做」).
   Both primary highlights now upper left; original failure, all alpha, eye rims,
   per-eye RGB histograms and outside-patch pixels preserved. Zero generation calls.
-- [ ] Owner review of Cat/corrected-Robot identity/rendering and shared-world
+- [x] Owner review of Cat/corrected-Robot identity/rendering and shared-world
   lineup, including normal/64px/solid-black silhouette QA views.
+- [x] Record Owner's positive style-consistency feedback on the corrected lineup.
+- [x] Prepare reviewable Style Bible v1 and exact reference-set index; keep v0
+  approved rules authoritative and all artwork/rights/availability statuses intact.
+- [x] Owner acceptance of v1 plus remaining identity/silhouette/reference gates;
+  then prepare Cat/Dinosaur model sheets with separate visual acceptance.
+- [ ] Cat/Dinosaur six-view/expression candidate set: six initial outputs saved
+  (front/three-quarter/side each); 4 pass agent review, both side views fail continuity.
+  Back/happy/confused are not generated. Exact prompts, raw PNGs, provenance,
+  numeric Dino measurements and common-scale review retained in 03B2 checkpoint.
+- [ ] Owner accepts individual model sheets before authored motion.
 
 ## Backlog
 
@@ -118,12 +137,21 @@ Do not interpret equal canvas/anchor as equal character height.
   only Robot's two large eye highlights programmatically, retaining original,
   all alpha and other pixels. This authorizes correction execution; corrected
   artwork and the shared-world lineup still require review.
+- 2026-10-06: After seeing corrected lineup, Owner said 「有 風格比較一治了」.
+  Recorded style-consistency confirmation. Prepared v1 candidate using existing
+  authorized path; this feedback does not silently approve every identity,
+  silhouette, document rule or new master. Explicit v1 review bundles those
+  remaining choices instead of repeating the same style-consistency question.
 - 2026-10-06: Owner opened continuous execution of the snack critical path
   (quoted above). Owner subsequently approved the proposed programmatic A3 repair
   (「好的 做下去」), leaving the remaining generation slot for A4. The A4 output
   failure and exhausted budget are actual problems; pause generation, preserve
   evidence and continue the explicitly requested tool-reuse analysis.
-- Pending Owner decisions, **no approved contract changes in this PR**:
+- 2026-10-06: Owner explicitly replied 「核准 v1 與參考集合，繼續 Cat／Dinosaur model sheets」 to the
+  exact v1/reference-set question. Cat/corrected Robot promoted to approved_reference
+  with cited evidence; v1 adopts Robot single-glint exception. Production/rights
+  and Dino v2d 2/2 budget unchanged. New 03B2 sheets stay candidate.
+- Pending Owner decisions, **representation contract unchanged in this PR**:
   1. Current style bible requires full model sheets before authored animation.
      A single-view shortcut for 2–4 poses would require explicit gate change;
      Robot motion/model-sheet production may wait, static lineup may not.
@@ -134,7 +162,14 @@ Do not interpret equal canvas/anchor as equal character height.
      and Dinosaur's locked magnifying-glass identity when carrying a snack.
   4. Corrected A3 style-key selection is now explicitly approved; retain failed A4.
      The current branch includes PR #12 inputs/evidence without claiming remote
-     merge. No retry or new Dinosaur generation budget is authorized.
+     merge. No v2d retry/reset is authorized. The separate 03B2 model-sheet candidate scope
+     is now explicitly authorized, with one initial call per requested sheet and
+     no automatic retries after a failed hard gate.
+
+- 2026-10-06: 03B2 side-view failure: Cat tail reposed behind/up instead of
+  resting across front feet; Dinosaur profile head on a three-quarter/front torso.
+  Stopped both sequences after 6 initial calls; 6 later sheets unexecuted. Propose
+  one targeted side edit per character, pending Owner disposition. No automatic retry.
 
 ## Known Risks
 

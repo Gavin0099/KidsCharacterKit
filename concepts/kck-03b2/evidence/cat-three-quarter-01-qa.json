@@ -1,0 +1,38 @@
+{
+  "job_id": "cat-three-quarter-01",
+  "copy": "Exact byte copy of built-in saved output; no image editing",
+  "structural": {
+    "canvas": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "raw_sha256": "c9126c6e8e286895e153125018da7bcc6d0da95f694a8d8fee7d6308ed04fe9a",
+    "rgba8_sha256": "9e6e47030c861310ef42efe4f72e8d41d591252dfee56b9ec37c173899ff4896",
+    "bytes": 1350018,
+    "alpha_zero": 883290,
+    "alpha_partial": 688681,
+    "alpha_opaque": 545,
+    "alpha_gt10_bbox_exclusive": [
+      229,
+      54,
+      1083,
+      1228
+    ],
+    "corners": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "agent_hard_gate": "PASS",
+  "agent_visual_review": "Agent visual: near-front three-quarter continuity with original head tilt/pose; raised left paw/pads, tabby stripes, curled tail, two feet, iris/sclera/tongue retained. Primary upper-left and secondary lower-right highlights; single full body, true alpha/no scene. Relative eye size and view depth still require Owner judgment.",
+  "owner_acceptance": "pending",
+  "not_proven": [
+    "Generator-held input hashes",
+    "Unseen anatomy correctness",
+    "Production scale or semantic ground anchor",
+    "Rights"
+  ]
+}

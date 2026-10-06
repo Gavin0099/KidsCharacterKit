@@ -26,11 +26,13 @@ class ConceptProvenance(unittest.TestCase):
         concepts = sorted((ROOT / 'concepts').glob('**/*.provenance.json'))
         self.assertEqual({json.loads(path.read_text())['id'] for path in concepts},
                          {'dinosaur-concept-02', 'dinosaur-concept-03', 'dinosaur-concept-04',
-                          'cat-concept-01', 'robot-concept-01', 'robot-concept-02'})
+                          'cat-concept-01', 'cat-concept-02', 'cat-concept-03', 'cat-concept-04',
+                          'dinosaur-concept-05', 'dinosaur-concept-06', 'dinosaur-concept-07',
+                          'robot-concept-01', 'robot-concept-02'})
         for path in concepts:
             record = json.loads(path.read_text())
             self.validator.validate(record)
-            expected_status = 'approved_reference' if record['id'] == 'dinosaur-concept-03' else 'candidate'
+            expected_status = 'approved_reference' if record['id'] in {'dinosaur-concept-03', 'cat-concept-01', 'robot-concept-02'} else 'candidate'
             self.assertEqual(record['status'], expected_status)
             output = ROOT / record['file']['path']
             self.assertEqual(hashlib.sha256(output.read_bytes()).hexdigest(), record['file']['sha256'])
@@ -42,6 +44,31 @@ class ConceptProvenance(unittest.TestCase):
                 self.assertEqual(hashlib.sha256((ROOT / source['name']).read_bytes()).hexdigest(), source['sha256'])
             for evidence in record['evidence']:
                 self.assertTrue((ROOT / evidence['path']).is_file())
+
+    def test_model_sheet_jobs_match_saved_outputs_and_stop_on_failure(self):
+        ledger = json.loads((ROOT / 'concepts/kck-03b2/model-sheet-jobs.json').read_text())
+        self.assertEqual(ledger['dinosaur_v2d_budget'], {'used': 2, 'maximum': 2, 'remaining': 0})
+        jobs = ledger['jobs']
+        self.assertEqual({(x['character'], x['view']) for x in jobs},
+                         {(c, v) for c in ('cat', 'dinosaur')
+                          for v in ('front', 'three-quarter', 'side', 'back', 'happy', 'confused')})
+        self.assertEqual(sum(x['calls'] for x in jobs), 6)
+        recorded = set()
+        for job in jobs:
+            self.assertLessEqual(job['calls'], job['initial_call_limit'])
+            self.assertEqual(hashlib.sha256((ROOT / job['reference']).read_bytes()).hexdigest(), job['reference_sha256'])
+            self.assertEqual(hashlib.sha256((ROOT / job['instruction']).read_bytes()).hexdigest(), job['instruction_sha256'])
+            if job['calls']:
+                self.assertEqual(job['status'], 'candidate_recorded')
+                record = json.loads((ROOT / job['provenance']).read_text())
+                self.assertEqual(record['id'], job['concept_id'])
+                self.assertEqual(record['status'], 'candidate')
+                self.assertEqual(hashlib.sha256((ROOT / job['output']).read_bytes()).hexdigest(), job['output_sha256'])
+                recorded.add(ROOT / job['provenance'])
+            else:
+                self.assertEqual(job['status'], 'blocked_after_hard_failure')
+                self.assertNotIn('output', job)
+        self.assertEqual(recorded, set((ROOT / 'concepts/kck-03b2').glob('**/*.provenance.json')))
 
     def test_missing_rights_or_invalid_hash_rejected(self):
         for mutation in ('rights', 'sha256'):

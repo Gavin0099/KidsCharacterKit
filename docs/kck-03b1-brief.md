@@ -984,6 +984,15 @@ are review artifacts with recorded common native-canvas scale, not approved
 production scale/anchors. Corrected-Robot artwork and shared-world acceptance
 remain Owner decisions; correction authorization does not complete B1-C.
 
+**Subsequent style feedback:** after viewing this corrected lineup, Owner said
+「有 風格比較一治了」. This confirms improved stylistic consistency; the exact
+[feedback record](../concepts/kck-03b1/evidence/2026-10-06-lineup-style-feedback.json)
+keeps its scope separate from identity/silhouette/production acceptance. The
+[v1 candidate](character-style-bible-v1.md) consolidates the observed rendering
+and remaining decisions. In particular, the original shared starting brief's
+dual-glint suggestion and the shown Robot's single-glint treatment need an
+explicit v1 disposition; positive style feedback does not silently waive it.
+
 Owner accepted the proposed programmatic A3 highlight-only repair and original
 Balanced texture in session (「好的 做下去」). The original PNG and its failed
 gate-4 record remain unchanged. The source-locked derivative swaps only original
@@ -1007,3 +1016,10 @@ ID 01 in PR #10 unchanged; copying its schema does not establish PR #10 merge. E
 records and manifest remain unchanged. GitHub workflow reuse research is in
 [character-pipeline-reuse-review.md](character-pipeline-reuse-review.md); no external
 skill installed or run, and no current gate changed by that research.
+
+**Later formal acceptance (2026-10-06):** Owner explicitly accepted Style Bible v1,
+the exact Cat/Dinosaur/corrected-Robot reference set, identity/shared world/64px
+recognition, and Robot single-glint exception. See [v1 approval](../concepts/kck-03b2/evidence/2026-10-06-owner-v1-approval.json).
+This closes the 03B1 visual-selection gate and authorizes Cat/Dinosaur model-sheet
+candidates under 03B2. Historical pending notes above describe earlier checkpoints.
+Original failed records and v2d budget 2/2 remain; no production/rights approval.
