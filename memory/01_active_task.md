@@ -21,3 +21,5 @@
 - KCK-03B1 reference set + Style Bible v1 accepted; KCK-03B2 has six sheet candidates, both side views FAIL continuity; sequences stopped pending Owner repair disposition. No production/rights/budget reset. <!-- memory_record_projection:active-task-summary:e1a81d3a1e0b1926328391a02a9e6aa99343394e519666d762a495dd41151813 -->
 
 - KCK-03B2: Cat six model sheets approved; Dinosaur six current candidates prepared, pending explicit Owner acceptance. Bounded belly repair validated; original failures and v2d 2/2 preserved. 03B master/scale/anchor and production/rights remain gated. <!-- memory_record_projection:active-task-summary:d85712a8fd4bf82474b7e684fd16eb5f35eb47b426f677f77129a8460cfe2655 -->
+
+- KCK-03B2 complete for Cat/Dino; 03B version/master/scale/anchors separately Owner approved and two deterministic production candidates prepared. Actual production acceptance pending; manifest available=false. Continue 03C/03C1 after acceptance. Original failures/A4 2/2 and inherited pending rights preserved. <!-- memory_record_projection:active-task-summary:0195356e0f87384a249874beb3b2d86c3d8ad158fb0662bf4e28aefc8521928b -->

@@ -54,5 +54,6 @@
     "used": 2,
     "maximum": 2,
     "remaining": 0
-  }
+  },
+  "checkpoint_scope": "Historical preparation check before Owner layout decision; current accepted decision and actual candidates are in artifacts/evidence/raster-delivery/validation.json"
 }

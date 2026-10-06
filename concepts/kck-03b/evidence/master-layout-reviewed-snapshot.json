@@ -1,0 +1,12 @@
+{
+  "approved_document_snapshot": {
+    "path": "concepts/kck-03b/evidence/master-layout-reviewed.txt",
+    "sha256": "baa517101f40000dca22c311bda2de05a2e7796ca72b38cc097203f7218e2f18",
+    "original_relative_link_context": "docs/kck-03b-master-layout-proposal.md"
+  },
+  "owner_decision": {
+    "path": "concepts/kck-03b/evidence/2026-10-06-owner-master-layout-approval.json",
+    "sha256": "1f3761ef7c0ae1873f713f0b6ef8a4f0a42ba60cd4f87830a4323907f122b74d"
+  },
+  "check": "Snapshot exact SHA equals pre-status-update document SHA in Owner decision"
+}
