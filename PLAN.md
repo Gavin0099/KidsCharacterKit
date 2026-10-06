@@ -35,11 +35,24 @@
   and ref/CI status are reported separately without a post-push memory loop.
 - [ ] Owner review/merge of the governance PR (not agent-authorized).
 - [ ] Owner disposition of A3 gate failure and pending PR #12, separately.
+- [x] Record Owner's continuous-execution instruction (2026-10-06):
+  「導入後按照slice 做下去 除非有問題 不然就做到完」.
+  Proceed through the snack critical path without re-asking about routine steps;
+  report actual gate failures, conflicting specifications and visual decisions.
+- [ ] Resolve the current A3 gate-4 failure before further image work. Owner was
+  shown the exact preserved A3 and asked about isolated programmatic highlight
+  correction versus the remaining prompt retry, plus texture acceptance.
+  Both decisions remain pending; no edit, generation or extra attempt was made.
 
 ## Backlog
 
-The following is **proposed planning**, not authorization to execute future
-slices or modify approved gates. Each slice requires Owner opening/approval.
+Owner has now authorized continuous execution of the snack critical path
+**03B1 → 03B2 → 03B → 03C → 03C1 → 03C2**, subject to actual problems and existing
+acceptance gates. Routine work within that path need not be separately opened
+again. Scope authorization does not approve unseen artwork, waive a hard gate,
+reset the shared attempt budget, or attest to merge of an exact PR head.
+03D/04 remain deferred. The consumer-app SNACK-01 scene remains a distinct repo
+scope; this instruction does not identify a consumer checkout.
 
 | Slice | Minimal delivery and completion gate | Snack dependency |
 |---|---|---|
@@ -69,6 +82,10 @@ Do not interpret equal canvas/anchor as equal character height.
   `https://github.com/Gavin0099/ai-governance-framework.git`, pinned at
   `fb8f6abb09d6419923247183a2ce744d75e65b29` (release 1.3.0, interface 1).
   Existing `GOVERNANCE.md` Owner/provenance/rights/slice rules remain authoritative.
+- 2026-10-06: Owner opened continuous execution of the snack critical path
+  (quoted above). The existing A3 failure is an actual problem under that
+  instruction. Continue mechanical work autonomously after its disposition;
+  do not treat broad continuation as an instruction to ignore that failure.
 - Pending Owner decisions, **no approved contract changes in this PR**:
   1. Current style bible requires full model sheets before authored animation.
      A single-view shortcut for 2–4 poses would require explicit gate change;
