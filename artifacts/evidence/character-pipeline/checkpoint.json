@@ -1,0 +1,29 @@
+{
+  "implementation_commit": "de251758cffe739e358d54d50ac0d0c9b8c9c1d2",
+  "local_test_count": 39,
+  "pipeline_receipt": "artifacts/evidence/test-results/character-pipeline.json",
+  "concept_receipt": "artifacts/evidence/test-results/b1b-concept-checkpoint.json",
+  "schema_validation": {
+    "manifest_records": 1,
+    "provenance_records": 15,
+    "result": "PASS"
+  },
+  "skill_quick_validate": "PASS",
+  "owner_style_key": "concepts/kck-03b1/evidence/2026-10-06-owner-style-key.json",
+  "dinosaur_budget": "2/2 unchanged",
+  "b1b_calls": {
+    "cat": 1,
+    "robot": 1
+  },
+  "b1b_status": "Cat candidate; Robot upper-right highlight FAIL; lineup Owner pending",
+  "generation_route": "Built-in image_gen.imagegen; exact prompts in concepts/kck-03b1/instructions; requested local input hashes verified, generator-held hashes not exposed",
+  "not_claimed": [
+    "B1-C complete",
+    "Style Bible v1",
+    "production raster",
+    "authored motion",
+    "rights clearance",
+    "remote merge",
+    "full runtime governance"
+  ]
+}
