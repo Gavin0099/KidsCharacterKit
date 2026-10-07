@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-10-06T03:05:43.796163+00:00",
+  "checks": [
+    {
+      "check": "framework-local-head",
+      "command": [
+        "git",
+        "-C",
+        "ai-governance-framework",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "fb8f6abb09d6419923247183a2ce744d75e65b29\n"
+    },
+    {
+      "check": "framework-remote-main",
+      "command": [
+        "git",
+        "-C",
+        "ai-governance-framework",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "fb8f6abb09d6419923247183a2ce744d75e65b29\trefs/heads/main\n"
+    },
+    {
+      "check": "framework-worktree",
+      "command": [
+        "git",
+        "-C",
+        "ai-governance-framework",
+        "status",
+        "--porcelain"
+      ],
+      "exit_code": 0,
+      "stdout": ""
+    },
+    {
+      "check": "base-repo-head",
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "e8b705c0a89fd8d9613216766705e0a17f7056d9\n"
+    },
+    {
+      "check": "consumer-main-remote",
+      "command": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "e8b705c0a89fd8d9613216766705e0a17f7056d9\trefs/heads/main\n"
+    }
+  ],
+  "protected_baseline": {
+    "source": "ai-governance-framework/baselines/repo-min/AGENTS.base.md",
+    "bytes_identical": true,
+    "sha256": "20f247a26575cc0e2e9f09be68ea057ac9a8f5d81ab56717e21a94e43ee3043b"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "initial_runtime_diagnostic": {
+    "command": [
+      "python",
+      "ai-governance-framework/governance_tools/external_repo_smoke.py",
+      "--repo",
+      ".",
+      "--contract",
+      "contract.yaml",
+      "--task-text",
+      "KCK-GOV-02 initial static adoption",
+      "--format",
+      "human",
+      "--output",
+      ".governance/evidence/kck-gov-02-external-runtime-smoke.json"
+    ],
+    "exit_code": 1,
+    "result": ".governance/evidence/kck-gov-02-external-runtime-smoke.json"
+  }
+}

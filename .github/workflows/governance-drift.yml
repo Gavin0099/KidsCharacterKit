@@ -1,0 +1,52 @@
+name: Governance and Asset Records
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  governance-drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install check dependencies
+        run: python -m pip install PyYAML==6.0.3 Pillow==12.3.0 jsonschema==4.26.0
+      - name: Verify governance baseline
+        run: |
+          python ai-governance-framework/governance_tools/governance_drift_checker.py \
+            --repo . \
+            --framework-root ./ai-governance-framework \
+            --format human
+      - name: Run existing input identity regressions
+        run: python concepts/kck-03b1/tools/test_preflight_hash.py
+      - name: Validate asset records against existing schemas
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from jsonschema import Draft202012Validator
+          for schema_path, records in (
+              (Path('manifests/character-manifest.schema.json'), [Path('manifests/characters.json')]),
+              (Path('provenance/schema/provenance.schema.json'), sorted(Path('provenance').glob('*/*.json'))),
+          ):
+              schema = json.loads(schema_path.read_text())
+              Draft202012Validator.check_schema(schema)
+              validator = Draft202012Validator(schema)
+              for record in records:
+                  if record == schema_path:
+                      continue
+                  validator.validate(json.loads(record.read_text()))
+                  print('VALID', record)
+          PY

@@ -1,0 +1,51 @@
+[
+  {
+    "check": "readiness",
+    "exit_code": 0,
+    "command": [
+      "python",
+      "ai-governance-framework/governance_tools/external_repo_readiness.py",
+      "--repo",
+      ".",
+      "--framework-root",
+      "./ai-governance-framework",
+      "--format",
+      "json"
+    ],
+    "evidence": ".governance/evidence/kck-gov-02/readiness.json"
+  },
+  {
+    "check": "quickstart-smoke",
+    "exit_code": 1,
+    "command": [
+      "python",
+      "ai-governance-framework/governance_tools/quickstart_smoke.py",
+      "--project-root",
+      ".",
+      "--plan",
+      "PLAN.md",
+      "--contract",
+      "contract.yaml",
+      "--task-text",
+      "KCK-GOV-02 initial static adoption",
+      "--format",
+      "json"
+    ],
+    "evidence": ".governance/evidence/kck-gov-02/quickstart-smoke.json"
+  },
+  {
+    "check": "memory-initial-check",
+    "exit_code": 0,
+    "command": [
+      "python",
+      "ai-governance-framework/governance_tools/memory_workflow.py",
+      "--check",
+      "--repo",
+      ".",
+      "--run-guard",
+      "--format",
+      "json"
+    ],
+    "evidence": ".governance/evidence/kck-gov-02/memory-initial-check.json"
+  }
+]

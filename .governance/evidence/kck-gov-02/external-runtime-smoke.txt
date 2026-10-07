@@ -1,0 +1,13 @@
+[external_repo_smoke]
+summary=ok=False | rules=common,avalonia,cpp,csharp,gl-hub-vendor-cmd,kernel-driver,python,refactor,swift | pre_task_ok=True | session_start_ok=False | post_task_ok=None
+token_summary=prompt=None,completion=None,total=None,source=unknown,observability=none
+repo_root=/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit
+plan_path=/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/PLAN.md
+contract_path=/Users/pc49-58/.codex/worktrees/kck-ai-governance/KidsCharacterKit/contract.yaml
+errors=2
+- session_start degraded mode is not allowed in strict smoke: controlled_refusal
+- version_compatibility_unsupported
+warnings=3
+- Assumption check missing before modification planning: missing=assumptions, alternative_root_causes, evidence, reframe_or_validation_step; why=the premise, alternatives, evidence, or validation step is not visible yet; next=state the missing items before choosing an implementation
+- Decision policy advisory: assumption evidence missing: missing=direct evidence that tests the stated assumption; why=the decision remains uncertain even if the assumption is plausible; next=collect a trace, spec, test, or usage evidence before a high-impact change
+- Decision policy advisory: proceeding under assumption: missing=confirmed evidence for the premise; why=this is a provisional action, not proof that the change is correct; next=keep the change reversible and run the targeted verification

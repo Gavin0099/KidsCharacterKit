@@ -1,0 +1,9 @@
+# Framework evidence policy; does not replace artwork input/output gates or budget.
+version: "1"
+fail_mode: strict
+blocking_actions:
+  - production_fix_required
+unknown_treatment:
+  mode: block_if_count_exceeds
+  threshold: 3
+artifact_stale_seconds: 86400

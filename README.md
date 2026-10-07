@@ -47,13 +47,17 @@ Governance (who approves what, asset statuses, rights): see [GOVERNANCE.md](GOVE
 | KCK-01 | Read-only inventory of existing Cat / Dinosaur / Robot assets | done |
 | KCK-02 | Provenance schema and records for the five core candidates | done |
 | KCK-03A | Character representation contract, manifest schema, raster delivery spec, style bible (specification only) | done |
-| KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | this slice |
-| KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Three checkpoints: B1-A Dinosaur style key → B1-B Cat / Robot translation → B1-C lineup gate. Brief: [docs/kck-03b1-brief.md](docs/kck-03b1-brief.md). Done by the owner outside this repo (needs an illustration workflow); outputs are `candidate`s and come back for a Style Bible v1 decision | next |
+| KCK-GOV-01 | Lite governance: AI proposes / Owner approves, provenance gate, rights not auto-upgraded, slice boundaries, asset statuses ([GOVERNANCE.md](GOVERNANCE.md)) | done |
+| KCK-GOV-02 | Initial AI governance adoption: pinned framework, repo rules, PLAN, static checks and explicit runtime gaps ([adoption](docs/ai-governance-adoption.md)) | proposed in this PR |
+| KCK-03B1 | Style exploration: a unified concept for the three characters, reviewed side by side. Three checkpoints: B1-A Dinosaur style key → B1-B Cat / Robot translation → B1-C lineup gate. Brief: [docs/kck-03b1-brief.md](docs/kck-03b1-brief.md). Done by the owner outside this repo (needs an illustration workflow); outputs are `candidate`s and come back for a Style Bible v1 decision | execution hold; pending PR #12 |
 | — | Style Bible v1 approved, then formal model sheets | after B1 |
 | KCK-03B | Raster assets: exact-copy originals, delivery variants, per-asset ground anchors, transformation evidence. **Blocked until `visual_scale` (e.g. junior vs parent) is decided** | planned |
 | KCK-03C | Authored 2D animation contract (schema only; no animations) | planned |
 | KCK-03D | 3D contract (schema only; no models) | planned |
 | later | Platform adapter (e.g. Swift) only once an app needs it | — |
+
+The proposed snack-motion slices (03B2, 03C1, 03C2) and their dependencies are in
+[PLAN.md](PLAN.md). They do not authorize production or waive existing gates.
 
 ## Status
 

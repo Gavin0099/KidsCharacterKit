@@ -1,0 +1,22 @@
+name: kidscharacterkit-contract
+plugin_version: "1.0.0"
+framework_interface_version: "1"
+framework_compatible: ">=1.0.0,<2.0.0"
+domain: character-asset-library
+documents:
+  - AGENTS.base.md
+  - AGENTS.md
+  - PLAN.md
+  - GOVERNANCE.md
+  - docs/character-representation-contract.md
+  - docs/character-style-bible.md
+  - docs/kck-03b1-brief.md
+  - docs/ai-governance-adoption.md
+  - governance/TESTING.md
+  - governance/ARCHITECTURE.md
+ai_behavior_override:
+  - AGENTS.base.md
+rule_roots:
+  - governance/rules
+# Existing manual schema/image checks are not registered domain runtime validators.
+validators: []

@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "/tmp/kck-governance-env/bin/python ai-governance-framework/governance_tools/governance_drift_checker.py --repo . --framework-root ./ai-governance-framework --format json",
+  "exit_code": 0,
+  "started_at": "2026-10-06T03:07:56Z",
+  "finished_at": "2026-10-06T03:07:57Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "9938a0751b6fc46741f446468ddde42aea728d5c",
+  "output_artifacts": [
+    "artifacts/evidence/test-results/kck-gov-02-drift.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}

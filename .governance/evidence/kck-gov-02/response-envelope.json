@@ -1,0 +1,75 @@
+{
+  "event_id": "kck-gov-02-20261006-validation",
+  "generated_at": "2026-10-06T03:07:58.279664+00:00",
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "KCK-GOV-02 initial static adoption",
+  "task_authority": {
+    "source": "current Owner instruction",
+    "text": "然後可以倒入ai goverance了"
+  },
+  "scope": [
+    "pinned canonical framework",
+    "official adopter baseline",
+    "repo AGENTS, PLAN, domain contract, governance pack, CI configuration",
+    "canonical memory and diagnostic evidence"
+  ],
+  "done": [
+    "static adoption implemented in 9938a07",
+    "protected baseline identical to pinned source",
+    "18 drift checks passed, 4 existing main-based tests passed, 11 JSON records valid",
+    "canonical milestone and clarification records bound to local implementation",
+    "memory dispatcher guard ran, no blockers; warnings retained"
+  ],
+  "claim_ceiling": [
+    "initial static adoption validated locally",
+    "governance maturity partial; proposal awaiting Owner review",
+    "readiness aggregate ready does not prove hooks_ready"
+  ],
+  "not_claimed": [
+    "Owner merge or art approval",
+    "runtime smoke success or hook enforcement",
+    "domain runtime validator registration",
+    "rights clearance or release readiness",
+    "automatic future-slice execution",
+    "warning-free memory",
+    "CI execution or remote publication at this retained validation event"
+  ],
+  "evidence_refs": [
+    {
+      "path": ".governance/evidence/kck-gov-02/drift-milestone.json",
+      "result": "PASS"
+    },
+    {
+      "path": "artifacts/evidence/test-results/kck-gov-02-drift.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".governance/evidence/kck-gov-02/preflight-tests.txt",
+      "result": "PASS (4 existing tests)"
+    },
+    {
+      "path": ".governance/evidence/kck-gov-02/asset-records.txt",
+      "result": "PASS (11 records)"
+    },
+    {
+      "path": ".governance/evidence/kck-gov-02-external-runtime-smoke.json",
+      "result": "FAIL: version_compatibility_unsupported"
+    },
+    {
+      "path": ".governance/evidence/kck-gov-02/memory-final-check.json",
+      "result": "guard ran, no blockers; warnings retained"
+    },
+    {
+      "path": ".governance/evidence/kck-gov-02/maturity-final.json",
+      "result": "partial"
+    }
+  ],
+  "risk": [
+    "runtime session-start blocked: installed-component version manifest absent, hooks not installed",
+    "memory path-discovery warnings and canonical continuity/raw-log-receipt warning retained",
+    "known pinned upstream taxonomy whitespace retained; scoped diff check passed",
+    "PR #12 pending; A3 output gate 4 failed, budget 1/2; no retry/A4 authorized"
+  ],
+  "next_action": "Commit the canonical memory companion, publish implementation and companion on one draft PR, verify the remote ref, then await Owner review."
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--exit-code",
+    "--",
+    "concepts",
+    "provenance",
+    "manifests",
+    "characters",
+    "docs/character-representation-contract.md",
+    "docs/character-style-bible.md",
+    "docs/kck-03b1-brief.md",
+    "docs/asset-spec.md"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "result": "No product asset bytes, schemas, instructions or approved art contracts changed."
+}
